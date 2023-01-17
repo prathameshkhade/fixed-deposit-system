@@ -1,0 +1,16 @@
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\bin\Debug\Bank_FD_management.exe.config
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\bin\Debug\Bank_FD_management.exe
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\bin\Debug\Bank_FD_management.pdb
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.csprojAssemblyReference.cache
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.Properties.Resources.resources
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.csproj.GenerateResource.cache
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.csproj.CoreCompileInputs.cache
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.exe
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.pdb
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmcreatecustomer.resources
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmCreate_FD.resources
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmCustomer_Master.resources
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmdashboard.resources
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmFDMaster.resources
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmForgetCustID.resources
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.Employee_Master.resources
