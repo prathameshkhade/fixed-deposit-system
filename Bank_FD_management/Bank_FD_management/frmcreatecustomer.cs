@@ -200,97 +200,9 @@ namespace Bank_FD_management
             ctrlOnLostFocussPnl4();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btncancel_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtaddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblemail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbltitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chbminor_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        private void txtgaddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtgname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtgrelation_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnlminor_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
     }
 }

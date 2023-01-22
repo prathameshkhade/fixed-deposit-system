@@ -62,6 +62,7 @@
             this.lblgrelation = new System.Windows.Forms.Label();
             this.txtgname = new System.Windows.Forms.TextBox();
             this.lblgname = new System.Windows.Forms.Label();
+            this.chbminor = new System.Windows.Forms.CheckBox();
             this.pnlnominee = new System.Windows.Forms.Panel();
             this.dobNom = new System.Windows.Forms.DateTimePicker();
             this.lblnomdob = new System.Windows.Forms.Label();
@@ -79,7 +80,6 @@
             this.btnexit = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
-            this.chbminor = new System.Windows.Forms.CheckBox();
             this.pnltitle.SuspendLayout();
             this.pnldetails.SuspendLayout();
             this.pnlminor.SuspendLayout();
@@ -106,7 +106,6 @@
             this.lbltitle.Size = new System.Drawing.Size(301, 42);
             this.lbltitle.TabIndex = 0;
             this.lbltitle.Text = "Create Customer";
-            this.lbltitle.Click += new System.EventHandler(this.lbltitle_Click);
             // 
             // pnldetails
             // 
@@ -158,7 +157,6 @@
             this.lblpan.Size = new System.Drawing.Size(59, 24);
             this.lblpan.TabIndex = 20;
             this.lblpan.Text = "PAN :";
-            this.lblpan.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // dtpcustbirth
             // 
@@ -198,7 +196,6 @@
             this.lblemail.Size = new System.Drawing.Size(73, 24);
             this.lblemail.TabIndex = 16;
             this.lblemail.Text = "E-mail :";
-            this.lblemail.Click += new System.EventHandler(this.lblemail_Click);
             // 
             // txtphone
             // 
@@ -208,7 +205,6 @@
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(232, 29);
             this.txtphone.TabIndex = 15;
-            this.txtphone.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lblphone
             // 
@@ -219,7 +215,6 @@
             this.lblphone.Size = new System.Drawing.Size(103, 24);
             this.lblphone.TabIndex = 14;
             this.lblphone.Text = "Phone no :";
-            this.lblphone.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // txtpincode
             // 
@@ -249,7 +244,6 @@
             this.cmbcity.Name = "cmbcity";
             this.cmbcity.Size = new System.Drawing.Size(203, 32);
             this.cmbcity.TabIndex = 11;
-            this.cmbcity.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // lblcity
             // 
@@ -290,7 +284,6 @@
             this.cmbstate.Name = "cmbstate";
             this.cmbstate.Size = new System.Drawing.Size(203, 32);
             this.cmbstate.TabIndex = 7;
-            this.cmbstate.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // lblstate
             // 
@@ -310,7 +303,6 @@
             this.txtaddress.Name = "txtaddress";
             this.txtaddress.Size = new System.Drawing.Size(821, 29);
             this.txtaddress.TabIndex = 5;
-            this.txtaddress.TextChanged += new System.EventHandler(this.txtaddress_TextChanged);
             // 
             // lbladdress
             // 
@@ -330,7 +322,6 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(198, 29);
             this.txtID.TabIndex = 3;
-            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // lblID
             // 
@@ -341,7 +332,6 @@
             this.lblID.Size = new System.Drawing.Size(79, 24);
             this.lblID.TabIndex = 2;
             this.lblID.Text = "Cust ID :";
-            this.lblID.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtname
             // 
@@ -379,7 +369,6 @@
             this.pnlminor.Name = "pnlminor";
             this.pnlminor.Size = new System.Drawing.Size(1132, 169);
             this.pnlminor.TabIndex = 3;
-            this.pnlminor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlminor_Paint);
             // 
             // txtgphone
             // 
@@ -410,7 +399,6 @@
             this.txtgaddress.Name = "txtgaddress";
             this.txtgaddress.Size = new System.Drawing.Size(608, 29);
             this.txtgaddress.TabIndex = 7;
-            this.txtgaddress.TextChanged += new System.EventHandler(this.txtgaddress_TextChanged);
             // 
             // lblgaddress
             // 
@@ -431,7 +419,6 @@
             this.txtgrelation.Name = "txtgrelation";
             this.txtgrelation.Size = new System.Drawing.Size(201, 29);
             this.txtgrelation.TabIndex = 5;
-            this.txtgrelation.TextChanged += new System.EventHandler(this.txtgrelation_TextChanged);
             // 
             // lblgrelation
             // 
@@ -452,7 +439,6 @@
             this.txtgname.Name = "txtgname";
             this.txtgname.Size = new System.Drawing.Size(481, 29);
             this.txtgname.TabIndex = 3;
-            this.txtgname.TextChanged += new System.EventHandler(this.txtgname_TextChanged);
             // 
             // lblgname
             // 
@@ -463,6 +449,19 @@
             this.lblgname.Size = new System.Drawing.Size(153, 24);
             this.lblgname.TabIndex = 2;
             this.lblgname.Text = "Guardian Name :";
+            // 
+            // chbminor
+            // 
+            this.chbminor.AutoSize = true;
+            this.chbminor.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbminor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbminor.Location = new System.Drawing.Point(28, 14);
+            this.chbminor.Name = "chbminor";
+            this.chbminor.Size = new System.Drawing.Size(110, 28);
+            this.chbminor.TabIndex = 0;
+            this.chbminor.Text = "is minor ?";
+            this.chbminor.UseVisualStyleBackColor = true;
+            this.chbminor.CheckedChanged += new System.EventHandler(this.chbminor_CheckedChanged_1);
             // 
             // pnlnominee
             // 
@@ -657,19 +656,7 @@
             this.btncancel.TabIndex = 0;
             this.btncancel.Text = "Cancel";
             this.btncancel.UseVisualStyleBackColor = false;
-            // 
-            // chbminor
-            // 
-            this.chbminor.AutoSize = true;
-            this.chbminor.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chbminor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbminor.Location = new System.Drawing.Point(28, 14);
-            this.chbminor.Name = "chbminor";
-            this.chbminor.Size = new System.Drawing.Size(110, 28);
-            this.chbminor.TabIndex = 0;
-            this.chbminor.Text = "is minor ?";
-            this.chbminor.UseVisualStyleBackColor = true;
-            this.chbminor.CheckedChanged += new System.EventHandler(this.chbminor_CheckedChanged_1);
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // frmcreatecustomer
             // 
@@ -686,7 +673,6 @@
             this.Name = "frmcreatecustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Customer";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.pnltitle.ResumeLayout(false);
             this.pnltitle.PerformLayout();
             this.pnldetails.ResumeLayout(false);
