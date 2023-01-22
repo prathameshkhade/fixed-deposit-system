@@ -32,15 +32,14 @@
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.breakFDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.breakFDToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mastersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerMastersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fDMastersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeMastersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forgetCustomerIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateInterestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.breakFDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.breakFDToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +55,7 @@
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1904, 38);
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 38);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -74,18 +73,35 @@
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
             this.customerToolStripMenuItem.Size = new System.Drawing.Size(180, 34);
             this.customerToolStripMenuItem.Text = "Customer";
+            this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
             // fDToolStripMenuItem
             // 
             this.fDToolStripMenuItem.Name = "fDToolStripMenuItem";
             this.fDToolStripMenuItem.Size = new System.Drawing.Size(180, 34);
             this.fDToolStripMenuItem.Text = "FD";
+            this.fDToolStripMenuItem.Click += new System.EventHandler(this.fDToolStripMenuItem_Click);
+            // 
+            // breakFDToolStripMenuItem
+            // 
+            this.breakFDToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.breakFDToolStripMenuItem1});
+            this.breakFDToolStripMenuItem.Name = "breakFDToolStripMenuItem";
+            this.breakFDToolStripMenuItem.Size = new System.Drawing.Size(107, 34);
+            this.breakFDToolStripMenuItem.Text = "Break FD";
+            this.breakFDToolStripMenuItem.Click += new System.EventHandler(this.breakFDToolStripMenuItem_Click);
+            // 
+            // breakFDToolStripMenuItem1
+            // 
+            this.breakFDToolStripMenuItem1.Name = "breakFDToolStripMenuItem1";
+            this.breakFDToolStripMenuItem1.Size = new System.Drawing.Size(180, 34);
+            this.breakFDToolStripMenuItem1.Text = "Break FD";
+            this.breakFDToolStripMenuItem1.Click += new System.EventHandler(this.breakFDToolStripMenuItem1_Click);
             // 
             // mastersToolStripMenuItem
             // 
             this.mastersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customerMastersToolStripMenuItem,
-            this.fDMastersToolStripMenuItem,
             this.employeeMastersToolStripMenuItem});
             this.mastersToolStripMenuItem.Name = "mastersToolStripMenuItem";
             this.mastersToolStripMenuItem.Size = new System.Drawing.Size(98, 34);
@@ -96,18 +112,14 @@
             this.customerMastersToolStripMenuItem.Name = "customerMastersToolStripMenuItem";
             this.customerMastersToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
             this.customerMastersToolStripMenuItem.Text = "Customer Masters";
-            // 
-            // fDMastersToolStripMenuItem
-            // 
-            this.fDMastersToolStripMenuItem.Name = "fDMastersToolStripMenuItem";
-            this.fDMastersToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
-            this.fDMastersToolStripMenuItem.Text = "FD Masters";
+            this.customerMastersToolStripMenuItem.Click += new System.EventHandler(this.customerMastersToolStripMenuItem_Click);
             // 
             // employeeMastersToolStripMenuItem
             // 
             this.employeeMastersToolStripMenuItem.Name = "employeeMastersToolStripMenuItem";
             this.employeeMastersToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
             this.employeeMastersToolStripMenuItem.Text = "Employee Masters";
+            this.employeeMastersToolStripMenuItem.Click += new System.EventHandler(this.employeeMastersToolStripMenuItem_Click);
             // 
             // utilityToolStripMenuItem
             // 
@@ -123,37 +135,26 @@
             this.forgetCustomerIDToolStripMenuItem.Name = "forgetCustomerIDToolStripMenuItem";
             this.forgetCustomerIDToolStripMenuItem.Size = new System.Drawing.Size(267, 34);
             this.forgetCustomerIDToolStripMenuItem.Text = "Forget Customer ID";
+            this.forgetCustomerIDToolStripMenuItem.Click += new System.EventHandler(this.forgetCustomerIDToolStripMenuItem_Click);
             // 
             // updateInterestToolStripMenuItem
             // 
             this.updateInterestToolStripMenuItem.Name = "updateInterestToolStripMenuItem";
             this.updateInterestToolStripMenuItem.Size = new System.Drawing.Size(267, 34);
             this.updateInterestToolStripMenuItem.Text = "Update Interest";
-            // 
-            // breakFDToolStripMenuItem
-            // 
-            this.breakFDToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.breakFDToolStripMenuItem1});
-            this.breakFDToolStripMenuItem.Name = "breakFDToolStripMenuItem";
-            this.breakFDToolStripMenuItem.Size = new System.Drawing.Size(107, 34);
-            this.breakFDToolStripMenuItem.Text = "Break FD";
-            // 
-            // breakFDToolStripMenuItem1
-            // 
-            this.breakFDToolStripMenuItem1.Name = "breakFDToolStripMenuItem1";
-            this.breakFDToolStripMenuItem1.Size = new System.Drawing.Size(180, 34);
-            this.breakFDToolStripMenuItem1.Text = "Break FD";
+            this.updateInterestToolStripMenuItem.Click += new System.EventHandler(this.updateInterestToolStripMenuItem_Click);
             // 
             // frmdashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.ClientSize = new System.Drawing.Size(1284, 701);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmdashboard";
             this.Text = "frmdashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmdashboard_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -169,7 +170,6 @@
         private System.Windows.Forms.ToolStripMenuItem fDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mastersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerMastersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fDMastersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem employeeMastersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem utilityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem forgetCustomerIDToolStripMenuItem;

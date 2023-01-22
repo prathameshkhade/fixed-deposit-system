@@ -62,9 +62,8 @@
             this.lblgrelation = new System.Windows.Forms.Label();
             this.txtgname = new System.Windows.Forms.TextBox();
             this.lblgname = new System.Windows.Forms.Label();
-            this.chbminor = new System.Windows.Forms.CheckBox();
             this.pnlnominee = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dobNom = new System.Windows.Forms.DateTimePicker();
             this.lblnomdob = new System.Windows.Forms.Label();
             this.chbisnomminor = new System.Windows.Forms.CheckBox();
             this.txtnphone = new System.Windows.Forms.TextBox();
@@ -80,6 +79,7 @@
             this.btnexit = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
+            this.chbminor = new System.Windows.Forms.CheckBox();
             this.pnltitle.SuspendLayout();
             this.pnldetails.SuspendLayout();
             this.pnlminor.SuspendLayout();
@@ -379,10 +379,12 @@
             this.pnlminor.Name = "pnlminor";
             this.pnlminor.Size = new System.Drawing.Size(1132, 169);
             this.pnlminor.TabIndex = 3;
+            this.pnlminor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlminor_Paint);
             // 
             // txtgphone
             // 
             this.txtgphone.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtgphone.Enabled = false;
             this.txtgphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtgphone.Location = new System.Drawing.Point(183, 121);
             this.txtgphone.Name = "txtgphone";
@@ -402,11 +404,13 @@
             // txtgaddress
             // 
             this.txtgaddress.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtgaddress.Enabled = false;
             this.txtgaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtgaddress.Location = new System.Drawing.Point(183, 86);
             this.txtgaddress.Name = "txtgaddress";
             this.txtgaddress.Size = new System.Drawing.Size(608, 29);
             this.txtgaddress.TabIndex = 7;
+            this.txtgaddress.TextChanged += new System.EventHandler(this.txtgaddress_TextChanged);
             // 
             // lblgaddress
             // 
@@ -421,11 +425,13 @@
             // txtgrelation
             // 
             this.txtgrelation.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtgrelation.Enabled = false;
             this.txtgrelation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtgrelation.Location = new System.Drawing.Point(920, 86);
             this.txtgrelation.Name = "txtgrelation";
             this.txtgrelation.Size = new System.Drawing.Size(201, 29);
             this.txtgrelation.TabIndex = 5;
+            this.txtgrelation.TextChanged += new System.EventHandler(this.txtgrelation_TextChanged);
             // 
             // lblgrelation
             // 
@@ -440,11 +446,13 @@
             // txtgname
             // 
             this.txtgname.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtgname.Enabled = false;
             this.txtgname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtgname.Location = new System.Drawing.Point(183, 51);
             this.txtgname.Name = "txtgname";
             this.txtgname.Size = new System.Drawing.Size(481, 29);
             this.txtgname.TabIndex = 3;
+            this.txtgname.TextChanged += new System.EventHandler(this.txtgname_TextChanged);
             // 
             // lblgname
             // 
@@ -456,23 +464,11 @@
             this.lblgname.TabIndex = 2;
             this.lblgname.Text = "Guardian Name :";
             // 
-            // chbminor
-            // 
-            this.chbminor.AutoSize = true;
-            this.chbminor.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chbminor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbminor.Location = new System.Drawing.Point(28, 14);
-            this.chbminor.Name = "chbminor";
-            this.chbminor.Size = new System.Drawing.Size(110, 28);
-            this.chbminor.TabIndex = 0;
-            this.chbminor.Text = "is minor ?";
-            this.chbminor.UseVisualStyleBackColor = true;
-            // 
             // pnlnominee
             // 
             this.pnlnominee.BackColor = System.Drawing.Color.LightGray;
             this.pnlnominee.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlnominee.Controls.Add(this.dateTimePicker1);
+            this.pnlnominee.Controls.Add(this.dobNom);
             this.pnlnominee.Controls.Add(this.lblnomdob);
             this.pnlnominee.Controls.Add(this.chbisnomminor);
             this.pnlnominee.Controls.Add(this.txtnphone);
@@ -489,15 +485,16 @@
             this.pnlnominee.Size = new System.Drawing.Size(1132, 231);
             this.pnlnominee.TabIndex = 20;
             // 
-            // dateTimePicker1
+            // dobNom
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(248, 176);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(230, 21);
-            this.dateTimePicker1.TabIndex = 21;
-            this.dateTimePicker1.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
+            this.dobNom.Enabled = false;
+            this.dobNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dobNom.Location = new System.Drawing.Point(248, 176);
+            this.dobNom.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
+            this.dobNom.Name = "dobNom";
+            this.dobNom.Size = new System.Drawing.Size(230, 21);
+            this.dobNom.TabIndex = 21;
+            this.dobNom.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
             // 
             // lblnomdob
             // 
@@ -513,6 +510,7 @@
             // 
             this.chbisnomminor.AutoSize = true;
             this.chbisnomminor.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbisnomminor.Enabled = false;
             this.chbisnomminor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbisnomminor.Location = new System.Drawing.Point(55, 171);
             this.chbisnomminor.Name = "chbisnomminor";
@@ -520,10 +518,12 @@
             this.chbisnomminor.TabIndex = 18;
             this.chbisnomminor.Text = "minor ?";
             this.chbisnomminor.UseVisualStyleBackColor = true;
+            this.chbisnomminor.CheckedChanged += new System.EventHandler(this.chbisnomminor_CheckedChanged);
             // 
             // txtnphone
             // 
             this.txtnphone.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtnphone.Enabled = false;
             this.txtnphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnphone.Location = new System.Drawing.Point(183, 121);
             this.txtnphone.Name = "txtnphone";
@@ -543,6 +543,7 @@
             // txtnaddress
             // 
             this.txtnaddress.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtnaddress.Enabled = false;
             this.txtnaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnaddress.Location = new System.Drawing.Point(183, 86);
             this.txtnaddress.Name = "txtnaddress";
@@ -562,6 +563,7 @@
             // txtnrelation
             // 
             this.txtnrelation.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtnrelation.Enabled = false;
             this.txtnrelation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnrelation.Location = new System.Drawing.Point(920, 86);
             this.txtnrelation.Name = "txtnrelation";
@@ -581,6 +583,7 @@
             // txtnname
             // 
             this.txtnname.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtnname.Enabled = false;
             this.txtnname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnname.Location = new System.Drawing.Point(183, 51);
             this.txtnname.Name = "txtnname";
@@ -608,6 +611,7 @@
             this.chbnominee.TabIndex = 0;
             this.chbnominee.Text = "nominee ?";
             this.chbnominee.UseVisualStyleBackColor = true;
+            this.chbnominee.CheckedChanged += new System.EventHandler(this.chbnominee_CheckedChanged);
             // 
             // pnlbuttons
             // 
@@ -654,18 +658,33 @@
             this.btncancel.Text = "Cancel";
             this.btncancel.UseVisualStyleBackColor = false;
             // 
+            // chbminor
+            // 
+            this.chbminor.AutoSize = true;
+            this.chbminor.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chbminor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbminor.Location = new System.Drawing.Point(28, 14);
+            this.chbminor.Name = "chbminor";
+            this.chbminor.Size = new System.Drawing.Size(110, 28);
+            this.chbminor.TabIndex = 0;
+            this.chbminor.Text = "is minor ?";
+            this.chbminor.UseVisualStyleBackColor = true;
+            this.chbminor.CheckedChanged += new System.EventHandler(this.chbminor_CheckedChanged_1);
+            // 
             // frmcreatecustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1156, 860);
+            this.ClientSize = new System.Drawing.Size(1156, 701);
             this.Controls.Add(this.pnlbuttons);
             this.Controls.Add(this.pnlnominee);
             this.Controls.Add(this.pnlminor);
             this.Controls.Add(this.pnldetails);
             this.Controls.Add(this.pnltitle);
             this.Name = "frmcreatecustomer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Customer";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnltitle.ResumeLayout(false);
@@ -714,7 +733,6 @@
         private System.Windows.Forms.Label lblgrelation;
         private System.Windows.Forms.TextBox txtgname;
         private System.Windows.Forms.Label lblgname;
-        private System.Windows.Forms.CheckBox chbminor;
         private System.Windows.Forms.TextBox txtgphone;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtgaddress;
@@ -729,13 +747,14 @@
         private System.Windows.Forms.TextBox txtnname;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox chbnominee;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dobNom;
         private System.Windows.Forms.Label lblnomdob;
         private System.Windows.Forms.CheckBox chbisnomminor;
         private System.Windows.Forms.Panel pnlbuttons;
         private System.Windows.Forms.Button btnexit;
         private System.Windows.Forms.Button btnsave;
         private System.Windows.Forms.Button btncancel;
+        private System.Windows.Forms.CheckBox chbminor;
     }
 }
 
