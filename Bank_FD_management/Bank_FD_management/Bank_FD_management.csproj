@@ -82,12 +82,6 @@
     <Compile Include="frmdashboard.Designer.cs">
       <DependentUpon>frmdashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFDMaster.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFDMaster.Designer.cs">
-      <DependentUpon>frmFDMaster.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmForgetCustID.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,9 +113,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmdashboard.resx">
       <DependentUpon>frmdashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmFDMaster.resx">
-      <DependentUpon>frmFDMaster.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmForgetCustID.resx">
       <DependentUpon>frmForgetCustID.cs</DependentUpon>

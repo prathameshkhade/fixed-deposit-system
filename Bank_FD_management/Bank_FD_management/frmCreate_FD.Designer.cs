@@ -35,6 +35,13 @@
             this.lblID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.pnldetails = new System.Windows.Forms.Panel();
+            this.lblcertid = new System.Windows.Forms.Label();
+            this.txtcertid = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.lblfdid = new System.Windows.Forms.Label();
+            this.txtfdid = new System.Windows.Forms.TextBox();
             this.rdbonmaturity = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.rdbhalfyearly = new System.Windows.Forms.RadioButton();
@@ -66,8 +73,7 @@
             this.btnexit = new System.Windows.Forms.Button();
             this.btncreate = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
-            this.lblfdid = new System.Windows.Forms.Label();
-            this.txtfdid = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnltitle.SuspendLayout();
             this.pnldetails.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -79,7 +85,7 @@
             this.pnltitle.BackColor = System.Drawing.Color.LightGray;
             this.pnltitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnltitle.Controls.Add(this.lbltitle);
-            this.pnltitle.Location = new System.Drawing.Point(13, 12);
+            this.pnltitle.Location = new System.Drawing.Point(13, 13);
             this.pnltitle.Name = "pnltitle";
             this.pnltitle.Size = new System.Drawing.Size(1131, 60);
             this.pnltitle.TabIndex = 2;
@@ -138,6 +144,11 @@
             this.pnldetails.AutoSize = true;
             this.pnldetails.BackColor = System.Drawing.Color.LightGray;
             this.pnldetails.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnldetails.Controls.Add(this.lblcertid);
+            this.pnldetails.Controls.Add(this.txtcertid);
+            this.pnldetails.Controls.Add(this.button1);
+            this.pnldetails.Controls.Add(this.label4);
+            this.pnldetails.Controls.Add(this.comboBox4);
             this.pnldetails.Controls.Add(this.lblfdid);
             this.pnldetails.Controls.Add(this.txtfdid);
             this.pnldetails.Controls.Add(this.rdbonmaturity);
@@ -163,6 +174,74 @@
             this.pnldetails.Size = new System.Drawing.Size(1131, 322);
             this.pnldetails.TabIndex = 3;
             this.pnldetails.Paint += new System.Windows.Forms.PaintEventHandler(this.pnldetails_Paint);
+            // 
+            // lblcertid
+            // 
+            this.lblcertid.AutoSize = true;
+            this.lblcertid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcertid.Location = new System.Drawing.Point(675, 122);
+            this.lblcertid.Name = "lblcertid";
+            this.lblcertid.Size = new System.Drawing.Size(123, 24);
+            this.lblcertid.TabIndex = 47;
+            this.lblcertid.Text = "Certificate ID :";
+            // 
+            // txtcertid
+            // 
+            this.txtcertid.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtcertid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcertid.Location = new System.Drawing.Point(801, 120);
+            this.txtcertid.Name = "txtcertid";
+            this.txtcertid.Size = new System.Drawing.Size(198, 29);
+            this.txtcertid.TabIndex = 48;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(349, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 32);
+            this.button1.TabIndex = 46;
+            this.button1.Text = "Load list";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(648, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 24);
+            this.label4.TabIndex = 45;
+            this.label4.Text = "Select FD :";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(756, 22);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(353, 32);
+            this.comboBox4.TabIndex = 44;
+            // 
+            // lblfdid
+            // 
+            this.lblfdid.AutoSize = true;
+            this.lblfdid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfdid.Location = new System.Drawing.Point(357, 123);
+            this.lblfdid.Name = "lblfdid";
+            this.lblfdid.Size = new System.Drawing.Size(67, 24);
+            this.lblfdid.TabIndex = 29;
+            this.lblfdid.Text = "FD ID :";
+            // 
+            // txtfdid
+            // 
+            this.txtfdid.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtfdid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfdid.Location = new System.Drawing.Point(430, 120);
+            this.txtfdid.Name = "txtfdid";
+            this.txtfdid.Size = new System.Drawing.Size(198, 29);
+            this.txtfdid.TabIndex = 30;
             // 
             // rdbonmaturity
             // 
@@ -457,6 +536,7 @@
             this.pnlbuttons.Controls.Add(this.btnexit);
             this.pnlbuttons.Controls.Add(this.btncreate);
             this.pnlbuttons.Controls.Add(this.btncancel);
+            this.pnlbuttons.Controls.Add(this.button2);
             this.pnlbuttons.Location = new System.Drawing.Point(12, 748);
             this.pnlbuttons.Name = "pnlbuttons";
             this.pnlbuttons.Size = new System.Drawing.Size(1132, 100);
@@ -466,7 +546,7 @@
             // 
             this.btnexit.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnexit.Location = new System.Drawing.Point(693, 27);
+            this.btnexit.Location = new System.Drawing.Point(797, 27);
             this.btnexit.Name = "btnexit";
             this.btnexit.Size = new System.Drawing.Size(130, 38);
             this.btnexit.TabIndex = 2;
@@ -477,7 +557,7 @@
             // 
             this.btncreate.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btncreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncreate.Location = new System.Drawing.Point(499, 27);
+            this.btncreate.Location = new System.Drawing.Point(589, 27);
             this.btncreate.Name = "btncreate";
             this.btncreate.Size = new System.Drawing.Size(130, 38);
             this.btncreate.TabIndex = 1;
@@ -488,31 +568,23 @@
             // 
             this.btncancel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancel.Location = new System.Drawing.Point(308, 27);
+            this.btncancel.Location = new System.Drawing.Point(382, 27);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(130, 38);
             this.btncancel.TabIndex = 0;
             this.btncancel.Text = "Cancel";
             this.btncancel.UseVisualStyleBackColor = false;
             // 
-            // lblfdid
+            // button2
             // 
-            this.lblfdid.AutoSize = true;
-            this.lblfdid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfdid.Location = new System.Drawing.Point(425, 25);
-            this.lblfdid.Name = "lblfdid";
-            this.lblfdid.Size = new System.Drawing.Size(67, 24);
-            this.lblfdid.TabIndex = 29;
-            this.lblfdid.Text = "FD ID :";
-            // 
-            // txtfdid
-            // 
-            this.txtfdid.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtfdid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfdid.Location = new System.Drawing.Point(498, 22);
-            this.txtfdid.Name = "txtfdid";
-            this.txtfdid.Size = new System.Drawing.Size(198, 29);
-            this.txtfdid.TabIndex = 30;
+            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(174, 27);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(130, 38);
+            this.button2.TabIndex = 47;
+            this.button2.Text = "Print";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // frmCreate_FD
             // 
@@ -580,5 +652,11 @@
         private System.Windows.Forms.Button btncancel;
         private System.Windows.Forms.Label lblfdid;
         private System.Windows.Forms.TextBox txtfdid;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblcertid;
+        private System.Windows.Forms.TextBox txtcertid;
     }
 }

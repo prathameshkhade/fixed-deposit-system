@@ -14,3 +14,5 @@ C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\B
 C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmFDMaster.resources
 C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmForgetCustID.resources
 C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.Employee_Master.resources
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmbreakFD.resources
+C:\Users\Hiremath\source\repos\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmUpdateInterest.resources
