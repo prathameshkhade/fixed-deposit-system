@@ -28,192 +28,267 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnltitle = new System.Windows.Forms.Panel();
-            this.lbltitle = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtmaturedate = new System.Windows.Forms.TextBox();
-            this.lblmaturitydate = new System.Windows.Forms.Label();
-            this.txtstartingdate = new System.Windows.Forms.TextBox();
-            this.lblstartdate = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblfdamount = new System.Windows.Forms.Label();
-            this.txtname = new System.Windows.Forms.TextBox();
-            this.lblname = new System.Windows.Forms.Label();
-            this.txtcertid = new System.Windows.Forms.TextBox();
+            this.pnlTitle = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pnlDetails = new System.Windows.Forms.Panel();
+            this.txtWithDate = new System.Windows.Forms.TextBox();
+            this.lblWithDate = new System.Windows.Forms.Label();
+            this.txtFinalAmount = new System.Windows.Forms.TextBox();
+            this.lblFinalAmount = new System.Windows.Forms.Label();
+            this.txtTotalInterest = new System.Windows.Forms.TextBox();
+            this.lblTotalInterest = new System.Windows.Forms.Label();
+            this.txtnterestRate = new System.Windows.Forms.TextBox();
+            this.lblInterestRate = new System.Windows.Forms.Label();
+            this.txtFDStatus = new System.Windows.Forms.TextBox();
+            this.lblDFStatus = new System.Windows.Forms.Label();
+            this.txtMatureDate = new System.Windows.Forms.TextBox();
+            this.lblMaturityDate = new System.Windows.Forms.Label();
+            this.txtStartingDate = new System.Windows.Forms.TextBox();
+            this.lblStartDate = new System.Windows.Forms.Label();
+            this.txtFDAmount = new System.Windows.Forms.TextBox();
+            this.lblFDAmount = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.txtCertID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnfetchdetails = new System.Windows.Forms.Button();
-            this.pnlbuttons = new System.Windows.Forms.Panel();
-            this.btnexit = new System.Windows.Forms.Button();
-            this.btncreate = new System.Windows.Forms.Button();
-            this.btncancel = new System.Windows.Forms.Button();
-            this.txtfinalamount = new System.Windows.Forms.TextBox();
-            this.lblfinalamount = new System.Windows.Forms.Label();
-            this.txttotalinterest = new System.Windows.Forms.TextBox();
-            this.lbltotalinterest = new System.Windows.Forms.Label();
-            this.txtinterestrate = new System.Windows.Forms.TextBox();
-            this.lblinterestrate = new System.Windows.Forms.Label();
-            this.txtwithdate = new System.Windows.Forms.TextBox();
-            this.lblwithdate = new System.Windows.Forms.Label();
-            this.pnltitle.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.pnlbuttons.SuspendLayout();
+            this.pnlFetch = new System.Windows.Forms.Panel();
+            this.btnFetchDetails = new System.Windows.Forms.Button();
+            this.pnlButtons = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnBreak = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.pnlTitle.SuspendLayout();
+            this.pnlDetails.SuspendLayout();
+            this.pnlFetch.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnltitle
+            // pnlTitle
             // 
-            this.pnltitle.BackColor = System.Drawing.Color.LightGray;
-            this.pnltitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnltitle.Controls.Add(this.lbltitle);
-            this.pnltitle.Location = new System.Drawing.Point(13, 12);
-            this.pnltitle.Name = "pnltitle";
-            this.pnltitle.Size = new System.Drawing.Size(1101, 60);
-            this.pnltitle.TabIndex = 34;
+            this.pnlTitle.BackColor = System.Drawing.Color.LightGray;
+            this.pnlTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlTitle.Controls.Add(this.lblTitle);
+            this.pnlTitle.Location = new System.Drawing.Point(13, 12);
+            this.pnlTitle.Name = "pnlTitle";
+            this.pnlTitle.Size = new System.Drawing.Size(1101, 60);
+            this.pnlTitle.TabIndex = 34;
             // 
-            // lbltitle
+            // lblTitle
             // 
-            this.lbltitle.AutoSize = true;
-            this.lbltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltitle.Location = new System.Drawing.Point(457, 7);
-            this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(176, 42);
-            this.lbltitle.TabIndex = 0;
-            this.lbltitle.Text = "FD Break";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(457, 7);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(176, 42);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "FD Break";
             // 
-            // panel1
+            // pnlDetails
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.txtwithdate);
-            this.panel1.Controls.Add(this.lblwithdate);
-            this.panel1.Controls.Add(this.txtfinalamount);
-            this.panel1.Controls.Add(this.lblfinalamount);
-            this.panel1.Controls.Add(this.txttotalinterest);
-            this.panel1.Controls.Add(this.lbltotalinterest);
-            this.panel1.Controls.Add(this.txtinterestrate);
-            this.panel1.Controls.Add(this.lblinterestrate);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtmaturedate);
-            this.panel1.Controls.Add(this.lblmaturitydate);
-            this.panel1.Controls.Add(this.txtstartingdate);
-            this.panel1.Controls.Add(this.lblstartdate);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.lblfdamount);
-            this.panel1.Controls.Add(this.txtname);
-            this.panel1.Controls.Add(this.lblname);
-            this.panel1.Location = new System.Drawing.Point(12, 158);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1102, 417);
-            this.panel1.TabIndex = 35;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.pnlDetails.BackColor = System.Drawing.Color.LightGray;
+            this.pnlDetails.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlDetails.Controls.Add(this.txtWithDate);
+            this.pnlDetails.Controls.Add(this.lblWithDate);
+            this.pnlDetails.Controls.Add(this.txtFinalAmount);
+            this.pnlDetails.Controls.Add(this.lblFinalAmount);
+            this.pnlDetails.Controls.Add(this.txtTotalInterest);
+            this.pnlDetails.Controls.Add(this.lblTotalInterest);
+            this.pnlDetails.Controls.Add(this.txtnterestRate);
+            this.pnlDetails.Controls.Add(this.lblInterestRate);
+            this.pnlDetails.Controls.Add(this.txtFDStatus);
+            this.pnlDetails.Controls.Add(this.lblDFStatus);
+            this.pnlDetails.Controls.Add(this.txtMatureDate);
+            this.pnlDetails.Controls.Add(this.lblMaturityDate);
+            this.pnlDetails.Controls.Add(this.txtStartingDate);
+            this.pnlDetails.Controls.Add(this.lblStartDate);
+            this.pnlDetails.Controls.Add(this.txtFDAmount);
+            this.pnlDetails.Controls.Add(this.lblFDAmount);
+            this.pnlDetails.Controls.Add(this.txtName);
+            this.pnlDetails.Controls.Add(this.lblName);
+            this.pnlDetails.Location = new System.Drawing.Point(12, 158);
+            this.pnlDetails.Name = "pnlDetails";
+            this.pnlDetails.Size = new System.Drawing.Size(1102, 417);
+            this.pnlDetails.TabIndex = 1;
             // 
-            // textBox4
+            // txtWithDate
             // 
-            this.textBox4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(756, 157);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(147, 29);
-            this.textBox4.TabIndex = 53;
+            this.txtWithDate.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtWithDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWithDate.Location = new System.Drawing.Point(473, 216);
+            this.txtWithDate.Name = "txtWithDate";
+            this.txtWithDate.Size = new System.Drawing.Size(147, 29);
+            this.txtWithDate.TabIndex = 6;
             // 
-            // label2
+            // lblWithDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(648, 160);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 24);
-            this.label2.TabIndex = 52;
-            this.label2.Text = "FD Status :";
+            this.lblWithDate.AutoSize = true;
+            this.lblWithDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWithDate.Location = new System.Drawing.Point(334, 218);
+            this.lblWithDate.Name = "lblWithDate";
+            this.lblWithDate.Size = new System.Drawing.Size(139, 24);
+            this.lblWithDate.TabIndex = 60;
+            this.lblWithDate.Text = "Withdraw date :";
             // 
-            // txtmaturedate
+            // txtFinalAmount
             // 
-            this.txtmaturedate.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtmaturedate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmaturedate.Location = new System.Drawing.Point(473, 157);
-            this.txtmaturedate.Name = "txtmaturedate";
-            this.txtmaturedate.Size = new System.Drawing.Size(147, 29);
-            this.txtmaturedate.TabIndex = 51;
+            this.txtFinalAmount.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtFinalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFinalAmount.Location = new System.Drawing.Point(163, 331);
+            this.txtFinalAmount.Name = "txtFinalAmount";
+            this.txtFinalAmount.Size = new System.Drawing.Size(147, 29);
+            this.txtFinalAmount.TabIndex = 8;
             // 
-            // lblmaturitydate
+            // lblFinalAmount
             // 
-            this.lblmaturitydate.AutoSize = true;
-            this.lblmaturitydate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmaturitydate.Location = new System.Drawing.Point(347, 160);
-            this.lblmaturitydate.Name = "lblmaturitydate";
-            this.lblmaturitydate.Size = new System.Drawing.Size(125, 24);
-            this.lblmaturitydate.TabIndex = 50;
-            this.lblmaturitydate.Text = "Maturity date :";
+            this.lblFinalAmount.AutoSize = true;
+            this.lblFinalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinalAmount.Location = new System.Drawing.Point(28, 334);
+            this.lblFinalAmount.Name = "lblFinalAmount";
+            this.lblFinalAmount.Size = new System.Drawing.Size(129, 24);
+            this.lblFinalAmount.TabIndex = 58;
+            this.lblFinalAmount.Text = "Final amount :";
             // 
-            // txtstartingdate
+            // txtTotalInterest
             // 
-            this.txtstartingdate.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtstartingdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtstartingdate.Location = new System.Drawing.Point(161, 157);
-            this.txtstartingdate.Name = "txtstartingdate";
-            this.txtstartingdate.Size = new System.Drawing.Size(147, 29);
-            this.txtstartingdate.TabIndex = 49;
+            this.txtTotalInterest.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtTotalInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalInterest.Location = new System.Drawing.Point(162, 273);
+            this.txtTotalInterest.Name = "txtTotalInterest";
+            this.txtTotalInterest.Size = new System.Drawing.Size(147, 29);
+            this.txtTotalInterest.TabIndex = 7;
             // 
-            // lblstartdate
+            // lblTotalInterest
             // 
-            this.lblstartdate.AutoSize = true;
-            this.lblstartdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblstartdate.Location = new System.Drawing.Point(32, 160);
-            this.lblstartdate.Name = "lblstartdate";
-            this.lblstartdate.Size = new System.Drawing.Size(123, 24);
-            this.lblstartdate.TabIndex = 48;
-            this.lblstartdate.Text = "Starting date :";
+            this.lblTotalInterest.AutoSize = true;
+            this.lblTotalInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalInterest.Location = new System.Drawing.Point(29, 276);
+            this.lblTotalInterest.Name = "lblTotalInterest";
+            this.lblTotalInterest.Size = new System.Drawing.Size(126, 24);
+            this.lblTotalInterest.TabIndex = 56;
+            this.lblTotalInterest.Text = "Total Interest :";
             // 
-            // textBox1
+            // txtnterestRate
             // 
-            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(148, 101);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 29);
-            this.textBox1.TabIndex = 25;
+            this.txtnterestRate.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtnterestRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnterestRate.Location = new System.Drawing.Point(161, 215);
+            this.txtnterestRate.Name = "txtnterestRate";
+            this.txtnterestRate.Size = new System.Drawing.Size(147, 29);
+            this.txtnterestRate.TabIndex = 5;
             // 
-            // lblfdamount
+            // lblInterestRate
             // 
-            this.lblfdamount.AutoSize = true;
-            this.lblfdamount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfdamount.Location = new System.Drawing.Point(29, 104);
-            this.lblfdamount.Name = "lblfdamount";
-            this.lblfdamount.Size = new System.Drawing.Size(113, 24);
-            this.lblfdamount.TabIndex = 24;
-            this.lblfdamount.Text = "FD amount :";
+            this.lblInterestRate.AutoSize = true;
+            this.lblInterestRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInterestRate.Location = new System.Drawing.Point(39, 218);
+            this.lblInterestRate.Name = "lblInterestRate";
+            this.lblInterestRate.Size = new System.Drawing.Size(116, 24);
+            this.lblInterestRate.TabIndex = 54;
+            this.lblInterestRate.Text = "Interest rate :";
             // 
-            // txtname
+            // txtFDStatus
             // 
-            this.txtname.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtname.Location = new System.Drawing.Point(147, 46);
-            this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(491, 29);
-            this.txtname.TabIndex = 23;
+            this.txtFDStatus.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtFDStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFDStatus.Location = new System.Drawing.Point(756, 157);
+            this.txtFDStatus.Name = "txtFDStatus";
+            this.txtFDStatus.Size = new System.Drawing.Size(147, 29);
+            this.txtFDStatus.TabIndex = 4;
             // 
-            // lblname
+            // lblDFStatus
             // 
-            this.lblname.AutoSize = true;
-            this.lblname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblname.Location = new System.Drawing.Point(70, 49);
-            this.lblname.Name = "lblname";
-            this.lblname.Size = new System.Drawing.Size(71, 24);
-            this.lblname.TabIndex = 22;
-            this.lblname.Text = "Name :";
+            this.lblDFStatus.AutoSize = true;
+            this.lblDFStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDFStatus.Location = new System.Drawing.Point(648, 160);
+            this.lblDFStatus.Name = "lblDFStatus";
+            this.lblDFStatus.Size = new System.Drawing.Size(100, 24);
+            this.lblDFStatus.TabIndex = 52;
+            this.lblDFStatus.Text = "FD Status :";
             // 
-            // txtcertid
+            // txtMatureDate
             // 
-            this.txtcertid.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtcertid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcertid.Location = new System.Drawing.Point(149, 14);
-            this.txtcertid.Name = "txtcertid";
-            this.txtcertid.Size = new System.Drawing.Size(198, 29);
-            this.txtcertid.TabIndex = 29;
+            this.txtMatureDate.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtMatureDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatureDate.Location = new System.Drawing.Point(473, 157);
+            this.txtMatureDate.Name = "txtMatureDate";
+            this.txtMatureDate.Size = new System.Drawing.Size(147, 29);
+            this.txtMatureDate.TabIndex = 3;
+            // 
+            // lblMaturityDate
+            // 
+            this.lblMaturityDate.AutoSize = true;
+            this.lblMaturityDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaturityDate.Location = new System.Drawing.Point(347, 160);
+            this.lblMaturityDate.Name = "lblMaturityDate";
+            this.lblMaturityDate.Size = new System.Drawing.Size(125, 24);
+            this.lblMaturityDate.TabIndex = 50;
+            this.lblMaturityDate.Text = "Maturity date :";
+            // 
+            // txtStartingDate
+            // 
+            this.txtStartingDate.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtStartingDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStartingDate.Location = new System.Drawing.Point(161, 157);
+            this.txtStartingDate.Name = "txtStartingDate";
+            this.txtStartingDate.Size = new System.Drawing.Size(147, 29);
+            this.txtStartingDate.TabIndex = 2;
+            // 
+            // lblStartDate
+            // 
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartDate.Location = new System.Drawing.Point(32, 160);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(123, 24);
+            this.lblStartDate.TabIndex = 48;
+            this.lblStartDate.Text = "Starting date :";
+            // 
+            // txtFDAmount
+            // 
+            this.txtFDAmount.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtFDAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFDAmount.Location = new System.Drawing.Point(148, 101);
+            this.txtFDAmount.Name = "txtFDAmount";
+            this.txtFDAmount.Size = new System.Drawing.Size(203, 29);
+            this.txtFDAmount.TabIndex = 1;
+            // 
+            // lblFDAmount
+            // 
+            this.lblFDAmount.AutoSize = true;
+            this.lblFDAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFDAmount.Location = new System.Drawing.Point(29, 104);
+            this.lblFDAmount.Name = "lblFDAmount";
+            this.lblFDAmount.Size = new System.Drawing.Size(113, 24);
+            this.lblFDAmount.TabIndex = 24;
+            this.lblFDAmount.Text = "FD amount :";
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(147, 46);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(491, 29);
+            this.txtName.TabIndex = 0;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(70, 49);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(71, 24);
+            this.lblName.TabIndex = 22;
+            this.lblName.Text = "Name :";
+            // 
+            // txtCertID
+            // 
+            this.txtCertID.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtCertID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCertID.Location = new System.Drawing.Point(149, 14);
+            this.txtCertID.Name = "txtCertID";
+            this.txtCertID.Size = new System.Drawing.Size(198, 29);
+            this.txtCertID.TabIndex = 0;
             // 
             // lblID
             // 
@@ -225,201 +300,128 @@
             this.lblID.TabIndex = 28;
             this.lblID.Text = "Certificate ID :";
             // 
-            // panel2
+            // pnlFetch
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.btnfetchdetails);
-            this.panel2.Controls.Add(this.txtcertid);
-            this.panel2.Controls.Add(this.lblID);
-            this.panel2.Location = new System.Drawing.Point(13, 85);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1101, 60);
-            this.panel2.TabIndex = 36;
+            this.pnlFetch.BackColor = System.Drawing.Color.LightGray;
+            this.pnlFetch.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlFetch.Controls.Add(this.btnFetchDetails);
+            this.pnlFetch.Controls.Add(this.txtCertID);
+            this.pnlFetch.Controls.Add(this.lblID);
+            this.pnlFetch.Location = new System.Drawing.Point(13, 85);
+            this.pnlFetch.Name = "pnlFetch";
+            this.pnlFetch.Size = new System.Drawing.Size(1101, 60);
+            this.pnlFetch.TabIndex = 0;
             // 
-            // btnfetchdetails
+            // btnFetchDetails
             // 
-            this.btnfetchdetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfetchdetails.Location = new System.Drawing.Point(375, 11);
-            this.btnfetchdetails.Name = "btnfetchdetails";
-            this.btnfetchdetails.Size = new System.Drawing.Size(127, 34);
-            this.btnfetchdetails.TabIndex = 42;
-            this.btnfetchdetails.Text = "Fetch Details";
-            this.btnfetchdetails.UseVisualStyleBackColor = true;
+            this.btnFetchDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFetchDetails.Location = new System.Drawing.Point(375, 11);
+            this.btnFetchDetails.Name = "btnFetchDetails";
+            this.btnFetchDetails.Size = new System.Drawing.Size(127, 34);
+            this.btnFetchDetails.TabIndex = 1;
+            this.btnFetchDetails.Text = "Fetch Details";
+            this.btnFetchDetails.UseVisualStyleBackColor = true;
             // 
-            // pnlbuttons
+            // pnlButtons
             // 
-            this.pnlbuttons.BackColor = System.Drawing.Color.LightGray;
-            this.pnlbuttons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlbuttons.Controls.Add(this.btnexit);
-            this.pnlbuttons.Controls.Add(this.btncreate);
-            this.pnlbuttons.Controls.Add(this.btncancel);
-            this.pnlbuttons.Location = new System.Drawing.Point(12, 589);
-            this.pnlbuttons.Name = "pnlbuttons";
-            this.pnlbuttons.Size = new System.Drawing.Size(1102, 94);
-            this.pnlbuttons.TabIndex = 56;
+            this.pnlButtons.BackColor = System.Drawing.Color.LightGray;
+            this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlButtons.Controls.Add(this.btnExit);
+            this.pnlButtons.Controls.Add(this.btnBreak);
+            this.pnlButtons.Controls.Add(this.btnCancel);
+            this.pnlButtons.Location = new System.Drawing.Point(12, 589);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(1102, 94);
+            this.pnlButtons.TabIndex = 2;
             // 
-            // btnexit
+            // btnExit
             // 
-            this.btnexit.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnexit.Location = new System.Drawing.Point(654, 27);
-            this.btnexit.Name = "btnexit";
-            this.btnexit.Size = new System.Drawing.Size(130, 38);
-            this.btnexit.TabIndex = 2;
-            this.btnexit.Text = "Exit";
-            this.btnexit.UseVisualStyleBackColor = false;
+            this.btnExit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(654, 27);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(130, 38);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
-            // btncreate
+            // btnBreak
             // 
-            this.btncreate.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btncreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncreate.Location = new System.Drawing.Point(485, 27);
-            this.btncreate.Name = "btncreate";
-            this.btncreate.Size = new System.Drawing.Size(130, 38);
-            this.btncreate.TabIndex = 1;
-            this.btncreate.Text = "Break";
-            this.btncreate.UseVisualStyleBackColor = false;
+            this.btnBreak.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnBreak.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBreak.Location = new System.Drawing.Point(485, 27);
+            this.btnBreak.Name = "btnBreak";
+            this.btnBreak.Size = new System.Drawing.Size(130, 38);
+            this.btnBreak.TabIndex = 0;
+            this.btnBreak.Text = "Break";
+            this.btnBreak.UseVisualStyleBackColor = false;
             // 
-            // btncancel
+            // btnCancel
             // 
-            this.btncancel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancel.Location = new System.Drawing.Point(316, 27);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(130, 38);
-            this.btncancel.TabIndex = 0;
-            this.btncancel.Text = "Cancel";
-            this.btncancel.UseVisualStyleBackColor = false;
-            // 
-            // txtfinalamount
-            // 
-            this.txtfinalamount.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtfinalamount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtfinalamount.Location = new System.Drawing.Point(163, 331);
-            this.txtfinalamount.Name = "txtfinalamount";
-            this.txtfinalamount.Size = new System.Drawing.Size(147, 29);
-            this.txtfinalamount.TabIndex = 59;
-            // 
-            // lblfinalamount
-            // 
-            this.lblfinalamount.AutoSize = true;
-            this.lblfinalamount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfinalamount.Location = new System.Drawing.Point(28, 334);
-            this.lblfinalamount.Name = "lblfinalamount";
-            this.lblfinalamount.Size = new System.Drawing.Size(129, 24);
-            this.lblfinalamount.TabIndex = 58;
-            this.lblfinalamount.Text = "Final amount :";
-            // 
-            // txttotalinterest
-            // 
-            this.txttotalinterest.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txttotalinterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttotalinterest.Location = new System.Drawing.Point(162, 273);
-            this.txttotalinterest.Name = "txttotalinterest";
-            this.txttotalinterest.Size = new System.Drawing.Size(147, 29);
-            this.txttotalinterest.TabIndex = 57;
-            // 
-            // lbltotalinterest
-            // 
-            this.lbltotalinterest.AutoSize = true;
-            this.lbltotalinterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotalinterest.Location = new System.Drawing.Point(29, 276);
-            this.lbltotalinterest.Name = "lbltotalinterest";
-            this.lbltotalinterest.Size = new System.Drawing.Size(126, 24);
-            this.lbltotalinterest.TabIndex = 56;
-            this.lbltotalinterest.Text = "Total Interest :";
-            // 
-            // txtinterestrate
-            // 
-            this.txtinterestrate.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtinterestrate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtinterestrate.Location = new System.Drawing.Point(161, 215);
-            this.txtinterestrate.Name = "txtinterestrate";
-            this.txtinterestrate.Size = new System.Drawing.Size(147, 29);
-            this.txtinterestrate.TabIndex = 55;
-            // 
-            // lblinterestrate
-            // 
-            this.lblinterestrate.AutoSize = true;
-            this.lblinterestrate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblinterestrate.Location = new System.Drawing.Point(39, 218);
-            this.lblinterestrate.Name = "lblinterestrate";
-            this.lblinterestrate.Size = new System.Drawing.Size(116, 24);
-            this.lblinterestrate.TabIndex = 54;
-            this.lblinterestrate.Text = "Interest rate :";
-            // 
-            // txtwithdate
-            // 
-            this.txtwithdate.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtwithdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtwithdate.Location = new System.Drawing.Point(473, 216);
-            this.txtwithdate.Name = "txtwithdate";
-            this.txtwithdate.Size = new System.Drawing.Size(147, 29);
-            this.txtwithdate.TabIndex = 61;
-            // 
-            // lblwithdate
-            // 
-            this.lblwithdate.AutoSize = true;
-            this.lblwithdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblwithdate.Location = new System.Drawing.Point(334, 218);
-            this.lblwithdate.Name = "lblwithdate";
-            this.lblwithdate.Size = new System.Drawing.Size(139, 24);
-            this.lblwithdate.TabIndex = 60;
-            this.lblwithdate.Text = "Withdraw date :";
+            this.btnCancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(316, 27);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(130, 38);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmbreakFD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 695);
-            this.Controls.Add(this.pnlbuttons);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnltitle);
+            this.Controls.Add(this.pnlButtons);
+            this.Controls.Add(this.pnlFetch);
+            this.Controls.Add(this.pnlDetails);
+            this.Controls.Add(this.pnlTitle);
             this.Name = "frmbreakFD";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FD Break";
-            this.pnltitle.ResumeLayout(false);
-            this.pnltitle.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.pnlbuttons.ResumeLayout(false);
+            this.pnlTitle.ResumeLayout(false);
+            this.pnlTitle.PerformLayout();
+            this.pnlDetails.ResumeLayout(false);
+            this.pnlDetails.PerformLayout();
+            this.pnlFetch.ResumeLayout(false);
+            this.pnlFetch.PerformLayout();
+            this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnltitle;
-        private System.Windows.Forms.Label lbltitle;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtcertid;
+        private System.Windows.Forms.Panel pnlTitle;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Panel pnlDetails;
+        private System.Windows.Forms.TextBox txtCertID;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.TextBox txtname;
-        private System.Windows.Forms.Label lblname;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnfetchdetails;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lblfdamount;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtmaturedate;
-        private System.Windows.Forms.Label lblmaturitydate;
-        private System.Windows.Forms.TextBox txtstartingdate;
-        private System.Windows.Forms.Label lblstartdate;
-        private System.Windows.Forms.Panel pnlbuttons;
-        private System.Windows.Forms.Button btnexit;
-        private System.Windows.Forms.Button btncreate;
-        private System.Windows.Forms.Button btncancel;
-        private System.Windows.Forms.TextBox txtfinalamount;
-        private System.Windows.Forms.Label lblfinalamount;
-        private System.Windows.Forms.TextBox txttotalinterest;
-        private System.Windows.Forms.Label lbltotalinterest;
-        private System.Windows.Forms.TextBox txtinterestrate;
-        private System.Windows.Forms.Label lblinterestrate;
-        private System.Windows.Forms.TextBox txtwithdate;
-        private System.Windows.Forms.Label lblwithdate;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Panel pnlFetch;
+        private System.Windows.Forms.Button btnFetchDetails;
+        private System.Windows.Forms.TextBox txtFDAmount;
+        private System.Windows.Forms.Label lblFDAmount;
+        private System.Windows.Forms.TextBox txtFDStatus;
+        private System.Windows.Forms.Label lblDFStatus;
+        private System.Windows.Forms.TextBox txtMatureDate;
+        private System.Windows.Forms.Label lblMaturityDate;
+        private System.Windows.Forms.TextBox txtStartingDate;
+        private System.Windows.Forms.Label lblStartDate;
+        private System.Windows.Forms.Panel pnlButtons;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnBreak;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.TextBox txtFinalAmount;
+        private System.Windows.Forms.Label lblFinalAmount;
+        private System.Windows.Forms.TextBox txtTotalInterest;
+        private System.Windows.Forms.Label lblTotalInterest;
+        private System.Windows.Forms.TextBox txtnterestRate;
+        private System.Windows.Forms.Label lblInterestRate;
+        private System.Windows.Forms.TextBox txtWithDate;
+        private System.Windows.Forms.Label lblWithDate;
     }
 }

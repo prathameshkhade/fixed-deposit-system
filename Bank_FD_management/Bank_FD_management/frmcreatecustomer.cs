@@ -27,8 +27,8 @@ namespace Bank_FD_management
             ctrl.BackColor = Color.White;
         }
 
-        //for every panel lost focus and got focus
-        private void ctrlOnFocussPnl1()
+        //for every control on panel got focus
+        private void ctrlOnFocusPnl1()
         {
             foreach(Control i in pnldetails.Controls)
             {
@@ -39,7 +39,7 @@ namespace Bank_FD_management
             }
         }
 
-        private void ctrlOnFocussPnl2()
+        private void ctrlOnFocusPnl2()
         {
             foreach (Control i in pnlminor.Controls)
             {
@@ -50,7 +50,7 @@ namespace Bank_FD_management
             }
         }
 
-        private void ctrlOnFocussPnl3()
+        private void ctrlOnFocusPnl3()
         {
             foreach (Control i in pnlnominee.Controls)
             {
@@ -61,7 +61,7 @@ namespace Bank_FD_management
             }
         }
 
-        private void ctrlOnFocussPnl4()
+        private void ctrlOnFocusPnl4()
         {
             foreach (Control i in pnlbuttons.Controls)
             {
@@ -72,8 +72,8 @@ namespace Bank_FD_management
             }
         }
 
-        // just for on lost focusing the seperate panel
-        private void ctrlOnLostFocussPnl1()
+        //for every control on panel lost focus
+        private void ctrlOnLostFocusPnl1()
         {
             foreach (Control i in pnldetails.Controls)
             {
@@ -84,7 +84,7 @@ namespace Bank_FD_management
             }
         }
 
-        private void ctrlOnLostFocussPnl2()
+        private void ctrlOnLostFocusPnl2()
         {
             foreach (Control i in pnlminor.Controls)
             {
@@ -95,7 +95,7 @@ namespace Bank_FD_management
             }
         }
 
-        private void ctrlOnLostFocussPnl3()
+        private void ctrlOnLostFocusPnl3()
         {
             foreach (Control i in pnlnominee.Controls)
             {
@@ -106,7 +106,7 @@ namespace Bank_FD_management
             }
         }
 
-        private void ctrlOnLostFocussPnl4()
+        private void ctrlOnLostFocusPnl4()
         {
             foreach (Control i in pnlbuttons.Controls)
             {
@@ -212,14 +212,14 @@ namespace Bank_FD_management
         {
             InitializeComponent();
 
-            ctrlOnFocussPnl1();
-            ctrlOnFocussPnl2();
-            ctrlOnFocussPnl3();
-            ctrlOnFocussPnl4();
-            ctrlOnLostFocussPnl1();
-            ctrlOnLostFocussPnl2();
-            ctrlOnLostFocussPnl3();
-            ctrlOnLostFocussPnl4();
+            ctrlOnFocusPnl1();
+            ctrlOnFocusPnl2();
+            ctrlOnFocusPnl3();
+            ctrlOnFocusPnl4();
+            ctrlOnLostFocusPnl1();
+            ctrlOnLostFocusPnl2();
+            ctrlOnLostFocusPnl3();
+            ctrlOnLostFocusPnl4();
         }
 
     }
