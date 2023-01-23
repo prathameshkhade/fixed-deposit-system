@@ -27,6 +27,7 @@ namespace Bank_FD_management
             ctrl.BackColor = Color.White;
         }
 
+        //for every panel lost focus and got focus
         private void ctrlOnFocussPnl1()
         {
             foreach(Control i in pnldetails.Controls)
@@ -185,6 +186,27 @@ namespace Bank_FD_management
             }
         }
 
+        // for removing all the text from cancel button
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in pnldetails.Controls)
+            {
+                if (c is TextBox || c is ComboBox)
+                {
+                    c.Text = "";
+                }
+
+                chbminor.Checked = false;
+                chbnominee.Checked = false;
+            }
+        }
+
+        // for exiting the current form 
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         // just like main() for form
         public frmcreatecustomer()
         {
@@ -200,9 +222,5 @@ namespace Bank_FD_management
             ctrlOnLostFocussPnl4();
         }
 
-        private void btncancel_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

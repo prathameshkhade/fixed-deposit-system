@@ -137,7 +137,7 @@
             this.pnldetails.Location = new System.Drawing.Point(13, 90);
             this.pnldetails.Name = "pnldetails";
             this.pnldetails.Size = new System.Drawing.Size(1131, 249);
-            this.pnldetails.TabIndex = 2;
+            this.pnldetails.TabIndex = 0;
             // 
             // txtpan
             // 
@@ -146,7 +146,7 @@
             this.txtpan.Location = new System.Drawing.Point(441, 196);
             this.txtpan.Name = "txtpan";
             this.txtpan.Size = new System.Drawing.Size(232, 29);
-            this.txtpan.TabIndex = 21;
+            this.txtpan.TabIndex = 11;
             // 
             // lblpan
             // 
@@ -165,7 +165,7 @@
             this.dtpcustbirth.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
             this.dtpcustbirth.Name = "dtpcustbirth";
             this.dtpcustbirth.Size = new System.Drawing.Size(232, 22);
-            this.dtpcustbirth.TabIndex = 19;
+            this.dtpcustbirth.TabIndex = 10;
             this.dtpcustbirth.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
             // 
             // lbldob
@@ -185,7 +185,7 @@
             this.txtemail.Location = new System.Drawing.Point(441, 161);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(401, 29);
-            this.txtemail.TabIndex = 17;
+            this.txtemail.TabIndex = 9;
             // 
             // lblemail
             // 
@@ -204,7 +204,7 @@
             this.txtphone.Location = new System.Drawing.Point(124, 161);
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(232, 29);
-            this.txtphone.TabIndex = 15;
+            this.txtphone.TabIndex = 8;
             // 
             // lblphone
             // 
@@ -223,7 +223,7 @@
             this.txtpincode.Location = new System.Drawing.Point(125, 126);
             this.txtpincode.Name = "txtpincode";
             this.txtpincode.Size = new System.Drawing.Size(203, 29);
-            this.txtpincode.TabIndex = 13;
+            this.txtpincode.TabIndex = 7;
             // 
             // lblpincode
             // 
@@ -240,10 +240,14 @@
             this.cmbcity.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbcity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbcity.FormattingEnabled = true;
+            this.cmbcity.Items.AddRange(new object[] {
+            "Maharashtra",
+            "Gujrat",
+            "karnataka"});
             this.cmbcity.Location = new System.Drawing.Point(743, 88);
             this.cmbcity.Name = "cmbcity";
             this.cmbcity.Size = new System.Drawing.Size(203, 32);
-            this.cmbcity.TabIndex = 11;
+            this.cmbcity.TabIndex = 6;
             // 
             // lblcity
             // 
@@ -260,10 +264,14 @@
             this.cmbdistrict.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbdistrict.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbdistrict.FormattingEnabled = true;
+            this.cmbdistrict.Items.AddRange(new object[] {
+            "Maharashtra",
+            "Gujrat",
+            "karnataka"});
             this.cmbdistrict.Location = new System.Drawing.Point(441, 88);
             this.cmbdistrict.Name = "cmbdistrict";
             this.cmbdistrict.Size = new System.Drawing.Size(203, 32);
-            this.cmbdistrict.TabIndex = 9;
+            this.cmbdistrict.TabIndex = 5;
             // 
             // lbldistrict
             // 
@@ -280,10 +288,14 @@
             this.cmbstate.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbstate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbstate.FormattingEnabled = true;
+            this.cmbstate.Items.AddRange(new object[] {
+            "Maharashtra",
+            "Gujraat",
+            "karnataka"});
             this.cmbstate.Location = new System.Drawing.Point(124, 88);
             this.cmbstate.Name = "cmbstate";
             this.cmbstate.Size = new System.Drawing.Size(203, 32);
-            this.cmbstate.TabIndex = 7;
+            this.cmbstate.TabIndex = 4;
             // 
             // lblstate
             // 
@@ -302,7 +314,7 @@
             this.txtaddress.Location = new System.Drawing.Point(125, 53);
             this.txtaddress.Name = "txtaddress";
             this.txtaddress.Size = new System.Drawing.Size(821, 29);
-            this.txtaddress.TabIndex = 5;
+            this.txtaddress.TabIndex = 3;
             // 
             // lbladdress
             // 
@@ -321,7 +333,7 @@
             this.txtID.Location = new System.Drawing.Point(789, 18);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(198, 29);
-            this.txtID.TabIndex = 3;
+            this.txtID.TabIndex = 2;
             // 
             // lblID
             // 
@@ -368,7 +380,7 @@
             this.pnlminor.Location = new System.Drawing.Point(12, 357);
             this.pnlminor.Name = "pnlminor";
             this.pnlminor.Size = new System.Drawing.Size(1132, 169);
-            this.pnlminor.TabIndex = 3;
+            this.pnlminor.TabIndex = 1;
             // 
             // txtgphone
             // 
@@ -378,7 +390,7 @@
             this.txtgphone.Location = new System.Drawing.Point(183, 121);
             this.txtgphone.Name = "txtgphone";
             this.txtgphone.Size = new System.Drawing.Size(232, 29);
-            this.txtgphone.TabIndex = 17;
+            this.txtgphone.TabIndex = 4;
             // 
             // label1
             // 
@@ -398,7 +410,7 @@
             this.txtgaddress.Location = new System.Drawing.Point(183, 86);
             this.txtgaddress.Name = "txtgaddress";
             this.txtgaddress.Size = new System.Drawing.Size(608, 29);
-            this.txtgaddress.TabIndex = 7;
+            this.txtgaddress.TabIndex = 2;
             // 
             // lblgaddress
             // 
@@ -418,7 +430,7 @@
             this.txtgrelation.Location = new System.Drawing.Point(920, 86);
             this.txtgrelation.Name = "txtgrelation";
             this.txtgrelation.Size = new System.Drawing.Size(201, 29);
-            this.txtgrelation.TabIndex = 5;
+            this.txtgrelation.TabIndex = 3;
             // 
             // lblgrelation
             // 
@@ -438,7 +450,7 @@
             this.txtgname.Location = new System.Drawing.Point(183, 51);
             this.txtgname.Name = "txtgname";
             this.txtgname.Size = new System.Drawing.Size(481, 29);
-            this.txtgname.TabIndex = 3;
+            this.txtgname.TabIndex = 1;
             // 
             // lblgname
             // 
@@ -482,7 +494,7 @@
             this.pnlnominee.Location = new System.Drawing.Point(12, 544);
             this.pnlnominee.Name = "pnlnominee";
             this.pnlnominee.Size = new System.Drawing.Size(1132, 231);
-            this.pnlnominee.TabIndex = 20;
+            this.pnlnominee.TabIndex = 2;
             // 
             // dobNom
             // 
@@ -492,7 +504,7 @@
             this.dobNom.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
             this.dobNom.Name = "dobNom";
             this.dobNom.Size = new System.Drawing.Size(230, 21);
-            this.dobNom.TabIndex = 21;
+            this.dobNom.TabIndex = 6;
             this.dobNom.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
             // 
             // lblnomdob
@@ -514,7 +526,7 @@
             this.chbisnomminor.Location = new System.Drawing.Point(55, 171);
             this.chbisnomminor.Name = "chbisnomminor";
             this.chbisnomminor.Size = new System.Drawing.Size(92, 28);
-            this.chbisnomminor.TabIndex = 18;
+            this.chbisnomminor.TabIndex = 5;
             this.chbisnomminor.Text = "minor ?";
             this.chbisnomminor.UseVisualStyleBackColor = true;
             this.chbisnomminor.CheckedChanged += new System.EventHandler(this.chbisnomminor_CheckedChanged);
@@ -527,7 +539,7 @@
             this.txtnphone.Location = new System.Drawing.Point(183, 121);
             this.txtnphone.Name = "txtnphone";
             this.txtnphone.Size = new System.Drawing.Size(232, 29);
-            this.txtnphone.TabIndex = 17;
+            this.txtnphone.TabIndex = 4;
             // 
             // label3
             // 
@@ -547,7 +559,7 @@
             this.txtnaddress.Location = new System.Drawing.Point(183, 86);
             this.txtnaddress.Name = "txtnaddress";
             this.txtnaddress.Size = new System.Drawing.Size(608, 29);
-            this.txtnaddress.TabIndex = 7;
+            this.txtnaddress.TabIndex = 2;
             // 
             // label4
             // 
@@ -567,7 +579,7 @@
             this.txtnrelation.Location = new System.Drawing.Point(920, 86);
             this.txtnrelation.Name = "txtnrelation";
             this.txtnrelation.Size = new System.Drawing.Size(201, 29);
-            this.txtnrelation.TabIndex = 5;
+            this.txtnrelation.TabIndex = 3;
             // 
             // label5
             // 
@@ -587,7 +599,7 @@
             this.txtnname.Location = new System.Drawing.Point(183, 51);
             this.txtnname.Name = "txtnname";
             this.txtnname.Size = new System.Drawing.Size(481, 29);
-            this.txtnname.TabIndex = 3;
+            this.txtnname.TabIndex = 1;
             // 
             // label6
             // 
@@ -622,7 +634,7 @@
             this.pnlbuttons.Location = new System.Drawing.Point(12, 793);
             this.pnlbuttons.Name = "pnlbuttons";
             this.pnlbuttons.Size = new System.Drawing.Size(1132, 56);
-            this.pnlbuttons.TabIndex = 21;
+            this.pnlbuttons.TabIndex = 3;
             // 
             // btnexit
             // 
@@ -634,6 +646,7 @@
             this.btnexit.TabIndex = 2;
             this.btnexit.Text = "Exit";
             this.btnexit.UseVisualStyleBackColor = false;
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // btnsave
             // 
@@ -642,7 +655,7 @@
             this.btnsave.Location = new System.Drawing.Point(503, 7);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(130, 38);
-            this.btnsave.TabIndex = 1;
+            this.btnsave.TabIndex = 0;
             this.btnsave.Text = "Save";
             this.btnsave.UseVisualStyleBackColor = false;
             // 
@@ -653,7 +666,7 @@
             this.btncancel.Location = new System.Drawing.Point(312, 7);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(130, 38);
-            this.btncancel.TabIndex = 0;
+            this.btncancel.TabIndex = 1;
             this.btncancel.Text = "Cancel";
             this.btncancel.UseVisualStyleBackColor = false;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);

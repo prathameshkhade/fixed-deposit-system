@@ -14,7 +14,7 @@ namespace Bank_FD_management
     public partial class frmdashboard : Form
     {
 
-        private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=D:/Programs/C#/Project/Fixed_deposite_system/Bank_FD_management/DB/Data.accdb";
+        private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=C:/Users/Hiremath/source/repos/Fixed_deposite_system/Bank_FD_management/DB/Data.accdb";
         OleDbConnection conn = new OleDbConnection(myConn);
 
         public void setConnection()
