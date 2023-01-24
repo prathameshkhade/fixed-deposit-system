@@ -7,11 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace Bank_FD_management
 {
     public partial class frmcreatecustomer : Form
     {
+        private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
+        OleDbConnection conn = new OleDbConnection(myConn);
+
+        public void setConnection()
+        {
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+                MessageBox.Show("Database successfully connected!");
+            }
+        }
+
         // just for on focusing the seperate panel
         private void onFocus(object sender, EventArgs e)
         {
@@ -27,7 +40,7 @@ namespace Bank_FD_management
             ctrl.BackColor = Color.White;
         }
 
-        //for every control on panel got focus
+        //just for got focusing every panel 
         private void ctrlOnFocusPnl1()
         {
             foreach(Control i in pnldetails.Controls)
@@ -72,7 +85,7 @@ namespace Bank_FD_management
             }
         }
 
-        //for every control on panel lost focus
+        //just for on lost focusing the panel
         private void ctrlOnLostFocusPnl1()
         {
             foreach (Control i in pnldetails.Controls)
@@ -212,6 +225,8 @@ namespace Bank_FD_management
         {
             InitializeComponent();
 
+            txtID.GotFocus += onFocus;
+            txtID.LostFocus += onLostFocus;
             ctrlOnFocusPnl1();
             ctrlOnFocusPnl2();
             ctrlOnFocusPnl3();
@@ -222,5 +237,11 @@ namespace Bank_FD_management
             ctrlOnLostFocusPnl4();
         }
 
+        private void btnsave_Click(object sender, EventArgs e)
+        {
+            setConnection();
+            OleDbCommand cmd = new OleDbCommand();
+            cmd = new OleDbCommand("insert into Customer_master (C_name) values('" + txtname.Text + "')");
+        }
     }
 }

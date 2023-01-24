@@ -168,7 +168,7 @@
             this.pnlDetails.Controls.Add(this.lblMonths);
             this.pnlDetails.Controls.Add(this.lblDays);
             this.pnlDetails.Controls.Add(this.cmbMonths);
-            this.pnlDetails.Location = new System.Drawing.Point(13, 88);
+            this.pnlDetails.Location = new System.Drawing.Point(13, 90);
             this.pnlDetails.Name = "pnlDetails";
             this.pnlDetails.Size = new System.Drawing.Size(1131, 322);
             this.pnlDetails.TabIndex = 0;

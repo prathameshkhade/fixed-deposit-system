@@ -29,7 +29,7 @@ namespace Bank_FD_management
         }
 
 
-        //for every panel lost focus and got focus
+        //just for got focusing every panel 
         private void ctrlOnFocusPnl1()
         {
             foreach (Control i in pnlDetails.Controls)
@@ -64,7 +64,7 @@ namespace Bank_FD_management
         }
 
 
-        // just for on lost focusing the seperate panel
+        //just for on lost focusing the panel
         private void ctrlOnLostFocusPnl1()
         {
             foreach (Control i in pnlDetails.Controls)

@@ -35,7 +35,6 @@
             this.breakFDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.breakFDToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mastersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customerMastersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeMastersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forgetCustomerIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,18 +100,10 @@
             // mastersToolStripMenuItem
             // 
             this.mastersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.customerMastersToolStripMenuItem,
             this.employeeMastersToolStripMenuItem});
             this.mastersToolStripMenuItem.Name = "mastersToolStripMenuItem";
             this.mastersToolStripMenuItem.Size = new System.Drawing.Size(98, 34);
             this.mastersToolStripMenuItem.Text = "Masters";
-            // 
-            // customerMastersToolStripMenuItem
-            // 
-            this.customerMastersToolStripMenuItem.Name = "customerMastersToolStripMenuItem";
-            this.customerMastersToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
-            this.customerMastersToolStripMenuItem.Text = "Customer Masters";
-            this.customerMastersToolStripMenuItem.Click += new System.EventHandler(this.customerMastersToolStripMenuItem_Click);
             // 
             // employeeMastersToolStripMenuItem
             // 
@@ -169,7 +160,6 @@
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mastersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem customerMastersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem employeeMastersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem utilityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem forgetCustomerIDToolStripMenuItem;

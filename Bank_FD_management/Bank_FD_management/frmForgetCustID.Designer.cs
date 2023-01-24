@@ -28,74 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnltitle = new System.Windows.Forms.Panel();
-            this.lbltitle = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlTitle = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pnlDetails = new System.Windows.Forms.Panel();
+            this.pnlCID = new System.Windows.Forms.Panel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
-            this.txtpan = new System.Windows.Forms.TextBox();
-            this.lblpan = new System.Windows.Forms.Label();
-            this.dtpcustbirth = new System.Windows.Forms.DateTimePicker();
-            this.lbldob = new System.Windows.Forms.Label();
-            this.txtname = new System.Windows.Forms.TextBox();
-            this.lblname = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnfetchid = new System.Windows.Forms.Button();
-            this.btnexit = new System.Windows.Forms.Button();
-            this.btncancel = new System.Windows.Forms.Button();
-            this.pnltitle.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.txtPan = new System.Windows.Forms.TextBox();
+            this.lblPan = new System.Windows.Forms.Label();
+            this.dtpCustBirth = new System.Windows.Forms.DateTimePicker();
+            this.lblDob = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.pnlButtons = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnFetchID = new System.Windows.Forms.Button();
+            this.pnlTitle.SuspendLayout();
+            this.pnlDetails.SuspendLayout();
+            this.pnlCID.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnltitle
+            // pnlTitle
             // 
-            this.pnltitle.BackColor = System.Drawing.Color.LightGray;
-            this.pnltitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnltitle.Controls.Add(this.lbltitle);
-            this.pnltitle.Location = new System.Drawing.Point(12, 12);
-            this.pnltitle.Name = "pnltitle";
-            this.pnltitle.Size = new System.Drawing.Size(776, 60);
-            this.pnltitle.TabIndex = 3;
-            this.pnltitle.Paint += new System.Windows.Forms.PaintEventHandler(this.pnltitle_Paint);
+            this.pnlTitle.BackColor = System.Drawing.Color.LightGray;
+            this.pnlTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlTitle.Controls.Add(this.lblTitle);
+            this.pnlTitle.Location = new System.Drawing.Point(12, 12);
+            this.pnlTitle.Name = "pnlTitle";
+            this.pnlTitle.Size = new System.Drawing.Size(776, 60);
+            this.pnlTitle.TabIndex = 3;
+            this.pnlTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.pnltitle_Paint);
             // 
-            // lbltitle
+            // lblTitle
             // 
-            this.lbltitle.AutoSize = true;
-            this.lbltitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltitle.Location = new System.Drawing.Point(249, 10);
-            this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(265, 33);
-            this.lbltitle.TabIndex = 0;
-            this.lbltitle.Text = "Forget customer ID";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(249, 10);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(265, 33);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Forget customer ID";
             // 
-            // panel1
+            // pnlDetails
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.txtpan);
-            this.panel1.Controls.Add(this.lblpan);
-            this.panel1.Controls.Add(this.dtpcustbirth);
-            this.panel1.Controls.Add(this.lbldob);
-            this.panel1.Controls.Add(this.txtname);
-            this.panel1.Controls.Add(this.lblname);
-            this.panel1.Location = new System.Drawing.Point(12, 85);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(776, 280);
-            this.panel1.TabIndex = 4;
+            this.pnlDetails.BackColor = System.Drawing.Color.LightGray;
+            this.pnlDetails.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlDetails.Controls.Add(this.pnlCID);
+            this.pnlDetails.Controls.Add(this.txtPan);
+            this.pnlDetails.Controls.Add(this.lblPan);
+            this.pnlDetails.Controls.Add(this.dtpCustBirth);
+            this.pnlDetails.Controls.Add(this.lblDob);
+            this.pnlDetails.Controls.Add(this.txtName);
+            this.pnlDetails.Controls.Add(this.lblName);
+            this.pnlDetails.Location = new System.Drawing.Point(12, 85);
+            this.pnlDetails.Name = "pnlDetails";
+            this.pnlDetails.Size = new System.Drawing.Size(776, 280);
+            this.pnlDetails.TabIndex = 4;
             // 
-            // panel3
+            // pnlCID
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.txtID);
-            this.panel3.Controls.Add(this.lblID);
-            this.panel3.Location = new System.Drawing.Point(225, 192);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(341, 62);
-            this.panel3.TabIndex = 30;
+            this.pnlCID.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlCID.Controls.Add(this.txtID);
+            this.pnlCID.Controls.Add(this.lblID);
+            this.pnlCID.Location = new System.Drawing.Point(225, 192);
+            this.pnlCID.Name = "pnlCID";
+            this.pnlCID.Size = new System.Drawing.Size(341, 62);
+            this.pnlCID.TabIndex = 30;
             // 
             // txtID
             // 
@@ -116,149 +116,151 @@
             this.lblID.TabIndex = 28;
             this.lblID.Text = "Cust ID :";
             // 
-            // txtpan
+            // txtPan
             // 
-            this.txtpan.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpan.Location = new System.Drawing.Point(160, 134);
-            this.txtpan.Name = "txtpan";
-            this.txtpan.Size = new System.Drawing.Size(232, 29);
-            this.txtpan.TabIndex = 27;
+            this.txtPan.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPan.Location = new System.Drawing.Point(160, 134);
+            this.txtPan.Name = "txtPan";
+            this.txtPan.Size = new System.Drawing.Size(232, 29);
+            this.txtPan.TabIndex = 27;
             // 
-            // lblpan
+            // lblPan
             // 
-            this.lblpan.AutoSize = true;
-            this.lblpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpan.Location = new System.Drawing.Point(95, 137);
-            this.lblpan.Name = "lblpan";
-            this.lblpan.Size = new System.Drawing.Size(59, 24);
-            this.lblpan.TabIndex = 26;
-            this.lblpan.Text = "PAN :";
+            this.lblPan.AutoSize = true;
+            this.lblPan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPan.Location = new System.Drawing.Point(95, 137);
+            this.lblPan.Name = "lblPan";
+            this.lblPan.Size = new System.Drawing.Size(59, 24);
+            this.lblPan.TabIndex = 26;
+            this.lblPan.Text = "PAN :";
             // 
-            // dtpcustbirth
+            // dtpCustBirth
             // 
-            this.dtpcustbirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpcustbirth.Location = new System.Drawing.Point(160, 96);
-            this.dtpcustbirth.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
-            this.dtpcustbirth.Name = "dtpcustbirth";
-            this.dtpcustbirth.Size = new System.Drawing.Size(232, 22);
-            this.dtpcustbirth.TabIndex = 25;
-            this.dtpcustbirth.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
+            this.dtpCustBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCustBirth.Location = new System.Drawing.Point(160, 96);
+            this.dtpCustBirth.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
+            this.dtpCustBirth.Name = "dtpCustBirth";
+            this.dtpCustBirth.Size = new System.Drawing.Size(232, 22);
+            this.dtpCustBirth.TabIndex = 25;
+            this.dtpCustBirth.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
             // 
-            // lbldob
+            // lblDob
             // 
-            this.lbldob.AutoSize = true;
-            this.lbldob.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldob.Location = new System.Drawing.Point(94, 94);
-            this.lbldob.Name = "lbldob";
-            this.lbldob.Size = new System.Drawing.Size(60, 24);
-            this.lbldob.TabIndex = 24;
-            this.lbldob.Text = "DOB :";
+            this.lblDob.AutoSize = true;
+            this.lblDob.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDob.Location = new System.Drawing.Point(94, 94);
+            this.lblDob.Name = "lblDob";
+            this.lblDob.Size = new System.Drawing.Size(60, 24);
+            this.lblDob.TabIndex = 24;
+            this.lblDob.Text = "DOB :";
             // 
-            // txtname
+            // txtName
             // 
-            this.txtname.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtname.Location = new System.Drawing.Point(160, 47);
-            this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(491, 29);
-            this.txtname.TabIndex = 23;
+            this.txtName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(160, 47);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(491, 29);
+            this.txtName.TabIndex = 23;
             // 
-            // lblname
+            // lblName
             // 
-            this.lblname.AutoSize = true;
-            this.lblname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblname.Location = new System.Drawing.Point(83, 47);
-            this.lblname.Name = "lblname";
-            this.lblname.Size = new System.Drawing.Size(71, 24);
-            this.lblname.TabIndex = 22;
-            this.lblname.Text = "Name :";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(83, 47);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(71, 24);
+            this.lblName.TabIndex = 22;
+            this.lblName.Text = "Name :";
             // 
-            // panel2
+            // pnlButtons
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.btnexit);
-            this.panel2.Controls.Add(this.btncancel);
-            this.panel2.Controls.Add(this.btnfetchid);
-            this.panel2.Location = new System.Drawing.Point(12, 378);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(776, 60);
-            this.panel2.TabIndex = 5;
+            this.pnlButtons.BackColor = System.Drawing.Color.LightGray;
+            this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlButtons.Controls.Add(this.btnExit);
+            this.pnlButtons.Controls.Add(this.btnCancel);
+            this.pnlButtons.Controls.Add(this.btnFetchID);
+            this.pnlButtons.Location = new System.Drawing.Point(12, 378);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(776, 60);
+            this.pnlButtons.TabIndex = 5;
             // 
-            // btnfetchid
+            // btnExit
             // 
-            this.btnfetchid.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnfetchid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfetchid.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnfetchid.Location = new System.Drawing.Point(322, 8);
-            this.btnfetchid.Name = "btnfetchid";
-            this.btnfetchid.Size = new System.Drawing.Size(127, 40);
-            this.btnfetchid.TabIndex = 23;
-            this.btnfetchid.Text = "Fetch Details";
-            this.btnfetchid.UseVisualStyleBackColor = false;
+            this.btnExit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(492, 9);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(130, 38);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnexit
+            // btnCancel
             // 
-            this.btnexit.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnexit.Location = new System.Drawing.Point(492, 9);
-            this.btnexit.Name = "btnexit";
-            this.btnexit.Size = new System.Drawing.Size(130, 38);
-            this.btnexit.TabIndex = 7;
-            this.btnexit.Text = "Exit";
-            this.btnexit.UseVisualStyleBackColor = false;
+            this.btnCancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(154, 10);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(130, 38);
+            this.btnCancel.TabIndex = 6;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btncancel
+            // btnFetchID
             // 
-            this.btncancel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancel.Location = new System.Drawing.Point(154, 10);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(130, 38);
-            this.btncancel.TabIndex = 6;
-            this.btncancel.Text = "Cancel";
-            this.btncancel.UseVisualStyleBackColor = false;
+            this.btnFetchID.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnFetchID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFetchID.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnFetchID.Location = new System.Drawing.Point(322, 8);
+            this.btnFetchID.Name = "btnFetchID";
+            this.btnFetchID.Size = new System.Drawing.Size(127, 40);
+            this.btnFetchID.TabIndex = 23;
+            this.btnFetchID.Text = "Fetch Details";
+            this.btnFetchID.UseVisualStyleBackColor = false;
             // 
             // frmForgetCustID
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnltitle);
+            this.Controls.Add(this.pnlButtons);
+            this.Controls.Add(this.pnlDetails);
+            this.Controls.Add(this.pnlTitle);
             this.Name = "frmForgetCustID";
             this.Text = "frmForgetCustID";
             this.Load += new System.EventHandler(this.frmForgetCustID_Load);
-            this.pnltitle.ResumeLayout(false);
-            this.pnltitle.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.pnlTitle.ResumeLayout(false);
+            this.pnlTitle.PerformLayout();
+            this.pnlDetails.ResumeLayout(false);
+            this.pnlDetails.PerformLayout();
+            this.pnlCID.ResumeLayout(false);
+            this.pnlCID.PerformLayout();
+            this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnltitle;
-        private System.Windows.Forms.Label lbltitle;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox txtpan;
-        private System.Windows.Forms.Label lblpan;
-        private System.Windows.Forms.DateTimePicker dtpcustbirth;
-        private System.Windows.Forms.Label lbldob;
-        private System.Windows.Forms.TextBox txtname;
-        private System.Windows.Forms.Label lblname;
-        private System.Windows.Forms.Button btnfetchid;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlTitle;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Panel pnlDetails;
+        private System.Windows.Forms.Panel pnlButtons;
+        private System.Windows.Forms.TextBox txtPan;
+        private System.Windows.Forms.Label lblPan;
+        private System.Windows.Forms.DateTimePicker dtpCustBirth;
+        private System.Windows.Forms.Label lblDob;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button btnFetchID;
+        private System.Windows.Forms.Panel pnlCID;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.Button btnexit;
-        private System.Windows.Forms.Button btncancel;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

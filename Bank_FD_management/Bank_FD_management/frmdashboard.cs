@@ -13,23 +13,9 @@ namespace Bank_FD_management
 {
     public partial class frmdashboard : Form
     {
-
-        private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
-        OleDbConnection conn = new OleDbConnection(myConn);
-
-        public void setConnection()
-        {
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-                MessageBox.Show("Database successfully connected!");
-            }
-        }
-
         public frmdashboard()
         {
             InitializeComponent();
-            setConnection();
         }
 
         private void frmdashboard_Load(object sender, EventArgs e)
@@ -60,11 +46,6 @@ namespace Bank_FD_management
             brfd.Show();
         }
 
-        private void customerMastersToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCustomer_Master custMast = new frmCustomer_Master();
-            custMast.Show();
-        }
 
         private void fDMastersToolStripMenuItem_Click(object sender, EventArgs e)
         {

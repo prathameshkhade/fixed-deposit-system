@@ -41,7 +41,6 @@ C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_
 C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmbreakFD.resources
 C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmCreate_FD.resources
 C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmcreatecustomer.resources
-C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmCustomer_Master.resources
 C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmdashboard.resources
 C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmForgetCustID.resources
 C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\obj\Debug\Bank_FD_management.frmUpdateInterest.resources

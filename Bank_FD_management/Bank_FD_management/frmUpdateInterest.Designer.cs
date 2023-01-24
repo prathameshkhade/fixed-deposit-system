@@ -31,6 +31,8 @@
             this.pnltitle = new System.Windows.Forms.Panel();
             this.lbltitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbfdtype = new System.Windows.Forms.ComboBox();
+            this.lblfdtype = new System.Windows.Forms.Label();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.lblpassword = new System.Windows.Forms.Label();
             this.txtinterest = new System.Windows.Forms.TextBox();
@@ -39,8 +41,6 @@
             this.btnexit = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
-            this.cmbfdtype = new System.Windows.Forms.ComboBox();
-            this.lblfdtype = new System.Windows.Forms.Label();
             this.pnltitle.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,6 +81,26 @@
             this.panel2.Size = new System.Drawing.Size(776, 278);
             this.panel2.TabIndex = 44;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // cmbfdtype
+            // 
+            this.cmbfdtype.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbfdtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbfdtype.FormattingEnabled = true;
+            this.cmbfdtype.Location = new System.Drawing.Point(297, 50);
+            this.cmbfdtype.Name = "cmbfdtype";
+            this.cmbfdtype.Size = new System.Drawing.Size(203, 32);
+            this.cmbfdtype.TabIndex = 37;
+            // 
+            // lblfdtype
+            // 
+            this.lblfdtype.AutoSize = true;
+            this.lblfdtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfdtype.Location = new System.Drawing.Point(185, 53);
+            this.lblfdtype.Name = "lblfdtype";
+            this.lblfdtype.Size = new System.Drawing.Size(109, 24);
+            this.lblfdtype.TabIndex = 36;
+            this.lblfdtype.Text = "FD interval :";
             // 
             // txtpassword
             // 
@@ -166,26 +186,6 @@
             this.btnsave.TabIndex = 23;
             this.btnsave.Text = "Save";
             this.btnsave.UseVisualStyleBackColor = false;
-            // 
-            // cmbfdtype
-            // 
-            this.cmbfdtype.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cmbfdtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbfdtype.FormattingEnabled = true;
-            this.cmbfdtype.Location = new System.Drawing.Point(297, 50);
-            this.cmbfdtype.Name = "cmbfdtype";
-            this.cmbfdtype.Size = new System.Drawing.Size(203, 32);
-            this.cmbfdtype.TabIndex = 37;
-            // 
-            // lblfdtype
-            // 
-            this.lblfdtype.AutoSize = true;
-            this.lblfdtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfdtype.Location = new System.Drawing.Point(182, 53);
-            this.lblfdtype.Name = "lblfdtype";
-            this.lblfdtype.Size = new System.Drawing.Size(109, 24);
-            this.lblfdtype.TabIndex = 36;
-            this.lblfdtype.Text = "FD interval :";
             // 
             // frmUpdateInterest
             // 
