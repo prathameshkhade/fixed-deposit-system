@@ -79,10 +79,10 @@
             this.btnsave = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chbNewData = new System.Windows.Forms.CheckBox();
             this.btnfetchid = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
-            this.chbNewData = new System.Windows.Forms.CheckBox();
             this.pnltitle.SuspendLayout();
             this.pnldetails.SuspendLayout();
             this.pnlminor.SuspendLayout();
@@ -668,6 +668,20 @@
             this.panel1.Size = new System.Drawing.Size(1132, 48);
             this.panel1.TabIndex = 0;
             // 
+            // chbNewData
+            // 
+            this.chbNewData.AutoSize = true;
+            this.chbNewData.Checked = true;
+            this.chbNewData.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.chbNewData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbNewData.Location = new System.Drawing.Point(1045, 8);
+            this.chbNewData.Name = "chbNewData";
+            this.chbNewData.Size = new System.Drawing.Size(68, 28);
+            this.chbNewData.TabIndex = 23;
+            this.chbNewData.Text = "New";
+            this.chbNewData.UseVisualStyleBackColor = true;
+            this.chbNewData.CheckedChanged += new System.EventHandler(this.chbNewData_CheckedChanged);
+            // 
             // btnfetchid
             // 
             this.btnfetchid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -697,24 +711,13 @@
             this.lblID.TabIndex = 2;
             this.lblID.Text = "Cust ID :";
             // 
-            // chbNewData
-            // 
-            this.chbNewData.AutoSize = true;
-            this.chbNewData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbNewData.Location = new System.Drawing.Point(1045, 8);
-            this.chbNewData.Name = "chbNewData";
-            this.chbNewData.Size = new System.Drawing.Size(68, 28);
-            this.chbNewData.TabIndex = 23;
-            this.chbNewData.Text = "New";
-            this.chbNewData.UseVisualStyleBackColor = true;
-            // 
             // frmcreatecustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1156, 860);
+            this.ClientSize = new System.Drawing.Size(1156, 749);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlbuttons);
             this.Controls.Add(this.pnlnominee);
