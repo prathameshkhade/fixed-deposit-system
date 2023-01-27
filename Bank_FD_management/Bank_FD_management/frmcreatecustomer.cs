@@ -14,14 +14,13 @@ namespace Bank_FD_management
     public partial class frmcreatecustomer : Form
     {
         private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
-        OleDbConnection conn = new OleDbConnection(myConn);
+        private OleDbConnection conn = new OleDbConnection(myConn);
 
         public void setConnection()
         {
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
-                MessageBox.Show("Database successfully connected!");
             }
         }
 
@@ -239,18 +238,35 @@ namespace Bank_FD_management
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            setConnection();
-            OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_ID, C_name, address, city, state, district, pin_code, phone, e_mail, DOB, PAN, Add_date) values ('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.SelectedText + "', '" + cmbstate.SelectedText + "', '" + cmbdistrict.SelectedText + "', " + txtpincode.Text + ", " + txtphone.Text + ", '" + txtemail.Text + "', #" + dtpcustbirth.Text + "#, '" + txtpan.Text + "', #" + DateTime.Now + "#", conn);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("pnl1 data inserted");
-            
-            if(chbisnomminor.Checked)
+            if(!chbminor.Checked)
             {
-                OleDbCommand pushMinor = new OleDbCommand("insert into customer_master (is_minor_cust, g_name, g_addr, g_relation, g_phone) values ('" + chbminor.Checked + "', '" + txtgname.Text + "', '" + txtgaddress.Text + "', '" + txtgrelation.Text + "', " + txtgphone.Text + "') ", conn);
-                pushMinor.ExecuteNonQuery();
-                MessageBox.Show("Minor data is stored");
+                txtgname.Text = "null";
+                txtgaddress.Text = "null";
+                txtgrelation.Text = "null";
+                mskTxtGPhoneNo.Text = "0000000000";
             }
 
+            if(!chbnominee.Checked)
+            {
+                txtnname.Text = "null";
+                txtnaddress.Text = "null";
+                mskTxtNPhoneNo.Text = "0000000000";
+            }
+
+            try
+            {
+                setConnection();
+                OleDbCommand cmd = new OleDbCommand("insert into customer_master values ('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + mskTxtPincode.Text + ", " + mskTxtPhoneNo.Text + ", '" + txtemail.Text + "', #" + dtpcustbirth.Value + "#, '" + txtpan.Text + "', #" + DateTime.Now + "#, '" + chbminor.Checked + "', '" + txtgname.Text +  "', '" + txtgaddress.Text + "', '" + txtgrelation.Text + "', " + mskTxtGPhoneNo.Text + ", '" + txtnname.Text + "', '" + txtnrelation.Text + "', " + mskTxtNPhoneNo.Text + ", '" + chbisnomminor.Checked + "', " + (DateTime.Now.Year - dobNom.Value.Year) + ")", conn);
+                cmd.ExecuteNonQuery();
+            }
+
+            catch (OleDbException ex)
+            {
+                MessageBox.Show(ex.Message);
+                
+            }
+
+            MessageBox.Show("data inserted!");
             conn.Close();
         }
 

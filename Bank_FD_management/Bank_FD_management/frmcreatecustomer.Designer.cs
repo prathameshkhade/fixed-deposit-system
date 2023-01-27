@@ -31,15 +31,15 @@
             this.pnltitle = new System.Windows.Forms.Panel();
             this.lbltitle = new System.Windows.Forms.Label();
             this.pnldetails = new System.Windows.Forms.Panel();
+            this.mskTxtPhoneNo = new System.Windows.Forms.MaskedTextBox();
+            this.mskTxtPincode = new System.Windows.Forms.MaskedTextBox();
             this.txtpan = new System.Windows.Forms.TextBox();
             this.lblpan = new System.Windows.Forms.Label();
             this.dtpcustbirth = new System.Windows.Forms.DateTimePicker();
             this.lbldob = new System.Windows.Forms.Label();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.lblemail = new System.Windows.Forms.Label();
-            this.txtphone = new System.Windows.Forms.TextBox();
             this.lblphone = new System.Windows.Forms.Label();
-            this.txtpincode = new System.Windows.Forms.TextBox();
             this.lblpincode = new System.Windows.Forms.Label();
             this.cmbcity = new System.Windows.Forms.ComboBox();
             this.lblcity = new System.Windows.Forms.Label();
@@ -52,7 +52,6 @@
             this.txtname = new System.Windows.Forms.TextBox();
             this.lblname = new System.Windows.Forms.Label();
             this.pnlminor = new System.Windows.Forms.Panel();
-            this.txtgphone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtgaddress = new System.Windows.Forms.TextBox();
             this.lblgaddress = new System.Windows.Forms.Label();
@@ -65,7 +64,6 @@
             this.dobNom = new System.Windows.Forms.DateTimePicker();
             this.lblnomdob = new System.Windows.Forms.Label();
             this.chbisnomminor = new System.Windows.Forms.CheckBox();
-            this.txtnphone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtnaddress = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -83,6 +81,8 @@
             this.btnfetchid = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
+            this.mskTxtGPhoneNo = new System.Windows.Forms.MaskedTextBox();
+            this.mskTxtNPhoneNo = new System.Windows.Forms.MaskedTextBox();
             this.pnltitle.SuspendLayout();
             this.pnldetails.SuspendLayout();
             this.pnlminor.SuspendLayout();
@@ -116,15 +116,15 @@
             this.pnldetails.AutoSize = true;
             this.pnldetails.BackColor = System.Drawing.Color.LightGray;
             this.pnldetails.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnldetails.Controls.Add(this.mskTxtPhoneNo);
+            this.pnldetails.Controls.Add(this.mskTxtPincode);
             this.pnldetails.Controls.Add(this.txtpan);
             this.pnldetails.Controls.Add(this.lblpan);
             this.pnldetails.Controls.Add(this.dtpcustbirth);
             this.pnldetails.Controls.Add(this.lbldob);
             this.pnldetails.Controls.Add(this.txtemail);
             this.pnldetails.Controls.Add(this.lblemail);
-            this.pnldetails.Controls.Add(this.txtphone);
             this.pnldetails.Controls.Add(this.lblphone);
-            this.pnldetails.Controls.Add(this.txtpincode);
             this.pnldetails.Controls.Add(this.lblpincode);
             this.pnldetails.Controls.Add(this.cmbcity);
             this.pnldetails.Controls.Add(this.lblcity);
@@ -140,6 +140,22 @@
             this.pnldetails.Name = "pnldetails";
             this.pnldetails.Size = new System.Drawing.Size(1131, 242);
             this.pnldetails.TabIndex = 1;
+            // 
+            // mskTxtPhoneNo
+            // 
+            this.mskTxtPhoneNo.Location = new System.Drawing.Point(124, 163);
+            this.mskTxtPhoneNo.Mask = "0000000000";
+            this.mskTxtPhoneNo.Name = "mskTxtPhoneNo";
+            this.mskTxtPhoneNo.Size = new System.Drawing.Size(140, 20);
+            this.mskTxtPhoneNo.TabIndex = 22;
+            // 
+            // mskTxtPincode
+            // 
+            this.mskTxtPincode.Location = new System.Drawing.Point(124, 130);
+            this.mskTxtPincode.Mask = "000000";
+            this.mskTxtPincode.Name = "mskTxtPincode";
+            this.mskTxtPincode.Size = new System.Drawing.Size(131, 20);
+            this.mskTxtPincode.TabIndex = 21;
             // 
             // txtpan
             // 
@@ -199,15 +215,6 @@
             this.lblemail.TabIndex = 16;
             this.lblemail.Text = "E-mail :";
             // 
-            // txtphone
-            // 
-            this.txtphone.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtphone.Location = new System.Drawing.Point(124, 159);
-            this.txtphone.Name = "txtphone";
-            this.txtphone.Size = new System.Drawing.Size(232, 29);
-            this.txtphone.TabIndex = 8;
-            // 
             // lblphone
             // 
             this.lblphone.AutoSize = true;
@@ -217,15 +224,6 @@
             this.lblphone.Size = new System.Drawing.Size(103, 24);
             this.lblphone.TabIndex = 14;
             this.lblphone.Text = "Phone no :";
-            // 
-            // txtpincode
-            // 
-            this.txtpincode.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtpincode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpincode.Location = new System.Drawing.Point(125, 124);
-            this.txtpincode.Name = "txtpincode";
-            this.txtpincode.Size = new System.Drawing.Size(203, 29);
-            this.txtpincode.TabIndex = 7;
             // 
             // lblpincode
             // 
@@ -351,7 +349,7 @@
             // 
             this.pnlminor.BackColor = System.Drawing.Color.LightGray;
             this.pnlminor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlminor.Controls.Add(this.txtgphone);
+            this.pnlminor.Controls.Add(this.mskTxtGPhoneNo);
             this.pnlminor.Controls.Add(this.label1);
             this.pnlminor.Controls.Add(this.txtgaddress);
             this.pnlminor.Controls.Add(this.lblgaddress);
@@ -364,16 +362,6 @@
             this.pnlminor.Name = "pnlminor";
             this.pnlminor.Size = new System.Drawing.Size(1132, 164);
             this.pnlminor.TabIndex = 2;
-            // 
-            // txtgphone
-            // 
-            this.txtgphone.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtgphone.Enabled = false;
-            this.txtgphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtgphone.Location = new System.Drawing.Point(183, 116);
-            this.txtgphone.Name = "txtgphone";
-            this.txtgphone.Size = new System.Drawing.Size(232, 29);
-            this.txtgphone.TabIndex = 4;
             // 
             // label1
             // 
@@ -462,10 +450,10 @@
             // 
             this.pnlnominee.BackColor = System.Drawing.Color.LightGray;
             this.pnlnominee.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlnominee.Controls.Add(this.mskTxtNPhoneNo);
             this.pnlnominee.Controls.Add(this.dobNom);
             this.pnlnominee.Controls.Add(this.lblnomdob);
             this.pnlnominee.Controls.Add(this.chbisnomminor);
-            this.pnlnominee.Controls.Add(this.txtnphone);
             this.pnlnominee.Controls.Add(this.label3);
             this.pnlnominee.Controls.Add(this.txtnaddress);
             this.pnlnominee.Controls.Add(this.label4);
@@ -514,16 +502,6 @@
             this.chbisnomminor.UseVisualStyleBackColor = true;
             this.chbisnomminor.CheckedChanged += new System.EventHandler(this.chbisnomminor_CheckedChanged);
             // 
-            // txtnphone
-            // 
-            this.txtnphone.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtnphone.Enabled = false;
-            this.txtnphone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnphone.Location = new System.Drawing.Point(183, 117);
-            this.txtnphone.Name = "txtnphone";
-            this.txtnphone.Size = new System.Drawing.Size(232, 29);
-            this.txtnphone.TabIndex = 4;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -536,7 +514,7 @@
             // 
             // txtnaddress
             // 
-            this.txtnaddress.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtnaddress.BackColor = System.Drawing.Color.Red;
             this.txtnaddress.Enabled = false;
             this.txtnaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnaddress.Location = new System.Drawing.Point(183, 82);
@@ -672,7 +650,7 @@
             // 
             this.chbNewData.AutoSize = true;
             this.chbNewData.Checked = true;
-            this.chbNewData.CheckState = System.Windows.Forms.CheckState.Indeterminate;
+            this.chbNewData.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbNewData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbNewData.Location = new System.Drawing.Point(1045, 8);
             this.chbNewData.Name = "chbNewData";
@@ -684,6 +662,7 @@
             // 
             // btnfetchid
             // 
+            this.btnfetchid.Enabled = false;
             this.btnfetchid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfetchid.Location = new System.Drawing.Point(332, 8);
             this.btnfetchid.Name = "btnfetchid";
@@ -695,6 +674,7 @@
             // txtID
             // 
             this.txtID.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(128, 8);
             this.txtID.Name = "txtID";
@@ -710,6 +690,22 @@
             this.lblID.Size = new System.Drawing.Size(79, 24);
             this.lblID.TabIndex = 2;
             this.lblID.Text = "Cust ID :";
+            // 
+            // mskTxtGPhoneNo
+            // 
+            this.mskTxtGPhoneNo.Location = new System.Drawing.Point(186, 116);
+            this.mskTxtGPhoneNo.Mask = "0000000000";
+            this.mskTxtGPhoneNo.Name = "mskTxtGPhoneNo";
+            this.mskTxtGPhoneNo.Size = new System.Drawing.Size(140, 20);
+            this.mskTxtGPhoneNo.TabIndex = 23;
+            // 
+            // mskTxtNPhoneNo
+            // 
+            this.mskTxtNPhoneNo.Location = new System.Drawing.Point(184, 122);
+            this.mskTxtNPhoneNo.Mask = "0000000000";
+            this.mskTxtNPhoneNo.Name = "mskTxtNPhoneNo";
+            this.mskTxtNPhoneNo.Size = new System.Drawing.Size(140, 20);
+            this.mskTxtNPhoneNo.TabIndex = 24;
             // 
             // frmcreatecustomer
             // 
@@ -758,9 +754,7 @@
         private System.Windows.Forms.Label lblcity;
         private System.Windows.Forms.ComboBox cmbdistrict;
         private System.Windows.Forms.Label lbldistrict;
-        private System.Windows.Forms.TextBox txtpincode;
         private System.Windows.Forms.Label lblpincode;
-        private System.Windows.Forms.TextBox txtphone;
         private System.Windows.Forms.Label lblphone;
         private System.Windows.Forms.DateTimePicker dtpcustbirth;
         private System.Windows.Forms.Label lbldob;
@@ -773,12 +767,10 @@
         private System.Windows.Forms.Label lblgrelation;
         private System.Windows.Forms.TextBox txtgname;
         private System.Windows.Forms.Label lblgname;
-        private System.Windows.Forms.TextBox txtgphone;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtgaddress;
         private System.Windows.Forms.Label lblgaddress;
         private System.Windows.Forms.Panel pnlnominee;
-        private System.Windows.Forms.TextBox txtnphone;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtnaddress;
         private System.Windows.Forms.Label label4;
@@ -800,6 +792,10 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.CheckBox chbNewData;
+        private System.Windows.Forms.MaskedTextBox mskTxtPhoneNo;
+        private System.Windows.Forms.MaskedTextBox mskTxtPincode;
+        private System.Windows.Forms.MaskedTextBox mskTxtGPhoneNo;
+        private System.Windows.Forms.MaskedTextBox mskTxtNPhoneNo;
     }
 }
 
