@@ -21,6 +21,7 @@ namespace Bank_FD_management
             if (conn.State == ConnectionState.Closed)
             {
                 conn.Open();
+                MessageBox.Show("Connection succesfull");
             }
         }
 
@@ -238,20 +239,20 @@ namespace Bank_FD_management
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            if(!chbminor.Checked)
-            {
-                txtgname.Text = "null";
-                txtgaddress.Text = "null";
-                txtgrelation.Text = "null";
-                mskTxtGPhoneNo.Text = "0000000000";
-            }
+            //if (!chbminor.Checked)
+            //{
+            //    txtgname.Text = "null";
+            //    txtgaddress.Text = "null";
+            //    txtgrelation.Text = "null";
+            //    mskTxtGPhoneNo.Text = "0000000000";
+            //}
 
-            if(!chbnominee.Checked)
-            {
-                txtnname.Text = "null";
-                txtnaddress.Text = "null";
-                mskTxtNPhoneNo.Text = "0000000000";
-            }
+            //if (!chbnominee.Checked)
+            //{
+            //    txtnname.Text = "null";
+            //    txtnaddress.Text = "null";
+            //    mskTxtNPhoneNo.Text = "0000000000";
+            //}
 
             try
             {
@@ -263,7 +264,6 @@ namespace Bank_FD_management
             catch (OleDbException ex)
             {
                 MessageBox.Show(ex.Message);
-                
             }
 
             MessageBox.Show("data inserted!");
