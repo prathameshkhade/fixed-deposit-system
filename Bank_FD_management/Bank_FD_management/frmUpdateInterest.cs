@@ -10,9 +10,11 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 
 namespace Bank_FD_management
+
 {
     public partial class frmUpdateInterest : Form
     {
+        private ErrorProvider err = new ErrorProvider();
         private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
         private OleDbConnection conn = new OleDbConnection(myConn);
 
@@ -60,7 +62,6 @@ namespace Bank_FD_management
             InitializeComponent();
             ctrlOnFocus();
             ctrlOnLostFocus();
-
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -80,15 +81,15 @@ namespace Bank_FD_management
 
         private void btncancel_Click(object sender, EventArgs e)
         {
-            foreach (Control c in pnlInfo.Controls)
-            {
-                if (c is ComboBox || c is TextBox)
-                    c.Text = "";
-            }
+            ctrlClear();
         }
 
         private void btnsave_Click(object sender, EventArgs e)
         {
+            if(ValidateChildren(ValidationConstraints.Enabled))
+            {
+                MessageBox.Show(cmbfdtype.SelectedText, "Message", MessageBoxButtons.OK);
+            }
             try
             {
                 setConnection();
@@ -100,18 +101,67 @@ namespace Bank_FD_management
             catch(OleDbException ex)
             {
                 MessageBox.Show(ex.Message);
+                ctrlClear();
             }
+
         }
 
         private void txtinterest_TextChanged(object sender, EventArgs e)
         {
-            //double num_chk = double.Parse(txtinterest.Text);
-            //if (!char.Isnumber(txtinterest.Text, 1))
-            //{
-            //    MessageBox.Show("Enter Float value.");
-            //    txtinterest.Text = "";
-            //    txtinterest.Focus();
-            //}
+
+        }
+
+        //for clearing the entire form
+        private void ctrlClear()
+        {
+            foreach (Control c in pnlInfo.Controls)
+            {
+                if (c is ComboBox || c is TextBox)
+                    c.Text = "";
+            }
+        }
+
+        private void cmbfdtype_Validating(object sender, CancelEventArgs e)
+        {
+            if(string.IsNullOrEmpty(cmbfdtype.Text))
+            {
+                err.SetError(cmbfdtype, "Please select FD type");
+            }
+            else { err.SetError(cmbfdtype, null); }
+        }
+
+        private void txtinterest_Validating(object sender, CancelEventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtinterest.Text))
+            {
+                err.SetError(txtinterest, "Please enter rate of interest");
+            }
+            else { err.SetError(txtinterest, null); }
+        }
+
+        private void txtPenDiff_Validating(object sender, CancelEventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtPenDiff.Text))
+            {
+                err.SetError(txtPenDiff, "Please enter difference of interest");
+            }
+            else { err.SetError(txtinterest, null); }
+        }
+
+        private void txtinterest_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPenDiff_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

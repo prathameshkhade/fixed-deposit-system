@@ -88,6 +88,7 @@
             // cmbfdtype
             // 
             this.cmbfdtype.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbfdtype.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbfdtype.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbfdtype.FormattingEnabled = true;
             this.cmbfdtype.Items.AddRange(new object[] {
@@ -100,7 +101,8 @@
             this.cmbfdtype.Margin = new System.Windows.Forms.Padding(4);
             this.cmbfdtype.Name = "cmbfdtype";
             this.cmbfdtype.Size = new System.Drawing.Size(269, 37);
-            this.cmbfdtype.TabIndex = 37;
+            this.cmbfdtype.TabIndex = 0;
+            this.cmbfdtype.Validating += new System.ComponentModel.CancelEventHandler(this.cmbfdtype_Validating);
             // 
             // lblfdtype
             // 
@@ -121,8 +123,10 @@
             this.txtPenDiff.Margin = new System.Windows.Forms.Padding(4);
             this.txtPenDiff.Name = "txtPenDiff";
             this.txtPenDiff.Size = new System.Drawing.Size(263, 34);
-            this.txtPenDiff.TabIndex = 35;
+            this.txtPenDiff.TabIndex = 2;
             this.txtPenDiff.TextChanged += new System.EventHandler(this.txtpassword_TextChanged);
+            this.txtPenDiff.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPenDiff_KeyPress);
+            this.txtPenDiff.Validating += new System.ComponentModel.CancelEventHandler(this.txtPenDiff_Validating);
             // 
             // lblpassword
             // 
@@ -143,8 +147,10 @@
             this.txtinterest.Margin = new System.Windows.Forms.Padding(4);
             this.txtinterest.Name = "txtinterest";
             this.txtinterest.Size = new System.Drawing.Size(263, 34);
-            this.txtinterest.TabIndex = 31;
+            this.txtinterest.TabIndex = 1;
             this.txtinterest.TextChanged += new System.EventHandler(this.txtinterest_TextChanged);
+            this.txtinterest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtinterest_KeyPress);
+            this.txtinterest.Validating += new System.ComponentModel.CancelEventHandler(this.txtinterest_Validating);
             // 
             // lblinterest
             // 
