@@ -239,25 +239,10 @@ namespace Bank_FD_management
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            //if (!chbminor.Checked)
-            //{
-            //    txtgname.Text = "null";
-            //    txtgaddress.Text = "null";
-            //    txtgrelation.Text = "null";
-            //    mskTxtGPhoneNo.Text = "0000000000";
-            //}
-
-            //if (!chbnominee.Checked)
-            //{
-            //    txtnname.Text = "null";
-            //    txtnaddress.Text = "null";
-            //    mskTxtNPhoneNo.Text = "0000000000";
-            //}
-
             try
             {
                 setConnection();
-                OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB , PAN , Add_date , is_minor_cust , g_name , g_addr , g_relation , g_phone , N_name , Rel_of_nom , Phone_nom , Is_minor , Age_minor) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + mskTxtPincode.Text + ", " + mskTxtPhoneNo.Text + ", '" + txtemail.Text + "', #" + dtpcustbirth.Value + "#, '" + txtpan.Text + "', #" + DateTime.Now + "#, '" + chbminor.Checked + "', '" + txtgname.Text +  "', '" + txtgaddress.Text + "', '" + txtgrelation.Text + "', " + mskTxtGPhoneNo.Text + ", '" + txtnname.Text + "', '" + txtnrelation.Text + "', " + mskTxtNPhoneNo.Text + ", '" + chbisnomminor.Checked + "', " + (DateTime.Now.Year - dobNom.Value.Year) + ")", conn);
+                OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date , is_minor_cust , g_name , g_addr , g_relation , g_phone , N_name , Rel_of_nom , Phone_nom , Is_minor , Age_minor) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text+ "', #" +dtpcustbirth.Value +"# ,'" + txtpan.Text + "', #" + DateTime.Now + "#, " + chbminor.Checked + ", '" + txtgname.Text + "', '" + txtgaddress.Text + "', '" + txtgrelation.Text + "', " + txtGuardPhone.Text + ", '" + txtnname.Text + "', '" + txtnrelation.Text + "', " + txtNomPhone.Text + ", " + chbisnomminor.Checked + ", " + (DateTime.Now.Year - dobNom.Value.Year) +")", conn);
                 cmd.ExecuteNonQuery();
             }
 

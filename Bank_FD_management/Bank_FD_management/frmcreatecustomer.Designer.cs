@@ -31,6 +31,8 @@
             this.pnltitle = new System.Windows.Forms.Panel();
             this.lbltitle = new System.Windows.Forms.Label();
             this.pnldetails = new System.Windows.Forms.Panel();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtPinCode = new System.Windows.Forms.TextBox();
             this.txtpan = new System.Windows.Forms.TextBox();
             this.lblpan = new System.Windows.Forms.Label();
             this.dtpcustbirth = new System.Windows.Forms.DateTimePicker();
@@ -50,6 +52,7 @@
             this.txtname = new System.Windows.Forms.TextBox();
             this.lblname = new System.Windows.Forms.Label();
             this.pnlminor = new System.Windows.Forms.Panel();
+            this.txtGuardPhone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtgaddress = new System.Windows.Forms.TextBox();
             this.lblgaddress = new System.Windows.Forms.Label();
@@ -77,9 +80,6 @@
             this.lblnomdob = new System.Windows.Forms.Label();
             this.dobNom = new System.Windows.Forms.DateTimePicker();
             this.pnlnominee = new System.Windows.Forms.Panel();
-            this.txtPinCode = new System.Windows.Forms.TextBox();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.txtminorPhone = new System.Windows.Forms.TextBox();
             this.txtNomPhone = new System.Windows.Forms.TextBox();
             this.pnltitle.SuspendLayout();
             this.pnldetails.SuspendLayout();
@@ -141,6 +141,26 @@
             this.pnldetails.Name = "pnldetails";
             this.pnldetails.Size = new System.Drawing.Size(1507, 297);
             this.pnldetails.TabIndex = 1;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(166, 199);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(267, 34);
+            this.txtPhone.TabIndex = 22;
+            // 
+            // txtPinCode
+            // 
+            this.txtPinCode.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPinCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPinCode.Location = new System.Drawing.Point(166, 155);
+            this.txtPinCode.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPinCode.Name = "txtPinCode";
+            this.txtPinCode.Size = new System.Drawing.Size(267, 34);
+            this.txtPinCode.TabIndex = 21;
             // 
             // txtpan
             // 
@@ -352,7 +372,7 @@
             // 
             this.pnlminor.BackColor = System.Drawing.Color.LightGray;
             this.pnlminor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlminor.Controls.Add(this.txtminorPhone);
+            this.pnlminor.Controls.Add(this.txtGuardPhone);
             this.pnlminor.Controls.Add(this.label1);
             this.pnlminor.Controls.Add(this.txtgaddress);
             this.pnlminor.Controls.Add(this.lblgaddress);
@@ -366,6 +386,17 @@
             this.pnlminor.Name = "pnlminor";
             this.pnlminor.Size = new System.Drawing.Size(1508, 201);
             this.pnlminor.TabIndex = 2;
+            // 
+            // txtGuardPhone
+            // 
+            this.txtGuardPhone.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtGuardPhone.Enabled = false;
+            this.txtGuardPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGuardPhone.Location = new System.Drawing.Point(244, 143);
+            this.txtGuardPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGuardPhone.Name = "txtGuardPhone";
+            this.txtGuardPhone.Size = new System.Drawing.Size(267, 34);
+            this.txtGuardPhone.TabIndex = 22;
             // 
             // label1
             // 
@@ -700,39 +731,6 @@
             this.pnlnominee.Size = new System.Drawing.Size(1508, 266);
             this.pnlnominee.TabIndex = 3;
             // 
-            // txtPinCode
-            // 
-            this.txtPinCode.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtPinCode.Enabled = false;
-            this.txtPinCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPinCode.Location = new System.Drawing.Point(166, 155);
-            this.txtPinCode.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPinCode.Name = "txtPinCode";
-            this.txtPinCode.Size = new System.Drawing.Size(267, 34);
-            this.txtPinCode.TabIndex = 21;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtPhone.Enabled = false;
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(166, 199);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(267, 34);
-            this.txtPhone.TabIndex = 22;
-            // 
-            // txtminorPhone
-            // 
-            this.txtminorPhone.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtminorPhone.Enabled = false;
-            this.txtminorPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtminorPhone.Location = new System.Drawing.Point(244, 143);
-            this.txtminorPhone.Margin = new System.Windows.Forms.Padding(4);
-            this.txtminorPhone.Name = "txtminorPhone";
-            this.txtminorPhone.Size = new System.Drawing.Size(267, 34);
-            this.txtminorPhone.TabIndex = 22;
-            // 
             // txtNomPhone
             // 
             this.txtNomPhone.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -820,7 +818,7 @@
         private System.Windows.Forms.CheckBox chbNewData;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtPinCode;
-        private System.Windows.Forms.TextBox txtminorPhone;
+        private System.Windows.Forms.TextBox txtGuardPhone;
         private System.Windows.Forms.CheckBox chbnominee;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtnname;
