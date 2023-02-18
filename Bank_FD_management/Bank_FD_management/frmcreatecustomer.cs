@@ -253,7 +253,7 @@ namespace Bank_FD_management
                     if ((chbminor.Checked) && (chbnominee.Checked))
                     {
                         setConnection();
-                        OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date , is_minor_cust , g_name , g_addr , g_relation , g_phone , N_name , Rel_of_nom , Phone_nom , Is_minor , Age_minor) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#, " + chbminor.Checked + ", '" + txtgname.Text + "', '" + txtgaddress.Text + "', '" + txtgrelation.Text + "', " + txtGuardPhone.Text + ", '" + txtnname.Text + "', '" + txtnrelation.Text + "', " + txtNomPhone.Text + ", " + chbisnomminor.Checked + ", " + (DateTime.Now.Year - dobNom.Value.Year) + ")", conn);
+                        OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date , is_minor_cust , g_name , g_addr , g_relation , g_phone , have_nom, N_name , Rel_of_nom , Phone_nom , Is_minor , dob_nom,  Age_minor) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#, " + chbminor.Checked + ", '" + txtgname.Text + "', '" + txtgaddress.Text + "', '" + txtgrelation.Text + "', " + txtGuardPhone.Text + ", " + chbnominee.Checked + ", '" + txtnname.Text + "', '" + txtnrelation.Text + "', " + txtNomPhone.Text + ", " + chbisnomminor.Checked + ", #" + dobNom.Value + "#, " + (DateTime.Now.Year - dobNom.Value.Year) + ")", conn);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("data inserted!");
                     }
@@ -267,7 +267,7 @@ namespace Bank_FD_management
                     else if (chbnominee.Checked)
                     {
                         setConnection();
-                        OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date ,N_name , Rel_of_nom , Phone_nom , Is_minor , Age_minor) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#,'" + txtnname.Text + "', '" + txtnrelation.Text + "', " + txtNomPhone.Text + ", " + chbisnomminor.Checked + ", " + (DateTime.Now.Year - dobNom.Value.Year) + ")", conn);
+                        OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date, have_nom,  N_name , Rel_of_nom , Phone_nom , Is_minor , dob_nom, Age_minor) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#, " + chbnominee.Checked + ", '" + txtnname.Text + "', '" + txtnrelation.Text + "', " + txtNomPhone.Text + ", " + chbisnomminor.Checked + ", #" + dobNom.Value + "#, " + (DateTime.Now.Year - dobNom.Value.Year) + ")", conn);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("data inserted!");
                     }
@@ -275,7 +275,7 @@ namespace Bank_FD_management
                 else
                 {
                     setConnection();
-                    OleDbCommand cmd = new OleDbCommand("update customer_master set c_name = '" + txtname.Text + "', address = '" + txtaddress.Text + "', city = '" + cmbcity.Text + "', state = '" + cmbstate.Text + "', district = '" + cmbdistrict.Text + "', pin_code = " + txtPinCode.Text + ", phone = " + txtPhone.Text + ", e_mail = '" + txtemail.Text + "', dob = #" + dtpcustbirth.Value + "#, pan = '" + txtpan.Text + "', is_minor_cust = " + chbminor.Checked + ", g_name = '" + txtgname.Text + "', g_addr = '" + txtgaddress.Text + "', g_relation = '" + txtgrelation.Text + "', g_phone = " + txtGuardPhone.Text + ", n_name = '" + txtnname.Text + "', rel_of_nom = '" + txtnrelation.Text + "', phone_nom = " + txtNomPhone.Text + ", is_minor = " + chbisnomminor.Checked + " where c_id = " + txtID.Text, conn);
+                    OleDbCommand cmd = new OleDbCommand("update customer_master set c_name = '" + txtname.Text + "', address = '" + txtaddress.Text + "', city = '" + cmbcity.Text + "', state = '" + cmbstate.Text + "', district = '" + cmbdistrict.Text + "', pin_code = " + txtPinCode.Text + ", phone = " + txtPhone.Text + ", e_mail = '" + txtemail.Text + "', dob = #" + dtpcustbirth.Value + "#, pan = '" + txtpan.Text + "', is_minor_cust = " + chbminor.Checked + ", g_name = '" + txtgname.Text + "', g_addr = '" + txtgaddress.Text + "', g_relation = '" + txtgrelation.Text + "', g_phone = " + txtGuardPhone.Text + ", n_name = '" + txtnname.Text + "', rel_of_nom = '" + txtnrelation.Text + "', phone_nom = " + txtNomPhone.Text + ", is_minor = " + chbisnomminor.Checked + ", have_nom = " + chbminor.Checked + " where c_id = " + txtID.Text, conn);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("data updated...");
                 }
@@ -339,6 +339,8 @@ namespace Bank_FD_management
                             txtnrelation.Text = dr["rel_of_nom"].ToString();
                             txtNomPhone.Text = dr["phone_nom"].ToString();
                             chbisnomminor.Checked = (bool)(dr["is_minor"]);
+                            chbnominee.Checked = (bool)(dr["have_nom"]);
+                            dobNom.Text = dr["dob_nom"].ToString();
                         }
                     }
                     else

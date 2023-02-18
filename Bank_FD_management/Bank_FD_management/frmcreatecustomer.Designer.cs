@@ -535,7 +535,7 @@
             // 
             this.btnfetchid.Enabled = false;
             this.btnfetchid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnfetchid.Location = new System.Drawing.Point(332, 8);
+            this.btnfetchid.Location = new System.Drawing.Point(356, 8);
             this.btnfetchid.Name = "btnfetchid";
             this.btnfetchid.Size = new System.Drawing.Size(127, 29);
             this.btnfetchid.TabIndex = 22;
