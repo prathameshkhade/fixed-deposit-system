@@ -13,6 +13,7 @@ namespace Bank_FD_management
 {
     public partial class frmcreatecustomer : Form
     {
+        private ErrorProvider err = new ErrorProvider();
         private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
         private OleDbConnection conn = new OleDbConnection(myConn);
 
@@ -22,6 +23,21 @@ namespace Bank_FD_management
             {
                 conn.Open();
                 MessageBox.Show("Connection succesfull");
+            }
+        }
+
+        // Function that will clear all the form 
+        private void clrfrm()
+        {
+            foreach (Control c in pnldetails.Controls)
+            {
+                if (c is TextBox || c is ComboBox)
+                {
+                    c.Text = "";
+                }
+
+                chbminor.Checked = false;
+                chbnominee.Checked = false;
             }
         }
 
@@ -202,16 +218,7 @@ namespace Bank_FD_management
         // for removing all the text from cancel button
         private void btncancel_Click(object sender, EventArgs e)
         {
-            foreach (Control c in pnldetails.Controls)
-            {
-                if (c is TextBox || c is ComboBox)
-                {
-                    c.Text = "";
-                }
-
-                chbminor.Checked = false;
-                chbnominee.Checked = false;
-            }
+            clrfrm();
         }
 
         // for exiting the current form 
@@ -239,35 +246,45 @@ namespace Bank_FD_management
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-                if ((chbminor.Checked) && (chbnominee.Checked))
+            try
+            {
+                if (chbNewData.Checked)
+                {
+                    if ((chbminor.Checked) && (chbnominee.Checked))
+                    {
+                        setConnection();
+                        OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date , is_minor_cust , g_name , g_addr , g_relation , g_phone , N_name , Rel_of_nom , Phone_nom , Is_minor , Age_minor) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#, " + chbminor.Checked + ", '" + txtgname.Text + "', '" + txtgaddress.Text + "', '" + txtgrelation.Text + "', " + txtGuardPhone.Text + ", '" + txtnname.Text + "', '" + txtnrelation.Text + "', " + txtNomPhone.Text + ", " + chbisnomminor.Checked + ", " + (DateTime.Now.Year - dobNom.Value.Year) + ")", conn);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("data inserted!");
+                    }
+                    else if (chbminor.Checked)
+                    {
+                        setConnection();
+                        OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date , is_minor_cust , g_name , g_addr , g_relation , g_phone )values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#, " + chbminor.Checked + ", '" + txtgname.Text + "', '" + txtgaddress.Text + "', '" + txtgrelation.Text + "', " + txtGuardPhone.Text + ")", conn);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("data inserted!");
+                    }
+                    else if (chbnominee.Checked)
+                    {
+                        setConnection();
+                        OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date ,N_name , Rel_of_nom , Phone_nom , Is_minor , Age_minor) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#,'" + txtnname.Text + "', '" + txtnrelation.Text + "', " + txtNomPhone.Text + ", " + chbisnomminor.Checked + ", " + (DateTime.Now.Year - dobNom.Value.Year) + ")", conn);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("data inserted!");
+                    }
+                }
+                else
                 {
                     setConnection();
-                    OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date , is_minor_cust , g_name , g_addr , g_relation , g_phone , N_name , Rel_of_nom , Phone_nom , Is_minor , Age_minor) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#, " + chbminor.Checked + ", '" + txtgname.Text + "', '" + txtgaddress.Text + "', '" + txtgrelation.Text + "', " + txtGuardPhone.Text + ", '" + txtnname.Text + "', '" + txtnrelation.Text + "', " + txtNomPhone.Text + ", " + chbisnomminor.Checked + ", " + (DateTime.Now.Year - dobNom.Value.Year) + ")", conn);
+                    OleDbCommand cmd = new OleDbCommand("update customer_master set c_name = '" + txtname.Text + "', address = '" + txtaddress.Text + "', city = '" + cmbcity.Text + "', state = '" + cmbstate.Text + "', district = '" + cmbdistrict.Text + "', pin_code = " + txtPinCode.Text + ", phone = " + txtPhone.Text + ", e_mail = '" + txtemail.Text + "', dob = #" + dtpcustbirth.Value + "#, pan = '" + txtpan.Text + "', is_minor_cust = " + chbminor.Checked + ", g_name = '" + txtgname.Text + "', g_addr = '" + txtgaddress.Text + "', g_relation = '" + txtgrelation.Text + "', g_phone = " + txtGuardPhone.Text + ", n_name = '" + txtnname.Text + "', rel_of_nom = '" + txtnrelation.Text + "', phone_nom = " + txtNomPhone.Text + ", is_minor = " + chbisnomminor.Checked + " where c_id = " + txtID.Text, conn);
                     cmd.ExecuteNonQuery();
+                    MessageBox.Show("data updated...");
                 }
-                else if (chbminor.Checked)
-                {
-                    setConnection();
-                    OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date , is_minor_cust , g_name , g_addr , g_relation , g_phone )values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#, " + chbminor.Checked + ", '" + txtgname.Text + "', '" + txtgaddress.Text + "', '" + txtgrelation.Text + "', " + txtGuardPhone.Text + ")", conn);
-                     cmd.ExecuteNonQuery();
-                }
-                else if(chbnominee.Checked)
-                {
-                    setConnection();
-                    OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date ,N_name , Rel_of_nom , Phone_nom , Is_minor , Age_minor) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#,'" + txtnname.Text + "', '" + txtnrelation.Text + "', " + txtNomPhone.Text + ", " + chbisnomminor.Checked + ", " + (DateTime.Now.Year - dobNom.Value.Year) + ")", conn);
-                    cmd.ExecuteNonQuery();
-                }
+            }
+            catch (OleDbException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-           // }
-
-            //catch (OleDbException ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-
-            MessageBox.Show("data inserted!");
             conn.Close();
         }
 
@@ -276,6 +293,7 @@ namespace Bank_FD_management
             if(chbNewData.Checked)
             {
                 txtID.Text = "";
+                clrfrm();
                 txtID.Enabled = false;
                 btnfetchid.Enabled = false;
             }
@@ -284,6 +302,63 @@ namespace Bank_FD_management
             {
                 txtID.Enabled = true;
                 btnfetchid.Enabled = true;
+            }
+        }
+
+        private void btnfetchid_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(txtID.Text))
+                {
+                    setConnection();
+                    OleDbCommand cmd = new OleDbCommand("select * from customer_master where c_id = " + txtID.Text, conn);
+
+                    OleDbDataReader dr = cmd.ExecuteReader();
+
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            txtname.Text = dr["C_name"].ToString();
+                            txtaddress.Text = dr["address"].ToString();
+                            cmbcity.Text = dr["city"].ToString();
+                            cmbstate.Text = dr["state"].ToString();
+                            cmbdistrict.Text = dr["district"].ToString();
+                            txtPinCode.Text = dr["pin_code"].ToString();
+                            txtPhone.Text = dr["phone"].ToString();
+                            txtemail.Text = dr["e_mail"].ToString();
+                            dtpcustbirth.Text = dr["dob"].ToString();
+                            txtpan.Text = dr["PAN"].ToString();
+                            chbminor.Checked = (bool)(dr["is_minor_cust"]);
+                            txtgname.Text = dr["g_name"].ToString();
+                            txtgaddress.Text = dr["g_addr"].ToString();
+                            txtgrelation.Text = dr["g_relation"].ToString();
+                            txtGuardPhone.Text = dr["g_phone"].ToString();
+                            txtnname.Text = dr["n_name"].ToString();
+                            txtnrelation.Text = dr["rel_of_nom"].ToString();
+                            txtNomPhone.Text = dr["phone_nom"].ToString();
+                            chbisnomminor.Checked = (bool)(dr["is_minor"]);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data found for id " + txtID.Text);
+                        txtID.Text = "";
+                        txtID.Focus();
+                    }
+                }
+                else
+                {
+                    err.SetError(txtID, "Enter ID");
+                    txtID.Focus();
+                }
+                conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
