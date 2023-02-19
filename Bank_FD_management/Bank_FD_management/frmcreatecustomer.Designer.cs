@@ -455,6 +455,7 @@
             this.chbminor.Text = "is minor ?";
             this.chbminor.UseVisualStyleBackColor = true;
             this.chbminor.CheckedChanged += new System.EventHandler(this.chbminor_CheckedChanged_1);
+            this.chbminor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.chbminor_KeyDown);
             // 
             // pnlbuttons
             // 
@@ -523,13 +524,14 @@
             this.chbNewData.Checked = true;
             this.chbNewData.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chbNewData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbNewData.Location = new System.Drawing.Point(1045, 8);
+            this.chbNewData.Location = new System.Drawing.Point(1045, 10);
             this.chbNewData.Name = "chbNewData";
             this.chbNewData.Size = new System.Drawing.Size(68, 28);
             this.chbNewData.TabIndex = 23;
             this.chbNewData.Text = "New";
             this.chbNewData.UseVisualStyleBackColor = true;
             this.chbNewData.CheckedChanged += new System.EventHandler(this.chbNewData_CheckedChanged);
+            this.chbNewData.KeyDown += new System.Windows.Forms.KeyEventHandler(this.chbNewData_KeyDown);
             // 
             // btnfetchid
             // 
@@ -575,6 +577,7 @@
             this.chbnominee.Text = "nominee ?";
             this.chbnominee.UseVisualStyleBackColor = true;
             this.chbnominee.CheckedChanged += new System.EventHandler(this.chbnominee_CheckedChanged);
+            this.chbnominee.KeyDown += new System.Windows.Forms.KeyEventHandler(this.chbnominee_KeyDown);
             // 
             // label6
             // 
@@ -639,6 +642,7 @@
             this.chbisnomminor.Text = "minor ?";
             this.chbisnomminor.UseVisualStyleBackColor = true;
             this.chbisnomminor.CheckedChanged += new System.EventHandler(this.chbisnomminor_CheckedChanged);
+            this.chbisnomminor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.chbisnomminor_KeyDown);
             // 
             // lblnomdob
             // 
@@ -696,7 +700,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1045, 626);
+            this.ClientSize = new System.Drawing.Size(1166, 643);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlbuttons);
             this.Controls.Add(this.pnlnominee);

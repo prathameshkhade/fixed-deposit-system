@@ -347,6 +347,7 @@ namespace Bank_FD_management
                     {
                         MessageBox.Show("No data found for id " + txtID.Text);
                         txtID.Text = "";
+                        clrfrm();
                         txtID.Focus();
                     }
                 }
@@ -363,5 +364,68 @@ namespace Bank_FD_management
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // checkbox will be checked or unchecked with the enter key
+        private void chbminor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (chbminor.Checked)
+                {
+                    chbminor.Checked = false;
+                }
+                else if (!chbminor.Checked)
+                {
+                    chbminor.Checked = true;
+                }
+            }
+        }
+
+        private void chbNewData_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (chbNewData.Checked)
+                {
+                    chbNewData.Checked = false;
+                }
+                else if (!chbNewData.Checked)
+                {
+                    chbNewData.Checked = true;
+                }
+            }
+        }
+
+        private void chbnominee_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (chbnominee.Checked)
+                {
+                    chbnominee.Checked = false;
+                }
+                else if (!chbnominee.Checked)
+                {
+                    chbnominee.Checked = true;
+                }
+            }
+        }
+
+        private void chbisnomminor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (chbisnomminor.Checked)
+                {
+                    chbisnomminor.Checked = false;
+                }
+                else if (!chbisnomminor.Checked)
+                {
+                    chbisnomminor.Checked = true;
+                }
+            }
+        }
+
+
     }
 }
