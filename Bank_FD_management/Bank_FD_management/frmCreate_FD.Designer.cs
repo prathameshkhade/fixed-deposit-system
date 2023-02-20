@@ -261,6 +261,7 @@
             this.txtFDAmount.Name = "txtFDAmount";
             this.txtFDAmount.Size = new System.Drawing.Size(203, 29);
             this.txtFDAmount.TabIndex = 7;
+            this.txtFDAmount.TextChanged += new System.EventHandler(this.txtFDAmount_TextChanged);
             // 
             // rdbHalfYearly
             // 
@@ -289,6 +290,12 @@
             this.cmbFDType.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbFDType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFDType.FormattingEnabled = true;
+            this.cmbFDType.Items.AddRange(new object[] {
+            "7 to 30 days",
+            "31 to 90 days",
+            "90 to 180 days",
+            "181 to 360 days",
+            "more than 360 days"});
             this.cmbFDType.Location = new System.Drawing.Point(122, 120);
             this.cmbFDType.Name = "cmbFDType";
             this.cmbFDType.Size = new System.Drawing.Size(203, 32);
@@ -562,6 +569,7 @@
             this.btnCreate.TabIndex = 0;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnCancel
             // 
@@ -598,6 +606,7 @@
             this.Name = "frmCreate_FD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create_FD";
+            this.Load += new System.EventHandler(this.frmCreate_FD_Load);
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
             this.pnlDetails.ResumeLayout(false);

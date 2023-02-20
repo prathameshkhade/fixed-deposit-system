@@ -711,7 +711,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1200, 643);
+            this.ClientSize = new System.Drawing.Size(1200, 848);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlbuttons);
             this.Controls.Add(this.pnlnominee);
