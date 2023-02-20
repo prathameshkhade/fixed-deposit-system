@@ -7,11 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
+using System.Text.RegularExpressions;
 
 namespace Bank_FD_management
 {
     public partial class frmForgetCustID : Form
     {
+        private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
+        private OleDbConnection conn = new OleDbConnection(myConn);
+
+        public void setConnection()
+        {
+            if (conn.State == ConnectionState.Closed)
+            {
+                conn.Open();
+                MessageBox.Show("Connection succesfull");
+            }
+        }
+
         // just for on focusing the seperate panel
         private void onFocus(object sender, EventArgs e)
         {
@@ -109,6 +123,36 @@ namespace Bank_FD_management
         private void pnltitle_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnFetchID_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                setConnection();
+                OleDbCommand cmd = new OleDbCommand("select c_id from customer_master where c_name = '" + txtName.Text + "' and dob = #" + dtpCustBirth.Value.Date + "# and pan = '" + txtPan.Text + "'", conn);
+                int id = (int)cmd.ExecuteScalar();
+                txtID.Text = id.ToString();
+            }
+            catch(OleDbException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtPan_Validating(object sender, CancelEventArgs e)
+        {
+            string validPan = "[A-Z]{5}[0-9]{4}[A-Z]{1}";
+            Regex re = new Regex(validPan);
+            if (!re.IsMatch(txtPan.Text) && !string.IsNullOrEmpty(txtPan.Text))
+            {
+                MessageBox.Show("Invalid PAN Entered!");
+                txtPan.Focus();
+            }
         }
     }
 }

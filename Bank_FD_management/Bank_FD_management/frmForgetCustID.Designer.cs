@@ -121,9 +121,11 @@
             this.txtPan.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPan.Location = new System.Drawing.Point(160, 134);
+            this.txtPan.MaxLength = 10;
             this.txtPan.Name = "txtPan";
             this.txtPan.Size = new System.Drawing.Size(232, 29);
             this.txtPan.TabIndex = 27;
+            this.txtPan.Validating += new System.ComponentModel.CancelEventHandler(this.txtPan_Validating);
             // 
             // lblPan
             // 
@@ -137,6 +139,7 @@
             // 
             // dtpCustBirth
             // 
+            this.dtpCustBirth.CustomFormat = "";
             this.dtpCustBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpCustBirth.Location = new System.Drawing.Point(160, 96);
             this.dtpCustBirth.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
@@ -221,6 +224,7 @@
             this.btnFetchID.TabIndex = 23;
             this.btnFetchID.Text = "Fetch Details";
             this.btnFetchID.UseVisualStyleBackColor = false;
+            this.btnFetchID.Click += new System.EventHandler(this.btnFetchID_Click);
             // 
             // frmForgetCustID
             // 

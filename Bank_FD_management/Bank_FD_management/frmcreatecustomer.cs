@@ -469,9 +469,10 @@ namespace Bank_FD_management
 
         private void txtemail_Validating(object sender, CancelEventArgs e)
         {
-            if (!this.txtemail.Text.Contains('@') || !this.txtemail.Text.Contains(".com") || !string.IsNullOrEmpty(txtpan.Text))
+            if (!this.txtemail.Text.Contains('@') || !this.txtemail.Text.Contains(".com"))
             {
-                err.SetError(txtemail, "Invalid email entered");
+                //err.SetError(txtemail, "Invalid email entered");
+                MessageBox.Show("Invalid email entered");
             }
         }
 
