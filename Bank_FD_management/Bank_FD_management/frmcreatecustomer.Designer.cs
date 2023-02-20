@@ -143,28 +143,34 @@
             // 
             this.txtPhone.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(124, 162);
+            this.txtPhone.Location = new System.Drawing.Point(124, 159);
+            this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(201, 29);
             this.txtPhone.TabIndex = 22;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtPinCode
             // 
             this.txtPinCode.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPinCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPinCode.Location = new System.Drawing.Point(124, 126);
+            this.txtPinCode.Location = new System.Drawing.Point(124, 124);
+            this.txtPinCode.MaxLength = 6;
             this.txtPinCode.Name = "txtPinCode";
             this.txtPinCode.Size = new System.Drawing.Size(201, 29);
             this.txtPinCode.TabIndex = 21;
+            this.txtPinCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPinCode_KeyPress);
             // 
             // txtpan
             // 
             this.txtpan.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpan.Location = new System.Drawing.Point(441, 196);
+            this.txtpan.Location = new System.Drawing.Point(441, 193);
+            this.txtpan.MaxLength = 10;
             this.txtpan.Name = "txtpan";
             this.txtpan.Size = new System.Drawing.Size(232, 29);
             this.txtpan.TabIndex = 11;
+            this.txtpan.Validating += new System.ComponentModel.CancelEventHandler(this.txtpan_Validating);
             // 
             // lblpan
             // 
@@ -179,7 +185,7 @@
             // dtpcustbirth
             // 
             this.dtpcustbirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpcustbirth.Location = new System.Drawing.Point(124, 197);
+            this.dtpcustbirth.Location = new System.Drawing.Point(124, 196);
             this.dtpcustbirth.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
             this.dtpcustbirth.Name = "dtpcustbirth";
             this.dtpcustbirth.Size = new System.Drawing.Size(232, 22);
@@ -200,10 +206,11 @@
             // 
             this.txtemail.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemail.Location = new System.Drawing.Point(441, 159);
+            this.txtemail.Location = new System.Drawing.Point(441, 156);
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(401, 29);
             this.txtemail.TabIndex = 9;
+            this.txtemail.Validating += new System.ComponentModel.CancelEventHandler(this.txtemail_Validating);
             // 
             // lblemail
             // 
@@ -311,7 +318,7 @@
             // 
             this.txtaddress.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtaddress.Location = new System.Drawing.Point(125, 51);
+            this.txtaddress.Location = new System.Drawing.Point(125, 49);
             this.txtaddress.Name = "txtaddress";
             this.txtaddress.Size = new System.Drawing.Size(821, 29);
             this.txtaddress.TabIndex = 3;
@@ -330,7 +337,7 @@
             // 
             this.txtname.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtname.Location = new System.Drawing.Point(125, 16);
+            this.txtname.Location = new System.Drawing.Point(125, 14);
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(491, 29);
             this.txtname.TabIndex = 1;
@@ -369,9 +376,11 @@
             this.txtGuardPhone.Enabled = false;
             this.txtGuardPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGuardPhone.Location = new System.Drawing.Point(183, 116);
+            this.txtGuardPhone.MaxLength = 10;
             this.txtGuardPhone.Name = "txtGuardPhone";
             this.txtGuardPhone.Size = new System.Drawing.Size(201, 29);
             this.txtGuardPhone.TabIndex = 22;
+            this.txtGuardPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGuardPhone_KeyPress);
             // 
             // label1
             // 
@@ -690,9 +699,11 @@
             this.txtNomPhone.Enabled = false;
             this.txtNomPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomPhone.Location = new System.Drawing.Point(183, 128);
+            this.txtNomPhone.MaxLength = 10;
             this.txtNomPhone.Name = "txtNomPhone";
             this.txtNomPhone.Size = new System.Drawing.Size(201, 29);
             this.txtNomPhone.TabIndex = 22;
+            this.txtNomPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomPhone_KeyPress);
             // 
             // frmcreatecustomer
             // 
@@ -700,7 +711,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1166, 643);
+            this.ClientSize = new System.Drawing.Size(1200, 643);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlbuttons);
             this.Controls.Add(this.pnlnominee);

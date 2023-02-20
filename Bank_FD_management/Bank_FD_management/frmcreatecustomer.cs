@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Text.RegularExpressions;
 
 namespace Bank_FD_management
 {
@@ -59,9 +60,9 @@ namespace Bank_FD_management
         //just for got focusing every panel 
         private void ctrlOnFocusPnl1()
         {
-            foreach(Control i in pnldetails.Controls)
+            foreach (Control i in pnldetails.Controls)
             {
-                if(i is TextBox || i is ComboBox || i is DateTimePicker)
+                if (i is TextBox || i is ComboBox || i is DateTimePicker)
                 {
                     i.GotFocus += onFocus;
                 }
@@ -290,15 +291,15 @@ namespace Bank_FD_management
 
         private void chbNewData_CheckedChanged(object sender, EventArgs e)
         {
-            if(chbNewData.Checked)
+            if (chbNewData.Checked)
             {
                 txtID.Text = "";
                 clrfrm();
                 txtID.Enabled = false;
                 btnfetchid.Enabled = false;
             }
-            
-            if(!chbNewData.Checked)
+
+            if (!chbNewData.Checked)
             {
                 txtID.Enabled = true;
                 btnfetchid.Enabled = true;
@@ -426,6 +427,56 @@ namespace Bank_FD_management
             }
         }
 
+        private void txtPinCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtGuardPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNomPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtemail_Validating(object sender, CancelEventArgs e)
+        {
+            if (!this.txtemail.Text.Contains('@') || !this.txtemail.Text.Contains(".com") || !string.IsNullOrEmpty(txtpan.Text))
+            {
+                MessageBox.Show("Invalid email entered");
+                txtemail.Focus();
+            }
+        }
+
+        private void txtpan_Validating(object sender, CancelEventArgs e)
+        {
+            string validPan = "[A-Z]{5}[0-9]{4}[A-Z]{1}";
+            Regex re = new Regex(validPan);
+            if(!re.IsMatch(txtpan.Text) && !string.IsNullOrEmpty(txtpan.Text))
+            {
+                MessageBox.Show("Invalid PAN entered!");
+                txtpan.Focus();
+            }
+        }
     }
 }
