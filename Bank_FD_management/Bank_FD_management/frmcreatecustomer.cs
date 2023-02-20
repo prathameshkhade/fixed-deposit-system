@@ -272,6 +272,14 @@ namespace Bank_FD_management
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("data inserted!");
                     }
+                    else
+                    {
+                        setConnection();
+                        OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#)", conn);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("data inserted!");
+                    }
+
                 }
                 else
                 {
@@ -463,8 +471,7 @@ namespace Bank_FD_management
         {
             if (!this.txtemail.Text.Contains('@') || !this.txtemail.Text.Contains(".com") || !string.IsNullOrEmpty(txtpan.Text))
             {
-                MessageBox.Show("Invalid email entered");
-                txtemail.Focus();
+                err.SetError(txtemail, "Invalid email entered");
             }
         }
 
