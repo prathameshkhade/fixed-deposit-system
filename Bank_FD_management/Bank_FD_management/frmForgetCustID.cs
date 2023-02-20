@@ -133,6 +133,7 @@ namespace Bank_FD_management
                 OleDbCommand cmd = new OleDbCommand("select c_id from customer_master where c_name = '" + txtName.Text + "' and dob = #" + dtpCustBirth.Value.Date + "# and pan = '" + txtPan.Text + "'", conn);
                 int id = (int)cmd.ExecuteScalar();
                 txtID.Text = id.ToString();
+                conn.Close();
             }
             catch(OleDbException ex)
             {
