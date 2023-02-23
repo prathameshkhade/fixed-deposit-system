@@ -62,6 +62,7 @@ namespace Bank_FD_management
             InitializeComponent();
             ctrlOnFocus();
             ctrlOnLostFocus();
+            setConnection();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -92,16 +93,20 @@ namespace Bank_FD_management
             }
             try
             {
-                setConnection();
-                OleDbCommand cmd = new OleDbCommand("insert into interest_master values ('" + cmbfdtype.Text + "', " + txtinterest.Text + ", " + txtPenDiff.Text + ")" , conn);
+                OleDbCommand cmd = new OleDbCommand("update interest_master set interest = " + txtinterest.Text + ", p_interest = " + txtPenDiff.Text + " where duration = '" + cmbfdtype.Text + "'", conn);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Data inserted...");
-                conn.Close();
+                MessageBox.Show("Data Updatated");
             }
             catch(OleDbException ex)
             {
                 MessageBox.Show(ex.Message);
                 ctrlClear();
+            }
+            finally
+            {
+                MessageBox.Show("No data is fillded");
+                ctrlClear();
+                cmbfdtype.Focus();
             }
 
         }
@@ -161,6 +166,35 @@ namespace Bank_FD_management
             if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void cmbfdtype_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                OleDbCommand cmd = new OleDbCommand("select * from interest_master where duration = '" + cmbfdtype.Text + "'", conn);
+                OleDbDataReader dr = cmd.ExecuteReader();
+                if(dr.HasRows)
+                {
+                    while(dr.Read())
+                    {
+                        txtinterest.Text = dr["interest"].ToString();
+                        txtPenDiff.Text = dr["p_interest"].ToString();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Record not found!");
+                }
+            }
+            catch(OleDbException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
