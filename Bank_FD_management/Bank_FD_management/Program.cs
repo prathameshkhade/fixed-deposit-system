@@ -19,7 +19,7 @@ namespace Bank_FD_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmUpdateInterest());
+            Application.Run(new frmdashboard());
         }
     }
 }

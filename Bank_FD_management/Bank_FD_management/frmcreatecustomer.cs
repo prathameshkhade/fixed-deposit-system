@@ -247,6 +247,8 @@ namespace Bank_FD_management
 
         private void btnsave_Click(object sender, EventArgs e)
         {
+            OleDbCommand cmd1 = new OleDbCommand("select Max(C_ID) from customer_master", conn);
+
             try
             {
                 if (chbNewData.Checked)
@@ -256,28 +258,36 @@ namespace Bank_FD_management
                         setConnection();
                         OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date , is_minor_cust , g_name , g_addr , g_relation , g_phone , have_nom, N_name , Rel_of_nom , Phone_nom , Is_minor , dob_nom,  Age_minor) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#, " + chbminor.Checked + ", '" + txtgname.Text + "', '" + txtgaddress.Text + "', '" + txtgrelation.Text + "', '" + txtGuardPhone.Text + "', " + chbnominee.Checked + ", '" + txtnname.Text + "', '" + txtnrelation.Text + "', '" + txtNomPhone.Text + "', " + chbisnomminor.Checked + ", #" + dobNom.Value + "#, " + (DateTime.Now.Year - dobNom.Value.Year) + ")", conn);
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("data inserted!");
+
+                        int id = Convert.ToInt32(cmd1.ExecuteScalar());
+                        MessageBox.Show(" Saved \n CUST ID = "+id);
                     }
                     else if (chbminor.Checked)
                     {
                         setConnection();
                         OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date , is_minor_cust , g_name , g_addr , g_relation , g_phone )values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#, " + chbminor.Checked + ", '" + txtgname.Text + "', '" + txtgaddress.Text + "', '" + txtgrelation.Text + "', '" + txtGuardPhone.Text + "')", conn);
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("data inserted!");
+
+                        int id = Convert.ToInt32(cmd1.ExecuteScalar());
+                        MessageBox.Show(" Saved \n CUST ID = " + id);
                     }
                     else if (chbnominee.Checked)
                     {
                         setConnection();
                         OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date, have_nom,  N_name , Rel_of_nom , Phone_nom , Is_minor , dob_nom, Age_minor) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#, " + chbnominee.Checked + ", '" + txtnname.Text + "', '" + txtnrelation.Text + "', '" + txtNomPhone.Text + "', " + chbisnomminor.Checked + ", #" + dobNom.Value + "#, " + (DateTime.Now.Year - dobNom.Value.Year) + ")", conn);
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("data inserted!");
+
+                        int id = Convert.ToInt32(cmd1.ExecuteScalar());
+                        MessageBox.Show(" Saved \n CUST ID = " + id);
                     }
                     else
                     {
                         setConnection();
                         OleDbCommand cmd = new OleDbCommand("insert into customer_master (C_name , address , city , state , district , pin_code , phone , e_mail , DOB  , PAN , Add_date) values('" + txtname.Text + "', '" + txtaddress.Text + "', '" + cmbcity.Text + "', '" + cmbstate.Text + "', '" + cmbdistrict.Text + "', " + txtPinCode.Text + ", " + txtPhone.Text + ",'" + txtemail.Text + "', #" + dtpcustbirth.Value + "# ,'" + txtpan.Text + "', #" + DateTime.Now + "#)", conn);
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("data inserted!");
+
+                        int id = Convert.ToInt32(cmd1.ExecuteScalar());
+                        MessageBox.Show(" Saved \n CUST ID = " + id);
                     }
 
                 }

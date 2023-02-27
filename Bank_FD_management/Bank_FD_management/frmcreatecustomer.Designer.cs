@@ -185,6 +185,7 @@
             // dtpcustbirth
             // 
             this.dtpcustbirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpcustbirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpcustbirth.Location = new System.Drawing.Point(124, 196);
             this.dtpcustbirth.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
             this.dtpcustbirth.Name = "dtpcustbirth";
@@ -711,7 +712,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1200, 848);
+            this.ClientSize = new System.Drawing.Size(1200, 854);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlbuttons);
             this.Controls.Add(this.pnlnominee);

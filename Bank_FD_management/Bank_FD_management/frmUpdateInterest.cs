@@ -87,10 +87,6 @@ namespace Bank_FD_management
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            if(ValidateChildren(ValidationConstraints.Enabled))
-            {
-                MessageBox.Show(cmbfdtype.SelectedText, "Message", MessageBoxButtons.OK);
-            }
             try
             {
                 OleDbCommand cmd = new OleDbCommand("update interest_master set interest = " + txtinterest.Text + ", p_interest = " + txtPenDiff.Text + " where duration = '" + cmbfdtype.Text + "'", conn);
@@ -102,13 +98,6 @@ namespace Bank_FD_management
                 MessageBox.Show(ex.Message);
                 ctrlClear();
             }
-            finally
-            {
-                MessageBox.Show("No data is fillded");
-                ctrlClear();
-                cmbfdtype.Focus();
-            }
-
         }
 
         private void txtinterest_TextChanged(object sender, EventArgs e)
@@ -183,10 +172,7 @@ namespace Bank_FD_management
                         txtPenDiff.Text = dr["p_interest"].ToString();
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Record not found!");
-                }
+
             }
             catch(OleDbException ex)
             {
