@@ -91,9 +91,9 @@
             this.cmbfdtype.Items.AddRange(new object[] {
             "7 to 30 days",
             "31 to 90 days",
-            "90 to 180 days",
-            "180 to 360 days",
-            "more than 360"});
+            "91 to 180 days",
+            "181 to 365 days",
+            "more than 365"});
             this.cmbfdtype.Location = new System.Drawing.Point(297, 50);
             this.cmbfdtype.Name = "cmbfdtype";
             this.cmbfdtype.Size = new System.Drawing.Size(203, 32);

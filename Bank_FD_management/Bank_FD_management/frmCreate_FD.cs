@@ -159,6 +159,8 @@ namespace Bank_FD_management
             ctrlOnLostFocusPnl1();
             ctrlOnLostFocusPnl2();
             ctrlOnLostFocusPnl3();
+
+            setConnection();
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -180,7 +182,7 @@ namespace Bank_FD_management
 
         private void txtFDAmount_TextChanged(object sender, EventArgs e)
         {
-
+            changePeriodicInterest();
         }
 
         private void frmCreate_FD_Load(object sender, EventArgs e)
@@ -190,7 +192,7 @@ namespace Bank_FD_management
 
         private void cmbDays_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //changeFDtype();
         }
 
         private void enableediting()
@@ -249,7 +251,6 @@ namespace Bank_FD_management
                     txtID.Focus();
                     disableediting();
                 }
-                conn.Close();
 
             }
             catch (Exception ex)
@@ -258,6 +259,160 @@ namespace Bank_FD_management
             }
         }
 
-        
+
+
+        //to update fd type depending on days and months
+        int totalDays;
+        private void changeFDtype()
+        {
+            if (!string.IsNullOrEmpty(cmbMonths.Text) && !string.IsNullOrEmpty(cmbDays.Text))
+            {
+                int days = int.Parse(cmbDays.Text);
+                int months = int.Parse(cmbMonths.Text);
+
+                DateTime startDate = DateTime.Now;
+                DateTime newDate = startDate.AddDays(days).AddMonths(months);
+                totalDays = (int)(newDate - startDate).TotalDays;
+
+                //totalDays = (months * 30) + days;
+                if (totalDays > 365)
+                {
+                    cmbFDType.SelectedIndex = 4;
+                }
+                else if(totalDays>=181)
+                {
+                    cmbFDType.SelectedIndex = 3;
+                }
+                else if(totalDays>=91)
+                {
+                    cmbFDType.SelectedIndex = 2;
+                }
+                else if(totalDays>=31)
+                {
+                    cmbFDType.SelectedIndex = 1;             
+                }
+                else if(totalDays>=7)
+                {
+                    cmbFDType.SelectedIndex = 0;
+                }
+                else
+                {   //logical error = cmddays combobox dosent get clear even tho we assign null value;              
+                    MessageBox.Show("Please select atleast 7 days period");
+                    cmbDays.Text = "";
+                    cmbFDType.Text = "";
+                    changeFDtype();
+                    cmbMonths.Focus();
+                }
+            }
+            else
+            {
+                if(!string.IsNullOrEmpty(cmbMonths.Text))
+                {
+                    cmbMonths.Focus();
+                }
+                else
+                {
+                    cmbDays.Focus();
+                }
+            }
+        }
+
+
+        private void cmbMonths_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //changeFDtype();
+        }
+
+        private void cmbMonths_TextChanged(object sender, EventArgs e)
+        {
+            changeFDtype();
+        }
+
+        private void cmbDays_TextChanged(object sender, EventArgs e)
+        {
+            changeFDtype();
+        }
+
+        //to load the interest rate automatically
+        double interest;
+        private void cmbFDType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbFDType.SelectedIndex == 0)
+            {
+                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", conn);
+                interest = Convert.ToDouble(cmd.ExecuteScalar());
+                txtInterestRate.Text = interest.ToString();
+            }
+            else if (cmbFDType.SelectedIndex == 1)
+            {
+                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", conn);
+                interest = Convert.ToDouble(cmd.ExecuteScalar());
+                txtInterestRate.Text = interest.ToString();
+            }
+            else if (cmbFDType.SelectedIndex == 2)
+            {
+                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", conn);
+                interest = Convert.ToDouble(cmd.ExecuteScalar());
+                txtInterestRate.Text = interest.ToString();
+            }
+            else if (cmbFDType.SelectedIndex == 3)
+            {
+                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", conn);
+                interest = Convert.ToDouble(cmd.ExecuteScalar());
+                txtInterestRate.Text = interest.ToString();
+            }
+            else if (cmbFDType.SelectedIndex == 4)
+            {
+                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", conn);
+                interest = Convert.ToDouble(cmd.ExecuteScalar());
+                txtInterestRate.Text = interest.ToString();
+            }
+        }
+
+
+        //to update periodic interest automatically depending upon amount and radiobuttons
+        private void changePeriodicInterest()
+        {
+            if (!string.IsNullOrEmpty(txtFDAmount.Text) && !string.IsNullOrEmpty(txtInterestRate.Text))
+            {
+                //getting latest amount
+                double amount = double.Parse(txtFDAmount.Text);
+
+                //updating the periodic interest
+                if(rdbMonthly.Checked)
+                {
+                    double pinterest = ((amount * 1 )/ 12 )* (interest/100);
+                    txtPeriodicInterest.Text = pinterest.ToString();
+                }
+                if (rdbQuaterly.Checked)
+                {
+                    double pinterest = ((amount * 3) / 12) * (interest / 100);
+                    txtPeriodicInterest.Text = pinterest.ToString();
+                }
+                if (rdbHalfYearly.Checked)
+                {
+                    double pinterest = ((amount * 6) / 12) * (interest / 100);
+                    txtPeriodicInterest.Text = pinterest.ToString();
+                }
+                if (rdbOnMaturity.Checked)
+                {
+                    txtPeriodicInterest.Text = "0";
+                }
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(txtFDAmount.Text))
+                {
+                    txtFDAmount.Focus();
+                }
+                else
+                {
+                    rdbMonthly.Focus();
+                }
+            }
+        }
+
+
+
     }
 }

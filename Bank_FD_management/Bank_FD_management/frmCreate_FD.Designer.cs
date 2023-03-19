@@ -262,19 +262,19 @@
             // cmbFDType
             // 
             this.cmbFDType.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cmbFDType.Enabled = false;
             this.cmbFDType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFDType.FormattingEnabled = true;
             this.cmbFDType.Items.AddRange(new object[] {
             "7 to 30 days",
             "31 to 90 days",
-            "90 to 180 days",
-            "181 to 360 days",
-            "more than 360 days"});
+            "91 to 180 days",
+            "181 to 365 days",
+            "more than 365 days"});
             this.cmbFDType.Location = new System.Drawing.Point(122, 219);
             this.cmbFDType.Name = "cmbFDType";
             this.cmbFDType.Size = new System.Drawing.Size(203, 32);
             this.cmbFDType.TabIndex = 4;
+            this.cmbFDType.SelectedIndexChanged += new System.EventHandler(this.cmbFDType_SelectedIndexChanged);
             // 
             // rdbQuaterly
             // 
@@ -329,11 +329,45 @@
             this.cmbDays.Enabled = false;
             this.cmbDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDays.FormattingEnabled = true;
+            this.cmbDays.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
             this.cmbDays.Location = new System.Drawing.Point(394, 120);
             this.cmbDays.Name = "cmbDays";
             this.cmbDays.Size = new System.Drawing.Size(92, 32);
             this.cmbDays.TabIndex = 9;
             this.cmbDays.SelectedIndexChanged += new System.EventHandler(this.cmbDays_SelectedIndexChanged);
+            this.cmbDays.TextChanged += new System.EventHandler(this.cmbDays_TextChanged);
             // 
             // lblInterestInterval
             // 
@@ -374,10 +408,26 @@
             this.cmbMonths.Enabled = false;
             this.cmbMonths.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMonths.FormattingEnabled = true;
+            this.cmbMonths.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
             this.cmbMonths.Location = new System.Drawing.Point(210, 120);
             this.cmbMonths.Name = "cmbMonths";
             this.cmbMonths.Size = new System.Drawing.Size(80, 32);
             this.cmbMonths.TabIndex = 8;
+            this.cmbMonths.SelectedIndexChanged += new System.EventHandler(this.cmbMonths_SelectedIndexChanged);
+            this.cmbMonths.TextChanged += new System.EventHandler(this.cmbMonths_TextChanged);
             // 
             // txtInterestRate
             // 
