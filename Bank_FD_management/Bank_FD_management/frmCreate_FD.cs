@@ -13,8 +13,10 @@ namespace Bank_FD_management
 {
     public partial class frmCreate_FD : Form
     {
+        private ErrorProvider err = new ErrorProvider();
         private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
         private OleDbConnection conn = new OleDbConnection(myConn);
+        
 
         public void setConnection()
         {
@@ -125,6 +127,10 @@ namespace Bank_FD_management
                 rdbQuaterly.Checked = false;
                 rdbHalfYearly.Checked = false;
                 rdbOnMaturity.Checked = false;
+
+                disableediting();
+
+                
             }
             foreach (Control c in pnlRates.Controls)
             {
@@ -181,5 +187,77 @@ namespace Bank_FD_management
         {
 
         }
+
+        private void cmbDays_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void enableediting()
+        {
+            cmbMonths.Enabled = true;
+            cmbDays.Enabled = true;
+            txtFDAmount.Enabled = true;
+            rdbMonthly.Enabled = true;
+            rdbQuaterly.Enabled = true;
+            rdbHalfYearly.Enabled = true;
+            rdbOnMaturity.Enabled = true;
+        }
+        private void disableediting()
+        {
+            cmbMonths.Enabled = false;
+            cmbDays.Enabled = false;
+            txtFDAmount.Enabled = false;
+            rdbMonthly.Enabled = false;
+            rdbQuaterly.Enabled = false;
+            rdbHalfYearly.Enabled = false;
+            rdbOnMaturity.Enabled = false;
+        }
+
+        //to load the name of the customer and enable editing if the id is present
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(txtID.Text))
+                {
+                    setConnection();
+                    OleDbCommand cmd = new OleDbCommand("select * from customer_master where c_id = " + txtID.Text, conn);
+
+                    OleDbDataReader dr = cmd.ExecuteReader();
+
+                    if (dr.HasRows)
+                    {               
+                        while (dr.Read())
+                        {
+                            txtName.Text = dr["C_name"].ToString();
+                        }
+                        enableediting();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No data found for id " + txtID.Text);
+                        txtID.Text = "";
+                        txtName.Text = "";
+                        txtID.Focus();
+                        disableediting();                    
+                    }
+                }
+                else
+                {
+                    err.SetError(txtID, "Enter ID");
+                    txtID.Focus();
+                    disableediting();
+                }
+                conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        
     }
 }
