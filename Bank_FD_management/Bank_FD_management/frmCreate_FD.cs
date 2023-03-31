@@ -176,12 +176,19 @@ namespace Bank_FD_management
         {
             try
             {
-                setConnection();
+                if (!string.IsNullOrEmpty(txtFinalAmount.Text))
+                {
+                    setConnection();
 
+                    OleDbCommand cmd = new OleDbCommand("insert into FD_Master c_id , c_name , cert_dt , cert_id , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value + "#,#" + dtpEndDate.Value + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ")", conn);
+                    cmd.ExecuteNonQuery();
 
-
-
-
+                    MessageBox.Show("Inserted successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Enter data first !!");
+                }
             }
             catch (OleDbException ex)
             {
@@ -191,11 +198,17 @@ namespace Bank_FD_management
 
         private void txtFDAmount_TextChanged(object sender, EventArgs e)
         {
-            changePeriodicInterest();
-
-            ChangeTotalInterest();
-
-
+            if (!string.IsNullOrEmpty(txtFDAmount.Text))
+            {
+                changePeriodicInterest();
+                ChangeTotalInterest();
+            }
+            else
+            {
+                txtPeriodicInterest.Text = "";
+                txtTotalInterest.Text = "";
+                txtFinalAmount.Text = "";
+            }
         }
 
         private void frmCreate_FD_Load(object sender, EventArgs e)
