@@ -35,6 +35,7 @@
             this.lblID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.pnlDetails = new System.Windows.Forms.Panel();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.lblcertid = new System.Windows.Forms.Label();
             this.txtCertID = new System.Windows.Forms.TextBox();
             this.lblFDID = new System.Windows.Forms.Label();
@@ -56,8 +57,8 @@
             this.txtInterestRate = new System.Windows.Forms.TextBox();
             this.lblInterstRate = new System.Windows.Forms.Label();
             this.pnlRates = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dtpcustbirth = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.lblMaturityDate = new System.Windows.Forms.Label();
             this.lblStartDate = new System.Windows.Forms.Label();
             this.txtFinalAmount = new System.Windows.Forms.TextBox();
@@ -71,7 +72,6 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.btnLoad = new System.Windows.Forms.Button();
             this.pnlTitle.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             this.pnlRates.SuspendLayout();
@@ -116,7 +116,7 @@
             this.txtName.Location = new System.Drawing.Point(122, 69);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(424, 29);
-            this.txtName.TabIndex = 3;
+            this.txtName.TabIndex = 2;
             // 
             // lblID
             // 
@@ -170,6 +170,18 @@
             this.pnlDetails.Size = new System.Drawing.Size(1131, 322);
             this.pnlDetails.TabIndex = 0;
             // 
+            // btnLoad
+            // 
+            this.btnLoad.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.Location = new System.Drawing.Point(347, 22);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(130, 27);
+            this.btnLoad.TabIndex = 1;
+            this.btnLoad.Text = "Load";
+            this.btnLoad.UseVisualStyleBackColor = false;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
             // lblcertid
             // 
             this.lblcertid.AutoSize = true;
@@ -220,10 +232,11 @@
             this.rdbOnMaturity.Location = new System.Drawing.Point(475, 266);
             this.rdbOnMaturity.Name = "rdbOnMaturity";
             this.rdbOnMaturity.Size = new System.Drawing.Size(245, 28);
-            this.rdbOnMaturity.TabIndex = 13;
+            this.rdbOnMaturity.TabIndex = 10;
             this.rdbOnMaturity.TabStop = true;
             this.rdbOnMaturity.Text = "Interest payout on maturity";
             this.rdbOnMaturity.UseVisualStyleBackColor = true;
+            this.rdbOnMaturity.CheckedChanged += new System.EventHandler(this.rdbOnMaturity_CheckedChanged);
             // 
             // txtFDAmount
             // 
@@ -233,7 +246,7 @@
             this.txtFDAmount.Location = new System.Drawing.Point(122, 171);
             this.txtFDAmount.Name = "txtFDAmount";
             this.txtFDAmount.Size = new System.Drawing.Size(203, 29);
-            this.txtFDAmount.TabIndex = 7;
+            this.txtFDAmount.TabIndex = 5;
             this.txtFDAmount.TextChanged += new System.EventHandler(this.txtFDAmount_TextChanged);
             // 
             // rdbHalfYearly
@@ -244,10 +257,11 @@
             this.rdbHalfYearly.Location = new System.Drawing.Point(347, 266);
             this.rdbHalfYearly.Name = "rdbHalfYearly";
             this.rdbHalfYearly.Size = new System.Drawing.Size(114, 28);
-            this.rdbHalfYearly.TabIndex = 12;
+            this.rdbHalfYearly.TabIndex = 9;
             this.rdbHalfYearly.TabStop = true;
             this.rdbHalfYearly.Text = "Half yearly";
             this.rdbHalfYearly.UseVisualStyleBackColor = true;
+            this.rdbHalfYearly.CheckedChanged += new System.EventHandler(this.rdbHalfYearly_CheckedChanged);
             // 
             // lblFDAmout
             // 
@@ -262,6 +276,7 @@
             // cmbFDType
             // 
             this.cmbFDType.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbFDType.Enabled = false;
             this.cmbFDType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFDType.FormattingEnabled = true;
             this.cmbFDType.Items.AddRange(new object[] {
@@ -273,7 +288,7 @@
             this.cmbFDType.Location = new System.Drawing.Point(122, 219);
             this.cmbFDType.Name = "cmbFDType";
             this.cmbFDType.Size = new System.Drawing.Size(203, 32);
-            this.cmbFDType.TabIndex = 4;
+            this.cmbFDType.TabIndex = 6;
             this.cmbFDType.SelectedIndexChanged += new System.EventHandler(this.cmbFDType_SelectedIndexChanged);
             // 
             // rdbQuaterly
@@ -284,10 +299,11 @@
             this.rdbQuaterly.Location = new System.Drawing.Point(231, 266);
             this.rdbQuaterly.Name = "rdbQuaterly";
             this.rdbQuaterly.Size = new System.Drawing.Size(104, 28);
-            this.rdbQuaterly.TabIndex = 11;
+            this.rdbQuaterly.TabIndex = 8;
             this.rdbQuaterly.TabStop = true;
             this.rdbQuaterly.Text = "Quarterly";
             this.rdbQuaterly.UseVisualStyleBackColor = true;
+            this.rdbQuaterly.CheckedChanged += new System.EventHandler(this.rdbQuaterly_CheckedChanged);
             // 
             // lblFDType
             // 
@@ -307,10 +323,11 @@
             this.rdbMonthly.Location = new System.Drawing.Point(122, 266);
             this.rdbMonthly.Name = "rdbMonthly";
             this.rdbMonthly.Size = new System.Drawing.Size(94, 28);
-            this.rdbMonthly.TabIndex = 10;
+            this.rdbMonthly.TabIndex = 7;
             this.rdbMonthly.TabStop = true;
             this.rdbMonthly.Text = "Monthly";
             this.rdbMonthly.UseVisualStyleBackColor = true;
+            this.rdbMonthly.CheckedChanged += new System.EventHandler(this.rdbMonthly_CheckedChanged);
             // 
             // lblInterest
             // 
@@ -365,7 +382,7 @@
             this.cmbDays.Location = new System.Drawing.Point(394, 120);
             this.cmbDays.Name = "cmbDays";
             this.cmbDays.Size = new System.Drawing.Size(92, 32);
-            this.cmbDays.TabIndex = 9;
+            this.cmbDays.TabIndex = 4;
             this.cmbDays.SelectedIndexChanged += new System.EventHandler(this.cmbDays_SelectedIndexChanged);
             this.cmbDays.TextChanged += new System.EventHandler(this.cmbDays_TextChanged);
             // 
@@ -425,7 +442,7 @@
             this.cmbMonths.Location = new System.Drawing.Point(210, 120);
             this.cmbMonths.Name = "cmbMonths";
             this.cmbMonths.Size = new System.Drawing.Size(80, 32);
-            this.cmbMonths.TabIndex = 8;
+            this.cmbMonths.TabIndex = 3;
             this.cmbMonths.SelectedIndexChanged += new System.EventHandler(this.cmbMonths_SelectedIndexChanged);
             this.cmbMonths.TextChanged += new System.EventHandler(this.cmbMonths_TextChanged);
             // 
@@ -439,6 +456,7 @@
             this.txtInterestRate.ReadOnly = true;
             this.txtInterestRate.Size = new System.Drawing.Size(147, 29);
             this.txtInterestRate.TabIndex = 0;
+            this.txtInterestRate.TextChanged += new System.EventHandler(this.txtInterestRate_TextChanged);
             // 
             // lblInterstRate
             // 
@@ -454,8 +472,8 @@
             // 
             this.pnlRates.BackColor = System.Drawing.Color.LightGray;
             this.pnlRates.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlRates.Controls.Add(this.dateTimePicker1);
-            this.pnlRates.Controls.Add(this.dtpcustbirth);
+            this.pnlRates.Controls.Add(this.dtpEndDate);
+            this.pnlRates.Controls.Add(this.dtpStartDate);
             this.pnlRates.Controls.Add(this.lblMaturityDate);
             this.pnlRates.Controls.Add(this.lblStartDate);
             this.pnlRates.Controls.Add(this.txtFinalAmount);
@@ -471,29 +489,29 @@
             this.pnlRates.Size = new System.Drawing.Size(1131, 299);
             this.pnlRates.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dtpEndDate
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(178, 245);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(147, 29);
-            this.dateTimePicker1.TabIndex = 41;
-            this.dateTimePicker1.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
+            this.dtpEndDate.Enabled = false;
+            this.dtpEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEndDate.Location = new System.Drawing.Point(178, 245);
+            this.dtpEndDate.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(147, 29);
+            this.dtpEndDate.TabIndex = 41;
+            this.dtpEndDate.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
             // 
-            // dtpcustbirth
+            // dtpStartDate
             // 
-            this.dtpcustbirth.Enabled = false;
-            this.dtpcustbirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpcustbirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpcustbirth.Location = new System.Drawing.Point(178, 201);
-            this.dtpcustbirth.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
-            this.dtpcustbirth.Name = "dtpcustbirth";
-            this.dtpcustbirth.Size = new System.Drawing.Size(147, 29);
-            this.dtpcustbirth.TabIndex = 40;
-            this.dtpcustbirth.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
+            this.dtpStartDate.Enabled = false;
+            this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStartDate.Location = new System.Drawing.Point(178, 201);
+            this.dtpStartDate.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(147, 29);
+            this.dtpStartDate.TabIndex = 40;
+            this.dtpStartDate.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
             // 
             // lblMaturityDate
             // 
@@ -546,6 +564,7 @@
             this.txtTotalInterest.ReadOnly = true;
             this.txtTotalInterest.Size = new System.Drawing.Size(147, 29);
             this.txtTotalInterest.TabIndex = 2;
+            this.txtTotalInterest.TextChanged += new System.EventHandler(this.txtTotalInterest_TextChanged);
             // 
             // lblTotalInterest
             // 
@@ -638,18 +657,6 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = false;
             // 
-            // btnLoad
-            // 
-            this.btnLoad.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoad.Location = new System.Drawing.Point(347, 22);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(130, 27);
-            this.btnLoad.TabIndex = 48;
-            this.btnLoad.Text = "Load";
-            this.btnLoad.UseVisualStyleBackColor = false;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
             // frmCreate_FD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -718,8 +725,8 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label lblcertid;
         private System.Windows.Forms.TextBox txtCertID;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dtpcustbirth;
+        private System.Windows.Forms.DateTimePicker dtpEndDate;
+        private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.Button btnLoad;
     }
 }

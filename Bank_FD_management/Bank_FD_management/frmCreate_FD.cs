@@ -118,17 +118,24 @@ namespace Bank_FD_management
         {
             foreach (Control c in pnlDetails.Controls)
             {
-                if (c is TextBox || c is ComboBox)
+                if (c is TextBox)
                 {
-                    c.Text = "";
+                   c.Text = "";                
                 }
+
+                cmbMonths.SelectedIndex = -1;
+                cmbDays.SelectedIndex = -1;
+                cmbFDType.SelectedIndex = -1;
 
                 rdbMonthly.Checked = false;
                 rdbQuaterly.Checked = false;
                 rdbHalfYearly.Checked = false;
                 rdbOnMaturity.Checked = false;
 
+                dtpEndDate.Value = DateTime.Now;
+
                 disableediting();
+                
 
                 
             }
@@ -161,6 +168,8 @@ namespace Bank_FD_management
             ctrlOnLostFocusPnl3();
 
             setConnection();
+            dtpStartDate.MaxDate = DateTime.Now;
+            dtpStartDate.Value = DateTime.Now;              
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -183,6 +192,10 @@ namespace Bank_FD_management
         private void txtFDAmount_TextChanged(object sender, EventArgs e)
         {
             changePeriodicInterest();
+
+            ChangeTotalInterest();
+
+
         }
 
         private void frmCreate_FD_Load(object sender, EventArgs e)
@@ -193,6 +206,7 @@ namespace Bank_FD_management
         private void cmbDays_SelectedIndexChanged(object sender, EventArgs e)
         {
             //changeFDtype();
+            ChangeTotalInterest();
         }
 
         private void enableediting()
@@ -214,6 +228,15 @@ namespace Bank_FD_management
             rdbQuaterly.Enabled = false;
             rdbHalfYearly.Enabled = false;
             rdbOnMaturity.Enabled = false;
+        }
+
+        private void clrpnl2()
+        {
+            txtInterestRate.Text = "";
+            txtPeriodicInterest.Text ="";
+            txtTotalInterest.Text = "";
+            txtFinalAmount.Text = "";
+            dtpEndDate.Value = DateTime.Now;
         }
 
         //to load the name of the customer and enable editing if the id is present
@@ -270,9 +293,14 @@ namespace Bank_FD_management
                 int days = int.Parse(cmbDays.Text);
                 int months = int.Parse(cmbMonths.Text);
 
+                //calculating total days
                 DateTime startDate = DateTime.Now;
                 DateTime newDate = startDate.AddDays(days).AddMonths(months);
                 totalDays = (int)(newDate - startDate).TotalDays;
+
+                //to change the end date
+                dtpEndDate.MaxDate = DateTime.Now.AddDays(totalDays);
+                dtpEndDate.Value = DateTime.Now.AddDays(totalDays);
 
                 //totalDays = (months * 30) + days;
                 if (totalDays > 365)
@@ -299,9 +327,11 @@ namespace Bank_FD_management
                 {   //logical error = cmddays combobox dosent get clear even tho we assign null value;              
                     MessageBox.Show("Please select atleast 7 days period");
                     cmbDays.Text = "";
-                    cmbFDType.Text = "";
+                    cmbFDType.SelectedIndex = -1;
                     changeFDtype();
-                    cmbMonths.Focus();
+                    cmbDays.Focus();
+                    clrpnl2();
+                   
                 }
             }
             else
@@ -321,6 +351,8 @@ namespace Bank_FD_management
         private void cmbMonths_SelectedIndexChanged(object sender, EventArgs e)
         {
             //changeFDtype();
+            ChangeTotalInterest();
+            
         }
 
         private void cmbMonths_TextChanged(object sender, EventArgs e)
@@ -337,6 +369,7 @@ namespace Bank_FD_management
         double interest;
         private void cmbFDType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (cmbFDType.SelectedIndex == 0)
             {
                 OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", conn);
@@ -378,21 +411,21 @@ namespace Bank_FD_management
                 //getting latest amount
                 double amount = double.Parse(txtFDAmount.Text);
 
-                //updating the periodic interest
-                if(rdbMonthly.Checked)
+                //updating the periodic interest here 1,2,3=months and 12=bcoz we are calculating by months
+                if (rdbMonthly.Checked)
                 {
                     double pinterest = ((amount * 1 )/ 12 )* (interest/100);
-                    txtPeriodicInterest.Text = pinterest.ToString();
+                    txtPeriodicInterest.Text = pinterest.ToString("0.##");
                 }
                 if (rdbQuaterly.Checked)
                 {
                     double pinterest = ((amount * 3) / 12) * (interest / 100);
-                    txtPeriodicInterest.Text = pinterest.ToString();
+                    txtPeriodicInterest.Text = pinterest.ToString("0.##");
                 }
                 if (rdbHalfYearly.Checked)
                 {
                     double pinterest = ((amount * 6) / 12) * (interest / 100);
-                    txtPeriodicInterest.Text = pinterest.ToString();
+                    txtPeriodicInterest.Text = pinterest.ToString("0.##");
                 }
                 if (rdbOnMaturity.Checked)
                 {
@@ -412,7 +445,49 @@ namespace Bank_FD_management
             }
         }
 
+        private void ChangeTotalInterest()
+        {
+            //getting latest amount
+            if (!string.IsNullOrEmpty(cmbMonths.Text)&&!string.IsNullOrEmpty(cmbDays.Text)&&!string.IsNullOrEmpty(txtFDAmount.Text)&&!string.IsNullOrEmpty(txtInterestRate.Text))
+            {
+                double amount = double.Parse(txtFDAmount.Text);
+                txtTotalInterest.Text = ((amount * totalDays / 365 * interest) / 100).ToString("0.##");
+            }
+            
+        }
 
 
+        private void rdbMonthly_CheckedChanged(object sender, EventArgs e)
+        {
+            changePeriodicInterest();
+        }
+
+        private void rdbQuaterly_CheckedChanged(object sender, EventArgs e)
+        {
+            changePeriodicInterest();
+        }
+
+        private void rdbHalfYearly_CheckedChanged(object sender, EventArgs e)
+        {
+            changePeriodicInterest();
+        }
+
+        private void rdbOnMaturity_CheckedChanged(object sender, EventArgs e)
+        {
+            changePeriodicInterest();
+        }
+
+        private void txtInterestRate_TextChanged(object sender, EventArgs e)
+        {
+            changePeriodicInterest();
+        }
+
+        private void txtTotalInterest_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtTotalInterest.Text)&&!string.IsNullOrEmpty(txtFDAmount.Text))
+            {
+                txtFinalAmount.Text = (Convert.ToDouble(txtFDAmount.Text)+Convert.ToDouble(txtTotalInterest.Text)).ToString("0.##");
+            }
+        }
     }
 }

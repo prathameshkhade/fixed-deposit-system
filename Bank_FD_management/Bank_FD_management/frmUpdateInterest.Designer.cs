@@ -93,7 +93,7 @@
             "31 to 90 days",
             "91 to 180 days",
             "181 to 365 days",
-            "more than 365"});
+            "more than 365 days"});
             this.cmbfdtype.Location = new System.Drawing.Point(297, 50);
             this.cmbfdtype.Name = "cmbfdtype";
             this.cmbfdtype.Size = new System.Drawing.Size(203, 32);
