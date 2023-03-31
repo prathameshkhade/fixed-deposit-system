@@ -132,11 +132,11 @@ namespace Bank_FD_management
                 rdbHalfYearly.Checked = false;
                 rdbOnMaturity.Checked = false;
 
+                dtpEndDate.MaxDate = DateTime.Now;  //this line bcz the below code breaks when we try to clear form when the end date is still not set
                 dtpEndDate.Value = DateTime.Now;
 
                 disableediting();
-                
-
+                txtID.Focus();
                 
             }
             foreach (Control c in pnlRates.Controls)
@@ -180,10 +180,34 @@ namespace Bank_FD_management
                 {
                     setConnection();
 
-                    OleDbCommand cmd = new OleDbCommand("insert into FD_Master c_id , c_name , cert_dt , cert_id , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value + "#,#" + dtpEndDate.Value + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ")", conn);
+                    //to read the interest period from radiobuttons
+                    string selectedperiod = "";
+                    foreach (Control c in grprdb.Controls)
+                    {
+                        if (c is RadioButton && ((RadioButton)c).Checked)
+                        {
+                            selectedperiod = ((RadioButton)c).Text;
+                        }
+                    }
+
+                    OleDbCommand cmd = new OleDbCommand("insert into FD_Master (c_id , c_name , cert_dt , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days , period_intr ) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value + "#,#" + dtpEndDate.Value + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ",'" + selectedperiod + "')", conn);
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Inserted successfully");
+
+
+                    //to select the latest maximum value of FD_ID & cert_id and load it to their respective textboxes;
+                    OleDbCommand cmd1 = new OleDbCommand("SELECT MAX(fd_id) AS max_fd_id, MAX(cert_id) AS max_cert_id FROM fd_master", conn);
+                    OleDbDataReader dr = cmd1.ExecuteReader();
+                    if (dr.HasRows && dr.Read())
+                    {
+                        txtFDID.Text = dr["max_fd_id"].ToString();
+                        txtCertID.Text = dr["max_cert_id"].ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("cant find maximum fd_id || cert_id");
+                    }
                 }
                 else
                 {

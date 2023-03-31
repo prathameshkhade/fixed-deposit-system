@@ -72,10 +72,13 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.grprdb = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pnlTitle.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             this.pnlRates.SuspendLayout();
             this.pnlButtons.SuspendLayout();
+            this.grprdb.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTitle
@@ -142,21 +145,17 @@
             this.pnlDetails.AutoSize = true;
             this.pnlDetails.BackColor = System.Drawing.Color.LightGray;
             this.pnlDetails.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlDetails.Controls.Add(this.grprdb);
             this.pnlDetails.Controls.Add(this.btnLoad);
             this.pnlDetails.Controls.Add(this.lblcertid);
             this.pnlDetails.Controls.Add(this.txtCertID);
             this.pnlDetails.Controls.Add(this.lblFDID);
             this.pnlDetails.Controls.Add(this.txtFDID);
-            this.pnlDetails.Controls.Add(this.rdbOnMaturity);
             this.pnlDetails.Controls.Add(this.txtFDAmount);
-            this.pnlDetails.Controls.Add(this.rdbHalfYearly);
             this.pnlDetails.Controls.Add(this.lblFDAmout);
             this.pnlDetails.Controls.Add(this.cmbFDType);
-            this.pnlDetails.Controls.Add(this.rdbQuaterly);
             this.pnlDetails.Controls.Add(this.lblFDType);
-            this.pnlDetails.Controls.Add(this.rdbMonthly);
             this.pnlDetails.Controls.Add(this.txtID);
-            this.pnlDetails.Controls.Add(this.lblInterest);
             this.pnlDetails.Controls.Add(this.cmbDays);
             this.pnlDetails.Controls.Add(this.lblID);
             this.pnlDetails.Controls.Add(this.lblInterestInterval);
@@ -229,7 +228,7 @@
             this.rdbOnMaturity.AutoSize = true;
             this.rdbOnMaturity.Enabled = false;
             this.rdbOnMaturity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbOnMaturity.Location = new System.Drawing.Point(475, 266);
+            this.rdbOnMaturity.Location = new System.Drawing.Point(473, 16);
             this.rdbOnMaturity.Name = "rdbOnMaturity";
             this.rdbOnMaturity.Size = new System.Drawing.Size(245, 28);
             this.rdbOnMaturity.TabIndex = 10;
@@ -254,7 +253,7 @@
             this.rdbHalfYearly.AutoSize = true;
             this.rdbHalfYearly.Enabled = false;
             this.rdbHalfYearly.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbHalfYearly.Location = new System.Drawing.Point(347, 266);
+            this.rdbHalfYearly.Location = new System.Drawing.Point(345, 16);
             this.rdbHalfYearly.Name = "rdbHalfYearly";
             this.rdbHalfYearly.Size = new System.Drawing.Size(114, 28);
             this.rdbHalfYearly.TabIndex = 9;
@@ -296,7 +295,7 @@
             this.rdbQuaterly.AutoSize = true;
             this.rdbQuaterly.Enabled = false;
             this.rdbQuaterly.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbQuaterly.Location = new System.Drawing.Point(231, 266);
+            this.rdbQuaterly.Location = new System.Drawing.Point(229, 16);
             this.rdbQuaterly.Name = "rdbQuaterly";
             this.rdbQuaterly.Size = new System.Drawing.Size(104, 28);
             this.rdbQuaterly.TabIndex = 8;
@@ -320,7 +319,7 @@
             this.rdbMonthly.AutoSize = true;
             this.rdbMonthly.Enabled = false;
             this.rdbMonthly.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMonthly.Location = new System.Drawing.Point(122, 266);
+            this.rdbMonthly.Location = new System.Drawing.Point(120, 16);
             this.rdbMonthly.Name = "rdbMonthly";
             this.rdbMonthly.Size = new System.Drawing.Size(94, 28);
             this.rdbMonthly.TabIndex = 7;
@@ -334,7 +333,7 @@
             this.lblInterest.AutoSize = true;
             this.lblInterest.CausesValidation = false;
             this.lblInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInterest.Location = new System.Drawing.Point(36, 268);
+            this.lblInterest.Location = new System.Drawing.Point(34, 18);
             this.lblInterest.Name = "lblInterest";
             this.lblInterest.Size = new System.Drawing.Size(80, 24);
             this.lblInterest.TabIndex = 24;
@@ -657,6 +656,19 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = false;
             // 
+            // grprdb
+            // 
+            this.grprdb.Controls.Add(this.rdbOnMaturity);
+            this.grprdb.Controls.Add(this.lblInterest);
+            this.grprdb.Controls.Add(this.rdbMonthly);
+            this.grprdb.Controls.Add(this.rdbQuaterly);
+            this.grprdb.Controls.Add(this.rdbHalfYearly);
+            this.grprdb.Location = new System.Drawing.Point(27, 257);
+            this.grprdb.Name = "grprdb";
+            this.grprdb.Size = new System.Drawing.Size(771, 53);
+            this.grprdb.TabIndex = 48;
+            this.grprdb.TabStop = false;
+            // 
             // frmCreate_FD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -677,6 +689,8 @@
             this.pnlRates.ResumeLayout(false);
             this.pnlRates.PerformLayout();
             this.pnlButtons.ResumeLayout(false);
+            this.grprdb.ResumeLayout(false);
+            this.grprdb.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -728,5 +742,7 @@
         private System.Windows.Forms.DateTimePicker dtpEndDate;
         private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.GroupBox grprdb;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
