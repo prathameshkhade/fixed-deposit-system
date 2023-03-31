@@ -208,6 +208,12 @@ namespace Bank_FD_management
                     {
                         MessageBox.Show("cant find maximum fd_id || cert_id");
                     }
+
+                    disableediting();
+                    btnCreate.Enabled = false;
+                    btnCancel.Enabled = false;
+                    txtID.Enabled = false;
+                    btnLoad.Enabled = false;
                 }
                 else
                 {
@@ -367,8 +373,7 @@ namespace Bank_FD_management
                     cmbFDType.SelectedIndex = -1;
                     changeFDtype();
                     cmbDays.Focus();
-                    clrpnl2();
-                   
+                    clrpnl2();                 
                 }
             }
             else
