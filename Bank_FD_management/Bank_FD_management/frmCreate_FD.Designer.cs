@@ -35,20 +35,21 @@
             this.lblID = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.pnlDetails = new System.Windows.Forms.Panel();
+            this.grprdb = new System.Windows.Forms.GroupBox();
+            this.rdbOnMaturity = new System.Windows.Forms.RadioButton();
+            this.lblInterest = new System.Windows.Forms.Label();
+            this.rdbMonthly = new System.Windows.Forms.RadioButton();
+            this.rdbQuaterly = new System.Windows.Forms.RadioButton();
+            this.rdbHalfYearly = new System.Windows.Forms.RadioButton();
             this.btnLoad = new System.Windows.Forms.Button();
             this.lblcertid = new System.Windows.Forms.Label();
             this.txtCertID = new System.Windows.Forms.TextBox();
             this.lblFDID = new System.Windows.Forms.Label();
             this.txtFDID = new System.Windows.Forms.TextBox();
-            this.rdbOnMaturity = new System.Windows.Forms.RadioButton();
             this.txtFDAmount = new System.Windows.Forms.TextBox();
-            this.rdbHalfYearly = new System.Windows.Forms.RadioButton();
             this.lblFDAmout = new System.Windows.Forms.Label();
             this.cmbFDType = new System.Windows.Forms.ComboBox();
-            this.rdbQuaterly = new System.Windows.Forms.RadioButton();
             this.lblFDType = new System.Windows.Forms.Label();
-            this.rdbMonthly = new System.Windows.Forms.RadioButton();
-            this.lblInterest = new System.Windows.Forms.Label();
             this.cmbDays = new System.Windows.Forms.ComboBox();
             this.lblInterestInterval = new System.Windows.Forms.Label();
             this.lblMonths = new System.Windows.Forms.Label();
@@ -72,13 +73,12 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.grprdb = new System.Windows.Forms.GroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pnlTitle.SuspendLayout();
             this.pnlDetails.SuspendLayout();
+            this.grprdb.SuspendLayout();
             this.pnlRates.SuspendLayout();
             this.pnlButtons.SuspendLayout();
-            this.grprdb.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTitle
@@ -169,6 +169,86 @@
             this.pnlDetails.Size = new System.Drawing.Size(1131, 322);
             this.pnlDetails.TabIndex = 0;
             // 
+            // grprdb
+            // 
+            this.grprdb.Controls.Add(this.rdbOnMaturity);
+            this.grprdb.Controls.Add(this.lblInterest);
+            this.grprdb.Controls.Add(this.rdbMonthly);
+            this.grprdb.Controls.Add(this.rdbQuaterly);
+            this.grprdb.Controls.Add(this.rdbHalfYearly);
+            this.grprdb.Location = new System.Drawing.Point(53, 257);
+            this.grprdb.Name = "grprdb";
+            this.grprdb.Size = new System.Drawing.Size(745, 53);
+            this.grprdb.TabIndex = 48;
+            this.grprdb.TabStop = false;
+            // 
+            // rdbOnMaturity
+            // 
+            this.rdbOnMaturity.AutoSize = true;
+            this.rdbOnMaturity.Enabled = false;
+            this.rdbOnMaturity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbOnMaturity.Location = new System.Drawing.Point(473, 16);
+            this.rdbOnMaturity.Name = "rdbOnMaturity";
+            this.rdbOnMaturity.Size = new System.Drawing.Size(245, 28);
+            this.rdbOnMaturity.TabIndex = 10;
+            this.rdbOnMaturity.TabStop = true;
+            this.rdbOnMaturity.Text = "Interest payout on maturity";
+            this.rdbOnMaturity.UseVisualStyleBackColor = true;
+            this.rdbOnMaturity.CheckedChanged += new System.EventHandler(this.rdbOnMaturity_CheckedChanged);
+            // 
+            // lblInterest
+            // 
+            this.lblInterest.AutoSize = true;
+            this.lblInterest.CausesValidation = false;
+            this.lblInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInterest.Location = new System.Drawing.Point(34, 18);
+            this.lblInterest.Name = "lblInterest";
+            this.lblInterest.Size = new System.Drawing.Size(80, 24);
+            this.lblInterest.TabIndex = 24;
+            this.lblInterest.Text = "interest :";
+            // 
+            // rdbMonthly
+            // 
+            this.rdbMonthly.AutoSize = true;
+            this.rdbMonthly.Enabled = false;
+            this.rdbMonthly.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbMonthly.Location = new System.Drawing.Point(120, 16);
+            this.rdbMonthly.Name = "rdbMonthly";
+            this.rdbMonthly.Size = new System.Drawing.Size(94, 28);
+            this.rdbMonthly.TabIndex = 7;
+            this.rdbMonthly.TabStop = true;
+            this.rdbMonthly.Text = "Monthly";
+            this.rdbMonthly.UseVisualStyleBackColor = true;
+            this.rdbMonthly.CheckedChanged += new System.EventHandler(this.rdbMonthly_CheckedChanged);
+            // 
+            // rdbQuaterly
+            // 
+            this.rdbQuaterly.AutoSize = true;
+            this.rdbQuaterly.Enabled = false;
+            this.rdbQuaterly.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbQuaterly.Location = new System.Drawing.Point(229, 16);
+            this.rdbQuaterly.Name = "rdbQuaterly";
+            this.rdbQuaterly.Size = new System.Drawing.Size(104, 28);
+            this.rdbQuaterly.TabIndex = 8;
+            this.rdbQuaterly.TabStop = true;
+            this.rdbQuaterly.Text = "Quarterly";
+            this.rdbQuaterly.UseVisualStyleBackColor = true;
+            this.rdbQuaterly.CheckedChanged += new System.EventHandler(this.rdbQuaterly_CheckedChanged);
+            // 
+            // rdbHalfYearly
+            // 
+            this.rdbHalfYearly.AutoSize = true;
+            this.rdbHalfYearly.Enabled = false;
+            this.rdbHalfYearly.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbHalfYearly.Location = new System.Drawing.Point(345, 16);
+            this.rdbHalfYearly.Name = "rdbHalfYearly";
+            this.rdbHalfYearly.Size = new System.Drawing.Size(114, 28);
+            this.rdbHalfYearly.TabIndex = 9;
+            this.rdbHalfYearly.TabStop = true;
+            this.rdbHalfYearly.Text = "Half yearly";
+            this.rdbHalfYearly.UseVisualStyleBackColor = true;
+            this.rdbHalfYearly.CheckedChanged += new System.EventHandler(this.rdbHalfYearly_CheckedChanged);
+            // 
             // btnLoad
             // 
             this.btnLoad.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -223,20 +303,6 @@
             this.txtFDID.Size = new System.Drawing.Size(198, 29);
             this.txtFDID.TabIndex = 5;
             // 
-            // rdbOnMaturity
-            // 
-            this.rdbOnMaturity.AutoSize = true;
-            this.rdbOnMaturity.Enabled = false;
-            this.rdbOnMaturity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbOnMaturity.Location = new System.Drawing.Point(473, 16);
-            this.rdbOnMaturity.Name = "rdbOnMaturity";
-            this.rdbOnMaturity.Size = new System.Drawing.Size(245, 28);
-            this.rdbOnMaturity.TabIndex = 10;
-            this.rdbOnMaturity.TabStop = true;
-            this.rdbOnMaturity.Text = "Interest payout on maturity";
-            this.rdbOnMaturity.UseVisualStyleBackColor = true;
-            this.rdbOnMaturity.CheckedChanged += new System.EventHandler(this.rdbOnMaturity_CheckedChanged);
-            // 
             // txtFDAmount
             // 
             this.txtFDAmount.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -247,20 +313,6 @@
             this.txtFDAmount.Size = new System.Drawing.Size(203, 29);
             this.txtFDAmount.TabIndex = 5;
             this.txtFDAmount.TextChanged += new System.EventHandler(this.txtFDAmount_TextChanged);
-            // 
-            // rdbHalfYearly
-            // 
-            this.rdbHalfYearly.AutoSize = true;
-            this.rdbHalfYearly.Enabled = false;
-            this.rdbHalfYearly.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbHalfYearly.Location = new System.Drawing.Point(345, 16);
-            this.rdbHalfYearly.Name = "rdbHalfYearly";
-            this.rdbHalfYearly.Size = new System.Drawing.Size(114, 28);
-            this.rdbHalfYearly.TabIndex = 9;
-            this.rdbHalfYearly.TabStop = true;
-            this.rdbHalfYearly.Text = "Half yearly";
-            this.rdbHalfYearly.UseVisualStyleBackColor = true;
-            this.rdbHalfYearly.CheckedChanged += new System.EventHandler(this.rdbHalfYearly_CheckedChanged);
             // 
             // lblFDAmout
             // 
@@ -290,20 +342,6 @@
             this.cmbFDType.TabIndex = 6;
             this.cmbFDType.SelectedIndexChanged += new System.EventHandler(this.cmbFDType_SelectedIndexChanged);
             // 
-            // rdbQuaterly
-            // 
-            this.rdbQuaterly.AutoSize = true;
-            this.rdbQuaterly.Enabled = false;
-            this.rdbQuaterly.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbQuaterly.Location = new System.Drawing.Point(229, 16);
-            this.rdbQuaterly.Name = "rdbQuaterly";
-            this.rdbQuaterly.Size = new System.Drawing.Size(104, 28);
-            this.rdbQuaterly.TabIndex = 8;
-            this.rdbQuaterly.TabStop = true;
-            this.rdbQuaterly.Text = "Quarterly";
-            this.rdbQuaterly.UseVisualStyleBackColor = true;
-            this.rdbQuaterly.CheckedChanged += new System.EventHandler(this.rdbQuaterly_CheckedChanged);
-            // 
             // lblFDType
             // 
             this.lblFDType.AutoSize = true;
@@ -313,31 +351,6 @@
             this.lblFDType.Size = new System.Drawing.Size(93, 24);
             this.lblFDType.TabIndex = 14;
             this.lblFDType.Text = "FD Type :";
-            // 
-            // rdbMonthly
-            // 
-            this.rdbMonthly.AutoSize = true;
-            this.rdbMonthly.Enabled = false;
-            this.rdbMonthly.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMonthly.Location = new System.Drawing.Point(120, 16);
-            this.rdbMonthly.Name = "rdbMonthly";
-            this.rdbMonthly.Size = new System.Drawing.Size(94, 28);
-            this.rdbMonthly.TabIndex = 7;
-            this.rdbMonthly.TabStop = true;
-            this.rdbMonthly.Text = "Monthly";
-            this.rdbMonthly.UseVisualStyleBackColor = true;
-            this.rdbMonthly.CheckedChanged += new System.EventHandler(this.rdbMonthly_CheckedChanged);
-            // 
-            // lblInterest
-            // 
-            this.lblInterest.AutoSize = true;
-            this.lblInterest.CausesValidation = false;
-            this.lblInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInterest.Location = new System.Drawing.Point(34, 18);
-            this.lblInterest.Name = "lblInterest";
-            this.lblInterest.Size = new System.Drawing.Size(80, 24);
-            this.lblInterest.TabIndex = 24;
-            this.lblInterest.Text = "interest :";
             // 
             // cmbDays
             // 
@@ -656,19 +669,6 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = false;
             // 
-            // grprdb
-            // 
-            this.grprdb.Controls.Add(this.rdbOnMaturity);
-            this.grprdb.Controls.Add(this.lblInterest);
-            this.grprdb.Controls.Add(this.rdbMonthly);
-            this.grprdb.Controls.Add(this.rdbQuaterly);
-            this.grprdb.Controls.Add(this.rdbHalfYearly);
-            this.grprdb.Location = new System.Drawing.Point(27, 257);
-            this.grprdb.Name = "grprdb";
-            this.grprdb.Size = new System.Drawing.Size(771, 53);
-            this.grprdb.TabIndex = 48;
-            this.grprdb.TabStop = false;
-            // 
             // frmCreate_FD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -686,11 +686,11 @@
             this.pnlTitle.PerformLayout();
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
+            this.grprdb.ResumeLayout(false);
+            this.grprdb.PerformLayout();
             this.pnlRates.ResumeLayout(false);
             this.pnlRates.PerformLayout();
             this.pnlButtons.ResumeLayout(false);
-            this.grprdb.ResumeLayout(false);
-            this.grprdb.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

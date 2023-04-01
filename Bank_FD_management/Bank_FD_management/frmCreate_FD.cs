@@ -190,19 +190,39 @@ namespace Bank_FD_management
                         }
                     }
 
-                    OleDbCommand cmd = new OleDbCommand("insert into FD_Master (c_id , c_name , cert_dt , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days , period_intr ) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value + "#,#" + dtpEndDate.Value + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ",'" + selectedperiod + "')", conn);
-                    cmd.ExecuteNonQuery();
+
+                    OleDbCommand cmd1 = new OleDbCommand("SELECT TOP 1 cert_id FROM fd_master ORDER BY cert_id DESC", conn);
+                    OleDbDataReader dr = cmd1.ExecuteReader();
+                    int ce_id=0;
+                    if (dr.HasRows && dr.Read())
+                    {
+                        ce_id = int.Parse(dr["cert_id"].ToString());
+                    }
+                    if (ce_id == 0)
+                    {
+                        ce_id = 700000;
+                    }
+                    else
+                    {
+                        ce_id = ce_id + 1;
+                    }
+                    dr.Close();
+
+
+                    //to save the data inside the database
+                    OleDbCommand cmd2 = new OleDbCommand("insert into FD_Master (c_id , c_name , cert_dt , cert_id , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days , period_intr ) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value + "#,"+ce_id+",#" + dtpEndDate.Value + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ",'" + selectedperiod + "')", conn);
+                    cmd2.ExecuteNonQuery();
 
                     MessageBox.Show("Inserted successfully");
 
 
                     //to select the latest maximum value of FD_ID & cert_id and load it to their respective textboxes;
-                    OleDbCommand cmd1 = new OleDbCommand("SELECT MAX(fd_id) AS max_fd_id, MAX(cert_id) AS max_cert_id FROM fd_master", conn);
-                    OleDbDataReader dr = cmd1.ExecuteReader();
-                    if (dr.HasRows && dr.Read())
+                    OleDbCommand cmd3 = new OleDbCommand("SELECT MAX(fd_id) AS max_fd_id, MAX(cert_id) AS max_cert_id FROM fd_master", conn);
+                    OleDbDataReader dr1 = cmd3.ExecuteReader();
+                    if (dr1.HasRows && dr1.Read())
                     {
-                        txtFDID.Text = dr["max_fd_id"].ToString();
-                        txtCertID.Text = dr["max_cert_id"].ToString();
+                        txtFDID.Text = dr1["max_fd_id"].ToString();
+                        txtCertID.Text = dr1["max_cert_id"].ToString();
                     }
                     else
                     {
@@ -457,17 +477,17 @@ namespace Bank_FD_management
                 if (rdbMonthly.Checked)
                 {
                     double pinterest = ((amount * 1 )/ 12 )* (interest/100);
-                    txtPeriodicInterest.Text = pinterest.ToString("0.##");
+                    txtPeriodicInterest.Text = pinterest.ToString("0");
                 }
                 if (rdbQuaterly.Checked)
                 {
                     double pinterest = ((amount * 3) / 12) * (interest / 100);
-                    txtPeriodicInterest.Text = pinterest.ToString("0.##");
+                    txtPeriodicInterest.Text = pinterest.ToString("0");
                 }
                 if (rdbHalfYearly.Checked)
                 {
                     double pinterest = ((amount * 6) / 12) * (interest / 100);
-                    txtPeriodicInterest.Text = pinterest.ToString("0.##");
+                    txtPeriodicInterest.Text = pinterest.ToString("0");
                 }
                 if (rdbOnMaturity.Checked)
                 {
@@ -493,7 +513,7 @@ namespace Bank_FD_management
             if (!string.IsNullOrEmpty(cmbMonths.Text)&&!string.IsNullOrEmpty(cmbDays.Text)&&!string.IsNullOrEmpty(txtFDAmount.Text)&&!string.IsNullOrEmpty(txtInterestRate.Text))
             {
                 double amount = double.Parse(txtFDAmount.Text);
-                txtTotalInterest.Text = ((amount * totalDays / 365 * interest) / 100).ToString("0.##");
+                txtTotalInterest.Text = ((amount * totalDays / 365 * interest) / 100).ToString("0");
             }
             
         }
@@ -528,7 +548,7 @@ namespace Bank_FD_management
         {
             if (!string.IsNullOrEmpty(txtTotalInterest.Text)&&!string.IsNullOrEmpty(txtFDAmount.Text))
             {
-                txtFinalAmount.Text = (Convert.ToDouble(txtFDAmount.Text)+Convert.ToDouble(txtTotalInterest.Text)).ToString("0.##");
+                txtFinalAmount.Text = (Convert.ToDouble(txtFDAmount.Text)+Convert.ToDouble(txtTotalInterest.Text)).ToString("0");
             }
         }
     }
