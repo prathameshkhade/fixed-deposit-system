@@ -38,7 +38,7 @@ namespace Bank_FD_management
 
         private void ctrlOnFocuspnl2()
         {
-            foreach (Control i in pnlDetails.Controls)
+            foreach (Control i in pnlBreak.Controls)
             {
                 if (i is TextBox || i is ComboBox || i is DateTimePicker)
                 {
@@ -64,7 +64,7 @@ namespace Bank_FD_management
 
         private void ctrlOnLostFocuspnl2()
         {
-            foreach (Control i in pnlDetails.Controls)
+            foreach (Control i in pnlBreak.Controls)
             {
                 if (i is TextBox || i is ComboBox || i is DateTimePicker)
                 {
@@ -86,7 +86,7 @@ namespace Bank_FD_management
         {
             txtCertID.Text = "";
 
-            foreach (Control c in pnlDetails.Controls)
+            foreach (Control c in pnlBreak.Controls)
             {
                 if (c is TextBox)
                 {
@@ -114,5 +114,24 @@ namespace Bank_FD_management
             ctrlOnLostFocuspnl3();
         }
 
+        private void frmbreakFD_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDFStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPeriod_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpStartDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
