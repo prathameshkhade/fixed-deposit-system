@@ -213,6 +213,8 @@ namespace Bank_FD_management
                     OleDbCommand cmd2 = new OleDbCommand("insert into FD_Master (c_id , c_name , cert_dt , cert_id , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days , period_intr ) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,"+ce_id+",#" + dtpEndDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ",'" + selectedperiod + "')", conn);
                     cmd2.ExecuteNonQuery();
 
+
+
                     MessageBox.Show("Inserted successfully");
 
 
@@ -228,6 +230,11 @@ namespace Bank_FD_management
                     {
                         MessageBox.Show("cant find maximum fd_id || cert_id");
                     }
+
+
+                    //to save the data inside the transection table
+                    OleDbCommand cmd4 = new OleDbCommand("insert into FD_transection (fd_id, cert_id, c_name, start_dt, mature_dt, period, fd_amount, final_amount, intr_rate, total_intr, total_days) values(" + txtFDID.Text + ",'" + txtCertID.Text + "','"+txtName.Text+"',#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,#" + dtpEndDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,'" + cmbFDType.Text + "'," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtInterestRate.Text + "," + txtTotalInterest.Text + ",'" + totalDays + "')", conn);
+                    cmd4.ExecuteNonQuery();              
 
                     disableediting();
                     btnCreate.Enabled = false;

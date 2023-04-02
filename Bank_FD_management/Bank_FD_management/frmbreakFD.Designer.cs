@@ -67,7 +67,7 @@
             this.lblStartDate = new System.Windows.Forms.Label();
             this.txtFinalAmount = new System.Windows.Forms.TextBox();
             this.lblInterestRate = new System.Windows.Forms.Label();
-            this.txtnterestRate = new System.Windows.Forms.TextBox();
+            this.txtinterestRate = new System.Windows.Forms.TextBox();
             this.txtpayable_intr = new System.Windows.Forms.TextBox();
             this.lblPayableInterest = new System.Windows.Forms.Label();
             this.txtPaid_intr = new System.Windows.Forms.TextBox();
@@ -322,6 +322,7 @@
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(1102, 94);
             this.pnlButtons.TabIndex = 2;
+            this.pnlButtons.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlButtons_Paint);
             // 
             // btnExit
             // 
@@ -375,7 +376,7 @@
             this.pnlMid1.Controls.Add(this.lblStartDate);
             this.pnlMid1.Controls.Add(this.txtFinalAmount);
             this.pnlMid1.Controls.Add(this.lblInterestRate);
-            this.pnlMid1.Controls.Add(this.txtnterestRate);
+            this.pnlMid1.Controls.Add(this.txtinterestRate);
             this.pnlMid1.Location = new System.Drawing.Point(13, 204);
             this.pnlMid1.Name = "pnlMid1";
             this.pnlMid1.Size = new System.Drawing.Size(1101, 169);
@@ -511,14 +512,14 @@
             this.lblInterestRate.TabIndex = 74;
             this.lblInterestRate.Text = "Interest rate :";
             // 
-            // txtnterestRate
+            // txtinterestRate
             // 
-            this.txtnterestRate.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtnterestRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnterestRate.Location = new System.Drawing.Point(173, 135);
-            this.txtnterestRate.Name = "txtnterestRate";
-            this.txtnterestRate.Size = new System.Drawing.Size(177, 29);
-            this.txtnterestRate.TabIndex = 66;
+            this.txtinterestRate.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtinterestRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtinterestRate.Location = new System.Drawing.Point(173, 135);
+            this.txtinterestRate.Name = "txtinterestRate";
+            this.txtinterestRate.Size = new System.Drawing.Size(177, 29);
+            this.txtinterestRate.TabIndex = 66;
             // 
             // txtpayable_intr
             // 
@@ -659,7 +660,7 @@
         private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.TextBox txtFinalAmount;
         private System.Windows.Forms.Label lblInterestRate;
-        private System.Windows.Forms.TextBox txtnterestRate;
+        private System.Windows.Forms.TextBox txtinterestRate;
         private System.Windows.Forms.TextBox txtpayable_intr;
         private System.Windows.Forms.Label lblPayableInterest;
         private System.Windows.Forms.TextBox txtPaid_intr;

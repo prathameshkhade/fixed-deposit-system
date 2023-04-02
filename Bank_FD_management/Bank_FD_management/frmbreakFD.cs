@@ -204,18 +204,19 @@ namespace Bank_FD_management
 
         private void btnFetchDetails_Click(object sender, EventArgs e)
         {
-            try
+           try
             {
                 if (!string.IsNullOrEmpty(txtCertID.Text))
                 {
                     setConnection();
                     OleDbCommand cmd = new OleDbCommand("select * from FD_master where cert_id = " + txtCertID.Text, conn);
-
                     OleDbDataReader dr = cmd.ExecuteReader();
+                    OleDbCommand cmd1 = new OleDbCommand("select * from FD_transection where cert_id = " + txtCertID.Text, conn);
+                    OleDbDataReader dr1 = cmd1.ExecuteReader();
 
-                    if (dr.HasRows)
+                    if (dr.HasRows && dr1.HasRows)
                     {
-                        while (dr.Read())
+                        while (dr.Read() && dr1.Read())
                         {
                             txtName.Text = dr["C_name"].ToString();
                             txtFD_ID.Text = dr["FD_ID"].ToString();
@@ -230,14 +231,42 @@ namespace Bank_FD_management
                             dtpMatureDate.MaxDate = dt;
                             dtpMatureDate.Value = dt;
 
-                            txtPeriod.Text = dr["FD_type"].ToString();
-
+                            txtPeriod.Text = dr["FD_type"].ToString();                     
                             txtelapsed_days.Text = (DateTime.Now.Subtract(dtpStartDate.Value).TotalDays).ToString("0");
-
+                            txtinterestRate.Text = dr["intr_rate"].ToString();
                             txtTotalInterest.Text = dr["Total_intr"].ToString();
-                            
+
+                            txtPaid_intr.Text = dr1["paid_intr"].ToString();
+
+                            if(txtPeriod.Text == "Monthly" && dtpStartDate.Value < dtpMatureDate.Value)
+                            {
+                                DateTime d = DateTime.Parse(dtpStartDate.Value.AddMonths(1).ToString("yyyy-MM-dd"));
+                                int totalDays = int.Parse(dr["total_days"].ToString());
+                                int periodicInterest = int.Parse(dr["period_intr"].ToString());
+                                DateTime currDay = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd"));
+                                DateTime matureDate = DateTime.Parse(dtpMatureDate.Value.ToString("yyyy-MM-dd"));
+
+
+                                //chatgpt
+                                TimeSpan duration = TimeSpan.FromDays(totalDays); // convert to TimeSpan
+
+                                int months = (int)(duration.Days / 30.44); // calculate number of months
+                                int remainingDays = duration.Days % 30; // calculate remaining days
+
+
+                                if (currDay < d)
+                                {
+                                    txtpayable_intr.Text = "0";
+                                    break;
+                                }
+                                if(currDay >= matureDate)
+                                {
+                                    
+                                }
+                            }
                         }
                     }
+
                     else
                     {
                         MessageBox.Show("No data found for id " + txtCertID.Text);
@@ -255,8 +284,13 @@ namespace Bank_FD_management
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+              MessageBox.Show(ex.Message);
             }
+        }
+
+        private void pnlButtons_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }
