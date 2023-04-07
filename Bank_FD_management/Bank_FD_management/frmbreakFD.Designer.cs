@@ -54,6 +54,8 @@
             this.btnBreak = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlMid1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtplastpaid = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.txtelapsed_days = new System.Windows.Forms.TextBox();
             this.txtFDAmount = new System.Windows.Forms.TextBox();
@@ -121,6 +123,7 @@
             // txtpen_intr
             // 
             this.txtpen_intr.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtpen_intr.Enabled = false;
             this.txtpen_intr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpen_intr.Location = new System.Drawing.Point(222, 65);
             this.txtpen_intr.Name = "txtpen_intr";
@@ -140,6 +143,7 @@
             // txtWith_amt
             // 
             this.txtWith_amt.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtWith_amt.Enabled = false;
             this.txtWith_amt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWith_amt.Location = new System.Drawing.Point(222, 113);
             this.txtWith_amt.Name = "txtWith_amt";
@@ -181,6 +185,7 @@
             // txtFDStatus
             // 
             this.txtFDStatus.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtFDStatus.Enabled = false;
             this.txtFDStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFDStatus.Location = new System.Drawing.Point(909, 62);
             this.txtFDStatus.Name = "txtFDStatus";
@@ -200,6 +205,7 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtName.Enabled = false;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(172, 62);
             this.txtName.Name = "txtName";
@@ -284,6 +290,7 @@
             // txtFD_ID
             // 
             this.txtFD_ID.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtFD_ID.Enabled = false;
             this.txtFD_ID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFD_ID.Location = new System.Drawing.Point(909, 16);
             this.txtFD_ID.Name = "txtFD_ID";
@@ -346,6 +353,7 @@
             this.btnBreak.TabIndex = 0;
             this.btnBreak.Text = "Break";
             this.btnBreak.UseVisualStyleBackColor = false;
+            this.btnBreak.Click += new System.EventHandler(this.btnBreak_Click);
             // 
             // btnCancel
             // 
@@ -363,6 +371,8 @@
             // 
             this.pnlMid1.BackColor = System.Drawing.Color.LightGray;
             this.pnlMid1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlMid1.Controls.Add(this.label2);
+            this.pnlMid1.Controls.Add(this.dtplastpaid);
             this.pnlMid1.Controls.Add(this.label1);
             this.pnlMid1.Controls.Add(this.txtelapsed_days);
             this.pnlMid1.Controls.Add(this.txtFDAmount);
@@ -382,6 +392,28 @@
             this.pnlMid1.Size = new System.Drawing.Size(1101, 169);
             this.pnlMid1.TabIndex = 35;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(380, 127);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(135, 24);
+            this.label2.TabIndex = 81;
+            this.label2.Text = "Last paid date :";
+            // 
+            // dtplastpaid
+            // 
+            this.dtplastpaid.Enabled = false;
+            this.dtplastpaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtplastpaid.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtplastpaid.Location = new System.Drawing.Point(522, 124);
+            this.dtplastpaid.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
+            this.dtplastpaid.Name = "dtplastpaid";
+            this.dtplastpaid.Size = new System.Drawing.Size(180, 29);
+            this.dtplastpaid.TabIndex = 82;
+            this.dtplastpaid.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -395,6 +427,7 @@
             // txtelapsed_days
             // 
             this.txtelapsed_days.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtelapsed_days.Enabled = false;
             this.txtelapsed_days.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtelapsed_days.Location = new System.Drawing.Point(865, 88);
             this.txtelapsed_days.Name = "txtelapsed_days";
@@ -404,6 +437,7 @@
             // txtFDAmount
             // 
             this.txtFDAmount.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtFDAmount.Enabled = false;
             this.txtFDAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFDAmount.Location = new System.Drawing.Point(172, 33);
             this.txtFDAmount.Name = "txtFDAmount";
@@ -424,7 +458,7 @@
             // 
             this.lblMaturityDate.AutoSize = true;
             this.lblMaturityDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaturityDate.Location = new System.Drawing.Point(390, 88);
+            this.lblMaturityDate.Location = new System.Drawing.Point(390, 81);
             this.lblMaturityDate.Name = "lblMaturityDate";
             this.lblMaturityDate.Size = new System.Drawing.Size(125, 24);
             this.lblMaturityDate.TabIndex = 71;
@@ -433,6 +467,7 @@
             // txtPeriod
             // 
             this.txtPeriod.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPeriod.Enabled = false;
             this.txtPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPeriod.Location = new System.Drawing.Point(864, 36);
             this.txtPeriod.Name = "txtPeriod";
@@ -476,7 +511,7 @@
             this.dtpMatureDate.Enabled = false;
             this.dtpMatureDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpMatureDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpMatureDate.Location = new System.Drawing.Point(522, 87);
+            this.dtpMatureDate.Location = new System.Drawing.Point(522, 80);
             this.dtpMatureDate.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
             this.dtpMatureDate.Name = "dtpMatureDate";
             this.dtpMatureDate.Size = new System.Drawing.Size(180, 29);
@@ -496,6 +531,7 @@
             // txtFinalAmount
             // 
             this.txtFinalAmount.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtFinalAmount.Enabled = false;
             this.txtFinalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFinalAmount.Location = new System.Drawing.Point(173, 85);
             this.txtFinalAmount.Name = "txtFinalAmount";
@@ -515,6 +551,7 @@
             // txtinterestRate
             // 
             this.txtinterestRate.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtinterestRate.Enabled = false;
             this.txtinterestRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtinterestRate.Location = new System.Drawing.Point(173, 135);
             this.txtinterestRate.Name = "txtinterestRate";
@@ -524,6 +561,7 @@
             // txtpayable_intr
             // 
             this.txtpayable_intr.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtpayable_intr.Enabled = false;
             this.txtpayable_intr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpayable_intr.Location = new System.Drawing.Point(174, 118);
             this.txtpayable_intr.Name = "txtpayable_intr";
@@ -543,6 +581,7 @@
             // txtPaid_intr
             // 
             this.txtPaid_intr.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPaid_intr.Enabled = false;
             this.txtPaid_intr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPaid_intr.Location = new System.Drawing.Point(175, 68);
             this.txtPaid_intr.Name = "txtPaid_intr";
@@ -562,6 +601,7 @@
             // txtTotalInterest
             // 
             this.txtTotalInterest.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtTotalInterest.Enabled = false;
             this.txtTotalInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalInterest.Location = new System.Drawing.Point(175, 20);
             this.txtTotalInterest.Name = "txtTotalInterest";
@@ -670,5 +710,7 @@
         private System.Windows.Forms.Panel pnlMid2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtelapsed_days;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtplastpaid;
     }
 }

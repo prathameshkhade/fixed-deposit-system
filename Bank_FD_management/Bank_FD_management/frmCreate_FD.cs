@@ -210,12 +210,8 @@ namespace Bank_FD_management
 
 
                     //to save the data inside the database
-                    OleDbCommand cmd2 = new OleDbCommand("insert into FD_Master (c_id , c_name , cert_dt , cert_id , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days , period_intr ) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,"+ce_id+",#" + dtpEndDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ",'" + selectedperiod + "')", conn);
+                    OleDbCommand cmd2 = new OleDbCommand("insert into FD_Master (c_id , c_name , cert_dt , cert_id , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days , period_intr ,periodic_intr) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,"+ce_id+",#" + dtpEndDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ",'" + selectedperiod + "',"+txtPeriodicInterest.Text+")", conn);
                     cmd2.ExecuteNonQuery();
-
-
-
-                    MessageBox.Show("Inserted successfully");
 
 
                     //to select the latest maximum value of FD_ID & cert_id and load it to their respective textboxes;
@@ -233,7 +229,7 @@ namespace Bank_FD_management
 
 
                     //to save the data inside the transection table
-                    OleDbCommand cmd4 = new OleDbCommand("insert into FD_transection (fd_id, cert_id, c_name, start_dt, mature_dt, period, fd_amount, final_amount, intr_rate, total_intr, total_days) values(" + txtFDID.Text + ",'" + txtCertID.Text + "','"+txtName.Text+"',#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,#" + dtpEndDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,'" + cmbFDType.Text + "'," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtInterestRate.Text + "," + txtTotalInterest.Text + ",'" + totalDays + "')", conn);
+                    OleDbCommand cmd4 = new OleDbCommand("insert into FD_transection (fd_id, cert_id, c_name, start_dt, mature_dt, period, fd_amount, final_amount, intr_rate, total_intr, total_days,periodic_intr,last_pay_date) values(" + txtFDID.Text + ",'" + txtCertID.Text + "','"+txtName.Text+"',#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,#" + dtpEndDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,'" + cmbFDType.Text + "'," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtInterestRate.Text + "," + txtTotalInterest.Text + ",'" + totalDays + "'," + txtPeriodicInterest.Text + ",#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#)", conn);
                     cmd4.ExecuteNonQuery();              
 
                     disableediting();
@@ -241,6 +237,8 @@ namespace Bank_FD_management
                     btnCancel.Enabled = false;
                     txtID.Enabled = false;
                     btnLoad.Enabled = false;
+
+                    MessageBox.Show("Inserted successfully");
                 }
                 else
                 {

@@ -250,9 +250,9 @@
             this.cmbcity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbcity.FormattingEnabled = true;
             this.cmbcity.Items.AddRange(new object[] {
-            "Maharashtra",
-            "Gujrat",
-            "karnataka"});
+            "Kolhapur",
+            "nashik",
+            "mumbai"});
             this.cmbcity.Location = new System.Drawing.Point(743, 86);
             this.cmbcity.Name = "cmbcity";
             this.cmbcity.Size = new System.Drawing.Size(203, 32);
@@ -274,9 +274,10 @@
             this.cmbdistrict.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbdistrict.FormattingEnabled = true;
             this.cmbdistrict.Items.AddRange(new object[] {
-            "Maharashtra",
-            "Gujrat",
-            "karnataka"});
+            "Kolhapur",
+            "Pune",
+            "Satara",
+            "Mumbai"});
             this.cmbdistrict.Location = new System.Drawing.Point(441, 86);
             this.cmbdistrict.Name = "cmbdistrict";
             this.cmbdistrict.Size = new System.Drawing.Size(203, 32);
