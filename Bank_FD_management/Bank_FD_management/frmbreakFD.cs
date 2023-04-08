@@ -155,7 +155,13 @@ namespace Bank_FD_management
         // for removing all the text from cancel button
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtCertID.Text = "";
+            foreach(Control c in pnlFetch.Controls)
+            {
+                if(c is TextBox)
+                {
+                    c.Text = "";
+                }
+            }
 
             foreach (Control c in pnlBreak.Controls)
             {
@@ -164,6 +170,24 @@ namespace Bank_FD_management
                     c.Text = "";
                 }
             }
+
+            foreach (Control c in pnlMid1.Controls)
+            {
+                if(c is TextBox)
+                {
+                    c.Text = "";
+                }
+            }
+
+            foreach(Control c in pnlMid2.Controls)
+            {
+                if (c is TextBox)
+                {
+                    c.Text = ""; 
+                }
+            }
+
+            txtCertID.Focus();
         }
 
 
@@ -176,6 +200,8 @@ namespace Bank_FD_management
         public frmbreakFD()
         {
             InitializeComponent();
+
+            setConnection();
 
             ctrlOnFocuspnl1();
             ctrlOnFocuspnl2();
@@ -258,7 +284,7 @@ namespace Bank_FD_management
 
         private void rbdPayInterest_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbdPayInterest.Checked)
+            if (rbdPayInterest.Checked && !string.IsNullOrEmpty(txtCertID.Text))
             {
                 OleDbCommand cmd1 = new OleDbCommand("select Period_intr from FD_master where cert_id = " + txtCertID.Text, conn);
                 string period = (string)cmd1.ExecuteScalar();
@@ -354,9 +380,21 @@ namespace Bank_FD_management
         {
            try
             {
+                // To disable radio button if curr date > mature date
+                OleDbCommand cmdMatureDate = new OleDbCommand("select mature_dt from fd_master where cert_id = " + txtCertID.Text, conn);
+                var mDate = DateTime.Parse(cmdMatureDate.ExecuteScalar().ToString());
+
+                if(DateTime.Now.Date > mDate)
+                {
+                    rbdPayInterest.Enabled = false;
+                }
+                else
+                {
+                    rbdPayInterest.Enabled = true;
+                }
+
                 if (!string.IsNullOrEmpty(txtCertID.Text))
                 {
-                    setConnection();
                     OleDbCommand cmd = new OleDbCommand("select * from FD_master where cert_id = " + txtCertID.Text, conn);
                     OleDbDataReader dr = cmd.ExecuteReader();
                     OleDbCommand cmd1 = new OleDbCommand("select * from FD_transection where cert_id = " + txtCertID.Text, conn);
@@ -375,7 +413,7 @@ namespace Bank_FD_management
                                 txtFDAmount.Text = dr["FD_amount"].ToString();
                                 txtFinalAmount.Text = dr["Mature_amount"].ToString();
 
-                                dtpStartDate.MaxDate = DateTime.Now;
+                                dtpStartDate.MaxDate = DateTime.Now.AddDays(1);
                                 dtpStartDate.Text = dr["Cert_dt"].ToString();
 
                                 DateTime dt = DateTime.Parse(dr["Mature_dt"].ToString());
@@ -401,6 +439,7 @@ namespace Bank_FD_management
                             }
                             else
                             {
+                                // exception la taklay. else kadhych ka?
                                 MessageBox.Show("Cant load data : FD is already broke");
                             }
                         }
@@ -421,6 +460,14 @@ namespace Bank_FD_management
                 }
 
             }
+
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("No data found for the Certificate ID: " + txtCertID.Text);
+                txtCertID.Clear();
+                txtCertID.Focus();
+            }
+
             catch (Exception ex)
             {
               MessageBox.Show(ex.Message);
@@ -480,15 +527,52 @@ namespace Bank_FD_management
                     if (res == DialogResult.Yes)
                     {
                         // update status in tables fd_transection and insert data into break_fd table
-                        OleDbCommand cmdUpdateStatus = new OleDbCommand("update fd_transection set fd_status = 'Break',withdraw_dt=#"+dtpWith_date.Value.ToString("yyyy-MM-dd HH:mm:ss")+ "# , penallty_intr="+txtpen_intr.Text+ ",with_amt="+txtWith_amt.Text+ " where cert_id = " + txtCertID.Text + " ", conn);
+                        OleDbCommand cmdUpdateStatus = new OleDbCommand("update fd_master set status = 'Break' where cert_id = " + txtCertID.Text, conn);
                         cmdUpdateStatus.ExecuteNonQuery();
-                        OleDbCommand cmdUpdateStatus1 = new OleDbCommand("update fd_master set status = 'Break' where cert_id = " + txtCertID.Text, conn);
+
+                        OleDbCommand cmdUpdateStatus1 = new OleDbCommand("update fd_transection set fd_status = 'Break' where cert_id = " + txtCertID.Text, conn);
                         cmdUpdateStatus1.ExecuteNonQuery();
+                            
+                        // record is deleted automatically after updating status in transection table
+                        OleDbCommand cmdGetInfo = new OleDbCommand("select * from fd_master where cert_id = " + txtCertID.Text, conn);
+                        OleDbDataReader dr = cmdGetInfo.ExecuteReader();
+
+                        OleDbCommand cmdGetPenIntr = new OleDbCommand("select * from Interest_master where duration = '" + txtPeriod.Text + "'", conn);
+                        OleDbDataReader dr1 = cmdGetPenIntr.ExecuteReader();
+                        int penIntr = 0;
+
+                        if(dr1.HasRows)
+                        {
+                            while(dr1.Read())
+                            {
+                                penIntr = Convert.ToInt32(dr1["p_intererst"].ToString());
+                            }
+                        }
+
+                        int cid = 0, mon = 0, day = 0, totalDays = 0;
+                        DateTime certDate = DateTime.Today;
+                        string fdType = "", matAmt = "";
+
+                        if(dr.HasRows)
+                        {
+                            while(dr.Read())
+                            {
+                                cid = Convert.ToInt32(dr["c_id"].ToString());
+                                certDate = DateTime.Parse(dr["cert_dt"].ToString());
+                                mon = Convert.ToInt32(dr["period_mon"].ToString());
+                                day = Convert.ToInt32(dr["period_day"].ToString());
+                                fdType = dr["fd_type"].ToString();
+                                matAmt = dr["mature_amount"].ToString();
+                                totalDays = Convert.ToInt32(dr["total_days"].ToString());
+                            }
+                        }
+                        dr.Close();
+
+                        OleDbCommand cmdInsert = new OleDbCommand("insert into break_fd values (" + txtFD_ID.Text + ", '" + cid + "', '" + txtName.Text + "', #" + certDate + "#, " + txtCertID.Text + ", #" + dtpMatureDate.Value + "#, " + mon + ", " + day + ", '" + txtFDStatus.Text + "', '" + fdType + "', " + txtinterestRate.Text + ", " + txtFDAmount.Text + ", " + matAmt + ", " + txtTotalInterest.Text + ", " + totalDays + ", " + periodic_intr + ", " + txtWith_amt.Text + ", #" + dtpWith_date.Value + "#, " + txtPaid_intr.Text + ", " + penIntr + ")", conn);
+                        cmdInsert.ExecuteNonQuery();
+
                         MessageBox.Show("Your fd is breaked");
-                        // data insertion is remaining
-
                         btnBreak.Enabled = false;
-
                     }
                     else if (res == DialogResult.No)
                     {
@@ -499,6 +583,30 @@ namespace Bank_FD_management
                 else
                 {
                     btnBreak.Enabled = false;
+                }
+            }
+        }
+
+        private void txtCertID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCertID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrEmpty(txtCertID.Text))
+                {
+                    btnFetchDetails.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter Customer ID");
+                    txtCertID.Focus();
                 }
             }
         }
