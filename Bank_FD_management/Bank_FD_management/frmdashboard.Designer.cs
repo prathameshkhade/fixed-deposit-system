@@ -39,6 +39,7 @@
             this.utilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forgetCustomerIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateInterestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fDMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,14 +71,14 @@
             // customerToolStripMenuItem
             // 
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(180, 34);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(175, 34);
             this.customerToolStripMenuItem.Text = "Customer";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
             // fDToolStripMenuItem
             // 
             this.fDToolStripMenuItem.Name = "fDToolStripMenuItem";
-            this.fDToolStripMenuItem.Size = new System.Drawing.Size(180, 34);
+            this.fDToolStripMenuItem.Size = new System.Drawing.Size(175, 34);
             this.fDToolStripMenuItem.Text = "FD";
             this.fDToolStripMenuItem.Click += new System.EventHandler(this.fDToolStripMenuItem_Click);
             // 
@@ -100,7 +101,8 @@
             // mastersToolStripMenuItem
             // 
             this.mastersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.employeeMastersToolStripMenuItem});
+            this.employeeMastersToolStripMenuItem,
+            this.fDMasterToolStripMenuItem});
             this.mastersToolStripMenuItem.Name = "mastersToolStripMenuItem";
             this.mastersToolStripMenuItem.Size = new System.Drawing.Size(98, 34);
             this.mastersToolStripMenuItem.Text = "Masters";
@@ -135,6 +137,13 @@
             this.updateInterestToolStripMenuItem.Text = "Update Interest";
             this.updateInterestToolStripMenuItem.Click += new System.EventHandler(this.updateInterestToolStripMenuItem_Click);
             // 
+            // fDMasterToolStripMenuItem
+            // 
+            this.fDMasterToolStripMenuItem.Name = "fDMasterToolStripMenuItem";
+            this.fDMasterToolStripMenuItem.Size = new System.Drawing.Size(255, 34);
+            this.fDMasterToolStripMenuItem.Text = "FD_Master";
+            this.fDMasterToolStripMenuItem.Click += new System.EventHandler(this.fDMasterToolStripMenuItem_Click);
+            // 
             // frmdashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,5 +175,6 @@
         private System.Windows.Forms.ToolStripMenuItem breakFDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem breakFDToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem updateInterestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fDMasterToolStripMenuItem;
     }
 }

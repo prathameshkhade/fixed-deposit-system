@@ -69,5 +69,11 @@ namespace Bank_FD_management
             frmUpdateInterest updtIntr = new frmUpdateInterest();
             updtIntr.Show();
         }
+
+        private void fDMasterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFD_master fd_master = new frmFD_master();
+            fd_master.Show();
+        }
     }
 }
