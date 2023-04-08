@@ -673,7 +673,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 860);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1156, 749);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.pnlRates);
             this.Controls.Add(this.pnlDetails);

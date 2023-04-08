@@ -177,6 +177,8 @@ namespace Bank_FD_management
         {
             InitializeComponent();
 
+            setConnection();
+
             ctrlOnFocuspnl1();
             ctrlOnFocuspnl2();
             ctrlOnFocuspnl3();
@@ -354,9 +356,21 @@ namespace Bank_FD_management
         {
            try
             {
+                // To disable radio button if curr date > mature date
+                OleDbCommand cmdMatureDate = new OleDbCommand("select mature_dt from fd_master where cert_id = " + txtCertID.Text, conn);
+                var mDate = DateTime.Parse(cmdMatureDate.ExecuteScalar().ToString());
+
+                if(DateTime.Now.Date > mDate)
+                {
+                    rbdPayInterest.Enabled = false;
+                }
+                else
+                {
+                    rbdPayInterest.Enabled = true;
+                }
+
                 if (!string.IsNullOrEmpty(txtCertID.Text))
                 {
-                    setConnection();
                     OleDbCommand cmd = new OleDbCommand("select * from FD_master where cert_id = " + txtCertID.Text, conn);
                     OleDbDataReader dr = cmd.ExecuteReader();
                     OleDbCommand cmd1 = new OleDbCommand("select * from FD_transection where cert_id = " + txtCertID.Text, conn);
@@ -375,7 +389,7 @@ namespace Bank_FD_management
                                 txtFDAmount.Text = dr["FD_amount"].ToString();
                                 txtFinalAmount.Text = dr["Mature_amount"].ToString();
 
-                                dtpStartDate.MaxDate = DateTime.Now;
+                                dtpStartDate.MaxDate = DateTime.Now.AddDays(1);
                                 dtpStartDate.Text = dr["Cert_dt"].ToString();
 
                                 DateTime dt = DateTime.Parse(dr["Mature_dt"].ToString());
