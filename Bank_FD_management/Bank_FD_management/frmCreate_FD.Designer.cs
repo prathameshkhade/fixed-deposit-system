@@ -139,6 +139,8 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(198, 29);
             this.txtID.TabIndex = 0;
+            this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // pnlDetails
             // 

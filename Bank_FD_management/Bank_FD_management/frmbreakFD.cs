@@ -155,7 +155,13 @@ namespace Bank_FD_management
         // for removing all the text from cancel button
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtCertID.Text = "";
+            foreach(Control c in pnlFetch.Controls)
+            {
+                if(c is TextBox)
+                {
+                    c.Text = "";
+                }
+            }
 
             foreach (Control c in pnlBreak.Controls)
             {
@@ -164,6 +170,24 @@ namespace Bank_FD_management
                     c.Text = "";
                 }
             }
+
+            foreach (Control c in pnlMid1.Controls)
+            {
+                if(c is TextBox)
+                {
+                    c.Text = "";
+                }
+            }
+
+            foreach(Control c in pnlMid2.Controls)
+            {
+                if (c is TextBox)
+                {
+                    c.Text = ""; 
+                }
+            }
+
+            txtCertID.Focus();
         }
 
 
@@ -260,7 +284,7 @@ namespace Bank_FD_management
 
         private void rbdPayInterest_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbdPayInterest.Checked)
+            if (rbdPayInterest.Checked && !string.IsNullOrEmpty(txtCertID.Text))
             {
                 OleDbCommand cmd1 = new OleDbCommand("select Period_intr from FD_master where cert_id = " + txtCertID.Text, conn);
                 string period = (string)cmd1.ExecuteScalar();
@@ -415,6 +439,7 @@ namespace Bank_FD_management
                             }
                             else
                             {
+                                // exception la taklay. else kadhych ka?
                                 MessageBox.Show("Cant load data : FD is already broke");
                             }
                         }
@@ -435,6 +460,14 @@ namespace Bank_FD_management
                 }
 
             }
+
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("No data found for the Certificate ID: " + txtCertID.Text);
+                txtCertID.Clear();
+                txtCertID.Focus();
+            }
+
             catch (Exception ex)
             {
               MessageBox.Show(ex.Message);
@@ -494,10 +527,29 @@ namespace Bank_FD_management
                     if (res == DialogResult.Yes)
                     {
                         // update status in tables fd_transection and insert data into break_fd table
-                        OleDbCommand cmdUpdateStatus = new OleDbCommand("update fd_transection set fd_status = 'Break',withdraw_dt=#"+dtpWith_date.Value.ToString("yyyy-MM-dd HH:mm:ss")+ "# , penallty_intr="+txtpen_intr.Text+ ",with_amt="+txtWith_amt.Text+ " where cert_id = " + txtCertID.Text + " ", conn);
+                        OleDbCommand cmdUpdateStatus = new OleDbCommand("update fd_master set status = 'Break' where cert_id = " + txtCertID.Text, conn);
                         cmdUpdateStatus.ExecuteNonQuery();
-                        OleDbCommand cmdUpdateStatus1 = new OleDbCommand("update fd_master set status = 'Break' where cert_id = " + txtCertID.Text, conn);
+
+                        OleDbCommand cmdUpdateStatus1 = new OleDbCommand("update fd_transection set fd_status = 'Break' where cert_id = " + txtCertID.Text, conn);
                         cmdUpdateStatus1.ExecuteNonQuery();
+
+                        //OleDbCommand cmdRead = new OleDbCommand("select * from fd_transection where cert_id = " + txtCertID.Text, conn);
+                        //OleDbDataReader dr = cmdRead.ExecuteReader();
+
+                        //if(dr.HasRows)
+                        //{
+                        //    OleDbCommand cmdInsert;
+                        //    while (dr.Read())
+                        //    {
+                        //        cmdInsert = new OleDbCommand("insert into break_fd values (" + dr["fd_id"].ToString() + ", " + dr["cert_id"].ToString() + ", '" + dr["c_name"].ToString() + "', #" + DateTime.Now + "#,  );
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("Record not found error!\nRecord not found in transection table");
+                        //}
+
+
                         MessageBox.Show("Your fd is breaked");
                         // data insertion is remaining
 
@@ -513,6 +565,30 @@ namespace Bank_FD_management
                 else
                 {
                     btnBreak.Enabled = false;
+                }
+            }
+        }
+
+        private void txtCertID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCertID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrEmpty(txtCertID.Text))
+                {
+                    btnFetchDetails.PerformClick();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter Customer ID");
+                    txtCertID.Focus();
                 }
             }
         }

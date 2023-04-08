@@ -118,22 +118,22 @@ namespace Bank_FD_management
         {
             foreach (Control c in pnlDetails.Controls)
             {
-                if (c is TextBox)
+                if (c is TextBox txt)
                 {
-                   c.Text = "";                
+                   txt.Clear();                
                 }
 
-                cmbMonths.SelectedIndex = -1;
-                cmbDays.SelectedIndex = -1;
-                cmbFDType.SelectedIndex = -1;
+                if(c is ComboBox cmb)
+                {
+                    cmb.SelectedIndex = -1;
+                }
 
-                rdbMonthly.Checked = false;
-                rdbQuaterly.Checked = false;
-                rdbHalfYearly.Checked = false;
-                rdbOnMaturity.Checked = false;
+                if(c is RadioButton r)
+                {
+                    r.Checked = false;
+                }
 
-                dtpEndDate.MaxDate = DateTime.Now;  //this line bcz the below code breaks when we try to clear form when the end date is still not set
-                dtpEndDate.Value = DateTime.Now;
+                dtpEndDate.ResetText();
 
                 disableediting();
                 txtID.Focus();
@@ -554,6 +554,31 @@ namespace Bank_FD_management
             if (!string.IsNullOrEmpty(txtTotalInterest.Text)&&!string.IsNullOrEmpty(txtFDAmount.Text))
             {
                 txtFinalAmount.Text = (Convert.ToDouble(txtFDAmount.Text)+Convert.ToDouble(txtTotalInterest.Text)).ToString("0");
+            }
+        }
+
+        private void txtID_KeyDown(object sender, KeyEventArgs e)
+        {
+           if(e.KeyCode == Keys.Enter)
+           {
+                if(!string.IsNullOrEmpty(txtID.Text))
+                {
+                    btnLoad.PerformClick();
+                    cmbMonths.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter Customer ID");
+                    txtID.Focus();
+                }
+           }
+        }
+
+        private void txtID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }
