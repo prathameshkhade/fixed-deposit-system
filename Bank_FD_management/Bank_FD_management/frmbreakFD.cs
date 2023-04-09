@@ -532,29 +532,47 @@ namespace Bank_FD_management
 
                         OleDbCommand cmdUpdateStatus1 = new OleDbCommand("update fd_transection set fd_status = 'Break' where cert_id = " + txtCertID.Text, conn);
                         cmdUpdateStatus1.ExecuteNonQuery();
+                            
+                        // record is deleted automatically after updating status in transection table
+                        OleDbCommand cmdGetInfo = new OleDbCommand("select * from fd_master where cert_id = " + txtCertID.Text, conn);
+                        OleDbDataReader dr = cmdGetInfo.ExecuteReader();
 
-                        //OleDbCommand cmdRead = new OleDbCommand("select * from fd_transection where cert_id = " + txtCertID.Text, conn);
-                        //OleDbDataReader dr = cmdRead.ExecuteReader();
+                        OleDbCommand cmdGetPenIntr = new OleDbCommand("select * from Interest_master where duration = '" + txtPeriod.Text + "'", conn);
+                        OleDbDataReader dr1 = cmdGetPenIntr.ExecuteReader();
+                        int penIntr = 0;
 
-                        //if(dr.HasRows)
-                        //{
-                        //    OleDbCommand cmdInsert;
-                        //    while (dr.Read())
-                        //    {
-                        //        cmdInsert = new OleDbCommand("insert into break_fd values (" + dr["fd_id"].ToString() + ", " + dr["cert_id"].ToString() + ", '" + dr["c_name"].ToString() + "', #" + DateTime.Now + "#,  );
-                        //    }
-                        //}
-                        //else
-                        //{
-                        //    MessageBox.Show("Record not found error!\nRecord not found in transection table");
-                        //}
+                        if(dr1.HasRows)
+                        {
+                            while(dr1.Read())
+                            {
+                                penIntr = Convert.ToInt32(dr1["p_intererst"].ToString());
+                            }
+                        }
 
+                        int cid = 0, mon = 0, day = 0, totalDays = 0;
+                        DateTime certDate = DateTime.Today;
+                        string fdType = "", matAmt = "";
+
+                        if(dr.HasRows)
+                        {
+                            while(dr.Read())
+                            {
+                                cid = Convert.ToInt32(dr["c_id"].ToString());
+                                certDate = DateTime.Parse(dr["cert_dt"].ToString());
+                                mon = Convert.ToInt32(dr["period_mon"].ToString());
+                                day = Convert.ToInt32(dr["period_day"].ToString());
+                                fdType = dr["fd_type"].ToString();
+                                matAmt = dr["mature_amount"].ToString();
+                                totalDays = Convert.ToInt32(dr["total_days"].ToString());
+                            }
+                        }
+                        dr.Close();
+
+                        OleDbCommand cmdInsert = new OleDbCommand("insert into break_fd values (" + txtFD_ID.Text + ", '" + cid + "', '" + txtName.Text + "', #" + certDate + "#, " + txtCertID.Text + ", #" + dtpMatureDate.Value + "#, " + mon + ", " + day + ", '" + txtFDStatus.Text + "', '" + fdType + "', " + txtinterestRate.Text + ", " + txtFDAmount.Text + ", " + matAmt + ", " + txtTotalInterest.Text + ", " + totalDays + ", " + periodic_intr + ", " + txtWith_amt.Text + ", #" + dtpWith_date.Value + "#, " + txtPaid_intr.Text + ", " + penIntr + ")", conn);
+                        cmdInsert.ExecuteNonQuery();
 
                         MessageBox.Show("Your fd is breaked");
-                        // data insertion is remaining
-
                         btnBreak.Enabled = false;
-
                     }
                     else if (res == DialogResult.No)
                     {
