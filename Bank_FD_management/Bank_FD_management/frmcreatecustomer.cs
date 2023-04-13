@@ -40,6 +40,7 @@ namespace Bank_FD_management
                 chbminor.Checked = false;
                 chbnominee.Checked = false;
             }
+            txtID.Text = "";
         }
 
         // just for on focusing the seperate panel
@@ -220,6 +221,10 @@ namespace Bank_FD_management
         private void btncancel_Click(object sender, EventArgs e)
         {
             clrfrm();
+            if(!chbNewData.Checked)
+            {
+                txtID.Enabled = true;
+            }
         }
 
         // for exiting the current form 
@@ -321,6 +326,9 @@ namespace Bank_FD_management
             {
                 txtID.Enabled = true;
                 btnfetchid.Enabled = true;
+                txtpan.Enabled = false;
+                dtpcustbirth.Enabled = false;
+                txtname.Enabled = false;
             }
         }
 
@@ -360,6 +368,8 @@ namespace Bank_FD_management
                             chbisnomminor.Checked = (bool)(dr["is_minor"]);
                             chbnominee.Checked = (bool)(dr["have_nom"]);
                             dobNom.Text = dr["dob_nom"].ToString();
+
+                            txtID.Enabled = false;
                         }
                     }
                     else

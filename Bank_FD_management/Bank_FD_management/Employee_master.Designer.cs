@@ -44,9 +44,9 @@
             this.txtempname = new System.Windows.Forms.TextBox();
             this.lblname = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnsave = new System.Windows.Forms.Button();
             this.btnexit = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
+            this.btnsave = new System.Windows.Forms.Button();
             this.pnltitle.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -220,16 +220,6 @@
             this.panel3.Size = new System.Drawing.Size(776, 46);
             this.panel3.TabIndex = 44;
             // 
-            // btnsave
-            // 
-            this.btnsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsave.Location = new System.Drawing.Point(323, 7);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(127, 30);
-            this.btnsave.TabIndex = 23;
-            this.btnsave.Text = "Save";
-            this.btnsave.UseVisualStyleBackColor = true;
-            // 
             // btnexit
             // 
             this.btnexit.BackColor = System.Drawing.Color.Gainsboro;
@@ -252,6 +242,16 @@
             this.btncancel.Text = "Cancel";
             this.btncancel.UseVisualStyleBackColor = false;
             // 
+            // btnsave
+            // 
+            this.btnsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsave.Location = new System.Drawing.Point(323, 7);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(127, 30);
+            this.btnsave.TabIndex = 23;
+            this.btnsave.Text = "Save";
+            this.btnsave.UseVisualStyleBackColor = true;
+            // 
             // Employee_Master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,6 +263,7 @@
             this.Controls.Add(this.pnltitle);
             this.Name = "Employee_Master";
             this.Text = "Employee_Master";
+            this.Load += new System.EventHandler(this.Employee_Master_Load);
             this.pnltitle.ResumeLayout(false);
             this.pnltitle.PerformLayout();
             this.panel1.ResumeLayout(false);

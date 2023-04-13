@@ -16,5 +16,10 @@ namespace Bank_FD_management
         {
             InitializeComponent();
         }
+
+        private void Employee_Master_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

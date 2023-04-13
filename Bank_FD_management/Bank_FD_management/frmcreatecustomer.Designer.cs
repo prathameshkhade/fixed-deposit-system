@@ -246,7 +246,6 @@
             // cmbcity
             // 
             this.cmbcity.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cmbcity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbcity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbcity.FormattingEnabled = true;
             this.cmbcity.Items.AddRange(new object[] {
@@ -422,7 +421,7 @@
             this.txtgrelation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtgrelation.Location = new System.Drawing.Point(920, 81);
             this.txtgrelation.Name = "txtgrelation";
-            this.txtgrelation.Size = new System.Drawing.Size(201, 29);
+            this.txtgrelation.Size = new System.Drawing.Size(193, 29);
             this.txtgrelation.TabIndex = 3;
             // 
             // lblgrelation
@@ -715,7 +714,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1200, 854);
+            this.ClientSize = new System.Drawing.Size(1153, 854);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlbuttons);
             this.Controls.Add(this.pnlnominee);

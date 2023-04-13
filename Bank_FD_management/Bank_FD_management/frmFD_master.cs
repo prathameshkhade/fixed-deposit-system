@@ -41,28 +41,35 @@ namespace Bank_FD_management
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            setConnection();
-            OleDbCommand cmd = new OleDbCommand("select * from FD_master where c_id = '"+txtID.Text+"'", conn);
-            OleDbDataReader dr = cmd.ExecuteReader();
-            if (dr.HasRows)
+            if (!string.IsNullOrEmpty(txtID.Text))
             {
-                while (dr.Read())
+                setConnection();
+                OleDbCommand cmd = new OleDbCommand("select * from FD_master where c_id = " + txtID.Text + "", conn);
+                OleDbDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
                 {
-                    txtName.Text = dr["c_name"].ToString();
-                    OleDbCommand cmd1 = new OleDbCommand("SELECT cert_id, fd_amount, cert_dt FROM FD_master WHERE c_id = '" + txtID.Text + "'", conn);
-                    //var adapter = new OleDbDataAdapter(cmd1);
-                    //var dt = new System.Data.DataTable();
-                    //adapter.Fill(dt);
-                    //dgvList.DataSource = dt;
-                    DataTable dt = new DataTable();
-                    OleDbDataAdapter adr = new OleDbDataAdapter(cmd1);                    
-                    adr.Fill(dt);
-                    dgvList.DataSource = dt;
+                    while (dr.Read())
+                    {
+                        txtName.Text = dr["c_name"].ToString();
+                        OleDbCommand cmd1 = new OleDbCommand("SELECT cert_id, fd_amount, cert_dt FROM FD_master WHERE c_id = " + txtID.Text + "", conn);
+                        //var adapter = new OleDbDataAdapter(cmd1);
+                        //var dt = new System.Data.DataTable();
+                        //adapter.Fill(dt);
+                        //dgvList.DataSource = dt;
+                        DataTable dt = new DataTable();
+                        OleDbDataAdapter adr = new OleDbDataAdapter(cmd1);
+                        adr.Fill(dt);
+                        dgvList.DataSource = dt;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("the given id does not exist");
                 }
             }
             else
             {
-                MessageBox.Show("the given id does not exist");
+                MessageBox.Show("Please Enter Customer ID");
             }
         }
 
@@ -93,6 +100,7 @@ namespace Bank_FD_management
                     {
                         txtFDID.Text = dr["fd_id"].ToString();
                         txtCertID.Text = dr["cert_id"].ToString();
+                        txtStatus.Text = dr["status"].ToString();
                         cmbFDType.Text = dr["fd_type"].ToString();
                         txtInterestRate.Text = dr["intr_rate"].ToString();
                         txtFDAmount.Text = dr["fd_amount"].ToString();
@@ -131,14 +139,21 @@ namespace Bank_FD_management
             txtName.Text = "";
             txtFDID.Text = "";
             txtCertID.Text = "";
+            txtStatus.Text = "";
 
-            //dont know how to clear the datagrid view
-            //dt.Clear();
-            //dgvList.DataSource = null;
-            //dgvList.DataSource = dt;
+            foreach(DataGridView d1 in pnldatagridview.Controls)
+            {
+                d1.DataSource = null;
+                d1.Rows.Clear();
+            }
 
             txtID.Text = "";
             txtID.Focus();
+        }
+
+        private void lblcertid_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

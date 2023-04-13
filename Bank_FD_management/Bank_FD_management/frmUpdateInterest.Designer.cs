@@ -213,6 +213,7 @@
             this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.pnltitle);
             this.Name = "frmUpdateInterest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Interest";
             this.pnltitle.ResumeLayout(false);
             this.pnltitle.PerformLayout();

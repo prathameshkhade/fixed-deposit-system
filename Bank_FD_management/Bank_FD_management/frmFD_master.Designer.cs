@@ -32,51 +32,53 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlRates = new System.Windows.Forms.Panel();
+            this.txtFDAmount = new System.Windows.Forms.TextBox();
+            this.txtintr_period = new System.Windows.Forms.TextBox();
+            this.lblFDAmout = new System.Windows.Forms.Label();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.txtInterestRate = new System.Windows.Forms.TextBox();
+            this.lblInterstRate = new System.Windows.Forms.Label();
+            this.lblintr_period = new System.Windows.Forms.Label();
+            this.txtPeriodicInterest = new System.Windows.Forms.TextBox();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.lblPeriodicInterest = new System.Windows.Forms.Label();
             this.lblMaturityDate = new System.Windows.Forms.Label();
+            this.cmbFDType = new System.Windows.Forms.ComboBox();
             this.lblStartDate = new System.Windows.Forms.Label();
+            this.lblFDType = new System.Windows.Forms.Label();
             this.txtFinalAmount = new System.Windows.Forms.TextBox();
             this.lblFinalAmount = new System.Windows.Forms.Label();
             this.txtTotalInterest = new System.Windows.Forms.TextBox();
             this.lblTotalInterest = new System.Windows.Forms.Label();
-            this.txtPeriodicInterest = new System.Windows.Forms.TextBox();
-            this.lblPeriodicInterest = new System.Windows.Forms.Label();
-            this.txtInterestRate = new System.Windows.Forms.TextBox();
-            this.lblInterstRate = new System.Windows.Forms.Label();
-            this.pnlTitle = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
+            this.cmbDays = new System.Windows.Forms.ComboBox();
             this.cmbMonths = new System.Windows.Forms.ComboBox();
             this.lblDays = new System.Windows.Forms.Label();
+            this.lblInterestInterval = new System.Windows.Forms.Label();
             this.lblMonths = new System.Windows.Forms.Label();
+            this.pnlTitle = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.lblInterestInterval = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.cmbDays = new System.Windows.Forms.ComboBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.lblFDType = new System.Windows.Forms.Label();
-            this.cmbFDType = new System.Windows.Forms.ComboBox();
-            this.lblFDAmout = new System.Windows.Forms.Label();
-            this.txtFDAmount = new System.Windows.Forms.TextBox();
             this.txtFDID = new System.Windows.Forms.TextBox();
             this.lblFDID = new System.Windows.Forms.Label();
             this.txtCertID = new System.Windows.Forms.TextBox();
             this.lblcertid = new System.Windows.Forms.Label();
             this.btnLoad = new System.Windows.Forms.Button();
             this.pnlhead = new System.Windows.Forms.Panel();
-            this.txtintr_period = new System.Windows.Forms.TextBox();
-            this.lblintr_period = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlNumbers = new System.Windows.Forms.Panel();
+            this.pnldatagridview = new System.Windows.Forms.Panel();
             this.dgvList = new System.Windows.Forms.DataGridView();
+            this.pnlNumbers = new System.Windows.Forms.Panel();
+            this.lblstatus = new System.Windows.Forms.Label();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.pnlButtons.SuspendLayout();
             this.pnlRates.SuspendLayout();
             this.pnlTitle.SuspendLayout();
             this.pnlhead.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.pnlNumbers.SuspendLayout();
+            this.pnldatagridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            this.pnlNumbers.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlButtons
@@ -147,6 +149,37 @@
             this.pnlRates.TabIndex = 4;
             this.pnlRates.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlRates_Paint);
             // 
+            // txtFDAmount
+            // 
+            this.txtFDAmount.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtFDAmount.Enabled = false;
+            this.txtFDAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFDAmount.Location = new System.Drawing.Point(138, 127);
+            this.txtFDAmount.Name = "txtFDAmount";
+            this.txtFDAmount.Size = new System.Drawing.Size(147, 29);
+            this.txtFDAmount.TabIndex = 5;
+            // 
+            // txtintr_period
+            // 
+            this.txtintr_period.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtintr_period.Enabled = false;
+            this.txtintr_period.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtintr_period.Location = new System.Drawing.Point(459, 180);
+            this.txtintr_period.Name = "txtintr_period";
+            this.txtintr_period.ReadOnly = true;
+            this.txtintr_period.Size = new System.Drawing.Size(147, 29);
+            this.txtintr_period.TabIndex = 48;
+            // 
+            // lblFDAmout
+            // 
+            this.lblFDAmout.AutoSize = true;
+            this.lblFDAmout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFDAmout.Location = new System.Drawing.Point(22, 129);
+            this.lblFDAmout.Name = "lblFDAmout";
+            this.lblFDAmout.Size = new System.Drawing.Size(113, 24);
+            this.lblFDAmout.TabIndex = 16;
+            this.lblFDAmout.Text = "FD amount :";
+            // 
             // dtpEndDate
             // 
             this.dtpEndDate.Enabled = false;
@@ -158,6 +191,48 @@
             this.dtpEndDate.Size = new System.Drawing.Size(147, 29);
             this.dtpEndDate.TabIndex = 41;
             this.dtpEndDate.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
+            // 
+            // txtInterestRate
+            // 
+            this.txtInterestRate.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtInterestRate.Enabled = false;
+            this.txtInterestRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInterestRate.Location = new System.Drawing.Point(138, 78);
+            this.txtInterestRate.Name = "txtInterestRate";
+            this.txtInterestRate.ReadOnly = true;
+            this.txtInterestRate.Size = new System.Drawing.Size(147, 29);
+            this.txtInterestRate.TabIndex = 0;
+            // 
+            // lblInterstRate
+            // 
+            this.lblInterstRate.AutoSize = true;
+            this.lblInterstRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInterstRate.Location = new System.Drawing.Point(16, 78);
+            this.lblInterstRate.Name = "lblInterstRate";
+            this.lblInterstRate.Size = new System.Drawing.Size(116, 24);
+            this.lblInterstRate.TabIndex = 29;
+            this.lblInterstRate.Text = "Interest rate :";
+            // 
+            // lblintr_period
+            // 
+            this.lblintr_period.AutoSize = true;
+            this.lblintr_period.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblintr_period.Location = new System.Drawing.Point(318, 183);
+            this.lblintr_period.Name = "lblintr_period";
+            this.lblintr_period.Size = new System.Drawing.Size(139, 24);
+            this.lblintr_period.TabIndex = 49;
+            this.lblintr_period.Text = "Interest period :";
+            // 
+            // txtPeriodicInterest
+            // 
+            this.txtPeriodicInterest.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPeriodicInterest.Enabled = false;
+            this.txtPeriodicInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPeriodicInterest.Location = new System.Drawing.Point(836, 76);
+            this.txtPeriodicInterest.Name = "txtPeriodicInterest";
+            this.txtPeriodicInterest.ReadOnly = true;
+            this.txtPeriodicInterest.Size = new System.Drawing.Size(147, 29);
+            this.txtPeriodicInterest.TabIndex = 1;
             // 
             // dtpStartDate
             // 
@@ -171,6 +246,16 @@
             this.dtpStartDate.TabIndex = 40;
             this.dtpStartDate.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
             // 
+            // lblPeriodicInterest
+            // 
+            this.lblPeriodicInterest.AutoSize = true;
+            this.lblPeriodicInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeriodicInterest.Location = new System.Drawing.Point(671, 79);
+            this.lblPeriodicInterest.Name = "lblPeriodicInterest";
+            this.lblPeriodicInterest.Size = new System.Drawing.Size(159, 24);
+            this.lblPeriodicInterest.TabIndex = 31;
+            this.lblPeriodicInterest.Text = "Periodic Interest  :";
+            // 
             // lblMaturityDate
             // 
             this.lblMaturityDate.AutoSize = true;
@@ -181,6 +266,23 @@
             this.lblMaturityDate.TabIndex = 39;
             this.lblMaturityDate.Text = "End date :";
             // 
+            // cmbFDType
+            // 
+            this.cmbFDType.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbFDType.Enabled = false;
+            this.cmbFDType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFDType.FormattingEnabled = true;
+            this.cmbFDType.Items.AddRange(new object[] {
+            "7 to 30 days",
+            "31 to 90 days",
+            "91 to 180 days",
+            "181 to 365 days",
+            "more than 365 days"});
+            this.cmbFDType.Location = new System.Drawing.Point(138, 25);
+            this.cmbFDType.Name = "cmbFDType";
+            this.cmbFDType.Size = new System.Drawing.Size(147, 32);
+            this.cmbFDType.TabIndex = 6;
+            // 
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
@@ -190,6 +292,16 @@
             this.lblStartDate.Size = new System.Drawing.Size(97, 24);
             this.lblStartDate.TabIndex = 37;
             this.lblStartDate.Text = "Start date :";
+            // 
+            // lblFDType
+            // 
+            this.lblFDType.AutoSize = true;
+            this.lblFDType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFDType.Location = new System.Drawing.Point(43, 29);
+            this.lblFDType.Name = "lblFDType";
+            this.lblFDType.Size = new System.Drawing.Size(93, 24);
+            this.lblFDType.TabIndex = 14;
+            this.lblFDType.Text = "FD Type :";
             // 
             // txtFinalAmount
             // 
@@ -232,156 +344,6 @@
             this.lblTotalInterest.Size = new System.Drawing.Size(126, 24);
             this.lblTotalInterest.TabIndex = 33;
             this.lblTotalInterest.Text = "Total Interest :";
-            // 
-            // txtPeriodicInterest
-            // 
-            this.txtPeriodicInterest.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtPeriodicInterest.Enabled = false;
-            this.txtPeriodicInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPeriodicInterest.Location = new System.Drawing.Point(836, 76);
-            this.txtPeriodicInterest.Name = "txtPeriodicInterest";
-            this.txtPeriodicInterest.ReadOnly = true;
-            this.txtPeriodicInterest.Size = new System.Drawing.Size(147, 29);
-            this.txtPeriodicInterest.TabIndex = 1;
-            // 
-            // lblPeriodicInterest
-            // 
-            this.lblPeriodicInterest.AutoSize = true;
-            this.lblPeriodicInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeriodicInterest.Location = new System.Drawing.Point(671, 79);
-            this.lblPeriodicInterest.Name = "lblPeriodicInterest";
-            this.lblPeriodicInterest.Size = new System.Drawing.Size(159, 24);
-            this.lblPeriodicInterest.TabIndex = 31;
-            this.lblPeriodicInterest.Text = "Periodic Interest  :";
-            // 
-            // txtInterestRate
-            // 
-            this.txtInterestRate.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtInterestRate.Enabled = false;
-            this.txtInterestRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInterestRate.Location = new System.Drawing.Point(138, 78);
-            this.txtInterestRate.Name = "txtInterestRate";
-            this.txtInterestRate.ReadOnly = true;
-            this.txtInterestRate.Size = new System.Drawing.Size(147, 29);
-            this.txtInterestRate.TabIndex = 0;
-            // 
-            // lblInterstRate
-            // 
-            this.lblInterstRate.AutoSize = true;
-            this.lblInterstRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInterstRate.Location = new System.Drawing.Point(16, 78);
-            this.lblInterstRate.Name = "lblInterstRate";
-            this.lblInterstRate.Size = new System.Drawing.Size(116, 24);
-            this.lblInterstRate.TabIndex = 29;
-            this.lblInterstRate.Text = "Interest rate :";
-            // 
-            // pnlTitle
-            // 
-            this.pnlTitle.BackColor = System.Drawing.Color.LightGray;
-            this.pnlTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlTitle.Controls.Add(this.lblTitle);
-            this.pnlTitle.Location = new System.Drawing.Point(13, 10);
-            this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(1131, 60);
-            this.pnlTitle.TabIndex = 6;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(479, 7);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(192, 42);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "FD Master";
-            // 
-            // cmbMonths
-            // 
-            this.cmbMonths.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cmbMonths.Enabled = false;
-            this.cmbMonths.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMonths.FormattingEnabled = true;
-            this.cmbMonths.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.cmbMonths.Location = new System.Drawing.Point(836, 24);
-            this.cmbMonths.Name = "cmbMonths";
-            this.cmbMonths.Size = new System.Drawing.Size(68, 32);
-            this.cmbMonths.TabIndex = 3;
-            // 
-            // lblDays
-            // 
-            this.lblDays.AutoSize = true;
-            this.lblDays.CausesValidation = false;
-            this.lblDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDays.Location = new System.Drawing.Point(918, 27);
-            this.lblDays.Name = "lblDays";
-            this.lblDays.Size = new System.Drawing.Size(61, 24);
-            this.lblDays.TabIndex = 22;
-            this.lblDays.Text = "Days :";
-            // 
-            // lblMonths
-            // 
-            this.lblMonths.AutoSize = true;
-            this.lblMonths.CausesValidation = false;
-            this.lblMonths.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonths.Location = new System.Drawing.Point(756, 27);
-            this.lblMonths.Name = "lblMonths";
-            this.lblMonths.Size = new System.Drawing.Size(82, 24);
-            this.lblMonths.TabIndex = 20;
-            this.lblMonths.Text = "Months :";
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(59, 72);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(71, 24);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "Name :";
-            // 
-            // txtName
-            // 
-            this.txtName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtName.Enabled = false;
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(136, 72);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(373, 29);
-            this.txtName.TabIndex = 2;
-            // 
-            // lblInterestInterval
-            // 
-            this.lblInterestInterval.AutoSize = true;
-            this.lblInterestInterval.CausesValidation = false;
-            this.lblInterestInterval.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInterestInterval.Location = new System.Drawing.Point(680, 27);
-            this.lblInterestInterval.Name = "lblInterestInterval";
-            this.lblInterestInterval.Size = new System.Drawing.Size(75, 24);
-            this.lblInterestInterval.TabIndex = 19;
-            this.lblInterestInterval.Text = "Period :";
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(51, 28);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(79, 24);
-            this.lblID.TabIndex = 2;
-            this.lblID.Text = "Cust ID :";
             // 
             // cmbDays
             // 
@@ -427,6 +389,114 @@
             this.cmbDays.Size = new System.Drawing.Size(68, 32);
             this.cmbDays.TabIndex = 4;
             // 
+            // cmbMonths
+            // 
+            this.cmbMonths.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbMonths.Enabled = false;
+            this.cmbMonths.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMonths.FormattingEnabled = true;
+            this.cmbMonths.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cmbMonths.Location = new System.Drawing.Point(836, 24);
+            this.cmbMonths.Name = "cmbMonths";
+            this.cmbMonths.Size = new System.Drawing.Size(68, 32);
+            this.cmbMonths.TabIndex = 3;
+            // 
+            // lblDays
+            // 
+            this.lblDays.AutoSize = true;
+            this.lblDays.CausesValidation = false;
+            this.lblDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDays.Location = new System.Drawing.Point(918, 27);
+            this.lblDays.Name = "lblDays";
+            this.lblDays.Size = new System.Drawing.Size(61, 24);
+            this.lblDays.TabIndex = 22;
+            this.lblDays.Text = "Days :";
+            // 
+            // lblInterestInterval
+            // 
+            this.lblInterestInterval.AutoSize = true;
+            this.lblInterestInterval.CausesValidation = false;
+            this.lblInterestInterval.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInterestInterval.Location = new System.Drawing.Point(680, 27);
+            this.lblInterestInterval.Name = "lblInterestInterval";
+            this.lblInterestInterval.Size = new System.Drawing.Size(75, 24);
+            this.lblInterestInterval.TabIndex = 19;
+            this.lblInterestInterval.Text = "Period :";
+            // 
+            // lblMonths
+            // 
+            this.lblMonths.AutoSize = true;
+            this.lblMonths.CausesValidation = false;
+            this.lblMonths.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonths.Location = new System.Drawing.Point(756, 27);
+            this.lblMonths.Name = "lblMonths";
+            this.lblMonths.Size = new System.Drawing.Size(82, 24);
+            this.lblMonths.TabIndex = 20;
+            this.lblMonths.Text = "Months :";
+            // 
+            // pnlTitle
+            // 
+            this.pnlTitle.BackColor = System.Drawing.Color.LightGray;
+            this.pnlTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlTitle.Controls.Add(this.lblTitle);
+            this.pnlTitle.Location = new System.Drawing.Point(13, 10);
+            this.pnlTitle.Name = "pnlTitle";
+            this.pnlTitle.Size = new System.Drawing.Size(1131, 60);
+            this.pnlTitle.TabIndex = 6;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(479, 7);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(192, 42);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "FD Master";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(59, 72);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(71, 24);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Name :";
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtName.Enabled = false;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(136, 72);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(373, 29);
+            this.txtName.TabIndex = 2;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(51, 28);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(79, 24);
+            this.lblID.TabIndex = 2;
+            this.lblID.Text = "Cust ID :";
+            // 
             // txtID
             // 
             this.txtID.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -436,69 +506,22 @@
             this.txtID.Size = new System.Drawing.Size(163, 29);
             this.txtID.TabIndex = 0;
             // 
-            // lblFDType
-            // 
-            this.lblFDType.AutoSize = true;
-            this.lblFDType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFDType.Location = new System.Drawing.Point(43, 29);
-            this.lblFDType.Name = "lblFDType";
-            this.lblFDType.Size = new System.Drawing.Size(93, 24);
-            this.lblFDType.TabIndex = 14;
-            this.lblFDType.Text = "FD Type :";
-            // 
-            // cmbFDType
-            // 
-            this.cmbFDType.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cmbFDType.Enabled = false;
-            this.cmbFDType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbFDType.FormattingEnabled = true;
-            this.cmbFDType.Items.AddRange(new object[] {
-            "7 to 30 days",
-            "31 to 90 days",
-            "91 to 180 days",
-            "181 to 365 days",
-            "more than 365 days"});
-            this.cmbFDType.Location = new System.Drawing.Point(138, 25);
-            this.cmbFDType.Name = "cmbFDType";
-            this.cmbFDType.Size = new System.Drawing.Size(147, 32);
-            this.cmbFDType.TabIndex = 6;
-            // 
-            // lblFDAmout
-            // 
-            this.lblFDAmout.AutoSize = true;
-            this.lblFDAmout.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFDAmout.Location = new System.Drawing.Point(22, 129);
-            this.lblFDAmout.Name = "lblFDAmout";
-            this.lblFDAmout.Size = new System.Drawing.Size(113, 24);
-            this.lblFDAmout.TabIndex = 16;
-            this.lblFDAmout.Text = "FD amount :";
-            // 
-            // txtFDAmount
-            // 
-            this.txtFDAmount.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtFDAmount.Enabled = false;
-            this.txtFDAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFDAmount.Location = new System.Drawing.Point(138, 127);
-            this.txtFDAmount.Name = "txtFDAmount";
-            this.txtFDAmount.Size = new System.Drawing.Size(147, 29);
-            this.txtFDAmount.TabIndex = 5;
-            // 
             // txtFDID
             // 
             this.txtFDID.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtFDID.Enabled = false;
             this.txtFDID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFDID.Location = new System.Drawing.Point(138, 21);
+            this.txtFDID.Location = new System.Drawing.Point(71, 22);
             this.txtFDID.Name = "txtFDID";
             this.txtFDID.ReadOnly = true;
-            this.txtFDID.Size = new System.Drawing.Size(147, 29);
+            this.txtFDID.Size = new System.Drawing.Size(130, 29);
             this.txtFDID.TabIndex = 5;
             // 
             // lblFDID
             // 
             this.lblFDID.AutoSize = true;
             this.lblFDID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFDID.Location = new System.Drawing.Point(64, 24);
+            this.lblFDID.Location = new System.Drawing.Point(8, 24);
             this.lblFDID.Name = "lblFDID";
             this.lblFDID.Size = new System.Drawing.Size(67, 24);
             this.lblFDID.TabIndex = 29;
@@ -509,10 +532,10 @@
             this.txtCertID.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCertID.Enabled = false;
             this.txtCertID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCertID.Location = new System.Drawing.Point(497, 24);
+            this.txtCertID.Location = new System.Drawing.Point(338, 25);
             this.txtCertID.Name = "txtCertID";
             this.txtCertID.ReadOnly = true;
-            this.txtCertID.Size = new System.Drawing.Size(147, 29);
+            this.txtCertID.Size = new System.Drawing.Size(132, 29);
             this.txtCertID.TabIndex = 6;
             this.txtCertID.TextChanged += new System.EventHandler(this.txtCertID_TextChanged);
             // 
@@ -520,11 +543,12 @@
             // 
             this.lblcertid.AutoSize = true;
             this.lblcertid.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcertid.Location = new System.Drawing.Point(369, 24);
+            this.lblcertid.Location = new System.Drawing.Point(214, 27);
             this.lblcertid.Name = "lblcertid";
             this.lblcertid.Size = new System.Drawing.Size(123, 24);
             this.lblcertid.TabIndex = 47;
             this.lblcertid.Text = "Certificate ID :";
+            this.lblcertid.Click += new System.EventHandler(this.lblcertid_Click);
             // 
             // btnLoad
             // 
@@ -553,49 +577,15 @@
             this.pnlhead.Size = new System.Drawing.Size(738, 132);
             this.pnlhead.TabIndex = 3;
             // 
-            // txtintr_period
+            // pnldatagridview
             // 
-            this.txtintr_period.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtintr_period.Enabled = false;
-            this.txtintr_period.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtintr_period.Location = new System.Drawing.Point(459, 180);
-            this.txtintr_period.Name = "txtintr_period";
-            this.txtintr_period.ReadOnly = true;
-            this.txtintr_period.Size = new System.Drawing.Size(147, 29);
-            this.txtintr_period.TabIndex = 48;
-            // 
-            // lblintr_period
-            // 
-            this.lblintr_period.AutoSize = true;
-            this.lblintr_period.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblintr_period.Location = new System.Drawing.Point(318, 183);
-            this.lblintr_period.Name = "lblintr_period";
-            this.lblintr_period.Size = new System.Drawing.Size(139, 24);
-            this.lblintr_period.TabIndex = 49;
-            this.lblintr_period.Text = "Interest period :";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.dgvList);
-            this.panel1.Location = new System.Drawing.Point(746, 80);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(396, 215);
-            this.panel1.TabIndex = 7;
-            // 
-            // pnlNumbers
-            // 
-            this.pnlNumbers.BackColor = System.Drawing.Color.LightGray;
-            this.pnlNumbers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlNumbers.Controls.Add(this.lblcertid);
-            this.pnlNumbers.Controls.Add(this.txtFDID);
-            this.pnlNumbers.Controls.Add(this.txtCertID);
-            this.pnlNumbers.Controls.Add(this.lblFDID);
-            this.pnlNumbers.Location = new System.Drawing.Point(13, 220);
-            this.pnlNumbers.Name = "pnlNumbers";
-            this.pnlNumbers.Size = new System.Drawing.Size(724, 75);
-            this.pnlNumbers.TabIndex = 8;
+            this.pnldatagridview.BackColor = System.Drawing.Color.LightGray;
+            this.pnldatagridview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnldatagridview.Controls.Add(this.dgvList);
+            this.pnldatagridview.Location = new System.Drawing.Point(746, 80);
+            this.pnldatagridview.Name = "pnldatagridview";
+            this.pnldatagridview.Size = new System.Drawing.Size(396, 215);
+            this.pnldatagridview.TabIndex = 7;
             // 
             // dgvList
             // 
@@ -607,18 +597,55 @@
             this.dgvList.TabIndex = 0;
             this.dgvList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellClick);
             // 
-            // FD_master
+            // pnlNumbers
+            // 
+            this.pnlNumbers.BackColor = System.Drawing.Color.LightGray;
+            this.pnlNumbers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlNumbers.Controls.Add(this.lblstatus);
+            this.pnlNumbers.Controls.Add(this.txtStatus);
+            this.pnlNumbers.Controls.Add(this.lblcertid);
+            this.pnlNumbers.Controls.Add(this.txtFDID);
+            this.pnlNumbers.Controls.Add(this.txtCertID);
+            this.pnlNumbers.Controls.Add(this.lblFDID);
+            this.pnlNumbers.Location = new System.Drawing.Point(13, 220);
+            this.pnlNumbers.Name = "pnlNumbers";
+            this.pnlNumbers.Size = new System.Drawing.Size(724, 75);
+            this.pnlNumbers.TabIndex = 8;
+            // 
+            // lblstatus
+            // 
+            this.lblstatus.AutoSize = true;
+            this.lblstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblstatus.Location = new System.Drawing.Point(486, 27);
+            this.lblstatus.Name = "lblstatus";
+            this.lblstatus.Size = new System.Drawing.Size(70, 24);
+            this.lblstatus.TabIndex = 49;
+            this.lblstatus.Text = "Status :";
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtStatus.Enabled = false;
+            this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(557, 24);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.ReadOnly = true;
+            this.txtStatus.Size = new System.Drawing.Size(147, 29);
+            this.txtStatus.TabIndex = 48;
+            // 
+            // frmFD_master
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1156, 648);
             this.Controls.Add(this.pnlNumbers);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnldatagridview);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.pnlRates);
             this.Controls.Add(this.pnlhead);
             this.Controls.Add(this.pnlTitle);
-            this.Name = "FD_master";
+            this.Name = "frmFD_master";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FD_master";
             this.pnlButtons.ResumeLayout(false);
             this.pnlRates.ResumeLayout(false);
@@ -627,10 +654,10 @@
             this.pnlTitle.PerformLayout();
             this.pnlhead.ResumeLayout(false);
             this.pnlhead.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.pnldatagridview.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.pnlNumbers.ResumeLayout(false);
             this.pnlNumbers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -677,8 +704,10 @@
         private System.Windows.Forms.Panel pnlhead;
         private System.Windows.Forms.TextBox txtintr_period;
         private System.Windows.Forms.Label lblintr_period;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnldatagridview;
         private System.Windows.Forms.Panel pnlNumbers;
         private System.Windows.Forms.DataGridView dgvList;
+        private System.Windows.Forms.Label lblstatus;
+        private System.Windows.Forms.TextBox txtStatus;
     }
 }

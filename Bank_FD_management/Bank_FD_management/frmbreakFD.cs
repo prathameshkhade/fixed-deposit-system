@@ -216,6 +216,9 @@ namespace Bank_FD_management
             ctrlOnLostFocuspnlmid2();
 
             btnBreak.Enabled = false;
+
+            rbdPayInterest.Enabled = false;
+            rbdBreakFD.Enabled = false;
         }
 
 
@@ -324,54 +327,57 @@ namespace Bank_FD_management
 
         private void rbdBreakFD_CheckedChanged(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txtpayable_intr.Text))
+            if (!string.IsNullOrEmpty(txtName.Text))
             {
-                txtpayable_intr.Text = "0";
-            }
-
-            btnBreak.Text = "Break";
-
-            dtpWith_date.MaxDate = DateTime.Now.AddDays(1).Date;
-            dtpWith_date.Text = DateTime.Now.Date.ToString("dd-MM-yyyy");
-
-            int amount =Convert.ToInt32(txtFDAmount.Text);
-
-            OleDbCommand cmd = new OleDbCommand("select p_interest from interest_master where duration = '" + txtPeriod.Text + "'", conn);
-            double temp = Convert.ToDouble(cmd.ExecuteScalar());
-            double penIntrDiff = Convert.ToDouble(txtinterestRate.Text) - temp;
-            txtpen_intr.Text = penIntrDiff.ToString();
-
-            if (DateTime.Now.Date < dtpMatureDate.Value.Date)   // if he wants to break before matuarity
-            {
-                if (DateTime.Now < dtpStartDate.Value.AddMonths(1))  //he is breaking fd before month
+                if (string.IsNullOrEmpty(txtpayable_intr.Text))
                 {
-                    txtWith_amt.Text = amount.ToString();
+                    txtpayable_intr.Text = "0";
+                }
+
+                btnBreak.Text = "Break";
+
+                dtpWith_date.MaxDate = DateTime.Now.AddDays(1).Date;
+                dtpWith_date.Text = DateTime.Now.Date.ToString("dd-MM-yyyy");
+
+                int amount = Convert.ToInt32(txtFDAmount.Text);
+
+                OleDbCommand cmd = new OleDbCommand("select p_interest from interest_master where duration = '" + txtPeriod.Text + "'", conn);
+                double temp = Convert.ToDouble(cmd.ExecuteScalar());
+                double penIntrDiff = Convert.ToDouble(txtinterestRate.Text) - temp;
+                txtpen_intr.Text = penIntrDiff.ToString();
+
+                if (DateTime.Now.Date < dtpMatureDate.Value.Date)   // if he wants to break before matuarity
+                {
+                    if (DateTime.Now < dtpStartDate.Value.AddMonths(1))  //he is breaking fd before month
+                    {
+                        txtWith_amt.Text = amount.ToString();
+                        txtpen_intr.Text = "0";
+                    }
+                    else if (dtplastpaid.Value >= dtpStartDate.Value)  // he is breaking fd after one month
+                    {
+                        TimeSpan d = DateTime.Now - dtpStartDate.Value;
+                        int diff = d.Days;
+                        double tot_intr = ((amount * diff / 365 * penIntrDiff) / 100);
+                        txtWith_amt.Text = (amount + tot_intr - Convert.ToInt32(txtPaid_intr.Text)).ToString();
+                    }
+                }
+                else  //when fd matures completely
+                {
+                    TimeSpan d = dtpMatureDate.Value - dtplastpaid.Value;
+                    int diff = d.Days;
+                    double rem_intr = ((amount * diff / 365 * Convert.ToDouble(txtinterestRate.Text)) / 100);
+                    txtWith_amt.Text = (amount + Convert.ToInt32(txtPaid_intr.Text) + rem_intr).ToString("0");
                     txtpen_intr.Text = "0";
                 }
-                else if (dtplastpaid.Value >= dtpStartDate.Value)  // he is breaking fd after one month
-                {
-                    TimeSpan d = DateTime.Now - dtpStartDate.Value;
-                    int diff = d.Days;
-                    double tot_intr = ((amount * diff / 365 * penIntrDiff) / 100);
-                    txtWith_amt.Text = (amount + tot_intr - Convert.ToInt32(txtPaid_intr.Text)).ToString();
-                }
-            }
-            else  //when fd matures completely
-            {
-                TimeSpan d = dtpMatureDate.Value - dtplastpaid.Value;
-                int diff = d.Days;
-                double rem_intr = ((amount * diff / 365 * Convert.ToDouble(txtinterestRate.Text)) / 100);
-                txtWith_amt.Text = (amount + Convert.ToInt32(txtPaid_intr.Text) + rem_intr).ToString("0");
-                txtpen_intr.Text = "0";
-            }
 
-            if (double.TryParse(txtWith_amt.Text, out double value) && value != 0)
-            {
-                btnBreak.Enabled = true;
-            }
-            else
-            {
-                btnBreak.Enabled = false;
+                if (double.TryParse(txtWith_amt.Text, out double value) && value != 0)
+                {
+                    btnBreak.Enabled = true;
+                }
+                else
+                {
+                    btnBreak.Enabled = false;
+                }
             }
 
         }
@@ -436,6 +442,9 @@ namespace Bank_FD_management
                                 {
                                     btnBreak.Enabled = false;
                                 }
+
+                                rbdBreakFD.Enabled = true;
+                                rbdPayInterest.Enabled = true;
                             }
                             else
                             {
@@ -539,15 +548,7 @@ namespace Bank_FD_management
 
                         OleDbCommand cmdGetPenIntr = new OleDbCommand("select * from Interest_master where duration = '" + txtPeriod.Text + "'", conn);
                         OleDbDataReader dr1 = cmdGetPenIntr.ExecuteReader();
-                        int penIntr = 0;
-
-                        if(dr1.HasRows)
-                        {
-                            while(dr1.Read())
-                            {
-                                penIntr = Convert.ToInt32(dr1["p_intererst"].ToString());
-                            }
-                        }
+                        double penIntr = double.Parse(txtinterestRate.Text) - double.Parse(txtpen_intr.Text) ;
 
                         int cid = 0, mon = 0, day = 0, totalDays = 0;
                         DateTime certDate = DateTime.Today;
@@ -568,7 +569,7 @@ namespace Bank_FD_management
                         }
                         dr.Close();
 
-                        OleDbCommand cmdInsert = new OleDbCommand("insert into break_fd values (" + txtFD_ID.Text + ", '" + cid + "', '" + txtName.Text + "', #" + certDate + "#, " + txtCertID.Text + ", #" + dtpMatureDate.Value + "#, " + mon + ", " + day + ", '" + txtFDStatus.Text + "', '" + fdType + "', " + txtinterestRate.Text + ", " + txtFDAmount.Text + ", " + matAmt + ", " + txtTotalInterest.Text + ", " + totalDays + ", " + periodic_intr + ", " + txtWith_amt.Text + ", #" + dtpWith_date.Value + "#, " + txtPaid_intr.Text + ", " + penIntr + ")", conn);
+                        OleDbCommand cmdInsert = new OleDbCommand("insert into break_fd values (" + txtFD_ID.Text + ", '" + cid + "', '" + txtName.Text + "', #" + certDate + "#, " + txtCertID.Text + ", #" + dtpMatureDate.Value + "#, " + mon + ", " + day + ", '" + "Break" + "', '" + fdType + "', " + txtinterestRate.Text + ", " + txtFDAmount.Text + ", " + matAmt + ", " + txtTotalInterest.Text + ", " + totalDays + ", " + periodic_intr + ", " + txtWith_amt.Text + ", #" + dtpWith_date.Value + "#, " + txtPaid_intr.Text + ", " + penIntr + ")", conn);
                         cmdInsert.ExecuteNonQuery();
 
                         MessageBox.Show("Your fd is breaked");

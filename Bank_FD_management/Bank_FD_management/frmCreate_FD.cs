@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using CrystalDecisions.CrystalReports;
+using CrystalDecisions.ReportSource;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Windows.Forms;
 
 namespace Bank_FD_management
 {
@@ -168,8 +172,10 @@ namespace Bank_FD_management
             ctrlOnLostFocusPnl3();
 
             setConnection();
-            dtpStartDate.MaxDate = DateTime.Now;
-            dtpStartDate.Value = DateTime.Now;              
+            dtpStartDate.MaxDate = DateTime.Now.AddMonths(1);
+            dtpStartDate.Value = DateTime.Now;
+
+            //btnPrint.Enabled = false;
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -237,6 +243,7 @@ namespace Bank_FD_management
                     btnCancel.Enabled = false;
                     txtID.Enabled = false;
                     btnLoad.Enabled = false;
+                    btnPrint.Enabled = true;
 
                     MessageBox.Show("Inserted successfully");
                 }
@@ -366,8 +373,37 @@ namespace Bank_FD_management
                 DateTime newDate = startDate.AddDays(days).AddMonths(months);
                 totalDays = (int)(newDate - startDate).TotalDays;
 
+                //if (totalDays >= 365)
+                //{
+                //    rdbMonthly.Enabled = true;
+                //    rdbQuaterly.Enabled = true;
+                //    rdbHalfYearly.Enabled = true;
+                //    rdbOnMaturity.Enabled = true;
+                //}
+                //else if (totalDays>=180)
+                //{
+                //    rdbMonthly.Enabled = true;
+                //    rdbQuaterly.Enabled =true;
+                //    rdbHalfYearly.Enabled = false;
+                //    rdbOnMaturity.Enabled = true;
+                //}
+                //else if(totalDays>=90)
+                //{
+                //    rdbMonthly.Enabled = true;
+                //    rdbQuaterly.Enabled =false;
+                //    rdbHalfYearly.Enabled = true;
+                //    rdbOnMaturity.Enabled = true;
+                //}
+                //else if(totalDays<=30)
+                //{
+                //    rdbMonthly.Enabled = false;
+                //    rdbQuaterly.Enabled = false;
+                //    rdbHalfYearly.Enabled = false;
+                //    rdbOnMaturity.Enabled = true;
+                //}
+
                 //to change the end date
-                dtpEndDate.MaxDate = DateTime.Now.AddDays(totalDays);
+                dtpEndDate.MaxDate = DateTime.Now.AddDays(totalDays).AddMonths(1);
                 dtpEndDate.Value = DateTime.Now.AddDays(totalDays);
 
                 //totalDays = (months * 30) + days;
@@ -507,7 +543,7 @@ namespace Bank_FD_management
                 }
                 else
                 {
-                    rdbMonthly.Focus();
+                    //rdbMonthly.Focus();
                 }
             }
         }
@@ -579,6 +615,37 @@ namespace Bank_FD_management
             if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            //ReportDocument crypt = new ReportDocument();
+            //crypt.Load("C:/Users/Hiremath/source/repos/Fixed_deposite_system/Bank_FD_management/Bank_FD_management/Reports/FD_Certificate.rpt");
+            //crypt.RecordSelectionFormula = "{FD_master.Cert_ID}=700024";
+            //crypt.Refresh();
+            //CrystalReportViewer view1 = new CrystalReportViewer();
+            //view1.ReportSource = crypt;
+            //view1.Show();
+
+            try
+            {
+                ReportDocument crypt = new ReportDocument();
+                crypt.Load(@"C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\FD_Certificate.rpt");
+                crypt.RecordSelectionFormula = "{FD_master.Cert_ID} ="+Convert.ToInt32(txtCertID.Text)+"";
+                crypt.Refresh();
+                CrystalReportViewer view1 = new CrystalReportViewer();
+                pnlTitle.Visible = false;
+                pnlDetails.Visible = false;
+                pnlButtons.Visible = false;
+                pnlRates.Visible = false;
+                view1.Dock = DockStyle.Fill;
+                view1.ReportSource = crypt;
+                this.Controls.Add(view1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
     }

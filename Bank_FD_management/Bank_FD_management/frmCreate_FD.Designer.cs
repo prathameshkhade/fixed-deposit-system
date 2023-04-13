@@ -670,13 +670,14 @@
             this.btnPrint.TabIndex = 2;
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // frmCreate_FD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1156, 749);
+            this.ClientSize = new System.Drawing.Size(1156, 858);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.pnlRates);
             this.Controls.Add(this.pnlDetails);
