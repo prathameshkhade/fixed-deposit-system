@@ -42,6 +42,8 @@ namespace Bank_FD_management
         }
 
         //for every control on panel got focus
+
+
         private void ctrlOnFocusPnl1()
         {
             foreach (Control i in pnlDetails.Controls)
@@ -86,9 +88,7 @@ namespace Bank_FD_management
                 }
             }
         }
-
-        // for removing all the text from cancel button
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void clear()
         {
             foreach (Control c in pnlDetails.Controls)
             {
@@ -98,6 +98,12 @@ namespace Bank_FD_management
                 }
             }
             txtID.Text = "";
+        }
+
+        // for removing all the text from cancel button
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            clear();
         }
 
         // for exiting the current form 
@@ -130,18 +136,22 @@ namespace Bank_FD_management
             try
             {
                 setConnection();
-                OleDbCommand cmd = new OleDbCommand("select c_id from customer_master where c_name = '" + txtName.Text + "' and dob = #" + dtpCustBirth.Value.Date + "# and pan = '" + txtPan.Text + "'", conn);
+                OleDbCommand cmd = new OleDbCommand("select c_id from customer_master where c_name = '" + txtName.Text + "' and dob = #" + dtpCustBirth.Value.ToString("yyyy-MM-dd HH:mm:ss") + "# and pan = '" + txtPan.Text + "'", conn);
                 int id = (int)cmd.ExecuteScalar();
                 txtID.Text = id.ToString();
                 conn.Close();
             }
             catch(OleDbException ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+                
+                
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
+                MessageBox.Show("Record does not Exists");
+                clear();
             }
         }
 

@@ -141,6 +141,7 @@
             // 
             this.dtpCustBirth.CustomFormat = "";
             this.dtpCustBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpCustBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpCustBirth.Location = new System.Drawing.Point(160, 96);
             this.dtpCustBirth.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
             this.dtpCustBirth.Name = "dtpCustBirth";
