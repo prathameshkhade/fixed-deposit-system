@@ -130,6 +130,18 @@
     <Compile Include="Employee_master.Designer.cs">
       <DependentUpon>Employee_master.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdd.Designer.cs">
+      <DependentUpon>frmAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpDashboard.Designer.cs">
+      <DependentUpon>frmEmpDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFD_master.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +200,12 @@
     </Compile>
     <EmbeddedResource Include="Employee_master.resx">
       <DependentUpon>Employee_master.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdd.resx">
+      <DependentUpon>frmAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpDashboard.resx">
+      <DependentUpon>frmEmpDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFD_master.resx">
       <DependentUpon>frmFD_master.cs</DependentUpon>

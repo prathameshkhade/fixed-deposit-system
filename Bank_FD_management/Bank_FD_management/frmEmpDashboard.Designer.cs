@@ -1,6 +1,6 @@
 ﻿namespace Bank_FD_management
 {
-    partial class frmdashboard
+    partial class frmEmpDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuDash = new System.Windows.Forms.MenuStrip();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,30 +38,26 @@
             this.fDMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forgetCustomerIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateInterestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuDash.SuspendLayout();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuDash
+            // menuStrip1
             // 
-            this.menuDash.BackColor = System.Drawing.Color.LightGray;
-            this.menuDash.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuDash.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip1.BackColor = System.Drawing.Color.LightGray;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createToolStripMenuItem,
             this.breakFDToolStripMenuItem,
             this.mastersToolStripMenuItem,
             this.utilityToolStripMenuItem,
-            this.addToToolStripMenuItem,
-            this.logOutToolStripMenuItem});
-            this.menuDash.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.menuDash.Location = new System.Drawing.Point(0, 0);
-            this.menuDash.Name = "menuDash";
-            this.menuDash.Size = new System.Drawing.Size(1284, 38);
-            this.menuDash.TabIndex = 0;
-            this.menuDash.Text = "menuStrip1";
+            this.exitToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1284, 38);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // createToolStripMenuItem
             // 
@@ -119,8 +115,7 @@
             // utilityToolStripMenuItem
             // 
             this.utilityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.forgetCustomerIDToolStripMenuItem,
-            this.updateInterestToolStripMenuItem});
+            this.forgetCustomerIDToolStripMenuItem});
             this.utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
             this.utilityToolStripMenuItem.Size = new System.Drawing.Size(78, 34);
             this.utilityToolStripMenuItem.Text = "Utility";
@@ -132,47 +127,24 @@
             this.forgetCustomerIDToolStripMenuItem.Text = "Forget Customer ID";
             this.forgetCustomerIDToolStripMenuItem.Click += new System.EventHandler(this.forgetCustomerIDToolStripMenuItem_Click);
             // 
-            // updateInterestToolStripMenuItem
+            // exitToolStripMenuItem
             // 
-            this.updateInterestToolStripMenuItem.Name = "updateInterestToolStripMenuItem";
-            this.updateInterestToolStripMenuItem.Size = new System.Drawing.Size(267, 34);
-            this.updateInterestToolStripMenuItem.Text = "Update Interest";
-            this.updateInterestToolStripMenuItem.Click += new System.EventHandler(this.updateInterestToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(100, 34);
+            this.exitToolStripMenuItem.Text = "Log Out";
             // 
-            // addToToolStripMenuItem
-            // 
-            this.addToToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.userIDToolStripMenuItem});
-            this.addToToolStripMenuItem.Name = "addToToolStripMenuItem";
-            this.addToToolStripMenuItem.Size = new System.Drawing.Size(63, 34);
-            this.addToToolStripMenuItem.Text = "Add";
-            // 
-            // userIDToolStripMenuItem
-            // 
-            this.userIDToolStripMenuItem.Name = "userIDToolStripMenuItem";
-            this.userIDToolStripMenuItem.Size = new System.Drawing.Size(154, 34);
-            this.userIDToolStripMenuItem.Text = "User ID";
-            this.userIDToolStripMenuItem.Click += new System.EventHandler(this.userIDToolStripMenuItem_Click);
-            // 
-            // logOutToolStripMenuItem
-            // 
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(100, 34);
-            this.logOutToolStripMenuItem.Text = "Log Out";
-            // 
-            // frmdashboard
+            // frmEmpDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 701);
-            this.Controls.Add(this.menuDash);
-            this.MainMenuStrip = this.menuDash;
-            this.Name = "frmdashboard";
-            this.Text = "Admin Dashboard";
+            this.Controls.Add(this.menuStrip1);
+            this.Name = "frmEmpDashboard";
+            this.Text = "Employee Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmdashboard_FormClosed);
-            this.menuDash.ResumeLayout(false);
-            this.menuDash.PerformLayout();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmEmpDashboard_FormClosed);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,19 +152,16 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuDash;
+        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fDToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mastersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem utilityToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem forgetCustomerIDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem breakFDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem breakFDToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem updateInterestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mastersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fDMasterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addToToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem userIDToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem utilityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem forgetCustomerIDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }

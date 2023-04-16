@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
 
 namespace Bank_FD_management
 {
@@ -16,11 +8,6 @@ namespace Bank_FD_management
         public frmdashboard()
         {
             InitializeComponent();
-        }
-
-        private void frmdashboard_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void customerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -35,21 +22,10 @@ namespace Bank_FD_management
             crfd.Show();
         }
 
-        private void breakFDToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void breakFDToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmbreakFD brfd = new frmbreakFD();
             brfd.Show();
-        }
-
-
-        private void fDMastersToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void employeeMastersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,6 +50,21 @@ namespace Bank_FD_management
         {
             frmFD_master fd_master = new frmFD_master();
             fd_master.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void userIDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frmAdd().Show();
+        }
+
+        private void frmdashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

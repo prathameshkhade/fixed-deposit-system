@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Text.RegularExpressions;
@@ -303,6 +300,10 @@ namespace Bank_FD_management
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("data updated...");
                 }
+
+                // To show next step automatically
+                this.Close();
+                new frmCreate_FD().Show();
             }
             catch (OleDbException ex)
             {
