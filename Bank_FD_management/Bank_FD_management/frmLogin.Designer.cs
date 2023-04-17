@@ -35,11 +35,11 @@
             this.txtUname = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkShow = new System.Windows.Forms.CheckBox();
             this.lblRole = new System.Windows.Forms.Label();
             this.cmbRole = new System.Windows.Forms.ComboBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.chkShow = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             this.txtUname.MaxLength = 20;
             this.txtUname.Name = "txtUname";
             this.txtUname.Size = new System.Drawing.Size(237, 29);
-            this.txtUname.TabIndex = 3;
+            this.txtUname.TabIndex = 0;
             this.txtUname.Validated += new System.EventHandler(this.txtUname_Validated);
             // 
             // txtPass
@@ -93,7 +93,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(237, 29);
-            this.txtPass.TabIndex = 4;
+            this.txtPass.TabIndex = 1;
             this.txtPass.Validated += new System.EventHandler(this.txtPass_Validated);
             // 
             // panel1
@@ -114,6 +114,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(471, 612);
             this.panel1.TabIndex = 5;
+            // 
+            // chkShow
+            // 
+            this.chkShow.AutoSize = true;
+            this.chkShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkShow.Location = new System.Drawing.Point(168, 380);
+            this.chkShow.Name = "chkShow";
+            this.chkShow.Size = new System.Drawing.Size(136, 22);
+            this.chkShow.TabIndex = 8;
+            this.chkShow.TabStop = false;
+            this.chkShow.Text = "Show Password";
+            this.chkShow.UseVisualStyleBackColor = true;
+            this.chkShow.CheckedChanged += new System.EventHandler(this.chkShow_CheckedChanged);
             // 
             // lblRole
             // 
@@ -136,7 +149,7 @@
             this.cmbRole.Location = new System.Drawing.Point(168, 186);
             this.cmbRole.Name = "cmbRole";
             this.cmbRole.Size = new System.Drawing.Size(237, 32);
-            this.cmbRole.TabIndex = 6;
+            this.cmbRole.TabIndex = 0;
             this.cmbRole.Text = "--Select Role--";
             // 
             // btnLogin
@@ -145,7 +158,7 @@
             this.btnLogin.Location = new System.Drawing.Point(146, 484);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(179, 41);
-            this.btnLogin.TabIndex = 5;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -159,18 +172,6 @@
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // chkShow
-            // 
-            this.chkShow.AutoSize = true;
-            this.chkShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkShow.Location = new System.Drawing.Point(168, 380);
-            this.chkShow.Name = "chkShow";
-            this.chkShow.Size = new System.Drawing.Size(136, 22);
-            this.chkShow.TabIndex = 8;
-            this.chkShow.Text = "Show Password";
-            this.chkShow.UseVisualStyleBackColor = true;
-            this.chkShow.CheckedChanged += new System.EventHandler(this.chkShow_CheckedChanged);
             // 
             // frmLogin
             // 

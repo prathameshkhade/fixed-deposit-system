@@ -37,7 +37,7 @@ namespace Bank_FD_management
 
         private void frmEmpDashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            if (!Program.login.Visible) Application.Exit();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

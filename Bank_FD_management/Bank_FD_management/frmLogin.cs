@@ -18,7 +18,7 @@ namespace Bank_FD_management
             if(cmbRole.SelectedIndex != -1)
             {
                 // Providing error
-                if(string.IsNullOrEmpty(txtUname.Text))
+                if (string.IsNullOrEmpty(txtUname.Text))
                 {
                     Program.err.SetError(txtUname, "Please enter Username!");
                     txtUname.Focus();
@@ -42,11 +42,14 @@ namespace Bank_FD_management
                         {
                             MessageBox.Show("Welcome " + txtUname.Text);
 
-                            // go to emp dashboard page
+                            // go to emp dashboard page 
                             frmdashboard admin = new frmdashboard();
                             this.Hide();
                             admin.ShowDialog();
                             admin.BringToFront();
+
+                            // clear the login form for later use
+                            clearLogin();
                         }
                         else
                         {
@@ -84,6 +87,9 @@ namespace Bank_FD_management
                         this.Hide();
                         emp.Show();
                         emp.BringToFront();
+
+                        // clear the login form for later use
+                        clearLogin();
                     }
                     else
                     {
@@ -120,6 +126,15 @@ namespace Bank_FD_management
         {
             if (chkShow.Checked) txtPass.PasswordChar = '\0';
             if (!chkShow.Checked) txtPass.PasswordChar = '*';
+        }
+
+        private void clearLogin()
+        {
+            txtUname.Clear();
+            txtPass.Clear();
+            cmbRole.SelectedIndex = -1;
+            cmbRole.Text = "--Select Role--";
+            cmbRole.Focus();
         }
     }
 }

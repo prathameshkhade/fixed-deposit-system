@@ -64,7 +64,7 @@ namespace Bank_FD_management
 
         private void frmdashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            if (!Program.login.Visible) Application.Exit(); 
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
