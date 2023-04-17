@@ -37,7 +37,14 @@ namespace Bank_FD_management
 
         private void frmEmpDashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.login.Show();
+            Program.login.BringToFront();
+            this.Close();
         }
     }
 }

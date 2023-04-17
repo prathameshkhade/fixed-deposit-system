@@ -290,8 +290,6 @@ namespace Bank_FD_management
             {
                 MessageBox.Show(ex.Message);
             }
-
-            Program.conn.Close();
         }
 
         private void chbNewData_CheckedChanged(object sender, EventArgs e)
@@ -366,8 +364,6 @@ namespace Bank_FD_management
                     Program.err.SetError(txtID, "Enter ID");
                     txtID.Focus();
                 }
-                Program.conn.Close();
-
             }
             catch (Exception ex)
             {

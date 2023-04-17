@@ -8,6 +8,7 @@ namespace Bank_FD_management
         public frmLogin()
         {
             InitializeComponent();
+            Program.setConnection();
         }
 
         private void btnLogin_Click(object sender, System.EventArgs e)

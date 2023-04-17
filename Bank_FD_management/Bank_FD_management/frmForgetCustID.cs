@@ -119,7 +119,6 @@ namespace Bank_FD_management
                 OleDbCommand cmd = new OleDbCommand("select c_id from customer_master where c_name = '" + txtName.Text + "' and dob = #" + dtpCustBirth.Value.ToString("yyyy-MM-dd HH:mm:ss") + "# and pan = '" + txtPan.Text + "'", Program.conn);
                 int id = (int)cmd.ExecuteScalar();
                 txtID.Text = id.ToString();
-                Program.conn.Close();
             }
             catch(NullReferenceException)
             {

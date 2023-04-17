@@ -6,7 +6,7 @@ namespace Bank_FD_management
 {
     static class Program
     {
-        internal static frmLogin login = new frmLogin();
+        public static frmLogin login;
 
         internal static ErrorProvider err = new ErrorProvider();
         internal static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
@@ -14,7 +14,10 @@ namespace Bank_FD_management
 
         internal static void setConnection()
         {
-            if (conn.State == System.Data.ConnectionState.Closed) conn.Open();
+            if (conn.State == System.Data.ConnectionState.Closed)
+            {
+                conn.Open();
+            }
         }
 
         /// <summary>
@@ -27,7 +30,8 @@ namespace Bank_FD_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(login);
+            login = new frmLogin();
+            Application.Run(Program.login);
         }
     }
 }

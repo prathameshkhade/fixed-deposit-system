@@ -64,7 +64,14 @@ namespace Bank_FD_management
 
         private void frmdashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.login.Show();
+            Program.login.BringToFront();
+            this.Close();
         }
     }
 }
