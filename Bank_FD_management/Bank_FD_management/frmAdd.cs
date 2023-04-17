@@ -6,22 +6,9 @@ namespace Bank_FD_management
 {
     public partial class frmAdd : Form
     {
-        private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
-        private OleDbConnection conn = new OleDbConnection(myConn);
-
-
-        public void setConnection()
-        {
-            if (conn.State == System.Data.ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-        }
-
         public frmAdd()
         {
             InitializeComponent();
-            setConnection();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -32,7 +19,7 @@ namespace Bank_FD_management
                 {
                     if(cmbRole.SelectedIndex == 0)
                     {
-                        OleDbCommand cmd = new OleDbCommand("insert into admin_login (name, uname, pass) values ('" + txtName.Text + "', '" + txtUname.Text + "', '" + txtPass.Text + "')", conn);
+                        OleDbCommand cmd = new OleDbCommand("insert into admin_login (name, uname, pass) values ('" + txtName.Text + "', '" + txtUname.Text + "', '" + txtPass.Text + "')", Program.conn);
                         
                         if(cmd.ExecuteNonQuery() == 1)
                         {
@@ -42,7 +29,7 @@ namespace Bank_FD_management
 
                     if (cmbRole.SelectedIndex == 1)
                     {
-                        OleDbCommand cmd = new OleDbCommand("insert into employee_login (name, uname, pass) values ('" + txtName.Text + "', '" + txtUname.Text + "', '" + txtPass.Text + "'", conn);
+                        OleDbCommand cmd = new OleDbCommand("insert into employee_login (name, uname, pass) values ('" + txtName.Text + "', '" + txtUname.Text + "', '" + txtPass.Text + "'", Program.conn);
 
                         if (cmd.ExecuteNonQuery() == 1)
                         {

@@ -12,20 +12,6 @@ namespace Bank_FD_management
             InitializeComponent();
         }
 
-        private ErrorProvider err = new ErrorProvider();
-        private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
-        private OleDbConnection conn = new OleDbConnection(myConn);
-
-
-        public void setConnection()
-        {
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-                MessageBox.Show("Connection succesfull");
-            }
-        }
-
         private void lblInterest_Click(object sender, EventArgs e)
         {
 
@@ -36,15 +22,14 @@ namespace Bank_FD_management
         {
             if (!string.IsNullOrEmpty(txtID.Text))
             {
-                setConnection();
-                OleDbCommand cmd = new OleDbCommand("select * from FD_master where c_id = " + txtID.Text + "", conn);
+                OleDbCommand cmd = new OleDbCommand("select * from FD_master where c_id = " + txtID.Text + "", Program.conn);
                 OleDbDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
                     while (dr.Read())
                     {
                         txtName.Text = dr["c_name"].ToString();
-                        OleDbCommand cmd1 = new OleDbCommand("SELECT cert_id, fd_amount, cert_dt FROM FD_master WHERE c_id = " + txtID.Text + "", conn);
+                        OleDbCommand cmd1 = new OleDbCommand("SELECT cert_id, fd_amount, cert_dt FROM FD_master WHERE c_id = " + txtID.Text + "", Program.conn);
                         //var adapter = new OleDbDataAdapter(cmd1);
                         //var dt = new System.Data.DataTable();
                         //adapter.Fill(dt);
@@ -85,7 +70,7 @@ namespace Bank_FD_management
                 int certId = (int)dgvList.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
 
                 // Query the database for the data associated with the cert_id
-                OleDbCommand cmd = new OleDbCommand("SELECT * FROM FD_master WHERE cert_id =" + certId, conn);
+                OleDbCommand cmd = new OleDbCommand("SELECT * FROM FD_master WHERE cert_id =" + certId, Program.conn);
                 OleDbDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {

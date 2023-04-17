@@ -5,22 +5,9 @@ namespace Bank_FD_management
 {
     public partial class frmLogin : Form
     {
-        ErrorProvider err = new ErrorProvider();
-        private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
-        private OleDbConnection conn = new OleDbConnection(myConn);
-
-        public void setConnection()
-        {
-            if (conn.State == System.Data.ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-        }
-
         public frmLogin()
         {
             InitializeComponent();
-            setConnection();
         }
 
         private void btnLogin_Click(object sender, System.EventArgs e)
@@ -32,13 +19,13 @@ namespace Bank_FD_management
                 // Providing error
                 if(string.IsNullOrEmpty(txtUname.Text))
                 {
-                    err.SetError(txtUname, "Please enter Username!");
+                    Program.err.SetError(txtUname, "Please enter Username!");
                     txtUname.Focus();
                 }
 
                 if (string.IsNullOrEmpty(txtPass.Text))
                 {
-                    err.SetError(txtPass, "Please enter Password!");
+                    Program.err.SetError(txtPass, "Please enter Password!");
                     txtPass.Focus();
                 }
 
@@ -47,7 +34,7 @@ namespace Bank_FD_management
                 {
                     if(!string.IsNullOrEmpty(txtUname.Text) && !string.IsNullOrEmpty(txtPass.Text))
                     {
-                        cmd = new OleDbCommand("select * from admin_login where uname = '" + txtUname.Text + "' and pass = '" + txtPass.Text + "'", conn);
+                        cmd = new OleDbCommand("select * from admin_login where uname = '" + txtUname.Text + "' and pass = '" + txtPass.Text + "'", Program.conn);
                         OleDbDataReader dr = cmd.ExecuteReader();
 
                         if (dr.HasRows)
@@ -84,7 +71,7 @@ namespace Bank_FD_management
                 // Employee login
                 if (cmbRole.SelectedIndex == 1)
                 {
-                    cmd = new OleDbCommand("select * from employee_login where uname = '" + txtUname.Text + "' and pass = '" + txtPass.Text + "'", conn);
+                    cmd = new OleDbCommand("select * from employee_login where uname = '" + txtUname.Text + "' and pass = '" + txtPass.Text + "'", Program.conn);
                     OleDbDataReader dr = cmd.ExecuteReader();
 
                     if (dr.HasRows)
@@ -116,7 +103,7 @@ namespace Bank_FD_management
         {
             if(!string.IsNullOrEmpty(txtUname.Text))
             {
-                err.SetError(txtUname, null);
+                Program.err.SetError(txtUname, null);
             }
         }
 
@@ -124,8 +111,14 @@ namespace Bank_FD_management
         {
             if (!string.IsNullOrEmpty(txtPass.Text))
             {
-                err.SetError(txtPass, null);
+                Program.err.SetError(txtPass, null);
             }
+        }
+
+        private void chkShow_CheckedChanged(object sender, System.EventArgs e)
+        {
+            if (chkShow.Checked) txtPass.PasswordChar = '\0';
+            if (!chkShow.Checked) txtPass.PasswordChar = '*';
         }
     }
 }

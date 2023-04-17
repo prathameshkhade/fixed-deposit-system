@@ -38,6 +38,8 @@
             this.lblRole = new System.Windows.Forms.Label();
             this.cmbRole = new System.Windows.Forms.ComboBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkShow = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,6 +91,7 @@
             this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.Location = new System.Drawing.Point(168, 335);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(237, 29);
             this.txtPass.TabIndex = 4;
             this.txtPass.Validated += new System.EventHandler(this.txtPass_Validated);
@@ -97,6 +100,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.chkShow);
             this.panel1.Controls.Add(this.lblRole);
             this.panel1.Controls.Add(this.cmbRole);
             this.panel1.Controls.Add(this.btnLogin);
@@ -146,6 +150,28 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(0, 0);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // chkShow
+            // 
+            this.chkShow.AutoSize = true;
+            this.chkShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkShow.Location = new System.Drawing.Point(168, 380);
+            this.chkShow.Name = "chkShow";
+            this.chkShow.Size = new System.Drawing.Size(136, 22);
+            this.chkShow.TabIndex = 8;
+            this.chkShow.Text = "Show Password";
+            this.chkShow.UseVisualStyleBackColor = true;
+            this.chkShow.CheckedChanged += new System.EventHandler(this.chkShow_CheckedChanged);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +180,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1282, 749);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Name = "frmLogin";
@@ -162,6 +189,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -176,5 +204,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.ComboBox cmbRole;
+        private System.Windows.Forms.CheckBox chkShow;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

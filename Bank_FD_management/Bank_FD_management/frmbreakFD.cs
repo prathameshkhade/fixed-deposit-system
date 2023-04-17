@@ -10,22 +10,6 @@ namespace Bank_FD_management
 
     public partial class frmbreakFD : Form
     {
-
-        private ErrorProvider err = new ErrorProvider();
-        private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
-        private OleDbConnection conn = new OleDbConnection(myConn);
-
-
-        public void setConnection()
-        {
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-                MessageBox.Show("Connection succesfull");
-            }
-        }
-
-
         // just for on focusing the seperate panel
         private void onFocus(object sender, EventArgs e)
         {
@@ -196,8 +180,6 @@ namespace Bank_FD_management
         {
             InitializeComponent();
 
-            setConnection();
-
             ctrlOnFocuspnl1();
             ctrlOnFocuspnl2();
             ctrlOnFocuspnl3();
@@ -223,7 +205,7 @@ namespace Bank_FD_management
 
         private void pay_intr_cal(int m1 , int m2)// m1= num of days and m2= num of months
         {
-            OleDbCommand cmd1 = new OleDbCommand("select paid_intr from FD_transection where cert_id = " + txtCertID.Text, conn);
+            OleDbCommand cmd1 = new OleDbCommand("select paid_intr from FD_transection where cert_id = " + txtCertID.Text, Program.conn);
             int paid_intr = (int)cmd1.ExecuteScalar();
 
             btnBreak.Text = "Pay Interest";
@@ -284,7 +266,7 @@ namespace Bank_FD_management
         {
             if (rbdPayInterest.Checked && !string.IsNullOrEmpty(txtCertID.Text))
             {
-                OleDbCommand cmd1 = new OleDbCommand("select Period_intr from FD_master where cert_id = " + txtCertID.Text, conn);
+                OleDbCommand cmd1 = new OleDbCommand("select Period_intr from FD_master where cert_id = " + txtCertID.Text, Program.conn);
                 string period = (string)cmd1.ExecuteScalar();
 
                 switch (period)
@@ -336,7 +318,7 @@ namespace Bank_FD_management
 
                 int amount = Convert.ToInt32(txtFDAmount.Text);
 
-                OleDbCommand cmd = new OleDbCommand("select p_interest from interest_master where duration = '" + txtPeriod.Text + "'", conn);
+                OleDbCommand cmd = new OleDbCommand("select p_interest from interest_master where duration = '" + txtPeriod.Text + "'", Program.conn);
                 double temp = Convert.ToDouble(cmd.ExecuteScalar());
                 double penIntrDiff = Convert.ToDouble(txtinterestRate.Text) - temp;
                 txtpen_intr.Text = penIntrDiff.ToString();
@@ -382,7 +364,7 @@ namespace Bank_FD_management
            try
             {
                 // To disable radio button if curr date > mature date
-                OleDbCommand cmdMatureDate = new OleDbCommand("select mature_dt from fd_master where cert_id = " + txtCertID.Text, conn);
+                OleDbCommand cmdMatureDate = new OleDbCommand("select mature_dt from fd_master where cert_id = " + txtCertID.Text, Program.conn);
                 var mDate = DateTime.Parse(cmdMatureDate.ExecuteScalar().ToString());
 
                 if(DateTime.Now.Date > mDate)
@@ -396,9 +378,9 @@ namespace Bank_FD_management
 
                 if (!string.IsNullOrEmpty(txtCertID.Text))
                 {
-                    OleDbCommand cmd = new OleDbCommand("select * from FD_master where cert_id = " + txtCertID.Text, conn);
+                    OleDbCommand cmd = new OleDbCommand("select * from FD_master where cert_id = " + txtCertID.Text, Program.conn);
                     OleDbDataReader dr = cmd.ExecuteReader();
-                    OleDbCommand cmd1 = new OleDbCommand("select * from FD_transection where cert_id = " + txtCertID.Text, conn);
+                    OleDbCommand cmd1 = new OleDbCommand("select * from FD_transection where cert_id = " + txtCertID.Text, Program.conn);
                     OleDbDataReader dr1 = cmd1.ExecuteReader();
 
                     if (dr.HasRows && dr1.HasRows)
@@ -459,7 +441,7 @@ namespace Bank_FD_management
                 }
                 else
                 {
-                    err.SetError(txtCertID, "Enter ID");
+                    Program.err.SetError(txtCertID, "Enter ID");
                     txtCertID.Focus();
                 }
 
@@ -485,7 +467,7 @@ namespace Bank_FD_management
 
         private void cal_Break()
         {
-            OleDbCommand cmd1 = new OleDbCommand("select paid_intr from FD_transection where cert_id = " + txtCertID.Text, conn);
+            OleDbCommand cmd1 = new OleDbCommand("select paid_intr from FD_transection where cert_id = " + txtCertID.Text, Program.conn);
             int paid_intr = (int)cmd1.ExecuteScalar();
 
             //if(DateTime.Now >= dtpStartDate.Value.ad)
@@ -510,7 +492,7 @@ namespace Bank_FD_management
                         DialogResult res = MessageBox.Show("Do you want to pay? /n Rs." + temp2 + "/-", "Confirm", MessageBoxButtons.YesNo);
                         if (res == DialogResult.Yes)
                         {
-                            OleDbCommand cmd = new OleDbCommand("update fd_transection set paid_intr = " + txtPaid_intr.Text + ", last_pay_date = #" + DateTime.Now.Date.ToString("yyyy-MM-dd HH:mm:ss") + "# where cert_id = " + txtCertID.Text, conn);
+                            OleDbCommand cmd = new OleDbCommand("update fd_transection set paid_intr = " + txtPaid_intr.Text + ", last_pay_date = #" + DateTime.Now.Date.ToString("yyyy-MM-dd HH:mm:ss") + "# where cert_id = " + txtCertID.Text, Program.conn);
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("Interest Paid");
                             btnBreak.Enabled = false;
@@ -531,17 +513,17 @@ namespace Bank_FD_management
                     if (res == DialogResult.Yes)
                     {
                         // update status in tables fd_transection and insert data into break_fd table
-                        OleDbCommand cmdUpdateStatus = new OleDbCommand("update fd_master set status = 'Break' where cert_id = " + txtCertID.Text, conn);
+                        OleDbCommand cmdUpdateStatus = new OleDbCommand("update fd_master set status = 'Break' where cert_id = " + txtCertID.Text, Program.conn);
                         cmdUpdateStatus.ExecuteNonQuery();
 
-                        OleDbCommand cmdUpdateStatus1 = new OleDbCommand("update fd_transection set fd_status = 'Break' where cert_id = " + txtCertID.Text, conn);
+                        OleDbCommand cmdUpdateStatus1 = new OleDbCommand("update fd_transection set fd_status = 'Break' where cert_id = " + txtCertID.Text, Program.conn);
                         cmdUpdateStatus1.ExecuteNonQuery();
                             
                         // record is deleted automatically after updating status in transection table
-                        OleDbCommand cmdGetInfo = new OleDbCommand("select * from fd_master where cert_id = " + txtCertID.Text, conn);
+                        OleDbCommand cmdGetInfo = new OleDbCommand("select * from fd_master where cert_id = " + txtCertID.Text, Program.conn);
                         OleDbDataReader dr = cmdGetInfo.ExecuteReader();
 
-                        OleDbCommand cmdGetPenIntr = new OleDbCommand("select * from Interest_master where duration = '" + txtPeriod.Text + "'", conn);
+                        OleDbCommand cmdGetPenIntr = new OleDbCommand("select * from Interest_master where duration = '" + txtPeriod.Text + "'", Program.conn);
                         OleDbDataReader dr1 = cmdGetPenIntr.ExecuteReader();
                         double penIntr = double.Parse(txtinterestRate.Text) - double.Parse(txtpen_intr.Text) ;
 
@@ -564,7 +546,7 @@ namespace Bank_FD_management
                         }
                         dr.Close();
 
-                        OleDbCommand cmdInsert = new OleDbCommand("insert into break_fd values (" + txtFD_ID.Text + ", '" + cid + "', '" + txtName.Text + "', #" + certDate + "#, " + txtCertID.Text + ", #" + dtpMatureDate.Value + "#, " + mon + ", " + day + ", '" + "Break" + "', '" + fdType + "', " + txtinterestRate.Text + ", " + txtFDAmount.Text + ", " + matAmt + ", " + txtTotalInterest.Text + ", " + totalDays + ", " + periodic_intr + ", " + txtWith_amt.Text + ", #" + dtpWith_date.Value + "#, " + txtPaid_intr.Text + ", " + penIntr + ")", conn);
+                        OleDbCommand cmdInsert = new OleDbCommand("insert into break_fd values (" + txtFD_ID.Text + ", '" + cid + "', '" + txtName.Text + "', #" + certDate + "#, " + txtCertID.Text + ", #" + dtpMatureDate.Value + "#, " + mon + ", " + day + ", '" + "Break" + "', '" + fdType + "', " + txtinterestRate.Text + ", " + txtFDAmount.Text + ", " + matAmt + ", " + txtTotalInterest.Text + ", " + totalDays + ", " + periodic_intr + ", " + txtWith_amt.Text + ", #" + dtpWith_date.Value + "#, " + txtPaid_intr.Text + ", " + penIntr + ")", Program.conn);
                         cmdInsert.ExecuteNonQuery();
 
                         MessageBox.Show("Your fd is breaked");

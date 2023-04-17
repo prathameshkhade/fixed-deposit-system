@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data.OleDb;
@@ -10,18 +9,6 @@ namespace Bank_FD_management
 {
     public partial class frmForgetCustID : Form
     {
-        private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
-        private OleDbConnection conn = new OleDbConnection(myConn);
-
-        public void setConnection()
-        {
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-                MessageBox.Show("Connection succesfull");
-            }
-        }
-
         // just for on focusing the seperate panel
         private void onFocus(object sender, EventArgs e)
         {
@@ -38,8 +25,6 @@ namespace Bank_FD_management
         }
 
         //for every control on panel got focus
-
-
         private void ctrlOnFocusPnl1()
         {
             foreach (Control i in pnlDetails.Controls)
@@ -131,23 +116,19 @@ namespace Bank_FD_management
         {
             try
             {
-                setConnection();
-                OleDbCommand cmd = new OleDbCommand("select c_id from customer_master where c_name = '" + txtName.Text + "' and dob = #" + dtpCustBirth.Value.ToString("yyyy-MM-dd HH:mm:ss") + "# and pan = '" + txtPan.Text + "'", conn);
+                OleDbCommand cmd = new OleDbCommand("select c_id from customer_master where c_name = '" + txtName.Text + "' and dob = #" + dtpCustBirth.Value.ToString("yyyy-MM-dd HH:mm:ss") + "# and pan = '" + txtPan.Text + "'", Program.conn);
                 int id = (int)cmd.ExecuteScalar();
                 txtID.Text = id.ToString();
-                conn.Close();
+                Program.conn.Close();
             }
-            catch(OleDbException ex)
+            catch(NullReferenceException)
             {
-                //MessageBox.Show(ex.Message);
-                
-                
-            }
-            catch(Exception ex)
-            {
-                //MessageBox.Show(ex.Message);
                 MessageBox.Show("Record does not Exists");
                 clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

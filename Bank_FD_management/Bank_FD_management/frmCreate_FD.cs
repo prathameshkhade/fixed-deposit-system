@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data.OleDb;
@@ -10,19 +9,6 @@ namespace Bank_FD_management
 {
     public partial class frmCreate_FD : Form
     {
-        private ErrorProvider err = new ErrorProvider();
-        private static string myConn = "Provider=Microsoft.ACE.Oledb.12.0; Data Source=../../../DB/Data.accdb";
-        private OleDbConnection conn = new OleDbConnection(myConn);
-        
-
-        public void setConnection()
-        {
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-        }
-
         // just for on focusing the seperate panel 
         private void onFocus(object sender, EventArgs e)
         {
@@ -163,7 +149,6 @@ namespace Bank_FD_management
             ctrlOnLostFocusPnl2();
             ctrlOnLostFocusPnl3();
 
-            setConnection();
             dtpStartDate.MaxDate = DateTime.Now.AddMonths(1);
             dtpStartDate.Value = DateTime.Now;
 
@@ -176,8 +161,6 @@ namespace Bank_FD_management
             {
                 if (!string.IsNullOrEmpty(txtFinalAmount.Text))
                 {
-                    setConnection();
-
                     //to read the interest period from radiobuttons
                     string selectedperiod = "";
                     foreach (Control c in grprdb.Controls)
@@ -189,7 +172,7 @@ namespace Bank_FD_management
                     }
 
 
-                    OleDbCommand cmd1 = new OleDbCommand("SELECT TOP 1 cert_id FROM fd_master ORDER BY cert_id DESC", conn);
+                    OleDbCommand cmd1 = new OleDbCommand("SELECT TOP 1 cert_id FROM fd_master ORDER BY cert_id DESC", Program.conn);
                     OleDbDataReader dr = cmd1.ExecuteReader();
                     int ce_id=0;
                     if (dr.HasRows && dr.Read())
@@ -208,12 +191,12 @@ namespace Bank_FD_management
 
 
                     //to save the data inside the database
-                    OleDbCommand cmd2 = new OleDbCommand("insert into FD_Master (c_id , c_name , cert_dt , cert_id , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days , period_intr ,periodic_intr) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,"+ce_id+",#" + dtpEndDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ",'" + selectedperiod + "',"+txtPeriodicInterest.Text+")", conn);
+                    OleDbCommand cmd2 = new OleDbCommand("insert into FD_Master (c_id , c_name , cert_dt , cert_id , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days , period_intr ,periodic_intr) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,"+ce_id+",#" + dtpEndDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ",'" + selectedperiod + "',"+txtPeriodicInterest.Text+")", Program.conn);
                     cmd2.ExecuteNonQuery();
 
 
                     //to select the latest maximum value of FD_ID & cert_id and load it to their respective textboxes;
-                    OleDbCommand cmd3 = new OleDbCommand("SELECT MAX(fd_id) AS max_fd_id, MAX(cert_id) AS max_cert_id FROM fd_master", conn);
+                    OleDbCommand cmd3 = new OleDbCommand("SELECT MAX(fd_id) AS max_fd_id, MAX(cert_id) AS max_cert_id FROM fd_master", Program.conn);
                     OleDbDataReader dr1 = cmd3.ExecuteReader();
                     if (dr1.HasRows && dr1.Read())
                     {
@@ -227,7 +210,7 @@ namespace Bank_FD_management
 
 
                     //to save the data inside the transection table
-                    OleDbCommand cmd4 = new OleDbCommand("insert into FD_transection (fd_id, cert_id, c_name, start_dt, mature_dt, period, fd_amount, final_amount, intr_rate, total_intr, total_days,periodic_intr,last_pay_date) values(" + txtFDID.Text + ",'" + txtCertID.Text + "','"+txtName.Text+"',#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,#" + dtpEndDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,'" + cmbFDType.Text + "'," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtInterestRate.Text + "," + txtTotalInterest.Text + ",'" + totalDays + "'," + txtPeriodicInterest.Text + ",#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#)", conn);
+                    OleDbCommand cmd4 = new OleDbCommand("insert into FD_transection (fd_id, cert_id, c_name, start_dt, mature_dt, period, fd_amount, final_amount, intr_rate, total_intr, total_days,periodic_intr,last_pay_date) values(" + txtFDID.Text + ",'" + txtCertID.Text + "','"+txtName.Text+"',#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,#" + dtpEndDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,'" + cmbFDType.Text + "'," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtInterestRate.Text + "," + txtTotalInterest.Text + ",'" + totalDays + "'," + txtPeriodicInterest.Text + ",#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#)", Program.conn);
                     cmd4.ExecuteNonQuery();              
 
                     disableediting();
@@ -313,8 +296,7 @@ namespace Bank_FD_management
             {
                 if (!string.IsNullOrEmpty(txtID.Text))
                 {
-                    setConnection();
-                    OleDbCommand cmd = new OleDbCommand("select * from customer_master where c_id = " + txtID.Text, conn);
+                    OleDbCommand cmd = new OleDbCommand("select * from customer_master where c_id = " + txtID.Text, Program.conn);
 
                     OleDbDataReader dr = cmd.ExecuteReader();
 
@@ -337,7 +319,7 @@ namespace Bank_FD_management
                 }
                 else
                 {
-                    err.SetError(txtID, "Enter ID");
+                    Program.err.SetError(txtID, "Enter ID");
                     txtID.Focus();
                     disableediting();
                 }
@@ -365,35 +347,6 @@ namespace Bank_FD_management
                 DateTime newDate = startDate.AddDays(days).AddMonths(months);
                 totalDays = (int)(newDate - startDate).TotalDays;
 
-                //if (totalDays >= 365)
-                //{
-                //    rdbMonthly.Enabled = true;
-                //    rdbQuaterly.Enabled = true;
-                //    rdbHalfYearly.Enabled = true;
-                //    rdbOnMaturity.Enabled = true;
-                //}
-                //else if (totalDays>=180)
-                //{
-                //    rdbMonthly.Enabled = true;
-                //    rdbQuaterly.Enabled =true;
-                //    rdbHalfYearly.Enabled = false;
-                //    rdbOnMaturity.Enabled = true;
-                //}
-                //else if(totalDays>=90)
-                //{
-                //    rdbMonthly.Enabled = true;
-                //    rdbQuaterly.Enabled =false;
-                //    rdbHalfYearly.Enabled = true;
-                //    rdbOnMaturity.Enabled = true;
-                //}
-                //else if(totalDays<=30)
-                //{
-                //    rdbMonthly.Enabled = false;
-                //    rdbQuaterly.Enabled = false;
-                //    rdbHalfYearly.Enabled = false;
-                //    rdbOnMaturity.Enabled = true;
-                //}
-
                 //to change the end date
                 dtpEndDate.MaxDate = DateTime.Now.AddDays(totalDays).AddMonths(1);
                 dtpEndDate.Value = DateTime.Now.AddDays(totalDays);
@@ -420,7 +373,8 @@ namespace Bank_FD_management
                     cmbFDType.SelectedIndex = 0;
                 }
                 else
-                {   //logical error = cmddays combobox dosent get clear even tho we assign null value;              
+                {   
+                    //logical error = cmddays combobox dosent get clear even tho we assign null value;              
                     MessageBox.Show("Please select atleast 7 days period");
                     cmbDays.Text = "";
                     cmbFDType.SelectedIndex = -1;
@@ -464,34 +418,33 @@ namespace Bank_FD_management
         double interest;
         private void cmbFDType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
             if (cmbFDType.SelectedIndex == 0)
             {
-                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", conn);
+                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", Program.conn);
                 interest = Convert.ToDouble(cmd.ExecuteScalar());
                 txtInterestRate.Text = interest.ToString();
             }
             else if (cmbFDType.SelectedIndex == 1)
             {
-                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", conn);
+                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", Program.conn);
                 interest = Convert.ToDouble(cmd.ExecuteScalar());
                 txtInterestRate.Text = interest.ToString();
             }
             else if (cmbFDType.SelectedIndex == 2)
             {
-                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", conn);
+                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", Program.conn);
                 interest = Convert.ToDouble(cmd.ExecuteScalar());
                 txtInterestRate.Text = interest.ToString();
             }
             else if (cmbFDType.SelectedIndex == 3)
             {
-                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", conn);
+                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", Program.conn);
                 interest = Convert.ToDouble(cmd.ExecuteScalar());
                 txtInterestRate.Text = interest.ToString();
             }
             else if (cmbFDType.SelectedIndex == 4)
             {
-                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", conn);
+                OleDbCommand cmd = new OleDbCommand("select interest from interest_master where duration = '" + cmbFDType.Text + "'", Program.conn);
                 interest = Convert.ToDouble(cmd.ExecuteScalar());
                 txtInterestRate.Text = interest.ToString();
             }
@@ -529,10 +482,8 @@ namespace Bank_FD_management
             }
             else
             {
-                if (!string.IsNullOrEmpty(txtFDAmount.Text))
-                {
-                    txtFDAmount.Focus();
-                }
+                if (!string.IsNullOrEmpty(txtFDAmount.Text)) txtFDAmount.Focus();
+
                 else
                 {
                     //rdbMonthly.Focus();
@@ -612,14 +563,6 @@ namespace Bank_FD_management
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            //ReportDocument crypt = new ReportDocument();
-            //crypt.Load("C:/Users/Hiremath/source/repos/Fixed_deposite_system/Bank_FD_management/Bank_FD_management/Reports/FD_Certificate.rpt");
-            //crypt.RecordSelectionFormula = "{FD_master.Cert_ID}=700024";
-            //crypt.Refresh();
-            //CrystalReportViewer view1 = new CrystalReportViewer();
-            //view1.ReportSource = crypt;
-            //view1.Show();
-
             try
             {
                 ReportDocument crypt = new ReportDocument();
