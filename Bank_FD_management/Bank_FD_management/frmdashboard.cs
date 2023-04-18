@@ -73,12 +73,5 @@ namespace Bank_FD_management
             Program.login.BringToFront();
             this.Close();
         }
-
-        private void fDReportsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmFD_reports report = new frmFD_reports();
-            report.Show();
-
-        }
     }
 }
