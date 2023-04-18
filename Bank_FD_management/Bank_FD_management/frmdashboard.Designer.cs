@@ -42,6 +42,7 @@
             this.addToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fDReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDash.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,7 +105,8 @@
             // mastersToolStripMenuItem
             // 
             this.mastersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fDMasterToolStripMenuItem});
+            this.fDMasterToolStripMenuItem,
+            this.fDReportsToolStripMenuItem});
             this.mastersToolStripMenuItem.Name = "mastersToolStripMenuItem";
             this.mastersToolStripMenuItem.Size = new System.Drawing.Size(98, 34);
             this.mastersToolStripMenuItem.Text = "Masters";
@@ -112,7 +114,7 @@
             // fDMasterToolStripMenuItem
             // 
             this.fDMasterToolStripMenuItem.Name = "fDMasterToolStripMenuItem";
-            this.fDMasterToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
+            this.fDMasterToolStripMenuItem.Size = new System.Drawing.Size(187, 34);
             this.fDMasterToolStripMenuItem.Text = "FD_Master";
             this.fDMasterToolStripMenuItem.Click += new System.EventHandler(this.fDMasterToolStripMenuItem_Click);
             // 
@@ -161,6 +163,13 @@
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
+            // fDReportsToolStripMenuItem
+            // 
+            this.fDReportsToolStripMenuItem.Name = "fDReportsToolStripMenuItem";
+            this.fDReportsToolStripMenuItem.Size = new System.Drawing.Size(187, 34);
+            this.fDReportsToolStripMenuItem.Text = "FD Reports";
+            this.fDReportsToolStripMenuItem.Click += new System.EventHandler(this.fDReportsToolStripMenuItem_Click);
+            // 
             // frmdashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,5 +204,6 @@
         private System.Windows.Forms.ToolStripMenuItem addToToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userIDToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fDReportsToolStripMenuItem;
     }
 }

@@ -69,7 +69,17 @@ namespace Bank_FD_management
         {
             if(cmbReportType.Text == "Customer wise Report")
             {
-
+                ReportDocument crypt = new ReportDocument();
+                crypt.Load("C:/Users/Hiremath/source/repos/Fixed_deposite_system/Bank_FD_management/Bank_FD_management/Reports/ID_Report.rpt");
+                crypt.RecordSelectionFormula = "{FD_master.C_ID} =" + Convert.ToInt32(txtID.Text) + "";
+                crypt.Refresh();
+                CrystalReportViewer view1 = new CrystalReportViewer();
+                pnlTitle.Visible = false;
+                pnlDetails.Visible = false;
+                pnlButtons.Visible = false;
+                view1.Dock = DockStyle.Fill;
+                view1.ReportSource = crypt;
+                this.Controls.Add(view1);
             }
 
             if (cmbReportType.Text == "Date wise report")
