@@ -505,6 +505,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(163, 29);
             this.txtID.TabIndex = 0;
+            this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtID_KeyDown);
             // 
             // txtFDID
             // 

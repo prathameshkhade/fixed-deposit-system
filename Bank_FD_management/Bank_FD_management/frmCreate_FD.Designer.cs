@@ -86,20 +86,21 @@
             this.pnlTitle.BackColor = System.Drawing.Color.LightGray;
             this.pnlTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlTitle.Controls.Add(this.lblTitle);
-            this.pnlTitle.Location = new System.Drawing.Point(13, 13);
+            this.pnlTitle.Location = new System.Drawing.Point(13, 10);
             this.pnlTitle.Name = "pnlTitle";
-            this.pnlTitle.Size = new System.Drawing.Size(1131, 60);
+            this.pnlTitle.Size = new System.Drawing.Size(1131, 76);
             this.pnlTitle.TabIndex = 2;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(479, 7);
+            this.lblTitle.Location = new System.Drawing.Point(480, 11);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(190, 42);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Create FD";
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // lblName
             // 
@@ -166,9 +167,9 @@
             this.pnlDetails.Controls.Add(this.lblMonths);
             this.pnlDetails.Controls.Add(this.lblDays);
             this.pnlDetails.Controls.Add(this.cmbMonths);
-            this.pnlDetails.Location = new System.Drawing.Point(13, 90);
+            this.pnlDetails.Location = new System.Drawing.Point(13, 94);
             this.pnlDetails.Name = "pnlDetails";
-            this.pnlDetails.Size = new System.Drawing.Size(1131, 322);
+            this.pnlDetails.Size = new System.Drawing.Size(1131, 328);
             this.pnlDetails.TabIndex = 0;
             // 
             // grprdb
@@ -498,9 +499,9 @@
             this.pnlRates.Controls.Add(this.lblPeriodicInterest);
             this.pnlRates.Controls.Add(this.txtInterestRate);
             this.pnlRates.Controls.Add(this.lblInterstRate);
-            this.pnlRates.Location = new System.Drawing.Point(13, 430);
+            this.pnlRates.Location = new System.Drawing.Point(13, 432);
             this.pnlRates.Name = "pnlRates";
-            this.pnlRates.Size = new System.Drawing.Size(1131, 299);
+            this.pnlRates.Size = new System.Drawing.Size(1131, 304);
             this.pnlRates.TabIndex = 1;
             // 
             // dtpEndDate
@@ -677,6 +678,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1156, 858);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.pnlRates);

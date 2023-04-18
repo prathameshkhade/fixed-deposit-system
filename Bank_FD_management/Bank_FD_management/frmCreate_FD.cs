@@ -583,5 +583,10 @@ namespace Bank_FD_management
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

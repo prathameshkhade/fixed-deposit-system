@@ -133,5 +133,21 @@ namespace Bank_FD_management
         {
 
         }
+
+        private void txtID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if(!string.IsNullOrEmpty(txtID.Text))
+                {
+                    btnLoad.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Enter ID first");
+                    txtID.Focus();
+                }
+            }
+        }
     }
 }

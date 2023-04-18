@@ -40,6 +40,7 @@
             this.lblReport_Type = new System.Windows.Forms.Label();
             this.cmbReportType = new System.Windows.Forms.ComboBox();
             this.pnlButtons = new System.Windows.Forms.Panel();
+            this.btncancel = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnViewReport = new System.Windows.Forms.Button();
             this.pnlTitle.SuspendLayout();
@@ -92,6 +93,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(163, 29);
             this.txtID.TabIndex = 53;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // lblID
             // 
@@ -124,6 +126,7 @@
             this.dtpStartDate.Size = new System.Drawing.Size(181, 29);
             this.dtpStartDate.TabIndex = 51;
             this.dtpStartDate.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
+            this.dtpStartDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpStartDate_KeyDown);
             // 
             // lblEndDate
             // 
@@ -169,6 +172,7 @@
             this.cmbReportType.Name = "cmbReportType";
             this.cmbReportType.Size = new System.Drawing.Size(234, 32);
             this.cmbReportType.TabIndex = 0;
+            this.cmbReportType.DropDown += new System.EventHandler(this.cmbReportType_DropDown);
             this.cmbReportType.SelectedIndexChanged += new System.EventHandler(this.cmbReportType_SelectedIndexChanged);
             this.cmbReportType.TextChanged += new System.EventHandler(this.cmbReportType_TextChanged);
             this.cmbReportType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbReportType_KeyDown);
@@ -177,6 +181,7 @@
             // 
             this.pnlButtons.BackColor = System.Drawing.Color.LightGray;
             this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlButtons.Controls.Add(this.btncancel);
             this.pnlButtons.Controls.Add(this.btnExit);
             this.pnlButtons.Controls.Add(this.btnViewReport);
             this.pnlButtons.Location = new System.Drawing.Point(13, 527);
@@ -184,11 +189,23 @@
             this.pnlButtons.Size = new System.Drawing.Size(1091, 60);
             this.pnlButtons.TabIndex = 9;
             // 
+            // btncancel
+            // 
+            this.btncancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btncancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.Location = new System.Drawing.Point(286, 9);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(130, 38);
+            this.btncancel.TabIndex = 5;
+            this.btncancel.Text = "Cancel";
+            this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
+            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(629, 9);
+            this.btnExit.Location = new System.Drawing.Point(678, 9);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(130, 38);
             this.btnExit.TabIndex = 4;
@@ -200,7 +217,7 @@
             // 
             this.btnViewReport.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnViewReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewReport.Location = new System.Drawing.Point(365, 9);
+            this.btnViewReport.Location = new System.Drawing.Point(469, 9);
             this.btnViewReport.Name = "btnViewReport";
             this.btnViewReport.Size = new System.Drawing.Size(159, 38);
             this.btnViewReport.TabIndex = 2;
@@ -244,5 +261,6 @@
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Button btnViewReport;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btncancel;
     }
 }
