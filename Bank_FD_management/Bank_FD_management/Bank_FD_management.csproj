@@ -172,6 +172,12 @@
     <Compile Include="frmdashboard.Designer.cs">
       <DependentUpon>frmdashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFD_reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFD_reports.designer.cs">
+      <DependentUpon>frmFD_reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmForgetCustID.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Date_report1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Date_report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\FD_Certificate1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -222,6 +234,9 @@
     <EmbeddedResource Include="frmdashboard.resx">
       <DependentUpon>frmdashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFD_reports.resx">
+      <DependentUpon>frmFD_reports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmForgetCustID.resx">
       <DependentUpon>frmForgetCustID.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +255,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\Date_report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Date_report1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\FD_Certificate.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>FD_Certificate1.cs</LastGenOutput>
