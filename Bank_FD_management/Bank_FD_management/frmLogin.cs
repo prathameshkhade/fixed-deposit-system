@@ -136,5 +136,34 @@ namespace Bank_FD_management
             cmbRole.Text = "--Select Role--";
             cmbRole.Focus();
         }
+
+        private void label4_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void cmbRole_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                txtUname.Focus();
+            }
+        }
+
+        private void txtUname_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtPass.Focus();
+            }
+        }
+
+        private void txtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.Focus();
+            }
+        }
     }
 }

@@ -79,5 +79,10 @@ namespace Bank_FD_management
             frmFD_reports temp = new frmFD_reports();
             temp.Show();
         }
+
+        private void mastersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

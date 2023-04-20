@@ -39,9 +39,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -154,16 +154,29 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.IndianRed;
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(796, 64);
             this.panel1.TabIndex = 16;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(321, 14);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(151, 37);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Add User";
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
+            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.IndianRed;
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Location = new System.Drawing.Point(12, 341);
@@ -173,7 +186,8 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.cmbRole);
             this.panel3.Controls.Add(this.lblRole);
             this.panel3.Controls.Add(this.label2);
@@ -186,17 +200,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(796, 248);
             this.panel3.TabIndex = 17;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(321, 14);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(151, 37);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Add User";
-            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // frmAdd
             // 

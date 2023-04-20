@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmdashboard));
             this.menuDash = new System.Windows.Forms.MenuStrip();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,19 +37,19 @@
             this.breakFDToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mastersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fDMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fDReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.forgetCustomerIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateInterestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addToToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userIDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fDReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDash.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuDash
             // 
-            this.menuDash.BackColor = System.Drawing.Color.LightGray;
+            this.menuDash.BackColor = System.Drawing.Color.Gray;
             this.menuDash.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuDash.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createToolStripMenuItem,
@@ -92,13 +93,13 @@
             this.breakFDToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.breakFDToolStripMenuItem1});
             this.breakFDToolStripMenuItem.Name = "breakFDToolStripMenuItem";
-            this.breakFDToolStripMenuItem.Size = new System.Drawing.Size(107, 34);
-            this.breakFDToolStripMenuItem.Text = "Break FD";
+            this.breakFDToolStripMenuItem.Size = new System.Drawing.Size(161, 34);
+            this.breakFDToolStripMenuItem.Text = "FD Transection";
             // 
             // breakFDToolStripMenuItem1
             // 
             this.breakFDToolStripMenuItem1.Name = "breakFDToolStripMenuItem1";
-            this.breakFDToolStripMenuItem1.Size = new System.Drawing.Size(168, 34);
+            this.breakFDToolStripMenuItem1.Size = new System.Drawing.Size(180, 34);
             this.breakFDToolStripMenuItem1.Text = "Break FD";
             this.breakFDToolStripMenuItem1.Click += new System.EventHandler(this.breakFDToolStripMenuItem1_Click);
             // 
@@ -108,8 +109,9 @@
             this.fDMasterToolStripMenuItem,
             this.fDReportsToolStripMenuItem});
             this.mastersToolStripMenuItem.Name = "mastersToolStripMenuItem";
-            this.mastersToolStripMenuItem.Size = new System.Drawing.Size(98, 34);
-            this.mastersToolStripMenuItem.Text = "Masters";
+            this.mastersToolStripMenuItem.Size = new System.Drawing.Size(89, 34);
+            this.mastersToolStripMenuItem.Text = "Master";
+            this.mastersToolStripMenuItem.Click += new System.EventHandler(this.mastersToolStripMenuItem_Click);
             // 
             // fDMasterToolStripMenuItem
             // 
@@ -117,6 +119,13 @@
             this.fDMasterToolStripMenuItem.Size = new System.Drawing.Size(187, 34);
             this.fDMasterToolStripMenuItem.Text = "FD_Master";
             this.fDMasterToolStripMenuItem.Click += new System.EventHandler(this.fDMasterToolStripMenuItem_Click);
+            // 
+            // fDReportsToolStripMenuItem
+            // 
+            this.fDReportsToolStripMenuItem.Name = "fDReportsToolStripMenuItem";
+            this.fDReportsToolStripMenuItem.Size = new System.Drawing.Size(187, 34);
+            this.fDReportsToolStripMenuItem.Text = "FD Reports";
+            this.fDReportsToolStripMenuItem.Click += new System.EventHandler(this.fDReportsToolStripMenuItem_Click);
             // 
             // utilityToolStripMenuItem
             // 
@@ -163,17 +172,11 @@
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
-            // fDReportsToolStripMenuItem
-            // 
-            this.fDReportsToolStripMenuItem.Name = "fDReportsToolStripMenuItem";
-            this.fDReportsToolStripMenuItem.Size = new System.Drawing.Size(187, 34);
-            this.fDReportsToolStripMenuItem.Text = "FD Reports";
-            this.fDReportsToolStripMenuItem.Click += new System.EventHandler(this.fDReportsToolStripMenuItem_Click);
-            // 
             // frmdashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1284, 701);
             this.Controls.Add(this.menuDash);
             this.MainMenuStrip = this.menuDash;
