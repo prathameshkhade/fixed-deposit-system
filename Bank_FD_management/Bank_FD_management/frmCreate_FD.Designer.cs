@@ -121,6 +121,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(424, 29);
             this.txtName.TabIndex = 2;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // lblID
             // 
@@ -679,7 +680,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1156, 858);
+            this.ClientSize = new System.Drawing.Size(1156, 749);
             this.Controls.Add(this.pnlButtons);
             this.Controls.Add(this.pnlRates);
             this.Controls.Add(this.pnlDetails);

@@ -24,16 +24,18 @@ namespace Bank_FD_management
                         if(cmd.ExecuteNonQuery() == 1)
                         {
                             MessageBox.Show(" Admin added succesfully");
+                            btnCancel.PerformClick();
                         }
                     }
 
                     if (cmbRole.SelectedIndex == 1)
                     {
-                        OleDbCommand cmd = new OleDbCommand("insert into employee_login (name, uname, pass) values ('" + txtName.Text + "', '" + txtUname.Text + "', '" + txtPass.Text + "'", Program.conn);
+                        OleDbCommand cmd = new OleDbCommand("insert into Employee_login (name, uname, pass) values('" + txtName.Text + "', '" + txtUname.Text + "', '" + txtPass.Text + "')", Program.conn);
 
                         if (cmd.ExecuteNonQuery() == 1)
                         {
                             MessageBox.Show("Employee added succesfully");
+                            btnCancel.PerformClick();
                         }
                     }
                 } 
@@ -53,7 +55,7 @@ namespace Bank_FD_management
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            foreach (Control c in this.Controls)
+            foreach (Control c in panel3.Controls)
             {
                 if (c is TextBox txt) txt.Clear();
                 if (c is ComboBox cmb)
@@ -61,7 +63,6 @@ namespace Bank_FD_management
                     cmb.SelectedIndex = -1;
                     cmb.Text = "--Select Role--";
                 }
-
             }
         }
 
@@ -73,6 +74,17 @@ namespace Bank_FD_management
         private void frmAdd_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void chkShow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShow.Checked) txtPass.PasswordChar = '\0';
+            if (!chkShow.Checked) txtPass.PasswordChar = '*';
         }
     }
 }

@@ -205,7 +205,7 @@ namespace Bank_FD_management
                     }
                     else
                     {
-                        MessageBox.Show("cant find maximum fd_id || cert_id");
+                        MessageBox.Show("cant find maximum fd_id or cert_id");
                     }
 
 
@@ -220,11 +220,11 @@ namespace Bank_FD_management
                     btnLoad.Enabled = false;
                     btnPrint.Enabled = true;
 
-                    MessageBox.Show("Inserted successfully");
+                    MessageBox.Show("FD created");
                 }
                 else
                 {
-                    MessageBox.Show("Enter data first !!");
+                    MessageBox.Show("Enter data first");
                 }
             }
             catch (OleDbException ex)
@@ -482,12 +482,7 @@ namespace Bank_FD_management
             }
             else
             {
-                if (!string.IsNullOrEmpty(txtFDAmount.Text)) txtFDAmount.Focus();
-
-                else
-                {
-                    //rdbMonthly.Focus();
-                }
+                if (!string.IsNullOrEmpty(txtFDAmount.Text)) txtFDAmount.Focus();    
             }
         }
 
@@ -566,7 +561,8 @@ namespace Bank_FD_management
             try
             {
                 ReportDocument crypt = new ReportDocument();
-                crypt.Load(@"C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\FD_Certificate.rpt");
+                //crypt.Load(@"C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\FD_Certificate.rpt");
+                crypt.Load(@"D:\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\FD_Certificate.rpt");
                 crypt.RecordSelectionFormula = "{FD_master.Cert_ID} ="+Convert.ToInt32(txtCertID.Text)+"";
                 crypt.Refresh();
                 CrystalReportViewer view1 = new CrystalReportViewer();
@@ -587,6 +583,11 @@ namespace Bank_FD_management
         private void lblTitle_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar)) e.Handled=true;
         }
     }
 }

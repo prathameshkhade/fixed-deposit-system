@@ -483,5 +483,105 @@ namespace Bank_FD_management
                 txtpan.Focus();
             }
         }
+
+        private void txtname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != (char)Keys.Space) e.Handled = true;
+        }
+
+        private void txtname_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) txtaddress.Focus();
+        }
+
+        private void txtaddress_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) cmbstate.Focus();
+        }
+
+        private void cmbstate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) cmbdistrict.Focus();
+        }
+
+        private void cmbdistrict_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) cmbcity.Focus();
+        }
+
+        private void cmbcity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) txtPinCode.Focus();
+        }
+
+        private void txtPinCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) txtPhone.Focus();
+        }
+
+        private void txtPhone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) txtemail.Focus();
+        }
+
+        private void txtemail_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) dtpcustbirth.Focus();
+        }
+
+        private void dtpcustbirth_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) txtpan.Focus();
+        }
+
+        private void txtpan_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) chbminor.Focus();
+        }
+
+        private void txtgname_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) txtgaddress.Focus();
+        }
+
+        private void txtgaddress_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) txtgrelation.Focus();
+        }
+
+        private void txtgrelation_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) txtGuardPhone.Focus();
+        }
+
+        private void txtGuardPhone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) chbisnomminor.Focus();
+        }
+
+        private void txtnname_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) txtnrelation.Focus();
+        }
+
+        private void txtnrelation_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) txtNomPhone.Focus();
+        }
+
+        private void txtNomPhone_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) chbisnomminor.Focus();
+        }
+
+        private void pnldetails_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dobNom_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) btnsave.Focus();
+        }
     }
 }

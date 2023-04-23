@@ -138,6 +138,7 @@
             this.pnldetails.Name = "pnldetails";
             this.pnldetails.Size = new System.Drawing.Size(1131, 242);
             this.pnldetails.TabIndex = 1;
+            this.pnldetails.Paint += new System.Windows.Forms.PaintEventHandler(this.pnldetails_Paint);
             // 
             // txtPhone
             // 
@@ -148,6 +149,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(201, 29);
             this.txtPhone.TabIndex = 22;
+            this.txtPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPhone_KeyDown);
             this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtPinCode
@@ -159,6 +161,7 @@
             this.txtPinCode.Name = "txtPinCode";
             this.txtPinCode.Size = new System.Drawing.Size(201, 29);
             this.txtPinCode.TabIndex = 21;
+            this.txtPinCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPinCode_KeyDown);
             this.txtPinCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPinCode_KeyPress);
             // 
             // txtpan
@@ -170,6 +173,7 @@
             this.txtpan.Name = "txtpan";
             this.txtpan.Size = new System.Drawing.Size(232, 29);
             this.txtpan.TabIndex = 11;
+            this.txtpan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtpan_KeyDown);
             this.txtpan.Validating += new System.ComponentModel.CancelEventHandler(this.txtpan_Validating);
             // 
             // lblpan
@@ -192,6 +196,7 @@
             this.dtpcustbirth.Size = new System.Drawing.Size(232, 22);
             this.dtpcustbirth.TabIndex = 10;
             this.dtpcustbirth.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
+            this.dtpcustbirth.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpcustbirth_KeyDown);
             // 
             // lbldob
             // 
@@ -211,6 +216,7 @@
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(401, 29);
             this.txtemail.TabIndex = 9;
+            this.txtemail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtemail_KeyDown);
             this.txtemail.Validating += new System.ComponentModel.CancelEventHandler(this.txtemail_Validating);
             // 
             // lblemail
@@ -256,6 +262,7 @@
             this.cmbcity.Name = "cmbcity";
             this.cmbcity.Size = new System.Drawing.Size(203, 32);
             this.cmbcity.TabIndex = 6;
+            this.cmbcity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbcity_KeyDown);
             // 
             // lblcity
             // 
@@ -281,6 +288,7 @@
             this.cmbdistrict.Name = "cmbdistrict";
             this.cmbdistrict.Size = new System.Drawing.Size(203, 32);
             this.cmbdistrict.TabIndex = 5;
+            this.cmbdistrict.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbdistrict_KeyDown);
             // 
             // lbldistrict
             // 
@@ -305,6 +313,7 @@
             this.cmbstate.Name = "cmbstate";
             this.cmbstate.Size = new System.Drawing.Size(203, 32);
             this.cmbstate.TabIndex = 4;
+            this.cmbstate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbstate_KeyDown);
             // 
             // lblstate
             // 
@@ -324,6 +333,7 @@
             this.txtaddress.Name = "txtaddress";
             this.txtaddress.Size = new System.Drawing.Size(821, 29);
             this.txtaddress.TabIndex = 3;
+            this.txtaddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtaddress_KeyDown);
             // 
             // lbladdress
             // 
@@ -343,6 +353,8 @@
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(491, 29);
             this.txtname.TabIndex = 1;
+            this.txtname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtname_KeyDown);
+            this.txtname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtname_KeyPress);
             // 
             // lblname
             // 
@@ -382,6 +394,7 @@
             this.txtGuardPhone.Name = "txtGuardPhone";
             this.txtGuardPhone.Size = new System.Drawing.Size(201, 29);
             this.txtGuardPhone.TabIndex = 22;
+            this.txtGuardPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGuardPhone_KeyDown);
             this.txtGuardPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGuardPhone_KeyPress);
             // 
             // label1
@@ -403,6 +416,7 @@
             this.txtgaddress.Name = "txtgaddress";
             this.txtgaddress.Size = new System.Drawing.Size(608, 29);
             this.txtgaddress.TabIndex = 2;
+            this.txtgaddress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtgaddress_KeyDown);
             // 
             // lblgaddress
             // 
@@ -423,6 +437,7 @@
             this.txtgrelation.Name = "txtgrelation";
             this.txtgrelation.Size = new System.Drawing.Size(193, 29);
             this.txtgrelation.TabIndex = 3;
+            this.txtgrelation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtgrelation_KeyDown);
             // 
             // lblgrelation
             // 
@@ -443,6 +458,7 @@
             this.txtgname.Name = "txtgname";
             this.txtgname.Size = new System.Drawing.Size(481, 29);
             this.txtgname.TabIndex = 1;
+            this.txtgname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtgname_KeyDown);
             // 
             // lblgname
             // 
@@ -609,6 +625,7 @@
             this.txtnname.Name = "txtnname";
             this.txtnname.Size = new System.Drawing.Size(481, 29);
             this.txtnname.TabIndex = 1;
+            this.txtnname.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnname_KeyDown);
             // 
             // label5
             // 
@@ -629,6 +646,7 @@
             this.txtnrelation.Name = "txtnrelation";
             this.txtnrelation.Size = new System.Drawing.Size(201, 29);
             this.txtnrelation.TabIndex = 3;
+            this.txtnrelation.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnrelation_KeyDown);
             // 
             // label3
             // 
@@ -676,6 +694,7 @@
             this.dobNom.Size = new System.Drawing.Size(230, 21);
             this.dobNom.TabIndex = 6;
             this.dobNom.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
+            this.dobNom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dobNom_KeyDown);
             // 
             // pnlnominee
             // 
@@ -706,6 +725,7 @@
             this.txtNomPhone.Name = "txtNomPhone";
             this.txtNomPhone.Size = new System.Drawing.Size(201, 29);
             this.txtNomPhone.TabIndex = 22;
+            this.txtNomPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNomPhone_KeyDown);
             this.txtNomPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomPhone_KeyPress);
             // 
             // frmcreatecustomer
@@ -714,7 +734,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1153, 854);
+            this.ClientSize = new System.Drawing.Size(1170, 749);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlbuttons);
             this.Controls.Add(this.pnlnominee);

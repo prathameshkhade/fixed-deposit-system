@@ -42,6 +42,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.chkShow = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -127,6 +128,7 @@
             this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.Location = new System.Drawing.Point(341, 183);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(158, 26);
             this.txtPass.TabIndex = 3;
             // 
@@ -179,15 +181,16 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.btnCancel);
             this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Location = new System.Drawing.Point(12, 341);
+            this.panel2.Location = new System.Drawing.Point(12, 346);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(796, 64);
+            this.panel2.Size = new System.Drawing.Size(796, 66);
             this.panel2.TabIndex = 17;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.LightGray;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.chkShow);
             this.panel3.Controls.Add(this.cmbRole);
             this.panel3.Controls.Add(this.lblRole);
             this.panel3.Controls.Add(this.label2);
@@ -198,15 +201,29 @@
             this.panel3.Controls.Add(this.txtName);
             this.panel3.Location = new System.Drawing.Point(12, 83);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(796, 248);
+            this.panel3.Size = new System.Drawing.Size(796, 257);
             this.panel3.TabIndex = 17;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // chkShow
+            // 
+            this.chkShow.AutoSize = true;
+            this.chkShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkShow.Location = new System.Drawing.Point(340, 217);
+            this.chkShow.Name = "chkShow";
+            this.chkShow.Size = new System.Drawing.Size(136, 22);
+            this.chkShow.TabIndex = 15;
+            this.chkShow.TabStop = false;
+            this.chkShow.Text = "Show Password";
+            this.chkShow.UseVisualStyleBackColor = true;
+            this.chkShow.CheckedChanged += new System.EventHandler(this.chkShow_CheckedChanged);
             // 
             // frmAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(817, 416);
+            this.ClientSize = new System.Drawing.Size(817, 424);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -239,5 +256,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.CheckBox chkShow;
     }
 }
