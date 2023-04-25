@@ -191,7 +191,7 @@ namespace Bank_FD_management
 
 
                     //to save the data inside the database
-                    OleDbCommand cmd2 = new OleDbCommand("insert into FD_Master (c_id , c_name , cert_dt , cert_id , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days , period_intr ,periodic_intr) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,"+ce_id+",#" + dtpEndDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ",'" + selectedperiod + "',"+txtPeriodicInterest.Text+")", Program.conn);
+                    OleDbCommand cmd2 = new OleDbCommand("insert into FD_Master (c_id , c_name , cert_dt , cert_id , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days , period_intr ,periodic_intr) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "#,"+ce_id+",#" + dtpEndDate.Value.ToString("yyyy-MM-dd") + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ",'" + selectedperiod + "',"+txtPeriodicInterest.Text+")", Program.conn);
                     cmd2.ExecuteNonQuery();
 
 
@@ -210,7 +210,7 @@ namespace Bank_FD_management
 
 
                     //to save the data inside the transection table
-                    OleDbCommand cmd4 = new OleDbCommand("insert into FD_transection (fd_id, cert_id, c_name, start_dt, mature_dt, period, fd_amount, final_amount, intr_rate, total_intr, total_days,periodic_intr,last_pay_date) values(" + txtFDID.Text + ",'" + txtCertID.Text + "','"+txtName.Text+"',#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,#" + dtpEndDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,'" + cmbFDType.Text + "'," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtInterestRate.Text + "," + txtTotalInterest.Text + ",'" + totalDays + "'," + txtPeriodicInterest.Text + ",#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#)", Program.conn);
+                    OleDbCommand cmd4 = new OleDbCommand("insert into FD_transection (fd_id, cert_id, c_name, start_dt, mature_dt, period, fd_amount, final_amount, intr_rate, total_intr, total_days,periodic_intr,last_pay_date) values(" + txtFDID.Text + ",'" + txtCertID.Text + "','"+txtName.Text+"',#" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "#,#" + dtpEndDate.Value.ToString("yyyy-MM-dd") + "#,'" + cmbFDType.Text + "'," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtInterestRate.Text + "," + txtTotalInterest.Text + ",'" + totalDays + "'," + txtPeriodicInterest.Text + ",#" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "#)", Program.conn);
                     cmd4.ExecuteNonQuery();              
 
                     disableediting();
@@ -561,8 +561,8 @@ namespace Bank_FD_management
             try
             {
                 ReportDocument crypt = new ReportDocument();
-                //crypt.Load(@"C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\FD_Certificate.rpt");
-                crypt.Load(@"D:\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\FD_Certificate.rpt");
+                crypt.Load(@"C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\FD_Certificate.rpt");
+                //crypt.Load(@"D:\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\FD_Certificate.rpt");
                 crypt.RecordSelectionFormula = "{FD_master.Cert_ID} ="+Convert.ToInt32(txtCertID.Text)+"";
                 crypt.Refresh();
                 CrystalReportViewer view1 = new CrystalReportViewer();

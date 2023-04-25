@@ -16,14 +16,14 @@ namespace Bank_FD_management.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Date_report : ReportClass {
+    public class Matured_FD_Report : ReportClass {
         
-        public Date_report() {
+        public Matured_FD_Report() {
         }
         
         public override string ResourceName {
             get {
-                return "Date_report.rpt";
+                return "Matured_FD_Report.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Bank_FD_management.Reports {
         
         public override string FullResourceName {
             get {
-                return "Bank_FD_management.Reports.Date_report.rpt";
+                return "Bank_FD_management.Reports.Matured_FD_Report.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Bank_FD_management.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedDate_report : Component, ICachedReport {
+    public class CachedMatured_FD_Report : Component, ICachedReport {
         
-        public CachedDate_report() {
+        public CachedMatured_FD_Report() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Bank_FD_management.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Date_report rpt = new Date_report();
+            Matured_FD_Report rpt = new Matured_FD_Report();
             rpt.Site = this.Site;
             return rpt;
         }

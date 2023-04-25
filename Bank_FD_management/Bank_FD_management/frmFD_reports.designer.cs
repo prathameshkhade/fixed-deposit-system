@@ -43,6 +43,10 @@
             this.btncancel = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnViewReport = new System.Windows.Forms.Button();
+            this.txtstartamt = new System.Windows.Forms.TextBox();
+            this.lblstartamt = new System.Windows.Forms.Label();
+            this.txtendamt = new System.Windows.Forms.TextBox();
+            this.lblendamt = new System.Windows.Forms.Label();
             this.pnlTitle.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -72,14 +76,18 @@
             // 
             this.pnlDetails.BackColor = System.Drawing.Color.LightGray;
             this.pnlDetails.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlDetails.Controls.Add(this.txtendamt);
+            this.pnlDetails.Controls.Add(this.lblendamt);
+            this.pnlDetails.Controls.Add(this.txtstartamt);
+            this.pnlDetails.Controls.Add(this.lblstartamt);
             this.pnlDetails.Controls.Add(this.txtID);
             this.pnlDetails.Controls.Add(this.lblID);
+            this.pnlDetails.Controls.Add(this.lblReport_Type);
             this.pnlDetails.Controls.Add(this.dtpEndDate);
+            this.pnlDetails.Controls.Add(this.cmbReportType);
             this.pnlDetails.Controls.Add(this.dtpStartDate);
             this.pnlDetails.Controls.Add(this.lblEndDate);
             this.pnlDetails.Controls.Add(this.lblStartDate);
-            this.pnlDetails.Controls.Add(this.lblReport_Type);
-            this.pnlDetails.Controls.Add(this.cmbReportType);
             this.pnlDetails.Location = new System.Drawing.Point(13, 82);
             this.pnlDetails.Name = "pnlDetails";
             this.pnlDetails.Size = new System.Drawing.Size(1091, 434);
@@ -89,7 +97,7 @@
             // 
             this.txtID.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(469, 224);
+            this.txtID.Location = new System.Drawing.Point(502, 221);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(163, 29);
             this.txtID.TabIndex = 53;
@@ -99,7 +107,7 @@
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.Location = new System.Drawing.Point(384, 227);
+            this.lblID.Location = new System.Drawing.Point(417, 224);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(79, 24);
             this.lblID.TabIndex = 54;
@@ -109,7 +117,7 @@
             // 
             this.dtpEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndDate.Location = new System.Drawing.Point(469, 263);
+            this.dtpEndDate.Location = new System.Drawing.Point(502, 260);
             this.dtpEndDate.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(181, 29);
@@ -120,7 +128,7 @@
             // 
             this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(469, 185);
+            this.dtpStartDate.Location = new System.Drawing.Point(502, 182);
             this.dtpStartDate.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(181, 29);
@@ -132,7 +140,7 @@
             // 
             this.lblEndDate.AutoSize = true;
             this.lblEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndDate.Location = new System.Drawing.Point(371, 265);
+            this.lblEndDate.Location = new System.Drawing.Point(404, 262);
             this.lblEndDate.Name = "lblEndDate";
             this.lblEndDate.Size = new System.Drawing.Size(96, 24);
             this.lblEndDate.TabIndex = 50;
@@ -142,7 +150,7 @@
             // 
             this.lblStartDate.AutoSize = true;
             this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartDate.Location = new System.Drawing.Point(370, 188);
+            this.lblStartDate.Location = new System.Drawing.Point(403, 185);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(97, 24);
             this.lblStartDate.TabIndex = 49;
@@ -166,8 +174,12 @@
             this.cmbReportType.ForeColor = System.Drawing.Color.Black;
             this.cmbReportType.FormattingEnabled = true;
             this.cmbReportType.Items.AddRange(new object[] {
-            "Customer wise Report",
-            "Date wise report"});
+            "Customer Report",
+            "Customer FD Report",
+            "Create FD report",
+            "Break FD report",
+            "Amount Wise",
+            "Matured FD Report"});
             this.cmbReportType.Location = new System.Drawing.Point(469, 108);
             this.cmbReportType.Name = "cmbReportType";
             this.cmbReportType.Size = new System.Drawing.Size(234, 32);
@@ -225,6 +237,44 @@
             this.btnViewReport.UseVisualStyleBackColor = false;
             this.btnViewReport.Click += new System.EventHandler(this.btnViewReport_Click);
             // 
+            // txtstartamt
+            // 
+            this.txtstartamt.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtstartamt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstartamt.Location = new System.Drawing.Point(502, 182);
+            this.txtstartamt.Name = "txtstartamt";
+            this.txtstartamt.Size = new System.Drawing.Size(163, 29);
+            this.txtstartamt.TabIndex = 55;
+            // 
+            // lblstartamt
+            // 
+            this.lblstartamt.AutoSize = true;
+            this.lblstartamt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblstartamt.Location = new System.Drawing.Point(417, 185);
+            this.lblstartamt.Name = "lblstartamt";
+            this.lblstartamt.Size = new System.Drawing.Size(79, 24);
+            this.lblstartamt.TabIndex = 56;
+            this.lblstartamt.Text = "Cust ID :";
+            // 
+            // txtendamt
+            // 
+            this.txtendamt.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtendamt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtendamt.Location = new System.Drawing.Point(502, 258);
+            this.txtendamt.Name = "txtendamt";
+            this.txtendamt.Size = new System.Drawing.Size(163, 29);
+            this.txtendamt.TabIndex = 57;
+            // 
+            // lblendamt
+            // 
+            this.lblendamt.AutoSize = true;
+            this.lblendamt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblendamt.Location = new System.Drawing.Point(344, 261);
+            this.lblendamt.Name = "lblendamt";
+            this.lblendamt.Size = new System.Drawing.Size(152, 24);
+            this.lblendamt.TabIndex = 58;
+            this.lblendamt.Text = "Ending Amount :";
+            // 
             // frmFD_reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,5 +312,9 @@
         private System.Windows.Forms.Button btnViewReport;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btncancel;
+        private System.Windows.Forms.TextBox txtendamt;
+        private System.Windows.Forms.Label lblendamt;
+        private System.Windows.Forms.TextBox txtstartamt;
+        private System.Windows.Forms.Label lblstartamt;
     }
 }
