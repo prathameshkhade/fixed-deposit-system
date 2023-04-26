@@ -317,6 +317,7 @@
             this.txtFDAmount.Size = new System.Drawing.Size(203, 29);
             this.txtFDAmount.TabIndex = 5;
             this.txtFDAmount.TextChanged += new System.EventHandler(this.txtFDAmount_TextChanged);
+            this.txtFDAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFDAmount_KeyPress);
             // 
             // lblFDAmout
             // 

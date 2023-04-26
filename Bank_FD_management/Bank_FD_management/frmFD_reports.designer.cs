@@ -31,22 +31,22 @@
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlDetails = new System.Windows.Forms.Panel();
+            this.txtendamt = new System.Windows.Forms.TextBox();
+            this.lblendamt = new System.Windows.Forms.Label();
+            this.txtstartamt = new System.Windows.Forms.TextBox();
+            this.lblstartamt = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
+            this.lblReport_Type = new System.Windows.Forms.Label();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbReportType = new System.Windows.Forms.ComboBox();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.lblEndDate = new System.Windows.Forms.Label();
             this.lblStartDate = new System.Windows.Forms.Label();
-            this.lblReport_Type = new System.Windows.Forms.Label();
-            this.cmbReportType = new System.Windows.Forms.ComboBox();
             this.pnlButtons = new System.Windows.Forms.Panel();
             this.btncancel = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnViewReport = new System.Windows.Forms.Button();
-            this.txtstartamt = new System.Windows.Forms.TextBox();
-            this.lblstartamt = new System.Windows.Forms.Label();
-            this.txtendamt = new System.Windows.Forms.TextBox();
-            this.lblendamt = new System.Windows.Forms.Label();
             this.pnlTitle.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             this.pnlButtons.SuspendLayout();
@@ -93,6 +93,46 @@
             this.pnlDetails.Size = new System.Drawing.Size(1091, 434);
             this.pnlDetails.TabIndex = 8;
             // 
+            // txtendamt
+            // 
+            this.txtendamt.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtendamt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtendamt.Location = new System.Drawing.Point(502, 258);
+            this.txtendamt.Name = "txtendamt";
+            this.txtendamt.Size = new System.Drawing.Size(163, 29);
+            this.txtendamt.TabIndex = 57;
+            this.txtendamt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtendamt_KeyPress);
+            // 
+            // lblendamt
+            // 
+            this.lblendamt.AutoSize = true;
+            this.lblendamt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblendamt.Location = new System.Drawing.Point(344, 261);
+            this.lblendamt.Name = "lblendamt";
+            this.lblendamt.Size = new System.Drawing.Size(152, 24);
+            this.lblendamt.TabIndex = 58;
+            this.lblendamt.Text = "Ending Amount :";
+            // 
+            // txtstartamt
+            // 
+            this.txtstartamt.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtstartamt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstartamt.Location = new System.Drawing.Point(502, 182);
+            this.txtstartamt.Name = "txtstartamt";
+            this.txtstartamt.Size = new System.Drawing.Size(163, 29);
+            this.txtstartamt.TabIndex = 55;
+            this.txtstartamt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtstartamt_KeyPress);
+            // 
+            // lblstartamt
+            // 
+            this.lblstartamt.AutoSize = true;
+            this.lblstartamt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblstartamt.Location = new System.Drawing.Point(417, 185);
+            this.lblstartamt.Name = "lblstartamt";
+            this.lblstartamt.Size = new System.Drawing.Size(79, 24);
+            this.lblstartamt.TabIndex = 56;
+            this.lblstartamt.Text = "Cust ID :";
+            // 
             // txtID
             // 
             this.txtID.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -102,6 +142,7 @@
             this.txtID.Size = new System.Drawing.Size(163, 29);
             this.txtID.TabIndex = 53;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
+            this.txtID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtID_KeyPress);
             // 
             // lblID
             // 
@@ -113,6 +154,17 @@
             this.lblID.TabIndex = 54;
             this.lblID.Text = "Cust ID :";
             // 
+            // lblReport_Type
+            // 
+            this.lblReport_Type.AutoSize = true;
+            this.lblReport_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReport_Type.Location = new System.Drawing.Point(282, 111);
+            this.lblReport_Type.Name = "lblReport_Type";
+            this.lblReport_Type.Size = new System.Drawing.Size(181, 24);
+            this.lblReport_Type.TabIndex = 48;
+            this.lblReport_Type.Text = "Select Report Type :";
+            this.lblReport_Type.Click += new System.EventHandler(this.lblReport_Type_Click);
+            // 
             // dtpEndDate
             // 
             this.dtpEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,6 +175,28 @@
             this.dtpEndDate.Size = new System.Drawing.Size(181, 29);
             this.dtpEndDate.TabIndex = 52;
             this.dtpEndDate.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
+            // 
+            // cmbReportType
+            // 
+            this.cmbReportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbReportType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbReportType.ForeColor = System.Drawing.Color.Black;
+            this.cmbReportType.FormattingEnabled = true;
+            this.cmbReportType.Items.AddRange(new object[] {
+            "Customer Report",
+            "Customer FD Report",
+            "Create FD report",
+            "Break FD report",
+            "Amount Wise",
+            "Matured FD Report"});
+            this.cmbReportType.Location = new System.Drawing.Point(469, 108);
+            this.cmbReportType.Name = "cmbReportType";
+            this.cmbReportType.Size = new System.Drawing.Size(234, 32);
+            this.cmbReportType.TabIndex = 0;
+            this.cmbReportType.DropDown += new System.EventHandler(this.cmbReportType_DropDown);
+            this.cmbReportType.SelectedIndexChanged += new System.EventHandler(this.cmbReportType_SelectedIndexChanged);
+            this.cmbReportType.TextChanged += new System.EventHandler(this.cmbReportType_TextChanged);
+            this.cmbReportType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbReportType_KeyDown);
             // 
             // dtpStartDate
             // 
@@ -155,39 +229,6 @@
             this.lblStartDate.Size = new System.Drawing.Size(97, 24);
             this.lblStartDate.TabIndex = 49;
             this.lblStartDate.Text = "Start date :";
-            // 
-            // lblReport_Type
-            // 
-            this.lblReport_Type.AutoSize = true;
-            this.lblReport_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReport_Type.Location = new System.Drawing.Point(282, 111);
-            this.lblReport_Type.Name = "lblReport_Type";
-            this.lblReport_Type.Size = new System.Drawing.Size(181, 24);
-            this.lblReport_Type.TabIndex = 48;
-            this.lblReport_Type.Text = "Select Report Type :";
-            this.lblReport_Type.Click += new System.EventHandler(this.lblReport_Type_Click);
-            // 
-            // cmbReportType
-            // 
-            this.cmbReportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbReportType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbReportType.ForeColor = System.Drawing.Color.Black;
-            this.cmbReportType.FormattingEnabled = true;
-            this.cmbReportType.Items.AddRange(new object[] {
-            "Customer Report",
-            "Customer FD Report",
-            "Create FD report",
-            "Break FD report",
-            "Amount Wise",
-            "Matured FD Report"});
-            this.cmbReportType.Location = new System.Drawing.Point(469, 108);
-            this.cmbReportType.Name = "cmbReportType";
-            this.cmbReportType.Size = new System.Drawing.Size(234, 32);
-            this.cmbReportType.TabIndex = 0;
-            this.cmbReportType.DropDown += new System.EventHandler(this.cmbReportType_DropDown);
-            this.cmbReportType.SelectedIndexChanged += new System.EventHandler(this.cmbReportType_SelectedIndexChanged);
-            this.cmbReportType.TextChanged += new System.EventHandler(this.cmbReportType_TextChanged);
-            this.cmbReportType.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbReportType_KeyDown);
             // 
             // pnlButtons
             // 
@@ -236,44 +277,6 @@
             this.btnViewReport.Text = "View Report";
             this.btnViewReport.UseVisualStyleBackColor = false;
             this.btnViewReport.Click += new System.EventHandler(this.btnViewReport_Click);
-            // 
-            // txtstartamt
-            // 
-            this.txtstartamt.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtstartamt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtstartamt.Location = new System.Drawing.Point(502, 182);
-            this.txtstartamt.Name = "txtstartamt";
-            this.txtstartamt.Size = new System.Drawing.Size(163, 29);
-            this.txtstartamt.TabIndex = 55;
-            // 
-            // lblstartamt
-            // 
-            this.lblstartamt.AutoSize = true;
-            this.lblstartamt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblstartamt.Location = new System.Drawing.Point(417, 185);
-            this.lblstartamt.Name = "lblstartamt";
-            this.lblstartamt.Size = new System.Drawing.Size(79, 24);
-            this.lblstartamt.TabIndex = 56;
-            this.lblstartamt.Text = "Cust ID :";
-            // 
-            // txtendamt
-            // 
-            this.txtendamt.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtendamt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtendamt.Location = new System.Drawing.Point(502, 258);
-            this.txtendamt.Name = "txtendamt";
-            this.txtendamt.Size = new System.Drawing.Size(163, 29);
-            this.txtendamt.TabIndex = 57;
-            // 
-            // lblendamt
-            // 
-            this.lblendamt.AutoSize = true;
-            this.lblendamt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblendamt.Location = new System.Drawing.Point(344, 261);
-            this.lblendamt.Name = "lblendamt";
-            this.lblendamt.Size = new System.Drawing.Size(152, 24);
-            this.lblendamt.TabIndex = 58;
-            this.lblendamt.Text = "Ending Amount :";
             // 
             // frmFD_reports
             // 
