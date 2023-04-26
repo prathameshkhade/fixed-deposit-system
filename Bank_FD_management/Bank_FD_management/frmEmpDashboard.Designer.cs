@@ -46,6 +46,7 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.LightGray;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createToolStripMenuItem,
             this.breakFDToolStripMenuItem,
@@ -55,7 +56,8 @@
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 38);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1712, 45);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,20 +67,20 @@
             this.customerToolStripMenuItem,
             this.fDToolStripMenuItem});
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(85, 34);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(106, 41);
             this.createToolStripMenuItem.Text = "Create";
             // 
             // customerToolStripMenuItem
             // 
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(175, 34);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(214, 42);
             this.customerToolStripMenuItem.Text = "Customer";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.customerToolStripMenuItem_Click);
             // 
             // fDToolStripMenuItem
             // 
             this.fDToolStripMenuItem.Name = "fDToolStripMenuItem";
-            this.fDToolStripMenuItem.Size = new System.Drawing.Size(175, 34);
+            this.fDToolStripMenuItem.Size = new System.Drawing.Size(214, 42);
             this.fDToolStripMenuItem.Text = "FD";
             this.fDToolStripMenuItem.Click += new System.EventHandler(this.fDToolStripMenuItem_Click);
             // 
@@ -87,13 +89,13 @@
             this.breakFDToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.breakFDToolStripMenuItem1});
             this.breakFDToolStripMenuItem.Name = "breakFDToolStripMenuItem";
-            this.breakFDToolStripMenuItem.Size = new System.Drawing.Size(107, 34);
+            this.breakFDToolStripMenuItem.Size = new System.Drawing.Size(133, 41);
             this.breakFDToolStripMenuItem.Text = "Break FD";
             // 
             // breakFDToolStripMenuItem1
             // 
             this.breakFDToolStripMenuItem1.Name = "breakFDToolStripMenuItem1";
-            this.breakFDToolStripMenuItem1.Size = new System.Drawing.Size(168, 34);
+            this.breakFDToolStripMenuItem1.Size = new System.Drawing.Size(204, 42);
             this.breakFDToolStripMenuItem1.Text = "Break FD";
             this.breakFDToolStripMenuItem1.Click += new System.EventHandler(this.breakFDToolStripMenuItem1_Click);
             // 
@@ -102,13 +104,13 @@
             this.mastersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fDMasterToolStripMenuItem});
             this.mastersToolStripMenuItem.Name = "mastersToolStripMenuItem";
-            this.mastersToolStripMenuItem.Size = new System.Drawing.Size(98, 34);
+            this.mastersToolStripMenuItem.Size = new System.Drawing.Size(121, 41);
             this.mastersToolStripMenuItem.Text = "Masters";
             // 
             // fDMasterToolStripMenuItem
             // 
             this.fDMasterToolStripMenuItem.Name = "fDMasterToolStripMenuItem";
-            this.fDMasterToolStripMenuItem.Size = new System.Drawing.Size(184, 34);
+            this.fDMasterToolStripMenuItem.Size = new System.Drawing.Size(224, 42);
             this.fDMasterToolStripMenuItem.Text = "FD_Master";
             this.fDMasterToolStripMenuItem.Click += new System.EventHandler(this.fDMasterToolStripMenuItem_Click);
             // 
@@ -117,29 +119,32 @@
             this.utilityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.forgetCustomerIDToolStripMenuItem});
             this.utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
-            this.utilityToolStripMenuItem.Size = new System.Drawing.Size(78, 34);
+            this.utilityToolStripMenuItem.Size = new System.Drawing.Size(100, 41);
             this.utilityToolStripMenuItem.Text = "Utility";
             // 
             // forgetCustomerIDToolStripMenuItem
             // 
             this.forgetCustomerIDToolStripMenuItem.Name = "forgetCustomerIDToolStripMenuItem";
-            this.forgetCustomerIDToolStripMenuItem.Size = new System.Drawing.Size(267, 34);
+            this.forgetCustomerIDToolStripMenuItem.Size = new System.Drawing.Size(331, 42);
             this.forgetCustomerIDToolStripMenuItem.Text = "Forget Customer ID";
             this.forgetCustomerIDToolStripMenuItem.Click += new System.EventHandler(this.forgetCustomerIDToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(100, 34);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(125, 41);
             this.exitToolStripMenuItem.Text = "Log Out";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // frmEmpDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 701);
+            this.BackgroundImage = global::Bank_FD_management.Properties.Resources.dashboard2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(1712, 863);
             this.Controls.Add(this.menuStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmEmpDashboard";
             this.Text = "Employee Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

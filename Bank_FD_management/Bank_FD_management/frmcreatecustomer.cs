@@ -300,6 +300,9 @@ namespace Bank_FD_management
                 clrfrm();
                 txtID.Enabled = false;
                 btnfetchid.Enabled = false;
+                txtname.Enabled = true;
+                txtpan.Enabled = true ;
+                dtpcustbirth.Enabled = true;;
             }
 
             if (!chbNewData.Checked)

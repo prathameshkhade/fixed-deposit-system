@@ -165,5 +165,10 @@ namespace Bank_FD_management
                 btnLogin.Focus();
             }
         }
+
+        private void frmLogin_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

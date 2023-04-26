@@ -185,7 +185,8 @@ namespace Bank_FD_management
                 if (dr.HasRows)
                 {
                     ReportDocument crypt = new ReportDocument();
-                    crypt.Load(@"C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Customer_add_report.rpt");
+                    crypt.Load(@"C:\Users\HARSH\source\project\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Customer_add_report.rpt");
+                    //crypt.Load(@"C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Customer_add_report.rpt");
                     //crypt.Load(@"D:\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Customer_add_report.rpt");
                     crypt.RecordSelectionFormula = "{Customer_master.Add_date} >= #" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "# and {Customer_master.Add_date} <= #" + dtpEndDate.Value.ToString("yyyy-MM-dd") + "# ";
                     crypt.DataDefinition.FormulaFields["tdate"].Text = "'" + dtpStartDate.Text + " TO " + dtpEndDate.Text + "'";
@@ -212,7 +213,8 @@ namespace Bank_FD_management
                 if (dr.HasRows)
                 {
                     ReportDocument crypt = new ReportDocument();
-                    crypt.Load("C:/Users/Hiremath/source/repos/Fixed_deposite_system/Bank_FD_management/Bank_FD_management/Reports/ID_Report.rpt");
+                    crypt.Load(@"C:\Users\HARSH\source\project\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\ID_Report.rpt");
+                    //crypt.Load("C:/Users/Hiremath/source/repos/Fixed_deposite_system/Bank_FD_management/Bank_FD_management/Reports/ID_Report.rpt");
                     //crypt.Load(@"D:\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Customer_add_report.rpt");
                     crypt.RecordSelectionFormula = "{FD_master.C_ID} =" + Convert.ToInt32(txtID.Text) + "";
                     crypt.Refresh();
@@ -237,7 +239,8 @@ namespace Bank_FD_management
                 if (dr.HasRows)
                 {
                     ReportDocument crypt = new ReportDocument();
-                    crypt.Load("C:/Users/Hiremath/source/repos/Fixed_deposite_system/Bank_FD_management/Bank_FD_management/Reports/Create_FD_report.rpt");
+                    crypt.Load(@"C:\Users\HARSH\source\project\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Create_FD_report.rpt");
+                    //crypt.Load("C:/Users/Hiremath/source/repos/Fixed_deposite_system/Bank_FD_management/Bank_FD_management/Reports/Create_FD_report.rpt");
                     //crypt.Load(@"D:\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Customer_add_report.rpt");
                     crypt.RecordSelectionFormula = "{FD_master.Cert_dt} >= #" + dtpStartDate.Value.ToString("yyyy-MM-dd") + "# and {FD_master.Cert_dt} <= #" + dtpEndDate.Value.ToString("yyyy-MM-dd") + "# ";
                     crypt.DataDefinition.FormulaFields["tdate"].Text = "'" + dtpStartDate.Text + " TO " + dtpEndDate.Text + "'";
@@ -294,7 +297,8 @@ namespace Bank_FD_management
                 if (dr.HasRows)
                 {
                     ReportDocument crypt = new ReportDocument();
-                    crypt.Load(@"C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Amount_wise_FD_report.rpt");
+                    crypt.Load(@"C:\Users\HARSH\source\project\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Amount_wise_FD_report.rpt");
+                    //crypt.Load(@"C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Amount_wise_FD_report.rpt");
                     //crypt.Load(@"D:\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Customer_add_report.rpt");
                     crypt.RecordSelectionFormula = "{FD_Master.FD_amount} >= " + txtstartamt.Text + " and {FD_Master.FD_amount} <= " + txtendamt.Text + " ";
                     crypt.DataDefinition.FormulaFields["tamount"].Text = "'" + txtstartamt.Text + " TO " + txtendamt.Text + "'";
@@ -322,7 +326,8 @@ namespace Bank_FD_management
                 if (dr.HasRows)
                 {
                     ReportDocument crypt = new ReportDocument();
-                    crypt.Load(@"C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Matured_FD_Report.rpt");
+                    crypt.Load(@"C:\Users\HARSH\source\project\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Matured_FD_Report.rpt");
+                    //crypt.Load(@"C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Matured_FD_Report.rpt");
                     //crypt.Load(@"D:\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\Customer_add_report.rpt");
                     crypt.RecordSelectionFormula = "{Break_FD.withdraw_dt} >=  {Break_FD.Mature_dt}";
                     crypt.Refresh();

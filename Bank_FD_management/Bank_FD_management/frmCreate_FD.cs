@@ -159,6 +159,7 @@ namespace Bank_FD_management
         {
             try
             {
+                
                 if (!string.IsNullOrEmpty(txtFinalAmount.Text))
                 {
                     //to read the interest period from radiobuttons
@@ -561,7 +562,8 @@ namespace Bank_FD_management
             try
             {
                 ReportDocument crypt = new ReportDocument();
-                crypt.Load(@"C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\FD_Certificate.rpt");
+                crypt.Load(@"C:\Users\HARSH\source\project\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\FD_Certificate.rpt");
+                //crypt.Load(@"C:\Users\Hiremath\source\repos\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\FD_Certificate.rpt");
                 //crypt.Load(@"D:\Fixed_deposite_system\Bank_FD_management\Bank_FD_management\Reports\FD_Certificate.rpt");
                 crypt.RecordSelectionFormula = "{FD_master.Cert_ID} ="+Convert.ToInt32(txtCertID.Text)+"";
                 crypt.Refresh();
