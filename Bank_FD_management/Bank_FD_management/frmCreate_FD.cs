@@ -210,7 +210,7 @@ namespace Bank_FD_management
 
 
                     //to save the data inside the database
-                    OleDbCommand cmd2 = new OleDbCommand("insert into FD_Master (c_id , c_name , cert_dt , cert_id , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days , period_intr ) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value + "#,"+ce_id+",#" + dtpEndDate.Value + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ",'" + selectedperiod + "')", conn);
+                    OleDbCommand cmd2 = new OleDbCommand("insert into FD_Master (c_id , c_name , cert_dt , cert_id , mature_dt , period_mon , period_day , fd_type , intr_rate , fd_amount , mature_amount , total_intr , total_days , period_intr ) values(" + txtID.Text + ",'" + txtName.Text + "',#" + dtpStartDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#,"+ce_id+",#" + dtpEndDate.Value.ToString("yyyy-MM-dd HH:mm:ss") + "#," + cmbMonths.Text + "," + cmbDays.Text + ",'" + cmbFDType.Text + "'," + txtInterestRate.Text + "," + txtFDAmount.Text + "," + txtFinalAmount.Text + "," + txtTotalInterest.Text + "," + totalDays + ",'" + selectedperiod + "')", conn);
                     cmd2.ExecuteNonQuery();
 
                     MessageBox.Show("Inserted successfully");

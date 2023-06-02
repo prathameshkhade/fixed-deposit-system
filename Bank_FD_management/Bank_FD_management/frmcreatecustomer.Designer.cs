@@ -669,6 +669,7 @@
             // 
             this.dobNom.Enabled = false;
             this.dobNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dobNom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dobNom.Location = new System.Drawing.Point(248, 172);
             this.dobNom.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
             this.dobNom.Name = "dobNom";

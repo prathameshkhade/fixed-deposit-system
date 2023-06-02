@@ -31,6 +31,11 @@
             this.pnlTitle = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlBreak = new System.Windows.Forms.Panel();
+            this.txtpen_intr = new System.Windows.Forms.TextBox();
+            this.lblPenaltyInterest = new System.Windows.Forms.Label();
+            this.txtWith_amt = new System.Windows.Forms.TextBox();
+            this.lblWithdrawableAmount = new System.Windows.Forms.Label();
+            this.dtpWith_date = new System.Windows.Forms.DateTimePicker();
             this.lblWithDate = new System.Windows.Forms.Label();
             this.txtFDStatus = new System.Windows.Forms.TextBox();
             this.lblDFStatus = new System.Windows.Forms.Label();
@@ -39,39 +44,36 @@
             this.txtCertID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
             this.pnlFetch = new System.Windows.Forms.Panel();
+            this.rbdBreakFD = new System.Windows.Forms.RadioButton();
+            this.rbdPayInterest = new System.Windows.Forms.RadioButton();
+            this.txtFD_ID = new System.Windows.Forms.TextBox();
+            this.lblFD_ID = new System.Windows.Forms.Label();
             this.btnFetchDetails = new System.Windows.Forms.Button();
             this.pnlButtons = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnBreak = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.txtFD_ID = new System.Windows.Forms.TextBox();
-            this.lblFD_ID = new System.Windows.Forms.Label();
-            this.dtpWith_date = new System.Windows.Forms.DateTimePicker();
-            this.txtWith_amt = new System.Windows.Forms.TextBox();
-            this.lblWithdrawableAmount = new System.Windows.Forms.Label();
-            this.txtpen_intr = new System.Windows.Forms.TextBox();
-            this.lblPenaltyInterest = new System.Windows.Forms.Label();
             this.pnlMid1 = new System.Windows.Forms.Panel();
-            this.txtpayable_intr = new System.Windows.Forms.TextBox();
-            this.rbdBreakFD = new System.Windows.Forms.RadioButton();
-            this.lblPayableInterest = new System.Windows.Forms.Label();
-            this.rbdPayInterest = new System.Windows.Forms.RadioButton();
-            this.txtPaid_intr = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtelapsed_days = new System.Windows.Forms.TextBox();
             this.txtFDAmount = new System.Windows.Forms.TextBox();
-            this.lblPaidInterest = new System.Windows.Forms.Label();
             this.lblPeriod = new System.Windows.Forms.Label();
             this.lblMaturityDate = new System.Windows.Forms.Label();
             this.txtPeriod = new System.Windows.Forms.TextBox();
             this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.txtTotalInterest = new System.Windows.Forms.TextBox();
             this.lblFDAmount = new System.Windows.Forms.Label();
             this.lblFinalAmount = new System.Windows.Forms.Label();
             this.dtpMatureDate = new System.Windows.Forms.DateTimePicker();
-            this.lblTotalInterest = new System.Windows.Forms.Label();
             this.lblStartDate = new System.Windows.Forms.Label();
             this.txtFinalAmount = new System.Windows.Forms.TextBox();
             this.lblInterestRate = new System.Windows.Forms.Label();
             this.txtnterestRate = new System.Windows.Forms.TextBox();
+            this.txtpayable_intr = new System.Windows.Forms.TextBox();
+            this.lblPayableInterest = new System.Windows.Forms.Label();
+            this.txtPaid_intr = new System.Windows.Forms.TextBox();
+            this.lblPaidInterest = new System.Windows.Forms.Label();
+            this.txtTotalInterest = new System.Windows.Forms.TextBox();
+            this.lblTotalInterest = new System.Windows.Forms.Label();
             this.pnlMid2 = new System.Windows.Forms.Panel();
             this.pnlTitle.SuspendLayout();
             this.pnlBreak.SuspendLayout();
@@ -116,6 +118,56 @@
             this.pnlBreak.Size = new System.Drawing.Size(543, 173);
             this.pnlBreak.TabIndex = 1;
             // 
+            // txtpen_intr
+            // 
+            this.txtpen_intr.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtpen_intr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpen_intr.Location = new System.Drawing.Point(222, 65);
+            this.txtpen_intr.Name = "txtpen_intr";
+            this.txtpen_intr.Size = new System.Drawing.Size(177, 29);
+            this.txtpen_intr.TabIndex = 64;
+            // 
+            // lblPenaltyInterest
+            // 
+            this.lblPenaltyInterest.AutoSize = true;
+            this.lblPenaltyInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPenaltyInterest.Location = new System.Drawing.Point(70, 68);
+            this.lblPenaltyInterest.Name = "lblPenaltyInterest";
+            this.lblPenaltyInterest.Size = new System.Drawing.Size(146, 24);
+            this.lblPenaltyInterest.TabIndex = 65;
+            this.lblPenaltyInterest.Text = "Penalty Interest :";
+            // 
+            // txtWith_amt
+            // 
+            this.txtWith_amt.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtWith_amt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWith_amt.Location = new System.Drawing.Point(222, 113);
+            this.txtWith_amt.Name = "txtWith_amt";
+            this.txtWith_amt.Size = new System.Drawing.Size(177, 29);
+            this.txtWith_amt.TabIndex = 62;
+            // 
+            // lblWithdrawableAmount
+            // 
+            this.lblWithdrawableAmount.AutoSize = true;
+            this.lblWithdrawableAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWithdrawableAmount.Location = new System.Drawing.Point(14, 115);
+            this.lblWithdrawableAmount.Name = "lblWithdrawableAmount";
+            this.lblWithdrawableAmount.Size = new System.Drawing.Size(202, 24);
+            this.lblWithdrawableAmount.TabIndex = 63;
+            this.lblWithdrawableAmount.Text = "Withdrawable amount :";
+            // 
+            // dtpWith_date
+            // 
+            this.dtpWith_date.Enabled = false;
+            this.dtpWith_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpWith_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpWith_date.Location = new System.Drawing.Point(222, 19);
+            this.dtpWith_date.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
+            this.dtpWith_date.Name = "dtpWith_date";
+            this.dtpWith_date.Size = new System.Drawing.Size(177, 29);
+            this.dtpWith_date.TabIndex = 61;
+            this.dtpWith_date.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
+            // 
             // lblWithDate
             // 
             this.lblWithDate.AutoSize = true;
@@ -144,7 +196,6 @@
             this.lblDFStatus.Size = new System.Drawing.Size(100, 24);
             this.lblDFStatus.TabIndex = 52;
             this.lblDFStatus.Text = "FD Status :";
-            this.lblDFStatus.Click += new System.EventHandler(this.lblDFStatus_Click);
             // 
             // txtName
             // 
@@ -204,62 +255,31 @@
             this.pnlFetch.Size = new System.Drawing.Size(1101, 110);
             this.pnlFetch.TabIndex = 0;
             // 
-            // btnFetchDetails
+            // rbdBreakFD
             // 
-            this.btnFetchDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFetchDetails.Location = new System.Drawing.Point(368, 11);
-            this.btnFetchDetails.Name = "btnFetchDetails";
-            this.btnFetchDetails.Size = new System.Drawing.Size(127, 34);
-            this.btnFetchDetails.TabIndex = 1;
-            this.btnFetchDetails.Text = "Fetch Details";
-            this.btnFetchDetails.UseVisualStyleBackColor = true;
+            this.rbdBreakFD.AutoSize = true;
+            this.rbdBreakFD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbdBreakFD.Location = new System.Drawing.Point(676, 18);
+            this.rbdBreakFD.Name = "rbdBreakFD";
+            this.rbdBreakFD.Size = new System.Drawing.Size(95, 24);
+            this.rbdBreakFD.TabIndex = 82;
+            this.rbdBreakFD.TabStop = true;
+            this.rbdBreakFD.Text = "Break FD";
+            this.rbdBreakFD.UseVisualStyleBackColor = true;
+            this.rbdBreakFD.CheckedChanged += new System.EventHandler(this.rbdBreakFD_CheckedChanged);
             // 
-            // pnlButtons
+            // rbdPayInterest
             // 
-            this.pnlButtons.BackColor = System.Drawing.Color.LightGray;
-            this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlButtons.Controls.Add(this.btnExit);
-            this.pnlButtons.Controls.Add(this.btnBreak);
-            this.pnlButtons.Controls.Add(this.btnCancel);
-            this.pnlButtons.Location = new System.Drawing.Point(13, 568);
-            this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(1102, 94);
-            this.pnlButtons.TabIndex = 2;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(654, 27);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(130, 38);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
-            // 
-            // btnBreak
-            // 
-            this.btnBreak.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnBreak.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBreak.Location = new System.Drawing.Point(485, 27);
-            this.btnBreak.Name = "btnBreak";
-            this.btnBreak.Size = new System.Drawing.Size(130, 38);
-            this.btnBreak.TabIndex = 0;
-            this.btnBreak.Text = "Break";
-            this.btnBreak.UseVisualStyleBackColor = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(316, 27);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(130, 38);
-            this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.rbdPayInterest.AutoSize = true;
+            this.rbdPayInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbdPayInterest.Location = new System.Drawing.Point(542, 18);
+            this.rbdPayInterest.Name = "rbdPayInterest";
+            this.rbdPayInterest.Size = new System.Drawing.Size(112, 24);
+            this.rbdPayInterest.TabIndex = 80;
+            this.rbdPayInterest.TabStop = true;
+            this.rbdPayInterest.Text = "Pay Interest";
+            this.rbdPayInterest.UseVisualStyleBackColor = true;
+            this.rbdPayInterest.CheckedChanged += new System.EventHandler(this.rbdPayInterest_CheckedChanged);
             // 
             // txtFD_ID
             // 
@@ -280,60 +300,70 @@
             this.lblFD_ID.TabIndex = 54;
             this.lblFD_ID.Text = "FD ID :";
             // 
-            // dtpWith_date
+            // btnFetchDetails
             // 
-            this.dtpWith_date.Enabled = false;
-            this.dtpWith_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpWith_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpWith_date.Location = new System.Drawing.Point(222, 19);
-            this.dtpWith_date.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
-            this.dtpWith_date.Name = "dtpWith_date";
-            this.dtpWith_date.Size = new System.Drawing.Size(177, 29);
-            this.dtpWith_date.TabIndex = 61;
-            this.dtpWith_date.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
+            this.btnFetchDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFetchDetails.Location = new System.Drawing.Point(368, 11);
+            this.btnFetchDetails.Name = "btnFetchDetails";
+            this.btnFetchDetails.Size = new System.Drawing.Size(127, 34);
+            this.btnFetchDetails.TabIndex = 1;
+            this.btnFetchDetails.Text = "Fetch Details";
+            this.btnFetchDetails.UseVisualStyleBackColor = true;
+            this.btnFetchDetails.Click += new System.EventHandler(this.btnFetchDetails_Click);
             // 
-            // txtWith_amt
+            // pnlButtons
             // 
-            this.txtWith_amt.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtWith_amt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWith_amt.Location = new System.Drawing.Point(222, 113);
-            this.txtWith_amt.Name = "txtWith_amt";
-            this.txtWith_amt.Size = new System.Drawing.Size(177, 29);
-            this.txtWith_amt.TabIndex = 62;
+            this.pnlButtons.BackColor = System.Drawing.Color.LightGray;
+            this.pnlButtons.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlButtons.Controls.Add(this.btnExit);
+            this.pnlButtons.Controls.Add(this.btnBreak);
+            this.pnlButtons.Controls.Add(this.btnCancel);
+            this.pnlButtons.Location = new System.Drawing.Point(13, 568);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(1102, 94);
+            this.pnlButtons.TabIndex = 2;
             // 
-            // lblWithdrawableAmount
+            // btnExit
             // 
-            this.lblWithdrawableAmount.AutoSize = true;
-            this.lblWithdrawableAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWithdrawableAmount.Location = new System.Drawing.Point(14, 115);
-            this.lblWithdrawableAmount.Name = "lblWithdrawableAmount";
-            this.lblWithdrawableAmount.Size = new System.Drawing.Size(202, 24);
-            this.lblWithdrawableAmount.TabIndex = 63;
-            this.lblWithdrawableAmount.Text = "Withdrawable amount :";
+            this.btnExit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(676, 27);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(130, 38);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
-            // txtpen_intr
+            // btnBreak
             // 
-            this.txtpen_intr.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtpen_intr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpen_intr.Location = new System.Drawing.Point(222, 65);
-            this.txtpen_intr.Name = "txtpen_intr";
-            this.txtpen_intr.Size = new System.Drawing.Size(177, 29);
-            this.txtpen_intr.TabIndex = 64;
+            this.btnBreak.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnBreak.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBreak.Location = new System.Drawing.Point(457, 27);
+            this.btnBreak.Name = "btnBreak";
+            this.btnBreak.Size = new System.Drawing.Size(197, 38);
+            this.btnBreak.TabIndex = 0;
+            this.btnBreak.Text = "Break";
+            this.btnBreak.UseVisualStyleBackColor = false;
             // 
-            // lblPenaltyInterest
+            // btnCancel
             // 
-            this.lblPenaltyInterest.AutoSize = true;
-            this.lblPenaltyInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPenaltyInterest.Location = new System.Drawing.Point(70, 68);
-            this.lblPenaltyInterest.Name = "lblPenaltyInterest";
-            this.lblPenaltyInterest.Size = new System.Drawing.Size(146, 24);
-            this.lblPenaltyInterest.TabIndex = 65;
-            this.lblPenaltyInterest.Text = "Penalty Interest :";
+            this.btnCancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(299, 27);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(130, 38);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pnlMid1
             // 
             this.pnlMid1.BackColor = System.Drawing.Color.LightGray;
             this.pnlMid1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlMid1.Controls.Add(this.label1);
+            this.pnlMid1.Controls.Add(this.txtelapsed_days);
             this.pnlMid1.Controls.Add(this.txtFDAmount);
             this.pnlMid1.Controls.Add(this.lblPeriod);
             this.pnlMid1.Controls.Add(this.lblMaturityDate);
@@ -351,57 +381,24 @@
             this.pnlMid1.Size = new System.Drawing.Size(1101, 169);
             this.pnlMid1.TabIndex = 35;
             // 
-            // txtpayable_intr
+            // label1
             // 
-            this.txtpayable_intr.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtpayable_intr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpayable_intr.Location = new System.Drawing.Point(174, 118);
-            this.txtpayable_intr.Name = "txtpayable_intr";
-            this.txtpayable_intr.Size = new System.Drawing.Size(178, 29);
-            this.txtpayable_intr.TabIndex = 83;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(728, 91);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 24);
+            this.label1.TabIndex = 80;
+            this.label1.Text = "Days elapsed :";
             // 
-            // rbdBreakFD
+            // txtelapsed_days
             // 
-            this.rbdBreakFD.AutoSize = true;
-            this.rbdBreakFD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbdBreakFD.Location = new System.Drawing.Point(676, 18);
-            this.rbdBreakFD.Name = "rbdBreakFD";
-            this.rbdBreakFD.Size = new System.Drawing.Size(95, 24);
-            this.rbdBreakFD.TabIndex = 82;
-            this.rbdBreakFD.TabStop = true;
-            this.rbdBreakFD.Text = "Break FD";
-            this.rbdBreakFD.UseVisualStyleBackColor = true;
-            // 
-            // lblPayableInterest
-            // 
-            this.lblPayableInterest.AutoSize = true;
-            this.lblPayableInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPayableInterest.Location = new System.Drawing.Point(20, 118);
-            this.lblPayableInterest.Name = "lblPayableInterest";
-            this.lblPayableInterest.Size = new System.Drawing.Size(152, 24);
-            this.lblPayableInterest.TabIndex = 84;
-            this.lblPayableInterest.Text = "Payable interest :";
-            // 
-            // rbdPayInterest
-            // 
-            this.rbdPayInterest.AutoSize = true;
-            this.rbdPayInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbdPayInterest.Location = new System.Drawing.Point(542, 18);
-            this.rbdPayInterest.Name = "rbdPayInterest";
-            this.rbdPayInterest.Size = new System.Drawing.Size(112, 24);
-            this.rbdPayInterest.TabIndex = 80;
-            this.rbdPayInterest.TabStop = true;
-            this.rbdPayInterest.Text = "Pay Interest";
-            this.rbdPayInterest.UseVisualStyleBackColor = true;
-            // 
-            // txtPaid_intr
-            // 
-            this.txtPaid_intr.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtPaid_intr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaid_intr.Location = new System.Drawing.Point(175, 68);
-            this.txtPaid_intr.Name = "txtPaid_intr";
-            this.txtPaid_intr.Size = new System.Drawing.Size(177, 29);
-            this.txtPaid_intr.TabIndex = 79;
+            this.txtelapsed_days.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtelapsed_days.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtelapsed_days.Location = new System.Drawing.Point(865, 88);
+            this.txtelapsed_days.Name = "txtelapsed_days";
+            this.txtelapsed_days.Size = new System.Drawing.Size(181, 29);
+            this.txtelapsed_days.TabIndex = 79;
             // 
             // txtFDAmount
             // 
@@ -412,21 +409,11 @@
             this.txtFDAmount.Size = new System.Drawing.Size(178, 29);
             this.txtFDAmount.TabIndex = 65;
             // 
-            // lblPaidInterest
-            // 
-            this.lblPaidInterest.AutoSize = true;
-            this.lblPaidInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaidInterest.Location = new System.Drawing.Point(47, 69);
-            this.lblPaidInterest.Name = "lblPaidInterest";
-            this.lblPaidInterest.Size = new System.Drawing.Size(122, 24);
-            this.lblPaidInterest.TabIndex = 81;
-            this.lblPaidInterest.Text = "Paid interest :";
-            // 
             // lblPeriod
             // 
             this.lblPeriod.AutoSize = true;
             this.lblPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeriod.Location = new System.Drawing.Point(767, 37);
+            this.lblPeriod.Location = new System.Drawing.Point(783, 37);
             this.lblPeriod.Name = "lblPeriod";
             this.lblPeriod.Size = new System.Drawing.Size(75, 24);
             this.lblPeriod.TabIndex = 73;
@@ -436,7 +423,7 @@
             // 
             this.lblMaturityDate.AutoSize = true;
             this.lblMaturityDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaturityDate.Location = new System.Drawing.Point(408, 88);
+            this.lblMaturityDate.Location = new System.Drawing.Point(390, 88);
             this.lblMaturityDate.Name = "lblMaturityDate";
             this.lblMaturityDate.Size = new System.Drawing.Size(125, 24);
             this.lblMaturityDate.TabIndex = 71;
@@ -446,7 +433,7 @@
             // 
             this.txtPeriod.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPeriod.Location = new System.Drawing.Point(848, 36);
+            this.txtPeriod.Location = new System.Drawing.Point(864, 36);
             this.txtPeriod.Name = "txtPeriod";
             this.txtPeriod.Size = new System.Drawing.Size(181, 29);
             this.txtPeriod.TabIndex = 72;
@@ -456,22 +443,12 @@
             this.dtpStartDate.Enabled = false;
             this.dtpStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(540, 35);
+            this.dtpStartDate.Location = new System.Drawing.Point(522, 35);
             this.dtpStartDate.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(180, 29);
             this.dtpStartDate.TabIndex = 78;
             this.dtpStartDate.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
-            this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
-            // 
-            // txtTotalInterest
-            // 
-            this.txtTotalInterest.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtTotalInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalInterest.Location = new System.Drawing.Point(175, 20);
-            this.txtTotalInterest.Name = "txtTotalInterest";
-            this.txtTotalInterest.Size = new System.Drawing.Size(177, 29);
-            this.txtTotalInterest.TabIndex = 67;
             // 
             // lblFDAmount
             // 
@@ -498,28 +475,18 @@
             this.dtpMatureDate.Enabled = false;
             this.dtpMatureDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpMatureDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpMatureDate.Location = new System.Drawing.Point(540, 87);
+            this.dtpMatureDate.Location = new System.Drawing.Point(522, 87);
             this.dtpMatureDate.MaxDate = new System.DateTime(2023, 1, 7, 23, 15, 14, 0);
             this.dtpMatureDate.Name = "dtpMatureDate";
             this.dtpMatureDate.Size = new System.Drawing.Size(180, 29);
             this.dtpMatureDate.TabIndex = 77;
             this.dtpMatureDate.Value = new System.DateTime(2023, 1, 7, 0, 0, 0, 0);
             // 
-            // lblTotalInterest
-            // 
-            this.lblTotalInterest.AutoSize = true;
-            this.lblTotalInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalInterest.Location = new System.Drawing.Point(38, 20);
-            this.lblTotalInterest.Name = "lblTotalInterest";
-            this.lblTotalInterest.Size = new System.Drawing.Size(126, 24);
-            this.lblTotalInterest.TabIndex = 75;
-            this.lblTotalInterest.Text = "Total Interest :";
-            // 
             // lblStartDate
             // 
             this.lblStartDate.AutoSize = true;
             this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartDate.Location = new System.Drawing.Point(410, 35);
+            this.lblStartDate.Location = new System.Drawing.Point(392, 35);
             this.lblStartDate.Name = "lblStartDate";
             this.lblStartDate.Size = new System.Drawing.Size(123, 24);
             this.lblStartDate.TabIndex = 70;
@@ -553,6 +520,63 @@
             this.txtnterestRate.Size = new System.Drawing.Size(177, 29);
             this.txtnterestRate.TabIndex = 66;
             // 
+            // txtpayable_intr
+            // 
+            this.txtpayable_intr.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtpayable_intr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpayable_intr.Location = new System.Drawing.Point(174, 118);
+            this.txtpayable_intr.Name = "txtpayable_intr";
+            this.txtpayable_intr.Size = new System.Drawing.Size(178, 29);
+            this.txtpayable_intr.TabIndex = 83;
+            // 
+            // lblPayableInterest
+            // 
+            this.lblPayableInterest.AutoSize = true;
+            this.lblPayableInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayableInterest.Location = new System.Drawing.Point(20, 118);
+            this.lblPayableInterest.Name = "lblPayableInterest";
+            this.lblPayableInterest.Size = new System.Drawing.Size(152, 24);
+            this.lblPayableInterest.TabIndex = 84;
+            this.lblPayableInterest.Text = "Payable interest :";
+            // 
+            // txtPaid_intr
+            // 
+            this.txtPaid_intr.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtPaid_intr.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPaid_intr.Location = new System.Drawing.Point(175, 68);
+            this.txtPaid_intr.Name = "txtPaid_intr";
+            this.txtPaid_intr.Size = new System.Drawing.Size(177, 29);
+            this.txtPaid_intr.TabIndex = 79;
+            // 
+            // lblPaidInterest
+            // 
+            this.lblPaidInterest.AutoSize = true;
+            this.lblPaidInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaidInterest.Location = new System.Drawing.Point(47, 69);
+            this.lblPaidInterest.Name = "lblPaidInterest";
+            this.lblPaidInterest.Size = new System.Drawing.Size(122, 24);
+            this.lblPaidInterest.TabIndex = 81;
+            this.lblPaidInterest.Text = "Paid interest :";
+            // 
+            // txtTotalInterest
+            // 
+            this.txtTotalInterest.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtTotalInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalInterest.Location = new System.Drawing.Point(175, 20);
+            this.txtTotalInterest.Name = "txtTotalInterest";
+            this.txtTotalInterest.Size = new System.Drawing.Size(177, 29);
+            this.txtTotalInterest.TabIndex = 67;
+            // 
+            // lblTotalInterest
+            // 
+            this.lblTotalInterest.AutoSize = true;
+            this.lblTotalInterest.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalInterest.Location = new System.Drawing.Point(38, 20);
+            this.lblTotalInterest.Name = "lblTotalInterest";
+            this.lblTotalInterest.Size = new System.Drawing.Size(126, 24);
+            this.lblTotalInterest.TabIndex = 75;
+            this.lblTotalInterest.Text = "Total Interest :";
+            // 
             // pnlMid2
             // 
             this.pnlMid2.BackColor = System.Drawing.Color.LightGray;
@@ -581,7 +605,6 @@
             this.Name = "frmbreakFD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FD Break";
-            this.Load += new System.EventHandler(this.frmbreakFD_Load);
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
             this.pnlBreak.ResumeLayout(false);
@@ -644,5 +667,7 @@
         private System.Windows.Forms.TextBox txtTotalInterest;
         private System.Windows.Forms.Label lblTotalInterest;
         private System.Windows.Forms.Panel pnlMid2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtelapsed_days;
     }
 }
