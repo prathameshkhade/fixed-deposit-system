@@ -4,9 +4,10 @@
 
 This project is your one-stop solution to manage the fixed deposits in a bank. The admin can create any number of employees in the database, and they are added through the Employee section on the dashboard's homepage.
 
-The added employees have the power to create, delete, or modify the customer. Employees can create various types of FDs (Fixed Deposit) as per the customer's need. After creating an FD, the FD Certificate will be generated. Employees are also able to generate various types of reports as per their need.
+The added employees have the power to create, delete, or modify the customer. Employees can create various types of FDs (Fixed Deposit) as per the customer's need. After creating a FD, the FD Certificate will be generated. Employees are also able to generate various types of reports as per their need.
 
-> 🔑 **NOTE:** The default username is `administrator` and the password is `administrator`.
+> [!NOTE]\
+> The default username is `administrator` and the password is `administrator`.
 
 ## ⚠️ Limitations
 
