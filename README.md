@@ -35,7 +35,8 @@ Tool for generating the crystal reports. Download and install from [here](https:
 
 ## 📸 Screenshots
 
-1. Login page
+1. Login page:
+    ![Login page](ss/Login.jpg)
 2. Admin dashboard
 3. Employee dashboard
 4. Create customer
