@@ -35,10 +35,23 @@ Tool for generating the crystal reports. Download and install from [here](https:
 
 ## 📸 Screenshots
 
-1. Login page:
-    ![Login page](ss/Login.jpg)
-2. Admin dashboard
-3. Employee dashboard
-4. Create customer
-5. Create FD
-6. Reports section
+### 1. Login page: 
+![Login page](ss/Login.jpg)
+### 2. Admin dashboard:
+![Admin Dashboard](ss/Dashboard.jpg)
+### 3. Create Customer:
+![Create Customer](ss/Create%20Customer.jpg)
+### 4. Create FD:
+![Create FD of Customer](ss/Create%20FD.jpg)
+### 5. FD Master:
+![FD Master](ss/FD%20Master.jpg)
+### 6. FD Reports:
+![FD Reports](ss/FD%20Reports.jpg)
+### 7. FD Transection:
+![FD Transection](ss/FD%20Transection.jpg)
+### 8. Add Employee:
+![Add Employee](ss/Add%20Employee.jpg)
+### 9. Forgot Customer ID:
+![Forgot Customer ID](ss/Forgot%20Customer%20ID.jpg)
+### 10. Update Interest:
+![Update Interest Rate](ss/Update%20Interest.jpg)
